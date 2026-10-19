@@ -1,0 +1,14 @@
+{
+  "name": "jogaviravoto",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Games Vira-Voto: site e placar público (Cloudflare Worker)",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "4.147.0"
+  },
+  "license": "CC-BY-NC-SA-4.0"
+}

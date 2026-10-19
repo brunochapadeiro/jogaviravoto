@@ -1,0 +1,18 @@
+{
+  // Site dos Games Vira-Voto: o nome precisa ser igual ao do Worker no painel do Cloudflare.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jogaviravoto",
+  "main": "src/index.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "PLACAR", "class_name": "Placar" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Placar"] }],
+  "observability": { "enabled": true }
+}
