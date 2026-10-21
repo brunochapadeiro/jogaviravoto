@@ -9,7 +9,7 @@ de acessos e compartilhamentos em `/api/placar`.
 - `src/index.js`: o placar público (um Durable Object com SQLite, sem nenhum banco para configurar).
 - `wrangler.jsonc`: a configuração do Worker `jogaviravoto` no Cloudflare.
 
-Cada envio para a branch `main` publica o site sozinho, pelo Cloudflare Workers Builds.
+Cada envio para a branch `main` publica o site sozinho: pelo Cloudflare Workers Builds (repositório conectado no painel) ou pelo GitHub Actions (`.github/workflows/publicar.yml`, com os segredos CLOUDFLARE_API_TOKEN e CLOUDFLARE_ACCOUNT_ID).
 
 © 2026 Prof. Bruno Chapadeiro · Licença Creative Commons CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br) · https://instagram.com/brunochapadeiro
 Feito com auxílio de IA.
