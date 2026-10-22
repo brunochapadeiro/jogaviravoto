@@ -14,7 +14,7 @@
   --key: #1D2228; --key-ink: #F5F7F9;
   --c1: #C9281D; --c2: #23609F; --c3: #1C7A4B; --c4: #74409F;
   --good: #157A3C; --bad: #B4520B; --confirma: #23A05A; --corrige: #EE8A2E; --ctl-ink: #0E120F;
-  --wa: #128C4A; --wa-ink: #FFFFFF; --ig: #C13584;
+  --wa: #0F7A40; --wa-ink: #FFFFFF; --ig: #C13584;
   --lula: #C9281D; --flavio: #2F5D9E; --z0: #1F8A4C; --z1: #B7791F; --z2: #64748B;
   --seg1: #64748B; --seg2: #C2410C; --seg3: #B7791F; --seg4: #1F8A4C;
   --shadow: 0 1px 2px rgba(20, 23, 28, .06);
@@ -168,6 +168,8 @@ h1[tabindex="-1"]:focus { outline: none; }
 .btn:hover:not(:disabled) { border-color: var(--ink); }
 .btn.primary { background: var(--g, var(--accent)); border-color: var(--g, var(--accent)); color: #FFFFFF; }
 .btn.primary:hover:not(:disabled) { filter: brightness(1.06); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.primary { background: color-mix(in srgb, var(--g, var(--accent)) 72%, #000); border-color: color-mix(in srgb, var(--g, var(--accent)) 72%, #000); } }
+:root[data-theme="dark"] .btn.primary { background: color-mix(in srgb, var(--g, var(--accent)) 72%, #000); border-color: color-mix(in srgb, var(--g, var(--accent)) 72%, #000); }
 .btn.lg { font-size: 18px; padding: 13px 22px; }
 .btn.wa { background: var(--wa); border-color: var(--wa); color: var(--wa-ink); }
 .btn.ig { border-color: var(--ig); }
@@ -325,6 +327,35 @@ select.copyfield { font-size: 16px; padding: 10px; }
 .plist .pt { display: flex; flex-direction: column; min-width: 0; }
 .plist small { color: var(--muted); font-size: 14px; }
 .confira { background: var(--soft); border-radius: 12px; padding: 12px; font-size: 15px; width: 100%; overflow-wrap: anywhere; }
+
+html.a11y-zoom body { zoom: var(--a11y-zoom); }
+footer p, footer a, .regras h2, .regras li { overflow-wrap: anywhere; }
+html.a11y-zoom .top { flex-wrap: wrap; row-gap: 6px; } html.a11y-zoom .xp { white-space: normal; }
+html.a11y-zoom .botao-ig, html.a11y-zoom .btn, html.a11y-zoom .redes a { max-width: 100%; white-space: normal; }
+details.a11y { margin: 0; font-size: 15px; }
+details.a11y > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px;
+  border-radius: 999px; border: 2px solid currentColor; font-weight: 700; }
+details.a11y > summary::-webkit-details-marker { display: none; }
+details.a11y > summary svg { width: 1.3em; height: 1.3em; }
+.a11y-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.a11y-bar button, .a11y-bar a { font: inherit; font-weight: 700; min-height: 44px; min-width: 44px; padding: 4px 12px; border-radius: 10px;
+  border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.a11y-bar button[aria-pressed="true"] { background: #1F4E8C; border-color: #1F4E8C; color: #fff; }
+.a11y-zl { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; }
+.a11y-aviso { flex-basis: 100%; margin: 0; font-size: 14px; }
+.a11y-aviso:empty { display: none; }
+.curtir-box { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0; }
+.curtir { font: inherit; font-weight: 700; min-height: 44px; padding: 4px 16px; border-radius: 999px; border: 2px solid #B3261E; background: transparent; color: inherit; cursor: pointer; }
+.curtir[aria-pressed="true"] { background: #B3261E; color: #fff; }
+html.a11y-contraste body, html.a11y-contraste body *:not(svg):not(svg *):not(i) { background-color: #000 !important; background-image: none !important;
+  color: #fff !important; border-color: #fff !important; text-shadow: none !important; box-shadow: none !important; }
+html.a11y-contraste a, html.a11y-contraste a * { color: #FFE600 !important; }
+html.a11y-contraste button, html.a11y-contraste .btn { border: 2px solid #fff !important; }
+html.a11y-contraste .a11y-bar button[aria-pressed="true"], html.a11y-contraste .curtir[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
+html.a11y-contraste :focus-visible { outline: 4px solid #FFE600 !important; outline-offset: 3px; }
+html.a11y-espaco body * { letter-spacing: .05em !important; word-spacing: .16em !important; line-height: 1.75 !important; }
+html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
 </style>
 
 </head><body>
@@ -333,8 +364,10 @@ select.copyfield { font-size: 16px; padding: 10px; }
     <a class="brand" href="#inicio">Games <span>Vira-Voto</span></a>
     <div class="xp" aria-live="polite"><span id="lvlname">Eleitor curioso</span><span class="sep"> · </span><b id="xpn">0</b> pts <span class="pop" id="xppop"></span></div>
   </div>
+  <details class="a11y"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5M12 15l-3.5 6M12 15l3.5 6"/></svg>Acessibilidade</summary><div class="a11y-bar" role="group" aria-label="Opções de acessibilidade"><button type="button" data-a11y="menos" aria-label="Diminuir a letra">A−</button><span class="a11y-zl" id="a11y-zl" aria-live="polite">100%</span><button type="button" data-a11y="mais" aria-label="Aumentar a letra">A+</button><button type="button" data-a11y="c" aria-pressed="false">Contraste</button><button type="button" data-a11y="e" aria-pressed="false">Espaçamento</button><button type="button" data-a11y="m" aria-pressed="false">Sem movimento</button><button type="button" data-a11y="ouvir" aria-pressed="false">Ouvir</button><button type="button" data-a11y="libras">Libras</button><a href="https://jogaviravoto.brunochapadeiro.workers.dev/acessibilidade">Ajuda</a><p class="a11y-aviso" id="a11y-aviso" aria-live="polite"></p></div></details>
   <main id="app"></main>
   <footer>
+    <p class="curtir-box"><button type="button" class="curtir" data-curtir aria-pressed="false">♥ Curtir</button><span data-curtidas aria-live="polite"></span></p>
     <div class="actions">
       <a class="btn ig sm" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg> Siga @brunochapadeiro</a>
     </div>
@@ -546,7 +579,7 @@ function home() {
       h('a', { class: 'lk', href: '#materiais' }, h('b', null, 'Materiais para baixar'), h('span', null, 'Baralho, cartaz com QR, modelos, PDFs, áudios, imagens e vídeos para as redes.'))));
   const pub = h('p', { class: 'pubstrip', 'data-pub': '1', hidden: true, 'aria-live': 'polite' });
   const pinta = () => { const T = PUB && PUB.totais; if (!T || !(T.acessos || T.partidas)) return; pub.hidden = false;
-    pub.replaceChildren(h('span', { class: 'pk' }, 'No Brasil todo'), h('span', null, h('b', null, fmt(T.acessos || 0)), ' acessos'), h('span', null, h('b', null, fmt(T.partidas || 0)), ' partidas'), h('span', null, h('b', null, fmt(T.compartilhamentos || 0)), ' compartilhamentos'), h('a', { href: '#placar' }, 'Ver o placar')); };
+    pub.replaceChildren(h('span', { class: 'pk' }, 'No Brasil todo'), h('span', null, h('b', null, fmt(T.acessos || 0)), ' acessos'), h('span', null, h('b', null, fmt(T.partidas || 0)), ' partidas'), h('span', null, h('b', null, fmt(T.compartilhamentos || 0)), ' compartilhamentos'), h('span', null, h('b', null, fmt(T.curtidas || 0)), ' curtidas'), h('a', { href: '#placar' }, 'Ver o placar')); };
   pub.addEventListener('pub', pinta); pinta(); carregaPublico();
   app.append(hero, pub, prog, ...secs, mais);
 }
@@ -612,10 +645,10 @@ function placarPublico() {
     const top = GAMES.filter(g => J[g.n]).sort((a, b) => J[b.n] - J[a.n]).slice(0, 8); const mx = Math.max(1, ...top.map(g => J[g.n]));
     const hora = new Date(PUB.atualizado); const hs = isNaN(hora) ? '' : hora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     sec.replaceChildren(h('h2', null, 'Placar do Brasil: todo mundo junto'),
-      h('div', { class: 'pcs' }, box(T.acessos, H.acessos, 'acessos'), box(T.partidas, H.partidas, 'partidas'), box(T.compartilhamentos, H.compartilhamentos, 'compartilhamentos'), box(T.pessoas, H.pessoas, 'pessoas atendidas')),
+      h('div', { class: 'pcs' }, box(T.acessos, H.acessos, 'acessos'), box(T.partidas, H.partidas, 'partidas'), box(T.compartilhamentos, H.compartilhamentos, 'compartilhamentos'), box(T.curtidas, H.curtidas, 'curtidas'), box(T.pessoas, H.pessoas, 'pessoas atendidas')),
       top.length ? h('div', null, h('p', { class: 'small', style: 'margin:0 0 6px' }, h('b', null, 'Jogos mais jogados no Brasil')),
         h('div', { class: 'pj' }, top.map(g => h('div', { class: 'pjr' }, h('span', null, g.n + ' · ' + g.curto), h('div', { class: 'pjt' }, h('i', { style: 'width:' + (J[g.n] / mx * 100) + '%;background:' + COR(g.n) })), h('em', null, fmt(J[g.n])))))) : null,
-      h('p', { class: 'small muted' }, (hs ? 'Atualizado às ' + hs + '. ' : '') + 'Conta números, não pessoas: ninguém é identificado. Começou a contar em 16/10/2026.'));
+      h('p', { class: 'small muted' }, (hs ? 'Atualizado às ' + hs + '. ' : '') + 'Conta números, não pessoas: ninguém é identificado. Começou a contar em 21/10/2026, quando o placar entrou no ar.'));
   };
   sec.addEventListener('pub', pinta); pinta(); carregaPublico(true);
   return sec;
@@ -1404,6 +1437,70 @@ function route() {
 window.addEventListener('hashchange', route);
 renderXP(); route();
 try { navigator.wakeLock && navigator.wakeLock.request('screen').catch(() => {}); } catch (e) {}
+</script>
+<script>
+(function () {
+  var H = document.documentElement, K = 'vv-a11y', st = { z: 1, c: 0, e: 0, m: 0 }, Z = [0.9, 1, 1.15, 1.3, 1.5], CONT = 'https://jogaviravoto.brunochapadeiro.workers.dev/api/placar';
+  try { var g = JSON.parse(localStorage.getItem(K) || '{}'); for (var k in g) st[k] = g[k]; } catch (x) {}
+  function aviso(t) { var a = document.getElementById('a11y-aviso'); if (a) a.textContent = t; }
+  function aplica() {
+    H.style.setProperty('--a11y-zoom', st.z); H.classList.toggle('a11y-zoom', st.z !== 1); H.classList.toggle('a11y-contraste', !!st.c); H.classList.toggle('a11y-espaco', !!st.e); H.classList.toggle('a11y-parado', !!st.m);
+    document.querySelectorAll('[data-a11y="c"],[data-a11y="e"],[data-a11y="m"]').forEach(function (b) { b.setAttribute('aria-pressed', String(!!st[b.getAttribute('data-a11y')])); });
+    var zl = document.getElementById('a11y-zl'); if (zl) zl.textContent = Math.round(st.z * 100) + '%';
+    try { localStorage.setItem(K, JSON.stringify(st)); } catch (x) {}
+  }
+  function zoom(d) { var i = Z.indexOf(st.z); if (i < 0) i = 1; st.z = Z[Math.max(0, Math.min(Z.length - 1, i + d))]; aplica(); }
+  var falando = false;
+  function ouvir(b) {
+    var s = window.speechSynthesis;
+    if (!s || !window.SpeechSynthesisUtterance) { aviso('Este navegador não lê em voz alta. Use o leitor de tela do celular (TalkBack ou VoiceOver).'); return; }
+    if (falando) { s.cancel(); falando = false; b.setAttribute('aria-pressed', 'false'); return; }
+    var alvo = document.querySelector('[data-a11y-ler]') || document.querySelector('main') || document.body;
+    var t = (alvo.innerText || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+    var partes = t.match(/[^.!?:]+[.!?:]*/g) || [t], vz = s.getVoices();
+    var v = vz.filter(function (x) { return /pt[-_]BR/i.test(x.lang); })[0] || vz.filter(function (x) { return /^pt/i.test(x.lang); })[0];
+    s.cancel(); falando = true; b.setAttribute('aria-pressed', 'true'); aviso('Lendo em voz alta. Toque em Ouvir de novo para parar.');
+    partes.forEach(function (p, i) {
+      var u = new SpeechSynthesisUtterance(p.trim()); u.lang = 'pt-BR'; if (v) u.voice = v;
+      if (i === partes.length - 1) u.onend = function () { falando = false; b.setAttribute('aria-pressed', 'false'); aviso(''); };
+      s.speak(u);
+    });
+  }
+  function libras() {
+    var ab = document.querySelector('[vw-access-button]');
+    if (window.VLibras && ab) { ab.click(); return; }
+    aviso('Abrindo o VLibras…');
+    var d = document.createElement('div'); d.setAttribute('vw', ''); d.className = 'enabled';
+    d.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+    document.body.appendChild(d);
+    var sc = document.createElement('script'); sc.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    sc.onload = function () { try { new window.VLibras.Widget('https://vlibras.gov.br/app');
+      setTimeout(function () { var b = document.querySelector('[vw-access-button]'); if (b) b.click(); aviso('Libras: o intérprete virtual aparece no canto da tela. Toque num texto para ele traduzir.'); }, 1500);
+    } catch (x) { aviso('Não foi possível abrir o VLibras aqui.'); } };
+    sc.onerror = function () { aviso('Não foi possível abrir o VLibras aqui. No site jogaviravoto ele funciona.'); };
+    document.head.appendChild(sc);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-a11y]'); if (!b) return; var k = b.getAttribute('data-a11y');
+    if (k === 'mais') zoom(1); else if (k === 'menos') zoom(-1); else if (k === 'ouvir') ouvir(b); else if (k === 'libras') libras(); else { st[k] = st[k] ? 0 : 1; aplica(); }
+  });
+  aplica();
+  // Curtir: um por aparelho; o total vem do placar público
+  var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
+  function mostra(n) { document.querySelectorAll('[data-curtidas]').forEach(function (el) { el.textContent = n ? n.toLocaleString('pt-BR') + ' curtidas no site' : ''; }); }
+  var total = 0;
+  function marca() { document.querySelectorAll('[data-curtir]').forEach(function (b) { b.setAttribute('aria-pressed', String(ja)); b.textContent = ja ? '♥ Curtido. Obrigado!' : '♥ Curtir'; }); }
+  marca();
+  if (document.querySelector('[data-curtir]') && /^https?:/.test(location.protocol)) {
+    try { fetch(CONT, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.totais) { total = d.totais.curtidas || 0; mostra(total); } }).catch(function () {}); } catch (x) {}
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-curtir]'); if (!b || ja) return;
+    ja = true; try { localStorage.setItem(CK, '1'); } catch (x) {}
+    try { fetch(CONT + '?e=curtidas', { method: 'POST', mode: 'cors', keepalive: true }).catch(function () {}); } catch (x) {}
+    total += 1; mostra(total); marca();
+  });
+})();
 </script>
 
 </body></html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Letra maior, contraste, espaçamento, ouvir, Libras e Votar no domingo em leitura fácil.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Games Vira-Voto">
+<meta property="og:title" content="Acessibilidade: Games Vira-Voto"><meta property="og:description" content="Letra maior, contraste, espaçamento, ouvir, Libras e Votar no domingo em leitura fácil.">
+<meta property="og:url" content="https://jogaviravoto.brunochapadeiro.workers.dev/acessibilidade">
+<meta property="og:image" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-games-vira-voto.png"><meta property="og:image:secure_url" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-games-vira-voto.png"><meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Acessibilidade: Games Vira-Voto">
+<meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="icone.svg" type="image/svg+xml">
+<title>Acessibilidade</title>
+<style>
+:root { --papel:#FBF8F1; --cartao:#FFFFFF; --tinta:#17191E; --suave:#4A4D57; --linha:#E2DCCF; --verm:#B3261E; --azul:#1F4E8C; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%2820%2C24%2C30%2C.045%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.045%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark } }
+:root[data-theme="dark"] { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.045%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Regular.woff2') format('woff2'); font-weight:400; }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Bold.woff2') format('woff2'); font-weight:700; }
+@font-face { font-family:'Lexend'; src:url('fontes/Lexend-var.woff2') format('woff2'); font-weight:100 900; }
+* { box-sizing:border-box; }
+body { margin:0; background-color:var(--papel); background-image:var(--marca); color:var(--tinta); font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-size:18px; line-height:1.55; }
+a { color:var(--azul); text-underline-offset:.18em; }
+:focus-visible { outline:4px solid var(--azul); outline-offset:3px; border-radius:4px; }
+.wrap { max-width:48rem; margin:0 auto; padding:20px max(16px, env(safe-area-inset-left, 0px)) 48px; display:flex; flex-direction:column; gap:18px; }
+.topo { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:space-between; }
+.placa { align-self:flex-start; margin:0; background:#FFE58F; color:#1B1B1F; font-family:'Lexend', sans-serif; font-weight:700; padding:4px 12px; border:2px solid #1B1B1F; transform:rotate(-1.5deg); }
+h1 { font-family:'Lexend', sans-serif; font-size:clamp(2rem, 7vw, 2.8rem); line-height:1.05; margin:0; } h1 span { color:var(--verm); }
+h2 { font-family:'Lexend', sans-serif; font-size:1.3rem; line-height:1.2; margin:0; }
+.sub { margin:0; font-size:1.06rem; }
+.caixa { background:var(--cartao); border:2px solid var(--linha); border-radius:16px; padding:14px 18px; }
+.caixa ul { margin:8px 0 0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+.rot { background:var(--cartao); border:2px solid var(--linha); border-radius:18px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; scroll-margin-top:12px; }
+.meta { margin:0; color:var(--suave); font-weight:700; font-size:.95rem; }
+.cena { margin:0; font-style:italic; }
+.fala { margin:0; padding-left:1.1em; display:flex; flex-direction:column; gap:6px; }
+.fala li.ind { list-style:none; margin-left:-1.1em; color:var(--suave); font-weight:700; font-size:.95rem; }
+.extra { margin:0; font-size:.95rem; overflow-wrap:anywhere; }
+.acoes { display:flex; flex-wrap:wrap; gap:10px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font:inherit; font-weight:700; min-height:48px; padding:6px 18px; border-radius:999px;
+       border:2px solid var(--tinta); background:transparent; color:var(--tinta); text-decoration:none; cursor:pointer; }
+.btn.forte { background:#B3261E; border-color:#B3261E; color:#fff; }
+.redes { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0; }
+.botao-ig { max-width:100%; display:inline-flex; align-items:center; gap:8px; min-height:46px; padding:6px 16px; border-radius:999px; background:var(--tinta); color:var(--papel); font-weight:700; text-decoration:none; }
+.selo { display:inline-flex; align-items:center; gap:6px; color:var(--suave); font-weight:700; text-decoration:none; font-size:.95rem; } .selo-ic { display:inline-flex; gap:2px; } .ic { width:1.2em; height:1.2em; }
+footer { font-size:.95rem; color:var(--suave); display:flex; flex-direction:column; gap:8px; }
+/* teleprompter */
+.tp { position:fixed; inset:0; z-index:50; background:#000; color:#fff; display:flex; flex-direction:column; }
+.tp[hidden] { display:none; }
+.tp-barra { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; padding:10px max(12px, env(safe-area-inset-left, 0px)); background:#111; border-bottom:2px solid #333; }
+.tp-barra button { font:inherit; font-weight:700; min-height:48px; min-width:48px; padding:4px 14px; border-radius:12px; border:2px solid #fff; background:#000; color:#fff; cursor:pointer; }
+.tp-barra button[aria-pressed="true"] { background:#FFE600; color:#000; border-color:#FFE600; }
+.tp-barra output { min-width:4.5em; text-align:center; font-weight:700; }
+.tp-tela { flex:1; overflow-y:auto; padding:40vh 7vw 70vh; scroll-behavior:auto; }
+.tp-tela.espelho { transform:scaleX(-1); }
+.tp-texto { margin:0 auto; max-width:30em; font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-weight:700; line-height:1.45; }
+.tp-texto p { margin:0 0 .9em; } .tp-texto .ind { color:#FFE600; font-size:.6em; font-weight:700; }
+.tp-guia { position:fixed; left:0; right:0; top:42%; height:0; border-top:3px solid rgba(255,230,0,.55); pointer-events:none; }
+.tp-conta { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; font-size:30vw; font-weight:700; pointer-events:none; }
+.tp-conta:empty { display:none; }
+@media print { .acoes, details.a11y, .tp, .curtir-box, .pular { display:none !important; } body { background:#fff; color:#000; } .rot { break-inside:avoid; } }
+@page { size:A4; margin:14mm; }
+.pular { position:absolute; left:-999px; } .pular:focus { left:16px; top:8px; background:var(--tinta); color:var(--papel); padding:8px 14px; z-index:9; }
+
+html.a11y-zoom body { zoom: var(--a11y-zoom); }
+footer p, footer a, .regras h2, .regras li { overflow-wrap: anywhere; }
+html.a11y-zoom .top { flex-wrap: wrap; row-gap: 6px; } html.a11y-zoom .xp { white-space: normal; }
+html.a11y-zoom .botao-ig, html.a11y-zoom .btn, html.a11y-zoom .redes a { max-width: 100%; white-space: normal; }
+details.a11y { margin: 0; font-size: 15px; }
+details.a11y > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px;
+  border-radius: 999px; border: 2px solid currentColor; font-weight: 700; }
+details.a11y > summary::-webkit-details-marker { display: none; }
+details.a11y > summary svg { width: 1.3em; height: 1.3em; }
+.a11y-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.a11y-bar button, .a11y-bar a { font: inherit; font-weight: 700; min-height: 44px; min-width: 44px; padding: 4px 12px; border-radius: 10px;
+  border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.a11y-bar button[aria-pressed="true"] { background: #1F4E8C; border-color: #1F4E8C; color: #fff; }
+.a11y-zl { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; }
+.a11y-aviso { flex-basis: 100%; margin: 0; font-size: 14px; }
+.a11y-aviso:empty { display: none; }
+.curtir-box { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0; }
+.curtir { font: inherit; font-weight: 700; min-height: 44px; padding: 4px 16px; border-radius: 999px; border: 2px solid #B3261E; background: transparent; color: inherit; cursor: pointer; }
+.curtir[aria-pressed="true"] { background: #B3261E; color: #fff; }
+html.a11y-contraste body, html.a11y-contraste body *:not(svg):not(svg *):not(i) { background-color: #000 !important; background-image: none !important;
+  color: #fff !important; border-color: #fff !important; text-shadow: none !important; box-shadow: none !important; }
+html.a11y-contraste a, html.a11y-contraste a * { color: #FFE600 !important; }
+html.a11y-contraste button, html.a11y-contraste .btn { border: 2px solid #fff !important; }
+html.a11y-contraste .a11y-bar button[aria-pressed="true"], html.a11y-contraste .curtir[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
+html.a11y-contraste :focus-visible { outline: 4px solid #FFE600 !important; outline-offset: 3px; }
+html.a11y-espaco body * { letter-spacing: .05em !important; word-spacing: .16em !important; line-height: 1.75 !important; }
+html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+.facil { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px; font-size:1.2rem; line-height:1.45; }
+.facil li { display:grid; grid-template-columns:auto minmax(0, 1fr); gap:14px; align-items:start; background:var(--cartao); border:2px solid var(--linha); border-radius:14px; padding:12px 14px; }
+.fic { width:2rem; height:2rem; color:var(--azul); }
+.como { margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:8px; }
+</style>
+</head><body>
+<div class="wrap">
+  <a class="pular" href="#facil">Pular para Votar no domingo, em leitura fácil</a>
+  <div class="topo"><a href="https://jogaviravoto.brunochapadeiro.workers.dev/">← Games Vira-Voto</a><p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p></div>
+  <details class="a11y" open><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5M12 15l-3.5 6M12 15l3.5 6"/></svg>Acessibilidade</summary><div class="a11y-bar" role="group" aria-label="Opções de acessibilidade"><button type="button" data-a11y="menos" aria-label="Diminuir a letra">A−</button><span class="a11y-zl" id="a11y-zl" aria-live="polite">100%</span><button type="button" data-a11y="mais" aria-label="Aumentar a letra">A+</button><button type="button" data-a11y="c" aria-pressed="false">Contraste</button><button type="button" data-a11y="e" aria-pressed="false">Espaçamento</button><button type="button" data-a11y="m" aria-pressed="false">Sem movimento</button><button type="button" data-a11y="ouvir" aria-pressed="false">Ouvir</button><button type="button" data-a11y="libras">Libras</button><a href="https://jogaviravoto.brunochapadeiro.workers.dev/acessibilidade">Ajuda</a><p class="a11y-aviso" id="a11y-aviso" aria-live="polite"></p></div></details>
+  <p class="placa">PARA TODO MUNDO</p>
+  <h1>Acessibilidade</h1>
+  <main data-a11y-ler>
+  <section class="caixa" aria-labelledby="c-t"><h2 id="c-t">Como usar o site com mais conforto</h2><ul class="como"><li><b>Letra maior ou menor.</b> No botão Acessibilidade, use A+ e A−. A escolha fica guardada neste aparelho.</li><li><b>Contraste.</b> Fundo preto, letra branca e links amarelos, para baixa visão.</li><li><b>Espaçamento.</b> Mais espaço entre letras, palavras e linhas: ajuda quem tem dislexia ou se cansa ao ler.</li><li><b>Sem movimento.</b> Desliga animações e rolagens suaves, para quem tem vertigem, enxaqueca ou TDAH.</li><li><b>Ouvir.</b> O próprio celular lê a página em voz alta. A Cartilha, a Apostila e o Guia têm também áudio gravado por parte e completo.</li><li><b>Libras.</b> Abre o VLibras, do governo federal: um intérprete virtual traduz o texto que você tocar.</li><li><b>Leitor de tela.</b> As páginas têm títulos, botões com nome e texto alternativo nas imagens, e funcionam com TalkBack (Android) e VoiceOver (iPhone). Os PDFs da Cartilha, da Apostila e do Guia são marcados para leitor de tela.</li><li><b>Teclado e controle.</b> Tudo funciona com Tab, Enter e espaço, com o foco bem visível. Quem usa acionador ou teclado adaptado consegue jogar.</li><li><b>Celular simples e internet fraca.</b> As páginas são leves. Os Games têm versão sem internet, e a Cartilha tem PDF no tamanho da tela do celular.</li></ul></section>
+  <section aria-labelledby="facil" style="margin-top:18px"><h2 id="facil" tabindex="-1">Votar no domingo, em leitura fácil</h2>
+    <p class="sub">Frases curtas, uma ideia por linha. Toque em Ouvir, no botão Acessibilidade, para escutar.</p>
+    <ul class="facil" style="margin-top:12px"><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Domingo, 25 de outubro, tem eleição para presidente.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Você pode votar das 8 horas da manhã às 5 horas da tarde, no horário de Brasília.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 5-6"/></svg><span>Leve um documento com foto. Pode ser a identidade, a carteira de motorista ou a carteira de trabalho de papel.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 5-6"/></svg><span>O documento pode estar vencido.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8 12 3 3 5-6"/></svg><span>Você não precisa levar o título de eleitor.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg><span>Você pode levar o número do seu candidato anotado num papel.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg><span>O celular fica com a mesa. Ele não entra na cabine.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4 4 0 0 1 8 0"/></svg><span>Pessoas com deficiência, idosos, gestantes e quem está com criança de colo passam na frente na fila.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4 4 0 0 1 8 0"/></svg><span>Se você tem deficiência ou dificuldade para andar, pode levar uma pessoa de confiança para ajudar na cabine.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 7v6h5l2 5"/><path d="M8.5 10.5a5.5 5.5 0 1 0 7 7"/></svg><span>A urna tem as teclas em braile e áudio com fone de ouvido. Peça o fone para a mesa.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3"/></svg><span>Em muitas cidades, o ônibus é de graça no dia da eleição. Pergunte na sua cidade.</span></li><li><svg class="fic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg><span>Se precisar de ajuda, peça para alguém da sua família ou para a pessoa da mesa.</span></li></ul>
+    <p class="sub" style="margin-top:12px">Mais sobre votar com deficiência: <a href="https://jogaviravoto.brunochapadeiro.workers.dev/cartilha#acessibilidade">Cartilha Vira-Voto</a>. Onde você vota: <a href="https://www.tse.jus.br/servicos-eleitorais/servicos/aplicativo-e-titulo">aplicativo e-Título</a>.</p>
+  </section>
+  <section class="caixa" aria-labelledby="a-t" style="margin-top:18px"><h2 id="a-t">Achou uma barreira? Avise</h2>
+    <p class="sub">Se algo não funcionou com o seu leitor de tela, o seu teclado ou a sua forma de ler, mande uma mensagem no Instagram <a href="https://instagram.com/brunochapadeiro">@brunochapadeiro</a>. A gente corrige.</p>
+    <p class="sub">O site busca seguir as diretrizes de acessibilidade WCAG 2.2, nível AA. As páginas passam por teste automático (axe) e são conferidas em celular, com letra grande e alto contraste.</p></section>
+  </main>
+  <footer>
+    <p class="curtir-box"><button type="button" class="curtir" data-curtir aria-pressed="false">♥ Curtir</button><span data-curtidas aria-live="polite"></span></p>
+    <p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p>
+    <p>© 2026 Prof. Bruno Chapadeiro. Licença Creative Commons CC BY-NC-SA 4.0: pode copiar e adaptar, sem fins comerciais, com crédito e a mesma licença. Feito com auxílio de IA.</p>
+    <p>Jogos, Cartilha e materiais: <a href="https://jogaviravoto.brunochapadeiro.workers.dev/">jogaviravoto.brunochapadeiro.workers.dev</a></p>
+  </footer>
+</div>
+<script>
+(function () {
+  var H = document.documentElement, K = 'vv-a11y', st = { z: 1, c: 0, e: 0, m: 0 }, Z = [0.9, 1, 1.15, 1.3, 1.5], CONT = 'https://jogaviravoto.brunochapadeiro.workers.dev/api/placar';
+  try { var g = JSON.parse(localStorage.getItem(K) || '{}'); for (var k in g) st[k] = g[k]; } catch (x) {}
+  function aviso(t) { var a = document.getElementById('a11y-aviso'); if (a) a.textContent = t; }
+  function aplica() {
+    H.style.setProperty('--a11y-zoom', st.z); H.classList.toggle('a11y-zoom', st.z !== 1); H.classList.toggle('a11y-contraste', !!st.c); H.classList.toggle('a11y-espaco', !!st.e); H.classList.toggle('a11y-parado', !!st.m);
+    document.querySelectorAll('[data-a11y="c"],[data-a11y="e"],[data-a11y="m"]').forEach(function (b) { b.setAttribute('aria-pressed', String(!!st[b.getAttribute('data-a11y')])); });
+    var zl = document.getElementById('a11y-zl'); if (zl) zl.textContent = Math.round(st.z * 100) + '%';
+    try { localStorage.setItem(K, JSON.stringify(st)); } catch (x) {}
+  }
+  function zoom(d) { var i = Z.indexOf(st.z); if (i < 0) i = 1; st.z = Z[Math.max(0, Math.min(Z.length - 1, i + d))]; aplica(); }
+  var falando = false;
+  function ouvir(b) {
+    var s = window.speechSynthesis;
+    if (!s || !window.SpeechSynthesisUtterance) { aviso('Este navegador não lê em voz alta. Use o leitor de tela do celular (TalkBack ou VoiceOver).'); return; }
+    if (falando) { s.cancel(); falando = false; b.setAttribute('aria-pressed', 'false'); return; }
+    var alvo = document.querySelector('[data-a11y-ler]') || document.querySelector('main') || document.body;
+    var t = (alvo.innerText || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+    var partes = t.match(/[^.!?:]+[.!?:]*/g) || [t], vz = s.getVoices();
+    var v = vz.filter(function (x) { return /pt[-_]BR/i.test(x.lang); })[0] || vz.filter(function (x) { return /^pt/i.test(x.lang); })[0];
+    s.cancel(); falando = true; b.setAttribute('aria-pressed', 'true'); aviso('Lendo em voz alta. Toque em Ouvir de novo para parar.');
+    partes.forEach(function (p, i) {
+      var u = new SpeechSynthesisUtterance(p.trim()); u.lang = 'pt-BR'; if (v) u.voice = v;
+      if (i === partes.length - 1) u.onend = function () { falando = false; b.setAttribute('aria-pressed', 'false'); aviso(''); };
+      s.speak(u);
+    });
+  }
+  function libras() {
+    var ab = document.querySelector('[vw-access-button]');
+    if (window.VLibras && ab) { ab.click(); return; }
+    aviso('Abrindo o VLibras…');
+    var d = document.createElement('div'); d.setAttribute('vw', ''); d.className = 'enabled';
+    d.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+    document.body.appendChild(d);
+    var sc = document.createElement('script'); sc.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    sc.onload = function () { try { new window.VLibras.Widget('https://vlibras.gov.br/app');
+      setTimeout(function () { var b = document.querySelector('[vw-access-button]'); if (b) b.click(); aviso('Libras: o intérprete virtual aparece no canto da tela. Toque num texto para ele traduzir.'); }, 1500);
+    } catch (x) { aviso('Não foi possível abrir o VLibras aqui.'); } };
+    sc.onerror = function () { aviso('Não foi possível abrir o VLibras aqui. No site jogaviravoto ele funciona.'); };
+    document.head.appendChild(sc);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-a11y]'); if (!b) return; var k = b.getAttribute('data-a11y');
+    if (k === 'mais') zoom(1); else if (k === 'menos') zoom(-1); else if (k === 'ouvir') ouvir(b); else if (k === 'libras') libras(); else { st[k] = st[k] ? 0 : 1; aplica(); }
+  });
+  aplica();
+  // Curtir: um por aparelho; o total vem do placar público
+  var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
+  function mostra(n) { document.querySelectorAll('[data-curtidas]').forEach(function (el) { el.textContent = n ? n.toLocaleString('pt-BR') + ' curtidas no site' : ''; }); }
+  var total = 0;
+  function marca() { document.querySelectorAll('[data-curtir]').forEach(function (b) { b.setAttribute('aria-pressed', String(ja)); b.textContent = ja ? '♥ Curtido. Obrigado!' : '♥ Curtir'; }); }
+  marca();
+  if (document.querySelector('[data-curtir]') && /^https?:/.test(location.protocol)) {
+    try { fetch(CONT, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.totais) { total = d.totais.curtidas || 0; mostra(total); } }).catch(function () {}); } catch (x) {}
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-curtir]'); if (!b || ja) return;
+    ja = true; try { localStorage.setItem(CK, '1'); } catch (x) {}
+    try { fetch(CONT + '?e=curtidas', { method: 'POST', mode: 'cors', keepalive: true }).catch(function () {}); } catch (x) {}
+    total += 1; mostra(total); marca();
+  });
+})();
+</script>
+</body></html>

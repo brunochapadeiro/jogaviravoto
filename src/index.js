@@ -1,12 +1,12 @@
 // Site dos Games Vira-Voto (Cloudflare Worker com arquivos estáticos em public/) + placar público.
-// O placar conta acessos, compartilhamentos, partidas, pessoas atendidas e leituras da Cartilha.
+// O placar conta acessos, compartilhamentos, curtidas, partidas, pessoas atendidas e leituras da Cartilha, da Apostila e do Guia.
 // Não guarda IP, nome nem cookie: só números. Fica num Durable Object com SQLite, que já vem no plano grátis
 // e não precisa de nenhum banco para configurar no painel.
 // © 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0 · Código feito com auxílio de IA.
 import { DurableObject } from 'cloudflare:workers';
 
-const EVENTOS = new Set(['acessos', 'compartilhamentos', 'partidas', 'pessoas', 'cartilha', 'apostila', 'guia']);
-const DIARIOS = new Set(['acessos', 'compartilhamentos', 'partidas', 'pessoas']);
+const EVENTOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'partidas', 'pessoas', 'cartilha', 'apostila', 'guia']);
+const DIARIOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'partidas', 'pessoas']);
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
