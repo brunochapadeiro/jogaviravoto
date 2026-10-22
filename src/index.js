@@ -1,12 +1,17 @@
 // Site dos Games Vira-Voto (Cloudflare Worker com arquivos estáticos em public/) + placar público.
-// O placar conta acessos, compartilhamentos, curtidas, partidas, pessoas atendidas e leituras da Cartilha, da Apostila e do Guia.
+// O placar conta acessos, curtidas, comentários (toques em Comentar no Instagram), reposts, compartilhamentos, partidas,
+// pessoas atendidas e leituras da Cartilha, da Apostila e do Guia.
 // Não guarda IP, nome nem cookie: só números. Fica num Durable Object com SQLite, que já vem no plano grátis
 // e não precisa de nenhum banco para configurar no painel.
 // © 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0 · Código feito com auxílio de IA.
 import { DurableObject } from 'cloudflare:workers';
 
-const EVENTOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'partidas', 'pessoas', 'cartilha', 'apostila', 'guia']);
-const DIARIOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'partidas', 'pessoas']);
+const EVENTOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'comentarios', 'reposts', 'partidas', 'pessoas', 'cartilha', 'apostila', 'guia']);
+const DIARIOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'comentarios', 'reposts', 'partidas', 'pessoas']);
+// Números de antes do placar existir (ele começou em 21/10/2026). Só entram se vierem de uma fonte conferida
+// (por exemplo, o painel da Cloudflare) e aparecem separados, em "base", com a nota dizendo de onde vieram.
+const BASE = {};
+const BASE_NOTA = '';
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
@@ -78,7 +83,11 @@ async function placar(req, env) {
     await obj.soma(chaves);
     return json({ ok: true });
   }
-  if (req.method === 'GET' || req.method === 'HEAD') return json(await obj.le(dia));
+  if (req.method === 'GET' || req.method === 'HEAD') {
+    const saida = await obj.le(dia);
+    if (Object.keys(BASE).length) { saida.base = BASE; saida.base_nota = BASE_NOTA; }
+    return json(saida);
+  }
   return json({ ok: false }, 405);
 }
 

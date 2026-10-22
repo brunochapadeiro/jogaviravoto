@@ -81,17 +81,42 @@ details.a11y > summary svg { width: 1.3em; height: 1.3em; }
 .a11y-zl { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; }
 .a11y-aviso { flex-basis: 100%; margin: 0; font-size: 14px; }
 .a11y-aviso:empty { display: none; }
-.curtir-box { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 0; }
-.curtir { font: inherit; font-weight: 700; min-height: 44px; padding: 4px 16px; border-radius: 999px; border: 2px solid #B3261E; background: transparent; color: inherit; cursor: pointer; }
-.curtir[aria-pressed="true"] { background: #B3261E; color: #fff; }
 html.a11y-contraste body, html.a11y-contraste body *:not(svg):not(svg *):not(i) { background-color: #000 !important; background-image: none !important;
   color: #fff !important; border-color: #fff !important; text-shadow: none !important; box-shadow: none !important; }
 html.a11y-contraste a, html.a11y-contraste a * { color: #FFE600 !important; }
 html.a11y-contraste button, html.a11y-contraste .btn { border: 2px solid #fff !important; }
-html.a11y-contraste .a11y-bar button[aria-pressed="true"], html.a11y-contraste .curtir[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
+html.a11y-contraste .a11y-bar button[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
 html.a11y-contraste :focus-visible { outline: 4px solid #FFE600 !important; outline-offset: 3px; }
 html.a11y-espaco body * { letter-spacing: .05em !important; word-spacing: .16em !important; line-height: 1.75 !important; }
 html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+.soc { margin: 0; }
+.soc-k { margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.soc-ac { margin: 0 0 2px; }
+.soc-a { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; min-height: 44px; padding: 2px 8px 2px 4px; border-radius: 12px; color: inherit; text-decoration: none; font-size: 16px; }
+.soc-a svg { width: 26px; height: 26px; flex: none; }
+.soc-a b { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; } .soc-a b:empty { display: none; }
+.soc-vp { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.soc-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(76px, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.soc-row > li { display: flex; min-width: 0; }
+.soc-i { flex: 1; min-width: 0; min-height: 58px; padding: 6px 2px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font: inherit; color: inherit; background: transparent; border: 0; border-radius: 12px; cursor: pointer; text-decoration: none; }
+.soc-i:hover, .soc-a:hover { background: rgba(128,128,128,.14); }
+.soc-i:focus-visible, .soc-a:focus-visible, .soc-b:focus-visible { outline: 3px solid #1F4E8C; outline-offset: 2px; }
+.soc-v { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2px 4px; }
+.soc-i svg { width: 24px; height: 24px; flex: none; }
+.soc-i b { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.soc-i b:empty { display: none; }
+.soc-l { font-size: 12.5px; line-height: 1.15; }
+.soc.grande .soc-a b { font-size: 24px; } .soc.grande .soc-a svg { width: 30px; height: 30px; }
+.soc-i[data-soc="curtir"][aria-pressed="true"] svg { fill: #E8173A; stroke: #E8173A; animation: soc-pop .35s ease-out; }
+@keyframes soc-pop { 0% { transform: scale(1); } 45% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .soc-i svg { animation: none !important; } }
+.soc-p { margin: 8px 0 0; padding: 10px 12px; border: 2px solid currentColor; border-radius: 12px; font-size: 15px; }
+.soc-p p { margin: 0; } .soc-bs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px !important; }
+.soc-b { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 14px; border-radius: 999px; border: 2px solid currentColor; color: inherit; font-weight: 700; text-decoration: none; }
+.soc-st { margin: 6px 0 0; font-size: 14px; overflow-wrap: anywhere; } .soc-st:empty { display: none; }
+@media print { .soc { display: none !important; } }
 </style>
 </head><body>
 <div class="wrap"><a class="pular" href="#plano">Pular para o plano</a>
@@ -245,7 +270,7 @@ Adesivo de link: https://jogaviravoto.brunochapadeiro.workers.dev/plano
 Legenda: Amanhã, das 8h às 17h. Que horas você vai? Vai com quem?
 Teleprompter: https://jogaviravoto.brunochapadeiro.workers.dev/roteiros#r9</p><button type="button" class="copiar" data-alvo="t28" aria-describedby="t28-h">Copiar o texto</button></div><div class="it"><div class="cab"><span class="badge" style="background:#C13584">Instagram · Feed</span><span class="hora">20h</span></div><p class="nota">Sem arte de IA: só foto, vídeo e texto seus (regra das 72 horas). Foto sua e a legenda (sugestão abaixo). É o último post novo: depois da meia-noite, nada novo.</p><h3 id="t29-h">Texto para copiar</h3><p class="txt" id="t29">Sugestão de legenda (reescreva com as suas palavras): Amanhã eu voto cedo e levo quem eu amo. Das 8h às 17h. Documento com foto, mesmo vencido. Quem trabalha pode sair para votar. E você: que horas vai? Vai com quem?</p><button type="button" class="copiar" data-alvo="t29" aria-describedby="t29-h">Copiar o texto</button></div><div class="it"><div class="cab"><span class="badge" style="background:#1D7A46">WhatsApp · Corrente dos 3</span><span class="hora">21h</span></div><p class="nota">Confirme com cada uma das três pessoas: hora, caminho e companhia. Combine de mandar “votei” amanhã.</p></div></section><section class="dia" id="d2026-10-25" aria-labelledby="h2026-10-25"><header><h2 id="h2026-10-25">Domingo, 25/10</h2><p class="tema">Dia de votar: nada novo nas redes; lembrete pessoal pode</p></header><div class="it"><div class="cab"><span class="badge" style="background:#4A4D57">Você</span><span class="hora">8h</span></div><p class="nota">Vote cedo e leve a família (no seu carro, só família). Documento com foto e o número anotado num papel.</p></div><div class="it"><div class="cab"><span class="badge" style="background:#1D7A46">WhatsApp · Corrente dos 3</span><span class="hora">10h e 14h</span></div><p class="nota">Mensagem pessoal, sem nome nem número de candidato e sem pedir voto: só lembrar o horário e oferecer ajuda.</p><h3 id="t32-h">Texto para copiar</h3><p class="txt" id="t32">Bom dia! Hoje a votação vai até as 17h. Já conseguiu ir? Se precisar de ajuda com o local ou o documento, me chama.</p><button type="button" class="copiar" data-alvo="t32" aria-describedby="t32-h">Copiar o texto</button></div><div class="it"><div class="cab"><span class="badge" style="background:#B3261E">Regra do dia</span><span class="hora">o dia todo</span></div><p class="nota">Não publique conteúdo novo nem impulsione (Lei 9.504/1997, art. 39, § 5º). O que já está no ar pode ficar, inclusive os Destaques. Pode usar broche, adesivo ou camiseta, em silêncio e só você. Sem boca de urna. Ajude do jeito certo: transporte público gratuito, nunca carona para quem não é da família.</p></div><div class="it"><div class="cab"><span class="badge" style="background:#4A4D57">Você</span><span class="hora">depois das 17h</span></div><p class="nota">Confira o boletim da sua urna no site do TSE. Agradeça à sua Corrente dos 3.</p></div></section></main>
 <footer>
-  <p class="curtir-box"><button type="button" class="curtir" data-curtir aria-pressed="false">♥ Curtir</button><span data-curtidas aria-live="polite"></span></p>
+  <div class="soc" data-conta-acesso data-soc-texto="Kit Vira-Voto: o que postar e fazer até domingo, 25/10, com textos prontos e fontes." data-soc-url="https://jogaviravoto.brunochapadeiro.workers.dev/kit"><p class="soc-ac"><a class="soc-a" data-soc="ver" href="https://jogaviravoto.brunochapadeiro.workers.dev/#placar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1.6 12S5.4 4.8 12 4.8 22.4 12 22.4 12 18.6 19.2 12 19.2 1.6 12 1.6 12z"/><circle cx="12" cy="12" r="3.3"/></svg><b data-soc-n="acessos"></b><span class="soc-al"></span><span class="soc-vp">Ver o placar</span></a></p><ul class="soc-row" role="list"><li><button type="button" class="soc-i" data-soc="curtir" aria-pressed="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.6s-7.7-4.7-9.7-9.4C.8 7.7 3 4 6.8 4c2.2 0 3.8 1.2 5.2 3 1.4-1.8 3-3 5.2-3 3.8 0 6 3.7 4.5 7.2-2 4.7-9.7 9.4-9.7 9.4z"/></svg><b data-soc-n="curtidas"></b></span><span class="soc-l">curtir</span></button></li><li><button type="button" class="soc-i" data-soc="comentar" aria-expanded="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 16.9A9.2 9.2 0 1 0 17 20.4l4.6 1.2z"/></svg><b data-soc-n="comentarios"></b></span><span class="soc-l">comentar</span></button></li><li><button type="button" class="soc-i" data-soc="repostar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 2.5l3.5 3.5-3.5 3.5"/><path d="M3.5 11.5V9.6A3.6 3.6 0 0 1 7.1 6h13.4"/><path d="M7 21.5L3.5 18 7 14.5"/><path d="M20.5 12.5v1.9a3.6 3.6 0 0 1-3.6 3.6H3.5"/></svg><b data-soc-n="reposts"></b></span><span class="soc-l">repostar</span></button></li><li><a href="https://wa.me/?text=Kit%20Vira-Voto%3A%20o%20que%20postar%20e%20fazer%20at%C3%A9%20domingo%2C%2025%2F10%2C%20com%20textos%20prontos%20e%20fontes.%20https%3A%2F%2Fjogaviravoto.brunochapadeiro.workers.dev%2Fkit" target="_blank" rel="noopener" class="soc-i" data-soc="compartilhar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.8 2.6L10.3 13.4"/><path d="M21.8 2.6l-6.9 18.8-4.6-8L2.2 9.2z"/></svg><b data-soc-n="compartilhamentos"></b></span><span class="soc-l">compartilhar</span></a></li></ul><div class="soc-p" hidden><p>Os comentários ficam no Instagram do Prof. Bruno Chapadeiro: lá cada pessoa assina o que escreve, e tem moderação.</p><p class="soc-bs"><a class="soc-b" data-soc-com href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener">Comentar no Instagram</a><a class="soc-b" data-soc-com href="https://ig.me/m/brunochapadeiro" target="_blank" rel="noopener">Mandar mensagem direta</a></p></div><p class="soc-st" aria-live="polite"></p></div>
   <p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p>
   <p>© 2026 Prof. Bruno Chapadeiro. Licença Creative Commons CC BY-NC-SA 4.0: pode copiar, compartilhar e adaptar, sem fins comerciais, com crédito e a mesma licença. Arte feita com auxílio de IA. Atualizado em 22/10/2026.</p>
   <p>Jogos, Cartilha e materiais: <a href="https://jogaviravoto.brunochapadeiro.workers.dev/">jogaviravoto.brunochapadeiro.workers.dev</a></p>
@@ -317,20 +342,73 @@ Teleprompter: https://jogaviravoto.brunochapadeiro.workers.dev/roteiros#r9</p><b
     if (k === 'mais') zoom(1); else if (k === 'menos') zoom(-1); else if (k === 'ouvir') ouvir(b); else if (k === 'libras') libras(); else { st[k] = st[k] ? 0 : 1; aplica(); }
   });
   aplica();
-  // Curtir: um por aparelho; o total vem do placar público
+})();
+</script><script>
+(function () {
+  var CONT = 'https://jogaviravoto.brunochapadeiro.workers.dev/api/placar', D = null, base = {}, nota = '', seq = 0, ult = {};
+  var PUB = (function () { try { return location.protocol === 'file:' || (/^https?:$/.test(location.protocol) && !/claude|anthropic/.test(location.hostname)); } catch (x) { return false; } })();
   var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
-  function mostra(n) { document.querySelectorAll('[data-curtidas]').forEach(function (el) { el.textContent = n ? n.toLocaleString('pt-BR') + ' curtidas no site' : ''; }); }
-  var total = 0;
-  function marca() { document.querySelectorAll('[data-curtir]').forEach(function (b) { b.setAttribute('aria-pressed', String(ja)); b.textContent = ja ? '♥ Curtido. Obrigado!' : '♥ Curtir'; }); }
-  marca();
-  if (document.querySelector('[data-curtir]') && /^https?:/.test(location.protocol)) {
-    try { fetch(CONT, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && d.totais) { total = d.totais.curtidas || 0; mostra(total); } }).catch(function () {}); } catch (x) {}
+  function fmt(n) { return (n || 0).toLocaleString('pt-BR'); }
+  function tot(k) { return D ? ((D.totais && D.totais[k]) || 0) + (base[k] || 0) : null; }
+  var NOME = { ver: function (n) { return n + ' acessos. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
+    comentar: function (n) { return 'Comentar no Instagram. ' + n + ' vezes'; }, repostar: function (n) { return 'Repostar. ' + n + ' reposts'; },
+    compartilhar: function (n) { return 'Compartilhar no WhatsApp. ' + n + ' compartilhamentos'; } };
+  var CH = { ver: 'acessos', curtir: 'curtidas', comentar: 'comentarios', repostar: 'reposts', compartilhar: 'compartilhamentos' };
+  function prepara(el) {
+    if (!el.getAttribute('data-soc-id')) { seq += 1; var id = 'soc-p-' + seq + '-' + Math.random().toString(36).slice(2, 6); el.setAttribute('data-soc-id', id);
+      var p = el.querySelector('.soc-p'), b = el.querySelector('[data-soc="comentar"]'); if (p && b) { p.id = id; b.setAttribute('aria-controls', id); } }
+    el.querySelectorAll('[data-soc]').forEach(function (b) {
+      var k = b.getAttribute('data-soc'), n = tot(CH[k]), nb = b.querySelector('[data-soc-n]');
+      if (nb) nb.textContent = n === null ? '' : fmt(n);
+      var al = b.querySelector('.soc-al'); if (al) al.textContent = n === null ? '' : (n === 1 ? 'acesso' : 'acessos');
+      var nome = n === null ? { ver: 'Ver o placar de acessos', curtir: 'Curtir', comentar: 'Comentar no Instagram', repostar: 'Repostar', compartilhar: 'Compartilhar no WhatsApp' }[k] : NOME[k](fmt(n));
+      b.setAttribute('aria-label', nome);
+      if (k === 'curtir') b.setAttribute('aria-pressed', String(ja));
+    });
   }
+  function pintaTudo() { document.querySelectorAll('.soc').forEach(prepara); }
+  function dados(d) { if (!d || !d.totais) return; D = d; base = d.base || {}; nota = d.base_nota || ''; pintaTudo(); }
+  function soma(k) { if (!D) return; D.totais = D.totais || {}; D.totais[k] = (D.totais[k] || 0) + 1; pintaTudo(); }
+  function envia(e) {
+    if (!PUB) return; var u = CONT + '?e=' + e;
+    try { if (navigator.sendBeacon && navigator.sendBeacon(u)) return; } catch (x) {}
+    try { fetch(u, { method: 'POST', mode: 'cors', keepalive: true }).catch(function () {}); } catch (x) {}
+  }
+  function conta(e) { var t = Date.now(); if (ult[e] && t - ult[e] < 15000) return; ult[e] = t; envia(e); soma(e); }
+  function st(el, t) { var s = el.querySelector('.soc-st'); if (s) s.textContent = t; }
+  window.vvSocial = { prepara: prepara, dados: dados, pinta: pintaTudo, nota: function () { return nota; } };
+  pintaTudo();
+  if (document.querySelector('.soc[data-conta-acesso]') && PUB) {
+    var a = false; try { a = sessionStorage.getItem('vv-acesso') === '1'; sessionStorage.setItem('vv-acesso', '1'); } catch (x) {}
+    if (!a) envia('acessos');
+  }
+  if (PUB && document.querySelector('.soc')) setTimeout(function () {
+    if (D) return;
+    try { fetch(CONT, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && !D) dados(d); }).catch(function () {}); } catch (x) {}
+  }, 700);
   document.addEventListener('click', function (e) {
-    var b = e.target.closest && e.target.closest('[data-curtir]'); if (!b || ja) return;
-    ja = true; try { localStorage.setItem(CK, '1'); } catch (x) {}
-    try { fetch(CONT + '?e=curtidas', { method: 'POST', mode: 'cors', keepalive: true }).catch(function () {}); } catch (x) {}
-    total += 1; mostra(total); marca();
+    var t = e.target.closest && e.target.closest('[data-soc],[data-soc-com]'); if (!t) return;
+    var bar = t.closest('.soc'); if (!bar) return;
+    if (t.hasAttribute('data-soc-com')) { conta('comentarios'); return; }
+    var k = t.getAttribute('data-soc');
+    if (k === 'curtir') {
+      if (ja) { st(bar, 'Você já curtiu daqui. Obrigado!'); return; }
+      ja = true; try { localStorage.setItem(CK, '1'); } catch (x) {}
+      envia('curtidas'); soma('curtidas'); if (!D) pintaTudo(); st(bar, 'Curtido. Obrigado!');
+    } else if (k === 'comentar') {
+      var p = bar.querySelector('.soc-p'), ab = p.hidden; p.hidden = !ab; t.setAttribute('aria-expanded', String(ab));
+      if (ab) { var l = p.querySelector('a'); if (l) l.focus(); }
+    } else if (k === 'repostar') {
+      var tx = bar.getAttribute('data-soc-texto') || document.title, u = bar.getAttribute('data-soc-url') || location.href;
+      var copia = function () {
+        var ok = function () { conta('reposts'); st(bar, 'Link copiado. Cole no seu story, status ou post.'); };
+        try { navigator.clipboard.writeText(tx + ' ' + u).then(ok, function () { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }); }
+        catch (x) { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }
+      };
+      if (navigator.share) navigator.share({ title: document.title, text: tx, url: u }).then(function () { conta('reposts'); st(bar, 'Obrigado por repostar!'); },
+        function (er) { if (!(er && er.name === 'AbortError')) copia(); });
+      else copia();
+    } else if (k === 'compartilhar') { conta('compartilhamentos'); }
   });
 })();
 </script></div>
