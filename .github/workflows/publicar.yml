@@ -1,10 +1,9 @@
-# Plano B para publicar o site no Cloudflare a cada envio para a branch main.
+# Plano B (manual) para publicar o site no Cloudflare. O caminho principal é o Cloudflare Workers Builds,
+# que publica sozinho a cada envio para a branch main. Use este só se aquele falhar: Actions > Publicar no Cloudflare > Run workflow.
 # Só funciona depois de cadastrar, no GitHub (Settings > Secrets and variables > Actions),
 # os segredos CLOUDFLARE_API_TOKEN e CLOUDFLARE_ACCOUNT_ID. Sem eles, nada é publicado e nada dá erro.
 name: Publicar no Cloudflare
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 jobs:
   publicar:
@@ -21,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         if: env.CLOUDFLARE_API_TOKEN != ''
         with:
-          node-version: 20
+          node-version: 22
       - name: Publicar o Worker jogaviravoto
         if: env.CLOUDFLARE_API_TOKEN != ''
         run: npx --yes wrangler@4.147.0 deploy
