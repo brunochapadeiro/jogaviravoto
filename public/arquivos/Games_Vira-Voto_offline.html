@@ -598,7 +598,7 @@ function matRow(m) {
 function materiais() {
   const app = page('materiais', 'Materiais · Games Vira-Voto');
   const grupos = D.materiais.map(([t, itens]) => h('section', { class: 'gsec' }, h('h2', { class: 'sec-h', style: '--g:var(--accent)' }, t), h('ul', { class: 'mats' }, itens.map(matRow))));
-  app.append(ptitle('Materiais para baixar', 'Tudo atualizado em 20/10/2026. Pode copiar, imprimir e espalhar, sem fins comerciais e com crédito (' + 'CC BY-NC-SA 4.0).'), ...grupos);
+  app.append(ptitle('Materiais para baixar', 'Tudo atualizado em 22/10/2026. Pode copiar, imprimir e espalhar, sem fins comerciais e com crédito (' + 'CC BY-NC-SA 4.0).'), ...grupos);
   focusH1();
 }
 
