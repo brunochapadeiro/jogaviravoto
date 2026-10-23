@@ -113,7 +113,8 @@ html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { anim
 @media print { .soc { display: none !important; } }
 
 .quando { display:grid; grid-template-columns:auto minmax(0,1fr); gap:6px 12px; margin:10px 0 0; }
-.quando dt { font-weight:700; } .quando dd { margin:0; }
+.quando dt { font-weight:700; } .quando dd { margin:0; min-width:0; overflow-wrap:anywhere; }
+html.a11y-zoom .quando { grid-template-columns:minmax(0,1fr); } html.a11y-zoom .quando dd { margin-bottom:6px; }
 .cont-bar { position:sticky; top:0; z-index:5; display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center; justify-content:space-between;
   background:var(--papel); border-bottom:2px solid var(--linha); padding:6px 0; margin:6px 0 10px; }
 .cont-bar output { font-weight:700; font-size:1rem; }
