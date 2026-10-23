@@ -10,8 +10,11 @@ const EVENTOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'comentario
 const DIARIOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'comentarios', 'reposts', 'partidas', 'pessoas']);
 // Números de antes do placar existir (ele começou em 21/10/2026). Só entram se vierem de uma fonte conferida
 // (por exemplo, o painel da Cloudflare) e aparecem separados, em "base", com a nota dizendo de onde vieram.
-const BASE = {};
-const BASE_NOTA = '';
+// Painel da Cloudflare (Workers & Pages > jogaviravoto > Métricas, últimos 30 dias, enviado em 22/10/2026): cerca de 4 mil pedidos de
+// arquivos de 15 a 20/10, dos quais uns 1,9 mil num só pico de 6 horas de respostas 3xx (robô ou recarga), que ficou de fora. Os ~2,1 mil
+// restantes, divididos por 4 a 5 pedidos por visita (página, fontes, ícone, prévia do WhatsApp), dão 420 a 525 visitas: usamos 400.
+const BASE = { acessos: 400 };
+const BASE_NOTA = 'Os acessos de 15 a 20/10/2026 (cerca de 400) são uma estimativa conservadora feita com o painel da Cloudflare, porque o placar só começou a contar em 21/10; curtidas, comentários, reposts e compartilhamentos desse período não foram registrados.';
 const CORS = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',

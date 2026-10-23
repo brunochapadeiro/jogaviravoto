@@ -695,7 +695,7 @@ function placarPublico() {
       h('div', { class: 'pcs' }, box(T.partidas, H.partidas, 'partidas jogadas'), box(T.pessoas, H.pessoas, 'pessoas atendidas na banquinha')),
       top.length ? h('div', null, h('p', { class: 'small', style: 'margin:0 0 6px' }, h('b', null, 'Jogos mais jogados no Brasil')),
         h('div', { class: 'pj' }, top.map(g => h('div', { class: 'pjr' }, h('span', null, g.n + ' · ' + g.curto), h('div', { class: 'pjt' }, h('i', { style: 'width:' + (J[g.n] / mx * 100) + '%;background:' + COR(g.n) })), h('em', null, fmt(J[g.n])))))) : null,
-      h('p', { class: 'small muted' }, (hs ? 'Atualizado às ' + hs + '. ' : '') + 'Números absolutos, sem identificar ninguém. O placar começou a contar em 21/10/2026, quando entrou no ar: antes disso o site não registrava nada. Comentar e repostar entraram em 22/10/2026 e contam os toques nesses botões; os comentários ficam no Instagram.' + (PUB.base_nota ? ' ' + PUB.base_nota : '')));
+      h('p', { class: 'small muted' }, (hs ? 'Atualizado às ' + hs + '. ' : '') + 'Números absolutos, sem identificar ninguém. ' + (PUB.base_nota ? PUB.base_nota : 'O placar começou a contar em 21/10/2026, quando entrou no ar: antes disso o site não registrava nada.') + ' Comentar e repostar entraram em 22/10/2026 e contam os toques nesses botões; os comentários ficam no Instagram.'));
   };
   sec.addEventListener('pub', pinta); pinta(); carregaPublico(true);
   return sec;
@@ -1540,7 +1540,7 @@ try { navigator.wakeLock && navigator.wakeLock.request('screen').catch(() => {})
   var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
   function fmt(n) { return (n || 0).toLocaleString('pt-BR'); }
   function tot(k) { return D ? ((D.totais && D.totais[k]) || 0) + (base[k] || 0) : null; }
-  var NOME = { ver: function (n) { return n + ' acessos. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
+  var NOME = { ver: function (n) { return n + ' acessos' + (base.acessos ? ' desde 15/10, com estimativa de 15 a 20/10' : '') + '. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
     comentar: function (n) { return 'Comentar no Instagram. ' + n + ' vezes'; }, repostar: function (n) { return 'Repostar. ' + n + ' reposts'; },
     compartilhar: function (n) { return 'Compartilhar no WhatsApp. ' + n + ' compartilhamentos'; } };
   var CH = { ver: 'acessos', curtir: 'curtidas', comentar: 'comentarios', repostar: 'reposts', compartilhar: 'compartilhamentos' };

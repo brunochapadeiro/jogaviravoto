@@ -221,7 +221,7 @@ html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { anim
   var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
   function fmt(n) { return (n || 0).toLocaleString('pt-BR'); }
   function tot(k) { return D ? ((D.totais && D.totais[k]) || 0) + (base[k] || 0) : null; }
-  var NOME = { ver: function (n) { return n + ' acessos. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
+  var NOME = { ver: function (n) { return n + ' acessos' + (base.acessos ? ' desde 15/10, com estimativa de 15 a 20/10' : '') + '. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
     comentar: function (n) { return 'Comentar no Instagram. ' + n + ' vezes'; }, repostar: function (n) { return 'Repostar. ' + n + ' reposts'; },
     compartilhar: function (n) { return 'Compartilhar no WhatsApp. ' + n + ' compartilhamentos'; } };
   var CH = { ver: 'acessos', curtir: 'curtidas', comentar: 'comentarios', repostar: 'reposts', compartilhar: 'compartilhamentos' };
