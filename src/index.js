@@ -13,6 +13,14 @@ const DIARIOS = new Set(['acessos', 'compartilhamentos', 'curtidas', 'comentario
 // Painel da Cloudflare (Workers & Pages > jogaviravoto > Métricas, últimos 30 dias, enviado em 22/10/2026): cerca de 4 mil pedidos de
 // arquivos de 15 a 20/10, dos quais uns 1,9 mil num só pico de 6 horas de respostas 3xx (robô ou recarga), que ficou de fora. Os ~2,1 mil
 // restantes, divididos por 4 a 5 pedidos por visita (página, fontes, ícone, prévia do WhatsApp), dão 420 a 525 visitas: usamos 400.
+// Números do painel da Cloudflare (Workers & Pages > jogaviravoto > Métricas), conferidos à mão e mostrados à parte no placar.
+const PAINEL = {
+  conferido: '23/10/2026, 11h30',
+  desde: '15/10/2026',
+  pedidos: 4950,
+  servidores: ['Rio de Janeiro', 'São Paulo', 'Uberlândia', 'Curitiba', 'Caçador (SC)', 'Fortaleza'],
+  exterior: ['Toronto', 'Dallas', 'Milão', 'Sydney', 'Newark', 'Atlanta'],
+};
 const BASE = { acessos: 400 };
 const BASE_NOTA = 'Os acessos de 15 a 20/10/2026 (cerca de 400) são uma estimativa conservadora feita com o painel da Cloudflare, porque o placar só começou a contar em 21/10; curtidas, comentários, reposts e compartilhamentos desse período não foram registrados.';
 const CORS = {
@@ -89,6 +97,7 @@ async function placar(req, env) {
   if (req.method === 'GET' || req.method === 'HEAD') {
     const saida = await obj.le(dia);
     if (Object.keys(BASE).length) { saida.base = BASE; saida.base_nota = BASE_NOTA; }
+    saida.painel = PAINEL;
     return json(saida);
   }
   return json({ ok: false }, 405);
