@@ -1,0 +1,12 @@
+# Lê o placar público do site e mostra os números no resumo da execução (só leitura, sem segredo nenhum).
+name: Ler placar
+on: workflow_dispatch
+jobs:
+  ler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ler /api/placar
+        run: |
+          J=$(curl -sS --max-time 20 https://jogaviravoto.brunochapadeiro.workers.dev/api/placar)
+          echo "::notice title=placar::$J"
+          echo "$J" >> "$GITHUB_STEP_SUMMARY"
