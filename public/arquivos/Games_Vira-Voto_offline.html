@@ -621,7 +621,9 @@ function home() {
     h('span', null, antes ? 'Debate na mão: os temas, os fatos com fonte e o que conferir antes de repassar um corte ›' : 'O placar de cada agência (Lupa, Estadão Verifica, Aos Fatos e g1), a média de todas e cards para repostar ›')) : null;
   const pesq = hojeBR() <= '2026-10-25' ? h('a', { class: 'lk deb-ban', href: FLIPER + 'pesquisas' }, h('b', null, 'Pesquisas do 2º turno: todas, com a média'),
     h('span', null, 'Empate técnico. Cada pesquisa por instituto e data, com registro no TSE, o gráfico e a conta do vira-voto ›')) : null;
-  app.append(hero, pesq, deb, pub, prog, ...secs, mais);
+  const jv = hojeBR() === '2026-10-25' ? h('a', { class: 'lk deb-ban', href: FLIPER + 'ja-votou' }, h('b', null, 'Utilidade pública: disseram que você já votou?'),
+    h('span', null, 'Não saia da seção. O que fazer, na ordem: ata, juiz eleitoral, anotações, boletim de ocorrência e cartório ›')) : null;
+  app.append(hero, jv, pesq, deb, pub, prog, ...secs, mais);
 }
 
 /* ---------- como virar voto ---------- */
