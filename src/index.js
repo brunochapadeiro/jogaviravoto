@@ -129,7 +129,10 @@ function resumoTSE(d) {
 async function lerTSE(uf, ele) {
   const u = `${TSE}/${ele}/dados/${uf}/${uf}-c0001-e00${ele}-u.json`;
   try {
-    const r = await fetch(u, { cf: { cacheTtl: 20, cacheEverything: true }, headers: { 'User-Agent': 'Mozilla/5.0 (Games Vira-Voto; apuração)' } });
+    const r = await fetch(u, { cf: { cacheTtl: 20, cacheEverything: true }, headers: {
+      'User-Agent': 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Mobile Safari/537.36',
+      'Accept': 'application/json, text/plain, */*', 'Accept-Language': 'pt-BR,pt;q=0.9',
+      'Referer': 'https://resultados.tse.jus.br/oficial/app/index.html' } });
     if (!r.ok) return { cd: uf, erro: r.status };
     return resumoTSE(await r.json());
   } catch (err) {
