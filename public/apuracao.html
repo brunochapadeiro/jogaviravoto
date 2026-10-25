@@ -150,6 +150,7 @@ main { display:flex; flex-direction:column; gap:18px; }
 .btns { display:flex; flex-wrap:wrap; gap:10px; }
 .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 .nota { margin:0; font-size:.95rem; color:var(--suave); }
+#aviso-tse[hidden] { display:none !important; }
 #prev { display:block; width:min(100%, 280px); height:auto; border-radius:12px; border:2px solid var(--linha); margin-top:10px; }
 </style>
 </head><body>
@@ -162,6 +163,9 @@ main { display:flex; flex-direction:column; gap:18px; }
   <p class="sub">Números oficiais do TSE, conferidos a cada minuto, para o Brasil, o exterior e cada estado. O resultado que vale é o do <a href="https://resultados.tse.jus.br/oficial/app/index.html#/eleicao/6258/uf/br/cargo/1/vis/nominal/resultados" target="_blank" rel="noopener">site de Resultados do TSE</a>.</p>
   <p class="teste" id="teste" hidden>Página em teste com os números do 1º turno (4/10). Para o 2º turno, abra sem o “?e=6257” no endereço.</p>
   <main data-a11y-ler>
+  <section class="teste" id="aviso-tse" aria-labelledby="av-t" style="display:flex;flex-direction:column;gap:6px"><h2 id="av-t" style="font-size:1.1rem">Votação prorrogada até as 19h; divulgação parada</h2>
+    <p style="margin:0;font-weight:400">Às 17h06, o TSE divulgou 0,25% das seções e parou. O ministro Cristiano Zanin, do STF, prorrogou a votação até as 19h (horário de Brasília) em todas as seções do país, depois de pedidos das duas campanhas: a de Lula citou falta de ônibus; a de Flávio, chuva e enchentes. A divulgação recomeça depois que as seções fecharem. O parcial de 0,25% não indica resultado.</p>
+    <p style="margin:0;font-weight:400;font-size:.92rem">Fontes: <a href="https://www.jornalopcao.com.br/ultimas-noticias/tse-suspende-apuracao-do-segundo-turno-apos-stf-prorrogar-votacao-ate-as-19h-em-todo-o-brasil-882413/" target="_blank" rel="noopener">Jornal Opção (25/10, 17h38)</a> e <a href="https://www.br104.com.br/eleicoes-2026/cidades/tse-suspende-apuracao-pedidos-lula-flavio-prorrogacao-votacao" target="_blank" rel="noopener">BR104 (25/10, 18h20)</a>.</p></section>
   <section class="st" aria-labelledby="st-g"><p class="g" id="st-g">Carregando…</p>
     <div class="prog" id="prog-w" role="progressbar" aria-label="Seções totalizadas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i id="prog"></i></div>
     <p id="st-h" class="nota"></p><p id="cont" class="nota"></p></section>
@@ -227,10 +231,11 @@ main { display:flex; flex-direction:column; gap:18px; }
     dados = d;
     var br = d.br || {}, s = br.s || {}, pst = s.pst || 0, x = pares(br);
     var temDados = pst > 0 && x.t > 0;
-    $('st-g').textContent = temDados ? pc(pst, 2) + '% das seções totalizadas' : 'A divulgação começa depois das 17h (horário de Brasília)';
+    $('st-g').textContent = temDados ? pc(pst, 2) + '% das seções totalizadas' : 'A divulgação recomeça depois das 19h (horário de Brasília)';
     $('st-h').textContent = temDados ? 'Atualizado pelo TSE em ' + (br.dt || '') + ', às ' + (br.ht || '') + '. Esta página confere a cada 30 segundos.'
                                      : 'Quando todas as seções do país fecharem, o TSE começa a divulgar. Esta página atualiza sozinha.';
     $('prog').style.width = Math.min(100, pst) + '%';
+    var av = $('aviso-tse'); if (av) av.hidden = pst >= 1;
     $('prog-w').setAttribute('aria-valuenow', pc(pst, 2));
     // placar: % dos válidos de cada um (no 2º turno, os válidos são só os dois)
     var lp = ELE === '6258' ? (x.L.p || x.lp) : x.L.p, fp = ELE === '6258' ? (x.F.p || x.fp) : x.F.p;
@@ -270,9 +275,9 @@ main { display:flex; flex-direction:column; gap:18px; }
       .catch(function(){ $('st-h').textContent = 'Sem conexão agora. Tentando de novo em 30 segundos. O resultado oficial está no site do TSE.'; });
   }
   ler(); setInterval(ler, 30000); document.addEventListener('visibilitychange', function(){ if (!document.hidden) ler(); });
-  // contagem regressiva até as 17h
+  // contagem regressiva até as 19h (votação prorrogada pelo STF)
   function relogio(){
-    var fim = new Date('2026-10-25T17:00:00-03:00').getTime(), agora = Date.now(), r = $('cont');
+    var fim = new Date('2026-10-25T19:00:00-03:00').getTime(), agora = Date.now(), r = $('cont');
     if (agora >= fim) { r.textContent = ''; return; }
     var m = Math.floor((fim - agora) / 60000), h = Math.floor(m / 60);
     r.textContent = 'As seções fecham em ' + (h ? h + ' h ' : '') + (m % 60) + ' min.';
