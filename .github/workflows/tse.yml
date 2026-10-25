@@ -22,4 +22,6 @@ jobs:
             S=$(wc -c < /tmp/r.json)
             H=$(head -c 2500 /tmp/r.json 2>/dev/null | tr '\n\r' '  ' | sed 's/::/ : /g')
             echo "::notice title=$C ${S}b $(echo "$U" | sed 's#.*/oficial/##')::$H"
+            T=$(tail -c 2500 /tmp/r.json 2>/dev/null | tr '\n\r' '  ' | sed 's/::/ : /g')
+            echo "::notice title=FIM $(basename "$U")::$T"
           done
