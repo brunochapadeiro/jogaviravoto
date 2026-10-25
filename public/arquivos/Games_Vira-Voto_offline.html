@@ -623,7 +623,9 @@ function home() {
     h('span', null, 'Empate técnico. Cada pesquisa por instituto e data, com registro no TSE, o gráfico e a conta do vira-voto ›')) : null;
   const jv = hojeBR() === '2026-10-25' ? h('a', { class: 'lk deb-ban', href: FLIPER + 'ja-votou' }, h('b', null, 'Utilidade pública: disseram que você já votou?'),
     h('span', null, 'Não saia da seção. O que fazer, na ordem: ata, juiz eleitoral, anotações, boletim de ocorrência e cartório ›')) : null;
-  app.append(hero, jv, pesq, deb, pub, prog, ...secs, mais);
+  const apu = hojeBR() >= '2026-10-25' && hojeBR() <= '2026-10-26' ? h('a', { class: 'lk deb-ban', href: FLIPER + 'apuracao' }, h('b', null, 'Apuração ao vivo, com os números do TSE'),
+    h('span', null, 'A partir das 17h: Brasil, exterior e cada estado, atualizado a cada minuto ›')) : null;
+  app.append(hero, apu, jv, pesq, deb, pub, prog, ...secs, mais);
 }
 
 /* ---------- como virar voto ---------- */
