@@ -103,10 +103,60 @@ async function placar(req, env) {
   return json({ ok: false }, 405);
 }
 
+// ---------------- Apuração: lê os arquivos públicos de resultados do TSE (2º turno, Presidente) ----------------
+// Fonte única: resultados.tse.jus.br (os mesmos arquivos do app oficial de Resultados). O Worker só junta Brasil, exterior e
+// as 27 UFs num arquivo pequeno e guarda por 20 segundos, para não sobrecarregar o TSE. Nada é calculado além de somas e diferenças.
+const TSE = 'https://resultados.tse.jus.br/oficial/ele2026';
+const ELE2 = '6258';
+const UFS = ['ac', 'al', 'am', 'ap', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mg', 'ms', 'mt', 'pa', 'pb', 'pe', 'pi', 'pr', 'rj', 'rn', 'ro', 'rr', 'rs', 'sc', 'se', 'sp', 'to'];
+const num = (x) => { const n = Number(String(x ?? '').replace(/\./g, '').replace(',', '.')); return Number.isFinite(n) ? n : 0; };
+
+function resumoTSE(d) {
+  const cands = [];
+  for (const cg of d.carg || []) for (const ag of cg.agr || []) for (const p of ag.par || []) for (const c of p.cand || []) {
+    cands.push({ n: c.n, nm: c.nmu, v: num(c.vap), p: num(c.pvapn ?? c.pvap), e: c.e, st: c.st || '' });
+  }
+  const s = d.s || {}, e = d.e || {}, v = d.v || {};
+  return {
+    cd: d.cdabr, dg: d.dg, hg: d.hg, dt: d.dt, ht: d.ht, tf: d.tf,
+    s: { ts: num(s.ts), st: num(s.st), pst: num(s.pstn ?? s.pst) },
+    e: { te: num(e.te), c: num(e.c), pc: num(e.pcn ?? e.pc), a: num(e.a), pa: num(e.pan ?? e.pa) },
+    v: { tv: num(v.tv), vv: num(v.vv), vb: num(v.vb), pvb: num(v.pvbn ?? v.pvb), vn: num(v.tvn), pvn: num(v.ptvnn ?? v.ptvn) },
+    cand: cands,
+  };
+}
+
+async function lerTSE(uf, ele) {
+  const u = `${TSE}/${ele}/dados/${uf}/${uf}-c0001-e00${ele}-u.json`;
+  try {
+    const r = await fetch(u, { cf: { cacheTtl: 20, cacheEverything: true }, headers: { 'User-Agent': 'Mozilla/5.0 (Games Vira-Voto; apuração)' } });
+    if (!r.ok) return { cd: uf, erro: r.status };
+    return resumoTSE(await r.json());
+  } catch (err) {
+    return { cd: uf, erro: String(err).slice(0, 80) };
+  }
+}
+
+async function apuracao(req, ctx) {
+  const ele = new URL(req.url).searchParams.get('e') === '6257' ? '6257' : ELE2;   // 6257 = 1º turno (só para conferir a página)
+  const cache = caches.default;
+  const chave = new Request(new URL(`/api/apuracao?v=1&e=${ele}`, req.url).toString());
+  const guardado = await cache.match(chave);
+  if (guardado) return guardado;
+  const [br, zz, ...ufs] = await Promise.all([lerTSE('br', ele), lerTSE('zz', ele), ...UFS.map((u) => lerTSE(u, ele))]);
+  const corpo = { fonte: 'TSE, resultados.tse.jus.br (arquivos oficiais de divulgação)', eleicao: ele, lido: new Date().toISOString(), br, zz, ufs };
+  const resp = new Response(JSON.stringify(corpo), {
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=20', ...CORS },
+  });
+  ctx.waitUntil(cache.put(chave, resp.clone()));
+  return resp;
+}
+
 export default {
-  async fetch(req, env) {
+  async fetch(req, env, ctx) {
     const url = new URL(req.url);
     if (url.pathname === '/api/placar' || url.pathname === '/api/placar/') return placar(req, env);
+    if (url.pathname === '/api/apuracao' || url.pathname === '/api/apuracao/') return apuracao(req, ctx);
     // tudo o mais: os arquivos do site (páginas, PDFs, áudios, imagens)
     return env.ASSETS.fetch(req);
   },
