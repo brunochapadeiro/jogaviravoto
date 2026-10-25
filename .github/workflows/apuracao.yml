@@ -1,0 +1,90 @@
+# Apuração ao vivo: lê os arquivos públicos de resultados do TSE (2º turno, Presidente) e entrega ao site.
+# Sem senha guardada: a entrega vai assinada pelo GitHub (token OIDC), e o site só aceita deste repositório, da branch main.
+name: Apuração ao vivo
+on:
+  workflow_dispatch:
+    inputs:
+      ele:
+        description: "6258 = 2º turno; 6257 = 1º turno (teste)"
+        default: "6258"
+      minutos:
+        description: "Por quantos minutos ficar lendo"
+        default: "330"
+      intervalo:
+        description: "Segundos entre leituras"
+        default: "60"
+  schedule:
+    - cron: "45 19 25 10 *"   # 25/10, 16h45 em Brasília (o GitHub pode atrasar alguns minutos)
+permissions:
+  id-token: write
+  contents: read
+concurrency:
+  group: apuracao-${{ inputs.ele || '6258' }}
+  cancel-in-progress: true
+jobs:
+  ler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: Ler o TSE e entregar ao site
+        env:
+          ELE: ${{ inputs.ele || '6258' }}
+          MINUTOS: ${{ inputs.minutos || '330' }}
+          INTERVALO: ${{ inputs.intervalo || '60' }}
+        run: |
+          cat > apu.py <<'PY'
+          import json, os, time, urllib.request, concurrent.futures as cf
+          ELE = os.environ["ELE"]; FIM = time.time() + 60 * float(os.environ["MINUTOS"]); PASSO = float(os.environ["INTERVALO"])
+          SITE = "https://jogaviravoto.brunochapadeiro.workers.dev/api/apuracao?e=" + ELE
+          UFS = "br zz ac al am ap ba ce df es go ma mg ms mt pa pb pe pi pr rj rn ro rr rs sc se sp to".split()
+          def num(x):
+              try: return float(str(x if x is not None else "").replace(".", "").replace(",", "."))
+              except ValueError: return 0.0
+          def ler(uf):
+              u = f"https://resultados.tse.jus.br/oficial/ele2026/{ELE}/dados/{uf}/{uf}-c0001-e00{ELE}-u.json"
+              try:
+                  r = urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": "Mozilla/5.0"}), timeout=20)
+                  d = json.load(r)
+              except Exception as e:
+                  return {"cd": uf, "erro": str(e)[:80]}
+              cands = []
+              for cg in d.get("carg", []):
+                  for ag in cg.get("agr", []):
+                      for p in ag.get("par", []):
+                          for c in p.get("cand", []):
+                              cands.append({"n": c.get("n"), "nm": c.get("nmu"), "v": num(c.get("vap")), "p": num(c.get("pvapn", c.get("pvap"))), "e": c.get("e"), "st": c.get("st", "")})
+              s, e, v = d.get("s", {}), d.get("e", {}), d.get("v", {})
+              return {"cd": d.get("cdabr", uf), "dg": d.get("dg"), "hg": d.get("hg"), "dt": d.get("dt"), "ht": d.get("ht"), "tf": d.get("tf"),
+                      "s": {"ts": num(s.get("ts")), "st": num(s.get("st")), "pst": num(s.get("pstn", s.get("pst")))},
+                      "e": {"te": num(e.get("te")), "c": num(e.get("c")), "pc": num(e.get("pcn", e.get("pc"))), "a": num(e.get("a")), "pa": num(e.get("pan", e.get("pa")))},
+                      "v": {"tv": num(v.get("tv")), "vv": num(v.get("vv")), "vb": num(v.get("vb")), "pvb": num(v.get("pvbn", v.get("pvb"))), "vn": num(v.get("tvn")), "pvn": num(v.get("ptvnn", v.get("ptvn")))},
+                      "cand": cands}
+          def token():
+              u = os.environ["ACTIONS_ID_TOKEN_REQUEST_URL"] + "&audience=jogaviravoto-apuracao"
+              r = urllib.request.urlopen(urllib.request.Request(u, headers={"Authorization": "bearer " + os.environ["ACTIONS_ID_TOKEN_REQUEST_TOKEN"]}), timeout=20)
+              return json.load(r)["value"]
+          ultimo = None
+          while True:
+              with cf.ThreadPoolExecutor(8) as ex:
+                  res = dict(zip(UFS, ex.map(ler, UFS)))
+              corpo = {"fonte": "TSE, resultados.tse.jus.br (arquivos oficiais de divulgação)", "eleicao": ELE, "lido": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                       "br": res["br"], "zz": res["zz"], "ufs": [res[u] for u in UFS[2:]]}
+              chave = json.dumps([corpo["br"], corpo["zz"], corpo["ufs"]], sort_keys=True)
+              br = corpo["br"]
+              if chave != ultimo and "erro" not in br:
+                  try:
+                      q = urllib.request.Request(SITE, data=json.dumps(corpo).encode(), method="POST",
+                                                 headers={"Content-Type": "application/json", "Authorization": "Bearer " + token(), "User-Agent": "apuracao-gh"})
+                      r = urllib.request.urlopen(q, timeout=30)
+                      print(time.strftime("%H:%M:%S"), "entregue", r.status, "seções", br["s"]["pst"], [(c["nm"], c["p"]) for c in br["cand"]][:2], flush=True)
+                      ultimo = chave
+                  except Exception as e:
+                      print(time.strftime("%H:%M:%S"), "falhou a entrega:", str(e)[:200], flush=True)
+              else:
+                  print(time.strftime("%H:%M:%S"), "sem mudança" if "erro" not in br else "TSE: " + br["erro"], flush=True)
+              if time.time() > FIM or (br.get("tf") == "s" and br.get("s", {}).get("pst", 0) >= 100 and chave == ultimo):
+                  break
+              time.sleep(PASSO)
+          print("::notice title=apuração::fim; última leitura", corpo["lido"], "seções", br.get("s", {}).get("pst"))
+          PY
+          python3 apu.py

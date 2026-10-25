@@ -76,6 +76,15 @@ export class Placar extends DurableObject {
     }
     return saida;
   }
+
+  async guardaApuracao(ele, texto) {
+    await this.ctx.storage.put('apuracao:' + ele, texto);
+    return true;
+  }
+
+  async leApuracao(ele) {
+    return (await this.ctx.storage.get('apuracao:' + ele)) || null;
+  }
 }
 
 async function placar(req, env) {
@@ -103,63 +112,60 @@ async function placar(req, env) {
   return json({ ok: false }, 405);
 }
 
-// ---------------- Apuração: lê os arquivos públicos de resultados do TSE (2º turno, Presidente) ----------------
-// Fonte única: resultados.tse.jus.br (os mesmos arquivos do app oficial de Resultados). O Worker só junta Brasil, exterior e
-// as 27 UFs num arquivo pequeno e guarda por 20 segundos, para não sobrecarregar o TSE. Nada é calculado além de somas e diferenças.
-const TSE = 'https://resultados.tse.jus.br/oficial/ele2026';
-const ELE2 = '6258';
-const UFS = ['ac', 'al', 'am', 'ap', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mg', 'ms', 'mt', 'pa', 'pb', 'pe', 'pi', 'pr', 'rj', 'rn', 'ro', 'rr', 'rs', 'sc', 'se', 'sp', 'to'];
-const num = (x) => { const n = Number(String(x ?? '').replace(/\./g, '').replace(',', '.')); return Number.isFinite(n) ? n : 0; };
+// ---------------- Apuração: resultados oficiais do TSE (2º turno, Presidente) ----------------
+// O TSE bloqueia leitura direta a partir da Cloudflare e de outros sites. Por isso, um robô do GitHub Actions do próprio
+// repositório (.github/workflows/apuracao.yml) lê os arquivos públicos de resultados.tse.jus.br a cada minuto e entrega aqui.
+// Sem senha guardada: cada entrega vem assinada pelo GitHub (token OIDC) e só é aceita se for deste repositório, da branch main.
+const ISS = 'https://token.actions.githubusercontent.com';
+const AUD = 'jogaviravoto-apuracao';
+const REPO = 'brunochapadeiro/jogaviravoto';
+const b64u = (s) => Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/') + '==='.slice((s.length + 3) % 4)), (c) => c.charCodeAt(0));
 
-function resumoTSE(d) {
-  const cands = [];
-  for (const cg of d.carg || []) for (const ag of cg.agr || []) for (const p of ag.par || []) for (const c of p.cand || []) {
-    cands.push({ n: c.n, nm: c.nmu, v: num(c.vap), p: num(c.pvapn ?? c.pvap), e: c.e, st: c.st || '' });
-  }
-  const s = d.s || {}, e = d.e || {}, v = d.v || {};
-  return {
-    cd: d.cdabr, dg: d.dg, hg: d.hg, dt: d.dt, ht: d.ht, tf: d.tf,
-    s: { ts: num(s.ts), st: num(s.st), pst: num(s.pstn ?? s.pst) },
-    e: { te: num(e.te), c: num(e.c), pc: num(e.pcn ?? e.pc), a: num(e.a), pa: num(e.pan ?? e.pa) },
-    v: { tv: num(v.tv), vv: num(v.vv), vb: num(v.vb), pvb: num(v.pvbn ?? v.pvb), vn: num(v.tvn), pvn: num(v.ptvnn ?? v.ptvn) },
-    cand: cands,
-  };
-}
-
-async function lerTSE(uf, ele) {
-  const u = `${TSE}/${ele}/dados/${uf}/${uf}-c0001-e00${ele}-u.json`;
+async function tokenGitHubOk(auth) {
   try {
-    const r = await fetch(u, { cf: { cacheTtl: 20, cacheEverything: true }, headers: {
-      'User-Agent': 'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Mobile Safari/537.36',
-      'Accept': 'application/json, text/plain, */*', 'Accept-Language': 'pt-BR,pt;q=0.9',
-      'Referer': 'https://resultados.tse.jus.br/oficial/app/index.html' } });
-    if (!r.ok) return { cd: uf, erro: r.status };
-    return resumoTSE(await r.json());
-  } catch (err) {
-    return { cd: uf, erro: String(err).slice(0, 80) };
+    const t = (auth || '').replace(/^Bearer\s+/i, '');
+    const [h, p, sig] = t.split('.');
+    const cab = JSON.parse(new TextDecoder().decode(b64u(h)));
+    const dados = JSON.parse(new TextDecoder().decode(b64u(p)));
+    if (cab.alg !== 'RS256') return false;
+    const jwks = await (await fetch(ISS + '/.well-known/jwks', { cf: { cacheTtl: 3600, cacheEverything: true } })).json();
+    const jwk = (jwks.keys || []).find((k) => k.kid === cab.kid);
+    if (!jwk) return false;
+    const chave = await crypto.subtle.importKey('jwk', jwk, { name: 'RSASSA-PKCS1-v1_5', hash: 'SHA-256' }, false, ['verify']);
+    const ok = await crypto.subtle.verify('RSASSA-PKCS1-v1_5', chave, b64u(sig), new TextEncoder().encode(h + '.' + p));
+    const agora = Date.now() / 1000;
+    return ok && dados.iss === ISS && dados.aud === AUD && dados.repository === REPO && dados.ref === 'refs/heads/main' && dados.exp > agora;
+  } catch (e) {
+    return false;
   }
 }
 
-async function apuracao(req, ctx) {
-  const ele = new URL(req.url).searchParams.get('e') === '6257' ? '6257' : ELE2;   // 6257 = 1º turno (só para conferir a página)
-  const cache = caches.default;
-  const chave = new Request(new URL(`/api/apuracao?v=1&e=${ele}`, req.url).toString());
-  const guardado = await cache.match(chave);
-  if (guardado) return guardado;
-  const [br, zz, ...ufs] = await Promise.all([lerTSE('br', ele), lerTSE('zz', ele), ...UFS.map((u) => lerTSE(u, ele))]);
-  const corpo = { fonte: 'TSE, resultados.tse.jus.br (arquivos oficiais de divulgação)', eleicao: ele, lido: new Date().toISOString(), br, zz, ufs };
-  const resp = new Response(JSON.stringify(corpo), {
-    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=20', ...CORS },
+async function apuracao(req, env) {
+  if (req.method === 'OPTIONS') return new Response(null, { headers: CORS });
+  const ele = new URL(req.url).searchParams.get('e') === '6257' ? '6257' : '6258';   // 6257 = 1º turno (só para conferir a página)
+  const obj = env.PLACAR.get(env.PLACAR.idFromName('geral'));
+  if (req.method === 'POST') {
+    if (!(await tokenGitHubOk(req.headers.get('Authorization')))) return json({ ok: false, erro: 'não autorizado' }, 401);
+    const texto = await req.text();
+    if (texto.length > 300000) return json({ ok: false, erro: 'grande demais' }, 413);
+    let d;
+    try { d = JSON.parse(texto); } catch (e) { return json({ ok: false, erro: 'json' }, 400); }
+    if (!d || !d.br || !Array.isArray(d.ufs)) return json({ ok: false, erro: 'formato' }, 400);
+    d.recebido = new Date().toISOString();
+    await obj.guardaApuracao(ele, JSON.stringify(d));
+    return json({ ok: true });
+  }
+  const t = await obj.leApuracao(ele);
+  return new Response(t || JSON.stringify({ vazio: true, eleicao: ele }), {
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'public, max-age=15', ...CORS },
   });
-  ctx.waitUntil(cache.put(chave, resp.clone()));
-  return resp;
 }
 
 export default {
   async fetch(req, env, ctx) {
     const url = new URL(req.url);
     if (url.pathname === '/api/placar' || url.pathname === '/api/placar/') return placar(req, env);
-    if (url.pathname === '/api/apuracao' || url.pathname === '/api/apuracao/') return apuracao(req, ctx);
+    if (url.pathname === '/api/apuracao' || url.pathname === '/api/apuracao/') return apuracao(req, env);
     // tudo o mais: os arquivos do site (páginas, PDFs, áudios, imagens)
     return env.ASSETS.fetch(req);
   },
