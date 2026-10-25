@@ -195,6 +195,9 @@ main { display:flex; flex-direction:column; gap:18px; }
     <div class="tb-wrap" tabindex="0" role="region" aria-label="Tabela da apuração por estado"><table class="tb"><caption>Percentual dos votos válidos de cada um, por estado e no exterior</caption>
       <thead><tr><th scope="col">Estado</th><th scope="col" class="n">Seções</th><th scope="col" class="n">Lula</th><th scope="col" class="n">Flávio</th><th scope="col">À frente</th><th scope="col" class="n">Diferença (votos)</th></tr></thead>
       <tbody id="ufs"></tbody></table></div></section>
+  <section class="caixa" aria-labelledby="mu-t"><h2 id="mu-t">Mapa e evolução da noite</h2>
+    <p style="margin:8px 0 0">Para ver o mapa do Brasil por estado, a evolução do placar ao longo da apuração e os números por cidade, use o painel da Comunidade MeiaUm. Ele é independente (não é do TSE) e lê os mesmos arquivos oficiais. Deixe no modo “Oficial do TSE”; o modo “Consolidado pelo site” é uma soma feita por eles e não é oficial.</p>
+    <p class="btns" style="margin-top:8px"><a class="btn" href="https://meiaum.vinnytasso.com.br/eleicoes" target="_blank" rel="noopener">Abrir o mapa da apuração (MeiaUm)</a></p></section>
   <section class="caixa" aria-labelledby="cd-t"><h2 id="cd-t">Card para repostar</h2>
     <p class="sub" style="font-size:.98rem;margin-top:4px">O card é desenhado no seu celular com os números do TSE da hora em que você tocar, com a fonte e o percentual de seções. É parcial até o fim da apuração: diga isso ao postar.</p>
     <p class="btns" style="margin-top:8px"><button type="button" class="btn forte" id="btn-s" disabled>Card para Stories</button><button type="button" class="btn" id="btn-f" disabled>Card para o feed</button>
@@ -203,6 +206,7 @@ main { display:flex; flex-direction:column; gap:18px; }
   <section class="caixa" aria-labelledby="ft-t"><h2 id="ft-t">De onde vêm os números</h2><ul>
     <li>Dos arquivos públicos de divulgação do TSE, os mesmos do <a href="https://resultados.tse.jus.br/oficial/app/index.html#/eleicao/6258/uf/br/cargo/1/vis/nominal/resultados" target="_blank" rel="noopener">site oficial de Resultados</a>. Um robô lê esses arquivos a cada minuto e traz para cá, sem mudar nada além de somas e diferenças.</li>
     <li>Na dúvida, vale o TSE. O resultado oficial é o da totalização e da proclamação pelo TSE.</li>
+    <li>Painel independente da Comunidade MeiaUm, com mapa, evolução e cidades a partir dos arquivos do TSE: <a href="https://meiaum.vinnytasso.com.br/eleicoes" target="_blank" rel="noopener">meiaum.vinnytasso.com.br/eleicoes</a>. O modo “Consolidado pelo site” não é oficial.</li>
     <li>Outro painel, independente e anônimo, com projeção própria: <a href="https://apuracao.ascaribe.tech/" target="_blank" rel="noopener">apuracao.ascaribe.tech</a>. Projeção não é resultado.</li>
     <li><a href="https://jogaviravoto.brunochapadeiro.workers.dev/pesquisas">Pesquisas do 2º turno</a> · <a href="https://jogaviravoto.brunochapadeiro.workers.dev/ja-votou">Disseram que você já votou?</a></li></ul></section>
   </main>
