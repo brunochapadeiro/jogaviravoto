@@ -7,6 +7,10 @@ on:
         description: "Endereços separados por espaço (relativos a /oficial/ ou completos)"
         required: false
         default: ""
+      grep:
+        description: "Expressão para procurar no conteúdo (opcional)"
+        required: false
+        default: ""
 jobs:
   ler:
     runs-on: ubuntu-latest
@@ -14,6 +18,7 @@ jobs:
       - name: Ler arquivos do TSE
         env:
           URLS: ${{ inputs.urls }}
+          GREP: ${{ inputs.grep }}
         run: |
           B=https://resultados.tse.jus.br/oficial
           echo "::notice title=CORS::$(curl -sS -I -H 'Origin: https://jogaviravoto.brunochapadeiro.workers.dev' "$B/ele2026/6257/dados/br/br-c0001-e006257-u.json" | tr '\r\n' '  ' | cut -c1-1500)"
@@ -25,4 +30,5 @@ jobs:
             echo "::notice title=$C ${S}b $(echo "$U" | sed 's#.*/oficial/##')::$H"
             T=$(tail -c 2500 /tmp/r.json 2>/dev/null | tr '\n\r' '  ' | sed 's/::/ : /g')
             echo "::notice title=FIM $(basename "$U")::$T"
+            if [ -n "$GREP" ]; then G=$(grep -oE ".{0,90}($GREP).{0,90}" /tmp/r.json | head -40 | tr '\n\r' '  ' | sed 's/::/ : /g' | cut -c1-3800); echo "::notice title=GREP $(basename "$U")::$G"; fi
           done
