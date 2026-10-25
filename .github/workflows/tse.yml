@@ -1,28 +1,25 @@
 # Diagnóstico: confere os arquivos públicos de resultados do TSE (só leitura, sem segredo nenhum).
 name: Conferir TSE
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Endereços separados por espaço (relativos a /oficial/ ou completos)"
+        required: false
+        default: ""
 jobs:
   ler:
     runs-on: ubuntu-latest
     steps:
       - name: Ler arquivos do TSE
+        env:
+          URLS: ${{ inputs.urls }}
         run: |
           B=https://resultados.tse.jus.br/oficial
-          for U in "$B/comum/config/ele-c.json" \
-                   "$B/ele2026/6258/dados-simplificados/br/br-c0001-e006258-r.json" \
-                   "$B/ele2026/6258/dados-simplificados/zz/zz-c0001-e006258-r.json" \
-                   "$B/ele2026/6258/dados-simplificados/sp/sp-c0001-e006258-r.json" \
-                   "$B/ele2026/6258/config/mun-e006258-cm.json" \
-                   "https://jogaviravoto.brunochapadeiro.workers.dev/api/apuracao"; do
+          for U in $URLS; do
+            case "$U" in http*) ;; *) U="$B/$U";; esac
             C=$(curl -sS -A "Mozilla/5.0" --compressed --max-time 20 -o /tmp/r.json -w "%{http_code}" "$U" || echo ERR)
-            H=$(head -c 1500 /tmp/r.json 2>/dev/null | tr '\n\r' '  ' | sed 's/::/ : /g')
-            echo "::notice title=$C $(basename "$U")::$H"
-            { echo "### $C $U"; echo '```'; head -c 4000 /tmp/r.json; echo; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+            S=$(wc -c < /tmp/r.json)
+            H=$(head -c 2500 /tmp/r.json 2>/dev/null | tr '\n\r' '  ' | sed 's/::/ : /g')
+            echo "::notice title=$C ${S}b $(echo "$U" | sed 's#.*/oficial/##')::$H"
           done
-          python3 - <<'PY'
-          import json, urllib.request
-          try:
-              d = json.load(open('/tmp/r.json'))
-          except Exception as e:
-              d = None
-          PY
