@@ -1,0 +1,17 @@
+{
+    "ListaVotacoes": {
+        "Metadados": {
+    "Versao": "26/10/2026 20:19:05",
+    "VersaoServico": "2",
+    "DataVersaoServico": "2021-09-09",
+ "DescricaoDataSet": "Votações Nominais em Plenário: Contém as Sessões de Votação em Plenário no período informado. Máximo de 60 dias."    ,
+    "Descontinuacao": {
+        "DataDepreciacao": "2025-03-18",
+        "DataDesativacaoCompleta": "2026-02-01",
+        "UrlServicoSubstituto": "https://legis.senado.leg.br/dadosabertos/votacao"
+    }
+
+}
+
+    }
+}

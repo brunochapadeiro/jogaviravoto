@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ListaVotacoes xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='https://legis.senado.leg.br/dadosabertos/dados/ListaVotacoesv2.xsd'>
+    <Metadados>
+    <Versao>26/10/2026 20:19:07</Versao>
+    <VersaoServico>2</VersaoServico>
+    <DataVersaoServico>2021-09-09</DataVersaoServico>
+    <DescricaoDataSet>Votações Nominais em Plenário: Contém as Sessões de Votação em Plenário no período informado. Máximo de 60 dias.</DescricaoDataSet>
+    <Descontinuacao>
+    <DataDepreciacao>2025-03-18</DataDepreciacao>
+    <DataDesativacaoCompleta>2026-02-01</DataDesativacaoCompleta>
+    <UrlServicoSubstituto>https://legis.senado.leg.br/dadosabertos/votacao</UrlServicoSubstituto>
+</Descontinuacao>
+
+</Metadados>
+
+    
+</ListaVotacoes>
