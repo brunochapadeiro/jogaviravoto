@@ -1,0 +1,38 @@
+# Baixa arquivos públicos (TSE, Câmara, Senado) e guarda como artefato da execução, para análise fora do site.
+# Só leitura, sem segredo nenhum. {uf} no endereço repete o download para as 27 UFs.
+name: Baixar dados públicos
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Endereços separados por espaço (relativos a resultados.tse.jus.br/oficial/ ou completos); {uf} repete para as 27 UFs"
+        required: true
+      nome:
+        description: "Nome do artefato"
+        required: false
+        default: "dados"
+jobs:
+  baixar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar
+        env:
+          URLS: ${{ inputs.urls }}
+        run: |
+          mkdir -p dados
+          UFS="ac al am ap ba ce df es go ma mg ms mt pa pb pe pi pr rj rn ro rr rs sc se sp to"
+          baixa() {
+            U="$1"; case "$U" in http*) ;; *) U="https://resultados.tse.jus.br/oficial/$U";; esac
+            F="dados/$(echo "$U" | sed -E 's#^https?://##; s#[/?=&]#_#g')"
+            S=$(curl -sS -L --max-time 120 --retry 3 -A "Mozilla/5.0" -H "Accept: application/json" -o "$F" -w "%{http_code}" "$U" || echo erro)
+            echo "$S $(wc -c < "$F" 2>/dev/null) $U"
+          }
+          for U in $URLS; do
+            case "$U" in *"{uf}"*) for uf in $UFS; do baixa "${U//\{uf\}/$uf}"; sleep 0.3; done;; *) baixa "$U";; esac
+          done | tee dados/_status.txt
+          echo "::notice title=baixados::$(grep -c '^200 ' dados/_status.txt) de $(wc -l < dados/_status.txt)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.nome }}
+          path: dados
+          retention-days: 7
