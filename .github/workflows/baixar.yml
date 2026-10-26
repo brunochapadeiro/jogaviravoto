@@ -1,5 +1,6 @@
-# Baixa arquivos públicos (TSE, Câmara, Senado) e guarda como artefato da execução, para análise fora do site.
-# Só leitura, sem segredo nenhum. {uf} no endereço repete o download para as 27 UFs.
+# Baixa arquivos públicos (TSE, Câmara, Senado), processa (opcional) e guarda o resultado no ramo "dados" do repositório.
+# Só leitura de fontes públicas; o único acesso de escrita é ao próprio ramo "dados" (o site, no ramo main, não muda).
+# {uf} no endereço repete o download para as 27 UFs.
 name: Baixar dados públicos
 on:
   workflow_dispatch:
@@ -8,31 +9,55 @@ on:
         description: "Endereços separados por espaço (relativos a resultados.tse.jus.br/oficial/ ou completos); {uf} repete para as 27 UFs"
         required: true
       nome:
-        description: "Nome do artefato"
+        description: "Pasta de destino no ramo dados"
         required: false
         default: "dados"
+      script:
+        description: "Script em .github/scripts para processar (vazio: guarda os arquivos de até 20 MB como vieram)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: baixar-dados
 jobs:
   baixar:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Baixar
         env:
           URLS: ${{ inputs.urls }}
         run: |
-          mkdir -p dados
+          mkdir -p ../ent
           UFS="ac al am ap ba ce df es go ma mg ms mt pa pb pe pi pr rj rn ro rr rs sc se sp to"
           baixa() {
             U="$1"; case "$U" in http*) ;; *) U="https://resultados.tse.jus.br/oficial/$U";; esac
-            F="dados/$(echo "$U" | sed -E 's#^https?://##; s#[/?=&]#_#g')"
-            S=$(curl -sS -L --max-time 120 --retry 3 -A "Mozilla/5.0" -H "Accept: application/json" -o "$F" -w "%{http_code}" "$U" || echo erro)
+            F="../ent/$(echo "$U" | sed -E 's#^https?://##; s#[/?=&]#_#g')"
+            S=$(curl -sS -L --max-time 600 --retry 3 -A "Mozilla/5.0" -o "$F" -w "%{http_code}" "$U" || echo erro)
             echo "$S $(wc -c < "$F" 2>/dev/null) $U"
           }
           for U in $URLS; do
             case "$U" in *"{uf}"*) for uf in $UFS; do baixa "${U//\{uf\}/$uf}"; sleep 0.3; done;; *) baixa "$U";; esac
-          done | tee dados/_status.txt
-          echo "::notice title=baixados::$(grep -c '^200 ' dados/_status.txt) de $(wc -l < dados/_status.txt)"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: ${{ inputs.nome }}
-          path: dados
-          retention-days: 7
+          done > ../status.txt
+          echo "::notice title=baixados::$(grep -c '^200 ' ../status.txt) de $(wc -l < ../status.txt); falhas: $(grep -v '^200 ' ../status.txt | head -5 | tr '\n' ' ')"
+      - name: Processar
+        env:
+          SCRIPT: ${{ inputs.script }}
+        run: |
+          mkdir -p ../sai
+          if [ -n "$SCRIPT" ]; then python3 ".github/scripts/$SCRIPT" ../ent ../sai | tee ../proc.txt; echo "::notice title=processado::$(tail -3 ../proc.txt | tr '\n' ' ' | cut -c1-3000)";
+          else find ../ent -type f -size -20M -exec cp {} ../sai/ \; ; fi
+          cp ../status.txt ../sai/_status.txt
+      - name: Guardar no ramo dados
+        env:
+          NOME: ${{ inputs.nome }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd .. && rm -rf pub && mkdir pub && cd pub && git init -q
+          git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q --depth 1 origin dados; then git checkout -q -b dados FETCH_HEAD; else git checkout -q --orphan dados; fi
+          rm -rf "$NOME" && mkdir -p "$NOME" && cp -r ../sai/. "$NOME"/
+          git add -A && (git commit -q -m "dados: $NOME [skip ci]" && git push -q origin HEAD:dados) || echo "nada novo"
+          echo "::notice title=guardado::ramo dados, pasta $NOME"
