@@ -1,0 +1,46 @@
+# Placar da semana: toda segunda, às 6h de Brasília, baixa as votações nominais da Câmara e do Senado dos últimos 7 dias
+# e guarda o JSON no ramo "dados" (pasta semana/<data final>). Não publica nada no site: a publicação depende de revisão humana.
+name: Placar da semana (dados)
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      inicio:
+        description: "Data inicial (AAAA-MM-DD); vazio = 7 dias até ontem"
+        required: false
+        default: ""
+      fim:
+        description: "Data final (AAAA-MM-DD); vazio = ontem"
+        required: false
+        default: ""
+permissions:
+  contents: write
+concurrency:
+  group: baixar-dados
+jobs:
+  semana:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar e calcular
+        env:
+          INI: ${{ inputs.inicio }}
+          FIM: ${{ inputs.fim }}
+        run: |
+          mkdir -p ../sai
+          ARGS=""; [ -n "$INI" ] && ARGS="$ARGS --inicio $INI"; [ -n "$FIM" ] && ARGS="$ARGS --fim $FIM"
+          python3 .github/scripts/placar_dados.py $ARGS --saida ../sai/placar.json | tee ../log.txt
+          echo "::notice title=semana::$(tail -1 ../log.txt)"
+      - name: Guardar no ramo dados
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FIMP=$(python3 -c "import json;print(json.load(open('../sai/placar.json'))['periodo']['fim'])")
+          cd .. && rm -rf pub && mkdir pub && cd pub && git init -q
+          git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q --depth 1 origin dados; then git checkout -q -b dados FETCH_HEAD; else git checkout -q --orphan dados; fi
+          mkdir -p "semana/$FIMP" && cp ../sai/placar.json "semana/$FIMP/placar.json" && echo "$FIMP" > semana/ultima.txt
+          git add -A && (git commit -q -m "semana: $FIMP [skip ci]" && git push -q origin HEAD:dados) || echo "nada novo"
+          echo "::notice title=guardado::ramo dados, semana/$FIMP"
