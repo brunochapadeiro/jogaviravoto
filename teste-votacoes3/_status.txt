@@ -1,0 +1,8 @@
+200 6348 https://dadosabertos.camara.leg.br/api/v2/votacoes/2635476-23
+200 168451 https://dadosabertos.camara.leg.br/api/v2/votacoes/2635476-23/votos
+200 2426 https://dadosabertos.camara.leg.br/api/v2/votacoes/2635476-23/orientacoes
+200 1571 https://dadosabertos.camara.leg.br/api/v2/votacoes/2634542-24
+200 114 https://dadosabertos.camara.leg.br/api/v2/votacoes/2634542-24/votos
+200 120 https://dadosabertos.camara.leg.br/api/v2/votacoes/2634542-24/orientacoes
+200 180829 https://dadosabertos.camara.leg.br/api/v2/votacoes/2236186-60/votos
+200 2412 https://dadosabertos.camara.leg.br/api/v2/votacoes/2236186-60/orientacoes
