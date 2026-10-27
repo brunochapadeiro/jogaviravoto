@@ -1,0 +1,12 @@
+200 275178 https://jogaviravoto.brunochapadeiro.workers.dev/
+200 68718 https://jogaviravoto.brunochapadeiro.workers.dev/viramos
+200 66337 https://jogaviravoto.brunochapadeiro.workers.dev/obrigado
+200 173250 https://jogaviravoto.brunochapadeiro.workers.dev/congresso
+200 124623 https://jogaviravoto.brunochapadeiro.workers.dev/semana
+200 124656 https://jogaviravoto.brunochapadeiro.workers.dev/semana-2026-10-17
+200 1681496 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Viramos_carrossel.zip
+200 1595062 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Obrigado_carrossel.zip
+200 1960728 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Congresso_carrossel.zip
+200 982982 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Placar_2026-10-17_carrossel.zip
+200 94440 https://jogaviravoto.brunochapadeiro.workers.dev/og-viramos.png
+200 18024 https://jogaviravoto.brunochapadeiro.workers.dev/fontes/Mali-Bold.woff2
