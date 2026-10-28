@@ -1,0 +1,12 @@
+200 8765235 https://dadosabertos.camara.leg.br/arquivos/votacoes/csv/votacoes-2025.csv
+200 58233239 https://dadosabertos.camara.leg.br/arquivos/votacoesVotos/csv/votacoesVotos-2025.csv
+200 1095383 https://dadosabertos.camara.leg.br/arquivos/votacoesOrientacoes/csv/votacoesOrientacoes-2025.csv
+200 5000004 https://dadosabertos.camara.leg.br/arquivos/votacoesProposicoes/csv/votacoesProposicoes-2025.csv
+200 45036655 https://dadosabertos.camara.leg.br/arquivos/votacoesObjetos/csv/votacoesObjetos-2025.csv
+200 1372220 https://dadosabertos.camara.leg.br/arquivos/deputados/csv/deputados.csv
+200 6901269 https://www.camara.leg.br/cotas/Ano-2025.csv.zip
+200 4140 https://dadosabertos.camara.leg.br/api/v2/deputados/204554/historico
+200 257267 https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/57.json
+200 57231 https://legis.senado.leg.br/dadosabertos/votacao?dataInicio=2025-06-01&dataFim=2025-06-10
+200 5756396 https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2025.csv
+200 17357106 https://dadosabertos.camara.leg.br/arquivos/eventosPresencaDeputados/csv/eventosPresencaDeputados-2025.csv
