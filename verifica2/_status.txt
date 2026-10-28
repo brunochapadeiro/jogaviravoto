@@ -1,0 +1,9 @@
+200 276681 https://jogaviravoto.brunochapadeiro.workers.dev/
+200 89355 https://jogaviravoto.brunochapadeiro.workers.dev/familia
+200 77171 https://jogaviravoto.brunochapadeiro.workers.dev/assedio
+200 1835932 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Familia_carrossel.zip
+200 2195501 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Familia_stories.zip
+200 1816728 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Assedio_carrossel.zip
+200 2185489 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Assedio_stories.zip
+200 96913 https://jogaviravoto.brunochapadeiro.workers.dev/og-familia.png
+200 99709 https://jogaviravoto.brunochapadeiro.workers.dev/og-assedio.png
