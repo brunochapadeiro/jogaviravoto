@@ -1,0 +1,42 @@
+# Ficha dos parlamentares e base do teste "Quem vota como você?": baixa os dados abertos da Câmara e do Senado (2023–2026),
+# calcula participação, alinhamento e gastos da cota e guarda os JSON no ramo "dados" (pasta parlamentares). Não publica nada no site.
+name: Parlamentares (dados)
+on:
+  schedule:
+    - cron: "30 9 * * 1"
+  workflow_dispatch:
+    inputs:
+      anos:
+        description: "Anos separados por vírgula"
+        required: false
+        default: "2023,2024,2025,2026"
+permissions:
+  contents: write
+concurrency:
+  group: baixar-dados
+jobs:
+  parlamentares:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar e calcular
+        env:
+          ANOS: ${{ inputs.anos }}
+        run: |
+          mkdir -p ../sai
+          python3 .github/scripts/parlamentares.py --saida ../sai --anos "${ANOS:-2023,2024,2025,2026}" 2> >(tee ../log.txt >&2)
+          ls -la ../sai
+          echo "::notice title=parlamentares::$(cat ../sai/meta.json | tr '\n' ' ' | cut -c1-900)"
+          cp ../log.txt ../sai/_log.txt
+      - name: Guardar no ramo dados
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd .. && rm -rf pub && mkdir pub && cd pub && git init -q
+          git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          if git fetch -q --depth 1 origin dados; then git checkout -q -b dados FETCH_HEAD; else git checkout -q --orphan dados; fi
+          rm -rf parlamentares && mkdir -p parlamentares && cp -r ../sai/. parlamentares/
+          git add -A && (git commit -q -m "parlamentares [skip ci]" && git push -q origin HEAD:dados) || echo "nada novo"
+          echo "::notice title=guardado::ramo dados, pasta parlamentares"
