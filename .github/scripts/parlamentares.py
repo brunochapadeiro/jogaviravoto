@@ -233,6 +233,14 @@ def senado(anos):
             time.sleep(0.5)
         print("senado", ano, len(vots), file=sys.stderr)
     nominais = {k: v for k, v in vots.items() if votos.get(k) and not v["secreta"]}
+    # partido/UF ausentes na lista da legislatura: usa o voto mais recente
+    for k in sorted(vots, key=lambda k: vots[k]["data"], reverse=True):
+        for c, (_, part, uf, _n) in votos.get(k, {}).items():
+            s = sens.get(c)
+            if s and not s.get("uf") and uf:
+                s["uf"] = uf
+            if s and not s.get("partido") and part:
+                s["partido"] = part
 
     # líder do governo no Senado (Jaques Wagner) como referência de orientação: o Senado não publica orientações nos dados abertos
     lider = next((c for c, s in sens.items() if "JAQUES WAGNER" in " ".join(norm(s["nome"]))), None)
@@ -256,6 +264,23 @@ def senado(anos):
 
     # CEAPS (por nome do senador)
     por_nome = {" ".join(norm(s["nome"])): c for c, s in sens.items()}
+    for c, s in sens.items():
+        if s.get("nomeCivil"):
+            por_nome.setdefault(" ".join(norm(s["nomeCivil"])), c)
+    TIT = {"DR", "DRA", "PROF", "PROFESSOR", "PROFESSORA", "DELEGADO", "DELEGADA", "CORONEL", "SARGENTO", "BISPO", "PASTOR", "CAPITAO", "GENERAL"}
+
+    def acha(nome):
+        if nome in por_nome:
+            return por_nome[nome]
+        t = set(nome.split()) - TIT
+        if not t:
+            return None
+        cands = {c for c, s in sens.items()
+                 if any((len(t) >= 2 and t <= set(norm(x))) or (set(norm(x)) - TIT and set(norm(x)) - TIT <= t) for x in (s["nome"], s.get("nomeCivil") or "") if x)}
+        if len(cands) == 1:
+            c = cands.pop(); por_nome[nome] = c
+            return c
+        return None
     sem = Counter()
     for ano in anos:
         b = baixa(f"https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_{ano}.csv", timeout=300)
@@ -263,7 +288,7 @@ def senado(anos):
             continue
         for r in linhas_csv(b, enc="latin-1", pular=1):
             nome = " ".join(norm(r.get("SENADOR")))
-            c = por_nome.get(nome)
+            c = acha(nome)
             if not c:
                 sem[nome] += 1
                 continue
