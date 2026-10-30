@@ -10,6 +10,14 @@ on:
         description: "Anos separados por vírgula"
         required: false
         default: "2023,2024,2025,2026"
+      casas:
+        description: "Casas: C (Câmara), S (Senado)"
+        required: false
+        default: "C,S"
+      pasta:
+        description: "Pasta de destino no ramo dados"
+        required: false
+        default: "parlamentares"
 permissions:
   contents: write
 concurrency:
@@ -23,9 +31,10 @@ jobs:
       - name: Baixar e calcular
         env:
           ANOS: ${{ inputs.anos }}
+          CASAS: ${{ inputs.casas }}
         run: |
           mkdir -p ../sai
-          python3 .github/scripts/parlamentares.py --saida ../sai --anos "${ANOS:-2023,2024,2025,2026}" 2> ../sai/_log.txt || echo "FALHOU" >> ../sai/_log.txt
+          python3 .github/scripts/parlamentares.py --saida ../sai --anos "${ANOS:-2023,2024,2025,2026}" --casas "${CASAS:-C,S}" 2> ../sai/_log.txt || echo "FALHOU" >> ../sai/_log.txt
           ls -la ../sai
           echo "::notice title=log::$(tail -c 3500 ../sai/_log.txt | tr '\n' '|')"
           for f in ../sai/_erro_*.txt; do [ -f "$f" ] && echo "::error title=$(basename $f)::$(tail -c 3000 $f | tr '\n' '|')"; done; true
@@ -33,11 +42,12 @@ jobs:
         if: always()
         env:
           GH_TOKEN: ${{ github.token }}
+          PASTA: ${{ inputs.pasta || 'parlamentares' }}
         run: |
           cd .. && rm -rf pub && mkdir pub && cd pub && git init -q
           git config user.name "github-actions[bot]" && git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           if git fetch -q --depth 1 origin dados; then git checkout -q -b dados FETCH_HEAD; else git checkout -q --orphan dados; fi
-          rm -rf parlamentares && mkdir -p parlamentares && cp -r ../sai/. parlamentares/
+          rm -rf "$PASTA" && mkdir -p "$PASTA" && cp -r ../sai/. "$PASTA"/
           git add -A && (git commit -q -m "parlamentares [skip ci]" && git push -q origin HEAD:dados) || echo "nada novo"
           echo "::notice title=guardado::ramo dados, pasta parlamentares"

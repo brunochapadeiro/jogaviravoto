@@ -7,7 +7,7 @@ Só biblioteca padrão (roda no GitHub Actions). Gera, na pasta de saída:
 Fontes: dadosabertos.camara.leg.br (arquivos anuais e API v2), camara.leg.br/cotas, legis.senado.leg.br/dadosabertos,
 senado.leg.br/transparencia (CEAPS).
 Uso: python3 parlamentares.py --saida <pasta> [--anos 2023,2024,2025,2026]"""
-import argparse, csv, datetime as dt, io, json, re, sys, time, unicodedata, urllib.request, urllib.error, zipfile
+import argparse, csv, datetime as dt, http.client, io, json, re, sys, time, unicodedata, urllib.request, urllib.error, zipfile
 from collections import defaultdict, Counter
 from pathlib import Path
 
@@ -23,7 +23,7 @@ def baixa(url, tentativas=4, timeout=300):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
                 return r.read()
-        except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+        except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.IncompleteRead, http.client.HTTPException) as e:
             if i == tentativas - 1:
                 print("FALHOU", url, e, file=sys.stderr)
                 return None
@@ -211,7 +211,9 @@ def senado(anos):
 
     vots, votos = {}, defaultdict(dict)
     for ano in anos:
-        for a, b in ((f"{ano}-01-01", f"{ano}-06-30"), (f"{ano}-07-01", f"{ano}-12-31")):
+        for mes in range(1, 13):
+            fim_mes = (dt.date(ano + (mes == 12), mes % 12 + 1, 1) - dt.timedelta(days=1)).isoformat()
+            a, b = f"{ano}-{mes:02d}-01", fim_mes
             a = max(a, INI_LEG)
             if a > b:
                 continue
@@ -277,17 +279,22 @@ def senado(anos):
 
 def main():
     a = argparse.ArgumentParser()
-    a.add_argument("--saida", required=True); a.add_argument("--anos", default="2023,2024,2025,2026")
+    a.add_argument("--saida", required=True); a.add_argument("--anos", default="2023,2024,2025,2026"); a.add_argument("--casas", default="C,S")
     o = a.parse_args()
     anos = [int(x) for x in o.anos.split(",")]
     sai = Path(o.saida); sai.mkdir(parents=True, exist_ok=True)
     import traceback
+    casas = o.casas.split(",")
     try:
+        if "C" not in casas:
+            raise RuntimeError("Câmara pulada (--casas)")
         deps, cv, cvotos = camara(anos)
     except Exception:
         traceback.print_exc(); deps, cv, cvotos = {}, {}, {}
         (sai / "_erro_camara.txt").write_text(traceback.format_exc(), encoding="utf-8")
     try:
+        if "S" not in casas:
+            raise RuntimeError("Senado pulado (--casas)")
         sens, sv, svotos, lider = senado(anos)
     except Exception:
         traceback.print_exc(); sens, sv, svotos, lider = {}, {}, {}, None
