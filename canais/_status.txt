@@ -1,0 +1,9 @@
+200 13562 https://mpt.mp.br/assedio-eleitoral
+200 12172 https://assedioeleitoral.trabalho.gov.br/
+200 216753 https://centraissindicais.org.br/ae/
+202 0 https://www.csjt.jus.br/web/csjt/ouvidoria/denuncia-assedio-eleitoral
+200 260023 https://www.mpf.mp.br/mpfservicos
+403 406 https://www.tre-rj.jus.br/institucional/ouvidoria
+200 3662 https://denuncia.sit.trabalho.gov.br/home
+200 54191 https://www.mpt.mp.br/
+403 919 https://www.trt1.jus.br/ouvidoria

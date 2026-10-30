@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139430604-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXXX&#8211;X', { 'anonymize_ip': true });
+    gtag('config', 'UA-139430604-1');
+  </script>
+  <title>Ministério Público do Trabalho</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="description" content="Ministério Público do Trabalho. O Ministério Público do Trabalho (MPT) é o ramo do MPU que tem como atribuição fiscalizar o cumprimento da legislação trabalhista quando houver interesse público, procurando regularizar e mediar as relações entre empregados e empregadores." />
+  <meta name="robots" content="index, follow" />
+  <link rel="shortcut icon" type="image/png" href="/++theme++mpt/images/favicon.ico" />
+
+  <!-- Fonts -->
+  <!-- ID inserido para que o CSS do plone seja inserido antes (Necess&#225;rio para a barra de edi&#231;&#227;o do primeiro n&#237;vel) -->
+  <link rel="canonical" href="https://mpt.mp.br/assedio-eleitoral" /><link rel="search" href="https://mpt.mp.br/@@search" title="Buscar neste site" /><link rel="stylesheet" type="text/css" href="https://mpt.mp.br/++plone++production/++unique++2019-02-18T16:48:21.677045/default.css" data-bundle="production" /><link rel="stylesheet" type="text/css" href="https://mpt.mp.br/yafowil.plone.css?version=None" data-bundle="yafowil" /><link rel="stylesheet" type="text/css" href="https://mpt.mp.br//++theme++mpt/less/barceloneta-compiled.css" data-bundle="diazo" /><link class="templateLINKplone" href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CKarma:400,600%7CLibre+Baskerville" rel="stylesheet" />
+
+  <!-- Font Icons -->
+  <link rel="stylesheet" href="/++theme++mpt/fonts/ionicons.css" />
+
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/++theme++mpt/plugin-frameworks/bootstrap.min.css" />
+
+  <!-- Swiper Slider -->
+  <link rel="stylesheet" href="/++theme++mpt/plugin-frameworks/swiper.css" />
+
+  <!-- Jquery Magnific for Image Pop up -->
+  <link rel="stylesheet" href="/++theme++mpt/plugin-frameworks/magnific-popup.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/++theme++mpt/common/styles.css" />
+  <link rel="stylesheet" href="/++theme++mpt/common/header-styles.css" />
+  <link rel="stylesheet" href="/++theme++mpt/common/footer-styles.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+<meta content="summary" name="twitter:card" /><meta content="Plone site" property="og:site_name" /><meta content="Assédio Eleitoral" property="og:title" /><meta content="website" property="og:type" /><meta content="" property="og:description" /><meta content="https://mpt.mp.br/assedio-eleitoral" property="og:url" /><meta content="https://mpt.mp.br/logo.png" property="og:image" /><meta content="image/png" property="og:image:type" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Plone - http://plone.com" /></head>
+
+<body id="visual-portal-wrapper" class="frontend icons-on pat-markspeciallinks portaltype-folder section-assedio-eleitoral site-Portal template-listing_view thumbs-on userrole-anonymous viewpermission-view" dir="ltr" data-i18ncatalogurl="https://mpt.mp.br/plonejsi18n" data-pat-plone-modal="{&quot;actionOptions&quot;: {&quot;displayInModal&quot;: false}}" data-pat-markspeciallinks="{&quot;external_links_open_new_window&quot;: false, &quot;mark_special_links&quot;: true}" data-view-url="https://mpt.mp.br/assedio-eleitoral" data-portal-url="https://mpt.mp.br" data-pat-pickadate="{&quot;date&quot;: {&quot;selectYears&quot;: 200}, &quot;time&quot;: {&quot;interval&quot;: 5 } }" data-base-url="https://mpt.mp.br/assedio-eleitoral"><section id="portal-toolbar">
+    <!--Se&#231;&#227;o referente ao #edit-bar do rules -->
+  </section><!-- <div class="loader-wrapper">
+		<div class="loader"><div></div><div></div></div>
+	</div> --><a href="#" class="" id="back-to-top"><i class="ion-android-arrow-up"></i></a><div class="src-popup pop-up" id="src-pop-up">
+    <div class="src-input-area pop-up-main">
+      <form method="post">
+        <span class="label">What you want to search</span>
+        <input class="pl-0" type="text" name="search" />
+        <button class="submit-btn" type="submit"><i class="ion-android-search"></i></button>
+      </form>
+    </div>
+    <!-- src-input -->
+  </div><!-- src-pop-up --><!-- MENU SUPERIOR --><header class="fixed-on-scroll menu-alt">
+    <div id="container-menu" class="container-menu position-relative">
+
+      <div class="menu-bottom">
+        <div class="row menu-interno">
+
+          <div class="col-sm-9 menu-principal">
+
+            <div id="mpt-logo">
+              <a href="/" class="logo"><img class="logo-big" src="/++theme++mpt/" alt="MPT" /></a>
+            </div>
+
+            <div id="hamburguer">
+              <a class="menu-nav-icon" data-menu-visible="#main-menu" href="#"><i class="ion-navicon"></i></a>
+            </div>
+
+            <div id="itens-menu">
+
+              <!-- menu-right-area -->
+              <ul class="nav-visible main-menu" id="main-menu">
+              </ul>
+              <!-- main-menu -->
+
+              <ul class="menu-right-area" hidden="">
+                <li><a data-popup="#src-pop-up" href="#"><i class="ion-android-search"></i></a></li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div id="div-acessibilidade" class="col-sm-2">
+            <ul id="ul-acessibilidade" class="">
+              <li class="social-media-icon"><a href="#"><i class="icon ion-ionic"></i></a></li>
+              <li class="social-media-icon"><a href="#"><i class="icon ion-ionic"></i></a></li>
+              <li class="social-media-icon"><a href="#"><i class="icon ion-ionic"></i></a></li>
+            </ul>
+          </div>
+          <div id="div-acessibilidade-fonte" class="col-sm-1">
+            <ul id="ul-midias" class="font-size--1-1m">
+              <li class="social-media-icon-noticia mr-10 mr-sm-10"><a class="fonte-aumentar fonte-tamanho" title="Aumentar o tamanho da letra" href="javascript:;" style="font-size: 14.4px;">A+</a></li>
+              <li class="social-media-icon-noticia mr-10 mr-sm-10"><a class="fonte-diminuir fonte-tamanho" title="Diminuir o tamanho da letra" href="javascript:;" style="font-size: 14.4px;">A-</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- row -->
+      </div>
+      <!-- menu-bottom -->
+    </div>
+     <!-- container -->
+  </header><div class="row container-coordenadoria container wrapper">
+    <div class="row col-md-12">
+      <div id="above-content-wrapper">
+        <div id="viewlet-above-content"><nav id="portal-breadcrumbs" class="plone-breadcrumb">
+  <div class="container">
+    <span id="breadcrumbs-you-are-here" class="hiddenStructure">Você está aqui:</span>
+    <ol aria-labelledby="breadcrumbs-you-are-here">
+      <li id="breadcrumbs-home">
+        <a href="https://mpt.mp.br">Página Inicial</a>
+      </li>
+      
+    </ol>
+  </div>
+</nav>
+</div>
+      </div>
+    </div>
+
+    <div class="col-md-12 min-height-600">
+      <!-- TITULO -->
+      <div class="container pt-20">
+        <div class="row">
+          <span class="mt-15 mr-30 mb-10 titulo-secao" id="titulo-pagina">Título</span>
+        </div>
+        <div class="row">
+          <span class="mt-15 mr-30 mb-10" id="descricao-pagina" style="text-align: justify">Descrição</span>
+        </div>
+        <div class="row">
+          <div style="color:rgb(0, 0, 0);font-size: 160%;padding: 20px 0 0 0; margin-bottom: 10px;">Selecione o estado para realizar a denúncia</div>
+          <select name="estado" class="select-overlay" id="select-denuncia" onchange="direciona(this);" onclick="event.stopPropagation();">
+            <option value="">Selecione</option>
+            <option value="prt14">Acre</option>
+            <option value="prt19">Alagoas</option>
+            <option value="prt8">Amapá</option>
+            <option value="prt11">Amazonas</option>
+            <option value="prt5">Bahia</option>
+            <option value="prt15">Campinas SP</option>
+            <option value="prt7">Ceará</option>
+            <option value="prt10">Distrito Federal</option>
+            <option value="prt17">Espírito Santo</option>
+            <option value="prt18">Goiás</option>
+            <option value="prt16">Maranhão</option>
+            <option value="prt23">Mato Grosso</option>
+            <option value="prt24">Mato Grosso do Sul</option>
+            <option value="prt3">Minas Gerais</option>
+            <option value="prt8">Pará</option>
+            <option value="prt13">Paraíba</option>
+            <option value="prt9">Paraná</option>
+            <option value="prt6">Pernambuco</option>
+            <option value="prt22">Piauí</option>
+            <option value="prt1">Rio de Janeiro</option>
+            <option value="prt21">Rio Grande do Norte</option>
+            <option value="prt4">Rio Grande do Sul</option>
+            <option value="prt14">Rondônia</option>
+            <option value="prt11">Roraima</option>
+            <option value="prt12">Santa Catarina</option>
+            <option value="prt2">São Paulo</option>
+            <option value="prt20">Sergipe</option>
+            <option value="prt10">Tocantins</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ATUA&#199;&#195;O -->
+      <!-- <div class="container pt-20 item-list text-left ">
+        <div class="row">
+          <h4 class="mr-30 pb-10">T&#211;PICOS</h4>
+          <div id="atuacao" class="row">
+
+            <a class="col-sm-2 mb-10 p-0 icone-atuacao" href="http://portal.mpt.mp.br/wps/portal/portal_mpt/mpt/ompt">
+              <div class="circle-mb servico-placeholder"></div>
+            </a>
+            <a class="col-sm-2 mb-10 p-0 icone-atuacao" href="http://portal.mpt.mp.br/wps/portal/portal_mpt/mpt/ompt">
+              <div class="circle-mb servico-placeholder"></div>
+            </a>
+            <a class="col-sm-2 mb-10 p-0 icone-atuacao" href="http://portal.mpt.mp.br/wps/portal/portal_mpt/mpt/ompt">
+              <div class="circle-mb servico-placeholder"></div>
+            </a>
+            <a class="col-sm-2 mb-10 p-0 icone-atuacao" href="http://portal.mpt.mp.br/wps/portal/portal_mpt/mpt/ompt">
+              <div class="circle-mb servico-placeholder"></div>
+            </a>
+            <a class="col-sm-2 mb-10 p-0 icone-atuacao" href="http://portal.mpt.mp.br/wps/portal/portal_mpt/mpt/ompt">
+              <div class="circle-mb servico-placeholder"></div>
+            </a>
+            <a class="col-sm-2 mb-10 p-0 icone-atuacao" href="http://portal.mpt.mp.br/wps/portal/portal_mpt/mpt/ompt">
+              <div class="circle-mb servico-placeholder"></div>
+            </a>
+            <a class="col-sm-2 mb-10 p-0 icone-atuacao" href="http://portal.mpt.mp.br/wps/portal/portal_mpt/mpt/ompt">
+              <div class="circle-mb servico-placeholder"></div>
+            </a>
+          </div>
+
+        </div>
+      </div> -->
+
+
+    </div>
+
+  </div><div class="container text-center rodape-coordenadorias">
+    <div id="rodape-coordenadorias" class="item-list-coordenadorias mlr-15">
+
+    </div>
+  </div><footer>
+    <div class="container">
+      <div id="titulo-footer">
+
+			<h3 class="pb-15" style="text-align:center">Ministério Público do Trabalho</h3>
+		</div>
+      <div class="row" id="footer-MPT">
+      </div>
+      <div style="text-align:center; font-weight: lighter;" id="end-footer-pgt">Procuradoria-Geral do Trabalho<br />Sede - SAUN Quadra 5, Lote C, Torre A - Brasília-DF<br />CEP 70040-250<br />Horário de atendimento: segunda à sexta-feira: das 9h às 19h <br />Telefone Geral: (61) 3314 8500</div>
+    </div>
+     <!-- container -->
+  </footer><!-- OVERRIDES CSS --><link rel="stylesheet" href="/++theme++mpt/common/overrides.css" /><!-- FONTS --><link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" /><!-- jQuery library --><script src="/++theme++mpt/plugin-frameworks/jquery-3.2.1.min.js"></script><!-- Latest compiled JavaScript --><script src="/++theme++mpt/plugin-frameworks/bootstrap.min.js"></script><!-- Swiper Slider --><script src="/++theme++mpt/plugin-frameworks/swiper.min.js"></script><!-- Parallax BG --><script src="/++theme++mpt/plugin-frameworks/parallax.min.js"></script><!-- Background Video--><script src="/++theme++mpt/plugin-frameworks/jquery.background-video.js"></script><!-- Isotope --><script src="/++theme++mpt/plugin-frameworks/isotope.pkgd.min.js"></script><!-- Jquery Magnific for Image Pop up --><script src="/++theme++mpt/plugin-frameworks/jquery.magnific-popup.min.js"></script><!-- Main Script --><script src="/++theme++mpt/js/script.js"></script><script src="/++theme++mpt/js/funcoes.js"></script><script src="/++theme++mpt/js/assedio-eleitoral.js"></script><script>
+    objetosAPI();
+
+  </script><script src="https://plugin.handtalk.me/web/latest/handtalk.min.js"></script><script>
+    var ht = new HT({token: 'b850dc223fe8e3d65d9a140d6be6a81b', pageSpeech: true})
+  </script></body>
+
+</html>

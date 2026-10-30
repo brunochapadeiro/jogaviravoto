@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" prefix="og: http://ogp.me/ns#" xml:lang="pt-br">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-139430604-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXXXX&#8211;X', { 'anonymize_ip': true });
+    gtag('config', 'UA-139430604-1');
+  </script>
+  <title>Ministério Público do Trabalho</title>
+  <meta property="og:title" content="Ministério Público do Trabalho" />
+  <meta property="og:url" content="https://www.mpt.mp.br" />
+  <meta property="og:image" content="https://mpt.mp.br/Portal/++theme++mpt/images/brasao.jpg" />
+  <meta name="theme-color" content="#3f3c3c" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#3f3c3c" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="description" content="Ministério Público do Trabalho. O Ministério Público do Trabalho (MPT) é o ramo do MPU que tem como atribuição fiscalizar o cumprimento da legislação trabalhista quando houver interesse público, procurando regularizar e mediar as relações entre empregados e empregadores." />
+  <meta name="robots" content="index, follow" />
+  <link rel="shortcut icon" type="image/png" href="/++theme++mpt/images/favicon.ico" />
+
+  <link rel="stylesheet" type="text/css" href="/++theme++mpt/common/slicebox.css" />
+  <link rel="stylesheet" type="text/css" href="/++theme++mpt/common/custom.css" />
+
+  <script type="text/javascript" src="/++theme++mpt/common/modernizr.custom.46884.js"></script>
+
+  <!-- Fonts -->
+  <!-- Classe inserida para que o CSS do plone seja inserido antes (Necess&#225;rio para a barra de edi&#231;&#227;o do primeiro n&#237;vel) -->
+  <link rel="canonical" href="https://mpt.mp.br" /><link rel="alternate" href="https://mpt.mp.br/rss-noticia/RSS" title="RSS-NOTICIA - RSS 1.0" type="application/rss+xml" /><link rel="alternate" href="https://mpt.mp.br/rss-noticia/rss.xml" title="RSS-NOTICIA - RSS 2.0" type="application/rss+xml" /><link rel="alternate" href="https://mpt.mp.br/rss-noticia/atom.xml" title="RSS-NOTICIA - Atom" type="application/rss+xml" /><link rel="alternate" href="https://mpt.mp.br/RSS" title="MPT - RSS 1.0" type="application/rss+xml" /><link rel="alternate" href="https://mpt.mp.br/rss.xml" title="MPT - RSS 2.0" type="application/rss+xml" /><link rel="alternate" href="https://mpt.mp.br/atom.xml" title="MPT - Atom" type="application/rss+xml" /><link rel="search" href="https://mpt.mp.br/@@search" title="Buscar neste site" /><link rel="stylesheet" type="text/css" href="https://mpt.mp.br/++plone++production/++unique++2019-02-18T16:48:21.677045/default.css" data-bundle="production" /><link rel="stylesheet" type="text/css" href="https://mpt.mp.br/yafowil.plone.css?version=None" data-bundle="yafowil" /><link rel="stylesheet" type="text/css" href="https://mpt.mp.br//++theme++mpt/less/barceloneta-compiled.css" data-bundle="diazo" /><link class="templateLINKplone" href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500,700%7CUbuntu:700%7CPoppins:700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css" />
+
+  <!-- Font Icons -->
+  <link rel="stylesheet" href="/++theme++mpt/fonts/ionicons.css" />
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/++theme++mpt/plugin-frameworks/bootstrap.min.css" />
+
+  <!-- Swiper Slider -->
+  <link rel="stylesheet" href="/++theme++mpt/plugin-frameworks/swiper.css" />
+
+  <!-- Jquery Magnific for Image Pop up -->
+  <link rel="stylesheet" href="/++theme++mpt/plugin-frameworks/magnific-popup.css" />
+
+  <!-- REVOLUTION STYLE SHEETS -->
+  <link rel="stylesheet" type="text/css" href="/++theme++mpt/plugin-frameworks/revolution/css/compressed.css" />
+  <link rel="stylesheet" type="text/css" href="/++theme++mpt/plugin-frameworks/revolution/css/navigation-skins/custom.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/++theme++mpt/common/styles.css" />
+  <link rel="stylesheet" href="/++theme++mpt/common/header-styles.css" />
+  <link rel="stylesheet" href="/++theme++mpt/common/footer-styles.css" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
+
+<meta content="summary" name="twitter:card" /><meta content="Plone site" property="og:site_name" /><meta content="Ministério Público do Trabalho" property="og:title" /><meta content="website" property="og:type" /><meta content="" property="og:description" /><meta content="https://mpt.mp.br" property="og:url" /><meta content="https://mpt.mp.br/logo.png" property="og:image" /><meta content="image/png" property="og:image:type" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Plone - http://plone.com" /></head>
+
+<body id="visual-portal-wrapper" class="frontend icons-on pat-markspeciallinks portaltype-document section-front-page-mpt site-Portal template-document_view thumbs-on userrole-anonymous viewpermission-view" dir="ltr" data-i18ncatalogurl="https://mpt.mp.br/plonejsi18n" data-pat-plone-modal="{&quot;actionOptions&quot;: {&quot;displayInModal&quot;: false}}" data-pat-markspeciallinks="{&quot;external_links_open_new_window&quot;: false, &quot;mark_special_links&quot;: true}" data-view-url="https://mpt.mp.br/front-page-mpt" data-portal-url="https://mpt.mp.br" data-pat-pickadate="{&quot;date&quot;: {&quot;selectYears&quot;: 200}, &quot;time&quot;: {&quot;interval&quot;: 5 } }" data-base-url="https://mpt.mp.br/front-page-mpt"><section id="portal-toolbar">
+    <!--Se&#231;&#227;o referente ao #edit-bar do rules -->
+  </section><a href="#" class="archi back-to-top-mpt" id="back-to-top"><i class="ion-android-arrow-up"></i></a><div class="src-popup pop-up" id="src-pop-up">
+    <div class="src-input-area pop-up-main">
+      <form method="post">
+        <span class="label">Busca</span>
+        <input class="pl-0" type="text" name="search" />
+        <button class="submit-btn" type="submit"><i class="ion-android-search"></i></button>
+      </form>
+    </div>
+    <!-- src-input -->
+  </div><!-- src-pop-up pop-up de pesquisa --><!-- MENU SUPERIOR --><header class="fixed-on-scroll">
+    <div id="container-menu" class="container-menu position-relative">
+
+      <div class="menu-bottom">
+        <div class="row">
+
+          <div class="col-sm-12 menu-principal">
+
+            <div id="mpt-logo">
+              <a href="/" class="logo primeira-pagina"><img class="logo-big" src="/++theme++mpt/images/logo_padrao.png" alt="MPT" /></a>
+            </div>
+
+            <div id="hamburguer">
+              <a class="menu-nav-icon" data-menu-visible="#main-menu" href="#"><i class="ion-navicon"></i></a>
+            </div>
+
+            <div id="itens-menu">
+
+              <!-- menu-right-area -->
+
+              <ul class="nav-visible main-menu" id="main-menu">
+              </ul>
+              <!-- main-menu -->
+
+              <ul class="menu-right-area" hidden="">
+                <li><a data-popup="#src-pop-up" href="#"><i class="ion-android-search"></i></a></li>
+              </ul>
+
+            </div>
+
+            <div id="div-midia-sociais" class="">
+              <ul id="ul-midias" class="font-size--1-1m">
+                <li class="social-media-icon-noticia mr-10"><a href="#"><i class="icon ion-ionic"></i></a></li>
+                <li class="social-media-icon-noticia mr-10"><a href="#"><i class="icon ion-ionic"></i></a></li>
+                <li class="social-media-icon-noticia mr-10"><a href="#"><i class="icon ion-ionic"></i></a></li>
+              </ul>
+            </div>
+            <div id="div-acessibilidade-fonte-home">
+              <ul id="ul-midias" class="font-size--1-1m">
+                <li class="social-media-icon-noticia mr-10 mr-sm-10"><a class="fonte-aumentar fonte-tamanho" title="Aumentar o tamanho da letra" href="javascript:;" style="font-size: 14.4px;">A+</a></li>
+                <li class="social-media-icon-noticia mr-10 mr-sm-10"><a class="fonte-diminuir fonte-tamanho" title="Diminuir o tamanho da letra" href="javascript:;" style="font-size: 14.4px;">A-</a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- col-sm-10 -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- menu-bottom -->
+    </div>
+     <!-- container -->
+  </header><!-- MENU SUPERIOR --><!-- main-slider --><div class="position-relative">
+    <div id="div-acessibilidade" class="width-90px bg-white social-media">
+
+      <div class="display-table">
+        <div class="display-table-cell">
+          <ul id="ul-acessibilidade" class="center-text list-block font-size--1-5m color-999 list-ptb-15">
+            <li class="social-media-icon"><a href="#"><i class="icon ion-ionic"></i></a></li>
+            <li class="social-media-icon"><a href="#"><i class="icon ion-ionic"></i></a></li>
+            <li class="social-media-icon"><a href="#"><i class="icon ion-ionic"></i></a></li>
+          </ul>
+        </div>
+        <!-- display-table-cell -->
+      </div>
+
+      <!-- display-table -->
+    </div>
+    <!-- position-right -->
+
+    <div class="mr-md-0">
+      <div id="rev_slider_1061_1_wrapper" class="rev_slider_wrapper fullscreen-container rs-nav-right" data-alias="creative-freedom" data-source="gallery" style="background-color:#1f1d24;padding:0px;">
+        <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+        <div id="rev_slider_1061_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+          <ul id="campanhas"><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/mpt-processa-meta-em-r-50-milhoes-e-quer-remocao-imediata-de-conteudos-de-assedio-eleitoral';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/mpt-processa-meta-em-r-50-milhoes-e-quer-remocao-imediata-de-conteudos-de-assedio-eleitoral/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/mpt-processa-meta-em-r-50-milhoes-e-quer-remocao-imediata-de-conteudos-de-assedio-eleitoral/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/azul-linhas-aereas-e-processada-por-assedio-moral';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/azul-linhas-aereas-e-processada-por-assedio-moral/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/azul-linhas-aereas-e-processada-por-assedio-moral/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/justica-determina-pensao-para-caseiro-usado-como-laranja-em-cinco-empresas-no-df';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/justica-determina-pensao-para-caseiro-usado-como-laranja-em-cinco-empresas-no-df/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/justica-determina-pensao-para-caseiro-usado-como-laranja-em-cinco-empresas-no-df/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/mpt-obtem-52-decisoes-liminares-para-combater-assedio-eleitoral';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/mpt-consegue-52-liminares-para-combater-assedio-eleitoral/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/mpt-consegue-52-liminares-para-combater-assedio-eleitoral/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/apos-denuncia-de-assedio-eleitoral-afiliada-da-rede-globo-no-parana-tera-que-adotar-medidas-de-prevencao-e-combate';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/assedio-eleitoral-na-globo-parana/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/assedio-eleitoral-na-globo-parana/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/conheca-os-trabalhos-vencedores-da-etapa-nacional-do-premio-mpt-na-escola-2026';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/mpt-na-escola-vencedores/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/mpt-na-escola-vencedores/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/justica-e-mps-unem-forcas-contra-o-assedio-eleitoral';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/campanha-no-meu-voto-mando-eu/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/campanha-no-meu-voto-mando-eu/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li><!--Slide--><li data-index="rs-2978" data-transition="fadethroughdark" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="1500" data-rotate="0" data-saveperformance="off" data-title="First" data-param1="01" onclick="location.href='https://mpt.mp.br/pgt/noticias/pgt-tem-regime-de-plantao-durante-finais-de-semana-feriados-e-recesso-forense';" style="cursor: pointer">
+					<!--MAIN IMAGE-->
+					<img src="https://mpt.mp.br/pgt/campanhas/pgt-tem-regime-de-plantao-durante-os-finais-de-semana-feriados-e-recesso-forense/@@images/image/campanha" src_mobile="https://mpt.mp.br/pgt/campanhas/pgt-tem-regime-de-plantao-durante-os-finais-de-semana-feriados-e-recesso-forense/@@images/image_mobile/preview" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="3" class="campanha-img rev-slidebg" />
+				</li></ul>
+          <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+        </div>
+      </div>
+      <!-- END REVOLUTION SLIDER -->
+    </div>
+
+    <!-- margin-right-->
+    <!-- midas sociasi -->
+  </div><!-- main-slider --><!-- SERVI&#199;OS --><section class="center-sm-text mt-90 pb-30 position-relative servico-dt">
+    <div class="container container-servicos" style="padding: 0">
+      <div class="" id="fp-servicos">
+
+        <div class="col-md-2">
+          <a class="br-8 box-shadow-5 position-relative circle">
+            <div><img src="/++theme++mpt/images/cinza.jpg" style="width: 250px;" /></div>
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a class="br-8 box-shadow-5 position-relative circle">
+            <div><img src="/++theme++mpt/images/cinza.jpg" style="width: 250px;" /></div>
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a class="br-8 box-shadow-5 position-relative circle">
+            <div><img src="/++theme++mpt/images/cinza.jpg" style="width: 250px;" /></div>
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a class="br-8 box-shadow-5 position-relative circle">
+            <div><img src="/++theme++mpt/images/cinza.jpg" style="width: 250px;" /></div>
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a class="br-8 box-shadow-5 position-relative circle">
+            <div><img src="/++theme++mpt/images/cinza.jpg" style="width: 250px;" /></div>
+          </a>
+        </div>
+        <div class="col-md-2">
+          <a class="br-8 box-shadow-5 position-relative circle">
+            <div><img src="/++theme++mpt/images/cinza.jpg" style="width: 250px;" /></div>inde
+          </a>
+        </div>
+
+      </div>
+      <!-- row -->
+    </div>
+    <!-- container -->
+  </section><!-- SERVI&#199;OS MOBILE --><section class="servico-mb">
+    <!-- <section class="mb-120 mb-md-50 mb-sm-50 servico-mb" style="height: 60vw; max-height: 300px;"> -->
+    <div id="container-servicos" class="container">
+      <div class="row mb-30">
+        <a class="col-4" href="/++theme++mpt/">
+          <div class="circle-mb servico-placeholder"></div>
+        </a>
+        <a class="col-4" href="/++theme++mpt/">
+          <div class="circle-mb servico-placeholder"></div>
+        </a>
+        <a class="col-4" href="/++theme++mpt/">
+          <div class="circle-mb servico-placeholder"></div>
+        </a>
+      </div>
+      <div class="row">
+        <a class="col-4" href="/++theme++mpt/">
+          <div class="circle-mb servico-placeholder"></div>
+        </a>
+        <a class="col-4" href="/++theme++mpt/">
+          <div class="circle-mb servico-placeholder"></div>
+        </a>
+        <a class="col-4" href="/++theme++mpt/">
+          <div class="circle-mb servico-placeholder"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- container -->
+
+  </section><!-- services-section --><div class="clearfix"></div><section class="section separador">
+  </section><!-- &#193;REAS DE ATUA&#199;&#195;O --><!-- <section class="section position-relative"> --><section class="section position-relative secao-atuacao">
+    <div class="container">
+      <div class="mb-10 titulo-secao">ÁREAS DE ATUAÇÃO</div>
+      <div class="team-container position-relative">
+        <div class="swpr-control top-align">
+          <div class="swiper-button-prev"><i class="ion-chevron-left"></i></div>
+          <div class="swiper-button-next"><i class="ion-chevron-right"></i></div>
+        </div>
+
+        <div class="swiper-container" data-slide-effect="slide" data-autoheight="false" data-swpr-speed="700" data-swpr-autoplay="5000" overflow-visible="" data-swpr-slides-per-view="5" data-swpr-margin="0" data-swpr-breakpoints="true" data-swpr-loop="true" data-swpr-centered-slides="false" data-swpr-responsive-slide="[4, 3, 2, 1]">
+          <div class="swiper-wrapper" id="fp-areaatuacao">
+
+			<div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/conap">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/administracao-publica-1/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div><div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/coordinfancia">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/crianca-e-adolescente-5/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div><div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/conafret">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/fraudes-trabalhistas-1/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div><div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/conalis">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/liberdade-sindical-1/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div><div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/codemat">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/meio-ambiente-do-trabalho-1/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div><div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/coordigualdade">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/promocao-da-igualdade-3/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div><div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/conaete">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/trabalho-escravo-1/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div><div class="swiper-slide">
+					<div class="mb-10 center-text width-100">
+						<div class="position-relative br-2">
+							<a class="width-100" href="/pgt/areas-de-atuacao/conatpa">
+								<img src="https://mpt.mp.br/pgt/atuacao-destaque/trabalho-portuario-e-aquaviario-1/@@images/image" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+		</div>
+          <!-- swiper-wrapper -->
+
+        </div>
+        <!-- swiper-container-fp -->
+      </div>
+      <!-- team-container -->
+    </div>
+    <!-- container -->
+  </section><!-- team-section --><!-- NOTICIAS  --><div class="container pt-20">
+    <div class="row pl-15">
+      <span class="mt-15 mr-30 titulo-secao">NOTÍCIAS</span>
+    </div>
+  </div><div class="container-noticia container wrapper row pl-0 pt-5">
+
+    <section class="col-md-6 pl-0 pr-sm-0">
+      <div class="container container-slider-noticias">
+        <span id="span-noticia-carrossel">
+          <ul id="sb-slider" class="sb-slider">
+            <li class="sb-current" style="display: block;">
+              <a href="/++theme++mpt/" target="_blank" rel="noopener">
+                <img class="img-carrossel" src="/++theme++mpt/images/cinza.jpg" style="width: 510px; height: 382px;" />
+              </a>
+            </li>
+          </ul>
+          <div id="nav-arrows" class="nav-arrows">
+            <a href="#">Next</a>
+            <a href="#">Previous</a>
+          </div>
+        </span>
+      </div>
+      <!-- container -->
+    </section>
+
+    <section class="col-md-6 section-noticias">
+      <span id="span-noticia">
+        <div>
+          <span class="titulo-noticia noticia-esqueleto-titulo"></span>
+          <p class="mb-15 noticia-esqueleto-titulo"><i class="ion-android-arrow-dropright color-mpt"></i></p>
+          <p class="mb-30 noticia-esqueleto-corpo"></p>
+          <p class="mb-30 noticia-esqueleto-corpo"></p>
+        </div>
+        <div>
+          <span class="titulo-noticia noticia-esqueleto-titulo"></span>
+          <p class="mb-15 noticia-esqueleto-titulo"><i class="ion-android-arrow-dropright color-mpt"></i></p>
+          <p class="mb-30 noticia-esqueleto-corpo"></p>
+          <p class="mb-30 noticia-esqueleto-corpo"></p>
+        </div>
+        <div>
+          <span class="titulo-noticia noticia-esqueleto-titulo"></span>
+          <p class="mb-15 noticia-esqueleto-titulo"><i class="ion-android-arrow-dropright color-mpt"></i></p>
+          <p class="mb-30 noticia-esqueleto-corpo"></p>
+          <p class="mb-30 noticia-esqueleto-corpo"></p>
+        </div>
+      </span>
+      <div class="ver-todas ver-todas-mb">
+        <a href="/pgt/noticias/"><span>Mais Notícias</span></a>
+      </div>
+    </section>
+  </div><div class="container pt-20 pb-15">
+    <div class="row pl-15">
+      <span class="mt-15 mr-30 titulo-secao">MULTIMÍDIA</span>
+    </div>
+  </div><div class="container-video">
+    <div id="div-videos" class="row">
+      <div class="col-md-4 col-sm-12 p-0 col-videos ">
+        <section class="col-md-12 col-sm-12 position-relative center-text p-0">
+          <div class="div-videos-larger">
+            <a><img id="video-0" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+        <section class="col-md-6 col-sm-6 col-xs-12  position-relative center-text p-0">
+          <div class="div-videos">
+            <a><img id="video-1" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+        <section class="col-md-6 col-sm-6 col-xs-12 position-relative center-text p-0">
+          <div class="div-videos">
+            <a><img id="video-2" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+      </div>
+      <div class="col-md-4 p-0 col-videos col-video-mobile">
+        <section class="col-md-6 col-sm-6 col-xs-6  position-relative center-text p-0">
+          <div class="div-videos">
+            <a><img id="video-3" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+        <section class="col-md-6 col-sm-6 col-xs-6 position-relative center-text p-0">
+          <div class="div-videos">
+            <a><img id="video-4" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+        <section class="col-md-12 col-sm-12 position-relative center-text p-0">
+          <div class="div-videos-larger">
+            <a><img id="video-5" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+      </div>
+      <div class="col-md-4 p-0 col-videos col-video-mobile">
+        <section class="col-md-12 col-sm-12 position-relative center-text p-0">
+          <div class="div-videos-larger">
+            <a><img id="video-6" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+        <section class="col-md-6 col-sm-6 col-xs-6  position-relative center-text p-0">
+          <div class="div-videos">
+            <a><img id="video-7" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+        <section class="col-md-6 col-sm-6 col-xs-6 position-relative center-text p-0">
+          <div class="div-videos">
+            <a><img id="video-8" src="/++theme++mpt/images/video_play.png" alt="" />
+              <img alt="" src="/++theme++mpt/images/play.png" class="play" />
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div><!-- quoto-section --><div class="container-noticia container wrapper row pt-40">
+    <span class="titulo-secao mlr-sm-15" style="margin-bottom: 3px">MPT NOS ESTADOS</span>
+  </div><div id="mapid" class="height-300px pt-5"></div><footer>
+    <div class="container">
+      <div id="titulo-footer">
+
+			<h3 class="pb-15" style="text-align:center">Ministério Público do Trabalho</h3>
+		</div>
+      <div class="row" id="footer-MPT">
+      </div>
+      <div style="text-align:center; font-weight: lighter;" id="end-footer-pgt">Procuradoria-Geral do Trabalho<br />Sede - SAUN Quadra 5, Lote C, Torre A - Brasília-DF<br />CEP 70040-250<br />Horário de atendimento: segunda à sexta-feira: das 9h às 19h <br />Telefone Geral: (61) 3314 8500</div>
+    </div>
+
+    <!-- container -->
+  </footer><!-- OVERLAY PETICIONAMENTO --><div style="display: none;" class="overlay" id="overlayPeticionamento" onclick="disable(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+      <div class="overlay-body">
+        <div class="linha-1">
+          <div class="col-md-2 col-lg-2 col-xl-2 img-overlay">
+              <img src="/++theme++mpt/images/285x300.jpg" alt="" id="img-peticionamento" />
+          </div>
+          <div class="col-12 col-sm-12 col-md-10&#9;col-lg-10&#9;col-xl-10">
+              <p id="p-peticionamento">O peticionamento eletrônico é um processo que ......... .. ... . . .... om o
+                administrador,
+                bem assim o exercício da cidadania e o respeito ao princípio do devido processo legal em sentido substantivo.</p>
+          </div>
+        </div>
+        <div class="linha-2">
+          <div>Selecione o Estado ou unidade para acessar a petição eletrônica</div>
+          <select name="estado" class="select-overlay" id="select-peticionamento" onclick="event.stopPropagation();" onchange="direciona(this);">
+            <option value="">Selecione</option>
+            <option value="pgt">Procuradoria Geral (casos nacionais)</option>
+            <option value="prt14">Acre</option>
+            <option value="prt19">Alagoas</option>
+            <option value="prt8">Amapá</option>
+            <option value="prt11">Amazonas</option>
+            <option value="prt5">Bahia</option>
+            <option value="prt15">Campinas SP</option>
+            <option value="prt7">Ceará</option>
+            <option value="prt10">Distrito Federal</option>
+            <option value="prt17">Espírito Santo</option>
+            <option value="prt18">Goiás</option>
+            <option value="prt16">Maranhão</option>
+            <option value="prt23">Mato Grosso</option>
+            <option value="prt24">Mato Grosso do Sul</option>
+            <option value="prt3">Minas Gerais</option>
+            <option value="prt8">Pará</option>
+            <option value="prt13">Paraíba</option>
+            <option value="prt9">Paraná</option>
+            <option value="prt6">Pernambuco</option>
+            <option value="prt22">Piauí</option>
+            <option value="prt1">Rio de Janeiro</option>
+            <option value="prt21">Rio Grande do Norte</option>
+            <option value="prt4">Rio Grande do Sul</option>
+            <option value="prt14">Rondônia</option>
+            <option value="prt11">Roraima</option>
+            <option value="prt12">Santa Catarina</option>
+            <option value="prt2">São Paulo</option>
+            <option value="prt20">Sergipe</option>
+            <option value="prt10">Tocantins</option>
+          </select>
+        </div>
+
+        <div class="linha-1">
+          <div class="col-md-2 col-lg-2 col-xl-2 img-overlay">
+              <img src="/++theme++mpt/images/285x300.jpg" alt="" id="img-peticionamento2" />
+          </div>
+          <div class="col-12 col-sm-12 col-md-10&#9;col-lg-10&#9;col-xl-10">
+              <p id="p-peticionamento2">Ou acesse o Protocolo Administrativo Eletrônico</p>
+          </div>
+        </div>
+
+      </div>
+  </div><!-- OVERLAY CONCILIA&#199;&#195;O  --><div style="display: none;" class="overlay" id="overlayConciliacao" onclick="disable(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+    <div class="overlay-body">
+      <div class="linha-1">
+        <div class="col-md-2 col-lg-2 col-xl-2 img-overlay">
+          <img src="/++theme++mpt/images/285x300.jpg" alt="" id="img-conciliacao" />
+        </div>
+        <div class="col-12 col-sm-12 col-md-10&#9;col-lg-10&#9;col-xl-10">
+          <p id="p-conciliacao"> A conciliação .... .... ....</p>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- OVERLAY MEDIA&#199;&#195;O  --><div style="display: none;" class="overlay" id="overlayMediacao" onclick="disable(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+    <div class="overlay-body">
+      <div class="linha-1">
+        <div class="col-md-2 col-lg-2 col-xl-2 img-overlay">
+          <img src="/++theme++mpt/images/285x300.jpg" alt="" id="img-mediacao" />
+        </div>
+        <div class="col-12 col-sm-12 col-md-10&#9;col-lg-10&#9;col-xl-10" style="font-size: 14px;">
+          <p id="p-mediacao"> A mediação - ao lado da negociação, da conciliação, das convenções processuais e das
+            práticas restaurativas - é instrumento efetivo de pac.... .... ....</p>
+        </div>
+      </div>
+
+      <div class="linha-2">
+        <div>Selecione o Estado ou unidade para solicitar mediação</div>
+        <select name="estado" class="select-overlay" id="select-mediacao" onclick="event.stopPropagation();" onchange="direciona(this);">
+          <option value="">Selecione</option>
+          <option value="pgt">Procuradoria Geral (casos nacionais)</option>
+          <option value="prt14">Acre</option>
+          <option value="prt19">Alagoas</option>
+          <option value="prt8">Amapá</option>
+          <option value="prt11">Amazonas</option>
+          <option value="prt5">Bahia</option>
+          <option value="prt15">Campinas SP</option>
+          <option value="prt7">Ceará</option>
+          <option value="prt10">Distrito Federal</option>
+          <option value="prt17">Espírito Santo</option>
+          <option value="prt18">Goiás</option>
+          <option value="prt16">Maranhão</option>
+          <option value="prt23">Mato Grosso</option>
+          <option value="prt24">Mato Grosso do Sul</option>
+          <option value="prt3">Minas Gerais</option>
+          <option value="prt8">Pará</option>
+          <option value="prt13">Paraíba</option>
+          <option value="prt9">Paraná</option>
+          <option value="prt6">Pernambuco</option>
+          <option value="prt22">Piauí</option>
+          <option value="prt1">Rio de Janeiro</option>
+          <option value="prt21">Rio Grande do Norte</option>
+          <option value="prt4">Rio Grande do Sul</option>
+          <option value="prt14">Rondônia</option>
+          <option value="prt11">Roraima</option>
+          <option value="prt12">Santa Catarina</option>
+          <option value="prt2">São Paulo</option>
+          <option value="prt20">Sergipe</option>
+          <option value="prt10">Tocantins</option>
+        </select>
+      </div>
+    </div>
+  </div><!-- OVERLAY - DENUNCIA  --><div style="display: none;" class="overlay" id="overlayDenuncia" onclick="disable(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+    <div class="row linha-unica overlay-body">
+      <div class="col-md-3 col-lg-3&#9;col-xl-3 img-overlay flex-center">
+        <img src="/++theme++mpt/images/mulher.jpg" alt="" id="img-denuncia" />
+      </div>
+      <div class="col-12&#9;col-sm-12&#9;col-md-9 col-lg-9&#9;col-xl-9">
+
+        <div>
+          <p id="p-denuncia">O processo de denúncia é um .... .... ... .... ... de conversação aberto para a
+            co-construção de soluções para as
+            questões apresentadas pela comunidade. Ela propicia ao particular a troca de informações com o
+            administrador,
+            bem assim o exercício da cidadania e o respeito ao princípio do devido processo legal em sentido
+            substantivo.</p>
+        </div>
+        <div>
+          <div style="color:white;font-size: 160%;padding: 20px 0 0 0;">Selecione o estado para realizar a denúncia</div>
+          <select name="estado" class="select-overlay" id="select-denuncia" onchange="direciona(this);" onclick="event.stopPropagation();">
+            <option value="">Selecione</option>
+            <option value="prt14">Acre</option>
+            <option value="prt19">Alagoas</option>
+            <option value="prt8">Amapá</option>
+            <option value="prt11">Amazonas</option>
+            <option value="prt5">Bahia</option>
+            <option value="prt15">Campinas SP</option>
+            <option value="prt7">Ceará</option>
+            <option value="prt10">Distrito Federal</option>
+            <option value="prt17">Espírito Santo</option>
+            <option value="prt18">Goiás</option>
+            <option value="prt16">Maranhão</option>
+            <option value="prt23">Mato Grosso</option>
+            <option value="prt24">Mato Grosso do Sul</option>
+            <option value="prt3">Minas Gerais</option>
+            <option value="prt8">Pará</option>
+            <option value="prt13">Paraíba</option>
+            <option value="prt9">Paraná</option>
+            <option value="prt6">Pernambuco</option>
+            <option value="prt22">Piauí</option>
+            <option value="prt1">Rio de Janeiro</option>
+            <option value="prt21">Rio Grande do Norte</option>
+            <option value="prt4">Rio Grande do Sul</option>
+            <option value="prt14">Rondônia</option>
+            <option value="prt11">Roraima</option>
+            <option value="prt12">Santa Catarina</option>
+            <option value="prt2">São Paulo</option>
+            <option value="prt20">Sergipe</option>
+            <option value="prt10">Tocantins</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- OVERLAY AUDIENCIA --><div style="display: none;" class="overlay" id="overlayAudiencia" onclick="disable(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+    <div class="overlay-body">
+      <div class="linha-1">
+        <div class="col-md-2 col-lg-2 col-xl-2 img-overlay">
+          <img src="/++theme++mpt/images/285x300.jpg" alt="" id="img-audiencia" /></div>
+        <div class="col-12 col-sm-12 col-md-10&#9;col-lg-10&#9;col-xl-10">
+        <p id="p-audiencia">A audiência pública é um instrumento do diálogo estabelecido com a sociedade na busca de
+          soluções para as demandas sociais. É um espaço de conversação aberto para a co-construção de soluções para as
+          questões apresentadas pela comunidade. Ela propicia ao particular a troca de informações com o administrador,
+          bem assim o exercício da cidadania e o respeito ao princípio do devido processo legal em sentido substantivo.</p></div>
+      </div>
+      <div class="linha-2">
+        <div>Selecione o estado para consultar as ATAS</div>
+        <select name="estado" class="select-overlay" id="select-audiencia-ata" onclick="event.stopPropagation();" onchange="direciona(this);">
+          <option value="">Selecione</option>
+          <option value="prt14">Acre</option>
+          <option value="prt19">Alagoas</option>
+          <option value="prt8">Amapá</option>
+          <option value="prt11">Amazonas</option>
+          <option value="prt5">Bahia</option>
+          <option value="prt15">Campinas SP</option>
+          <option value="prt7">Ceará</option>
+          <option value="prt10">Distrito Federal</option>
+          <option value="prt17">Espírito Santo</option>
+          <option value="prt18">Goiás</option>
+          <option value="prt16">Maranhão</option>
+          <option value="prt23">Mato Grosso</option>
+          <option value="prt24">Mato Grosso do Sul</option>
+          <option value="prt3">Minas Gerais</option>
+          <option value="prt8">Pará</option>
+          <option value="prt13">Paraíba</option>
+          <option value="prt9">Paraná</option>
+          <option value="prt6">Pernambuco</option>
+          <option value="prt22">Piauí</option>
+          <option value="prt1">Rio de Janeiro</option>
+          <option value="prt21">Rio Grande do Norte</option>
+          <option value="prt4">Rio Grande do Sul</option>
+          <option value="prt14">Rondônia</option>
+          <option value="prt11">Roraima</option>
+          <option value="prt12">Santa Catarina</option>
+          <option value="prt2">São Paulo</option>
+          <option value="prt20">Sergipe</option>
+          <option value="prt10">Tocantins</option>
+        </select>
+      </div>
+      <div class="linha-2">
+        <div>Selecione o estado para consultar os EDITAIS</div>
+        <select name="estado" class="select-overlay" id="select-audiencia-edital" onclick="event.stopPropagation();" onchange="direciona(this);">
+          <option value="">Selecione</option>
+          <option value="prt14">Acre</option>
+          <option value="prt19">Alagoas</option>
+          <option value="prt8">Amapá</option>
+          <option value="prt11">Amazonas</option>
+          <option value="prt5">Bahia</option>
+          <option value="prt15">Campinas SP</option>
+          <option value="prt7">Ceará</option>
+          <option value="prt10">Distrito Federal</option>
+          <option value="prt17">Espírito Santo</option>
+          <option value="prt18">Goiás</option>
+          <option value="prt16">Maranhão</option>
+          <option value="prt23">Mato Grosso</option>
+          <option value="prt24">Mato Grosso do Sul</option>
+          <option value="prt3">Minas Gerais</option>
+          <option value="prt8">Pará</option>
+          <option value="prt13">Paraíba</option>
+          <option value="prt9">Paraná</option>
+          <option value="prt6">Pernambuco</option>
+          <option value="prt22">Piauí</option>
+          <option value="prt1">Rio de Janeiro</option>
+          <option value="prt21">Rio Grande do Norte</option>
+          <option value="prt4">Rio Grande do Sul</option>
+          <option value="prt14">Rondônia</option>
+          <option value="prt11">Roraima</option>
+          <option value="prt12">Santa Catarina</option>
+          <option value="prt2">São Paulo</option>
+          <option value="prt20">Sergipe</option>
+          <option value="prt10">Tocantins</option>
+        </select>
+      </div>
+    </div>
+  </div><!-- OVERLAY PROCESSOS / PROCEDIMENTOS --><div style="display: none;" class="overlay" id="overlayProcedimentos" onclick="disable(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+    <div class="row overlay-body">
+      <div class="linha-margem">
+        <p><i class="fa fa-caret-right" aria-hidden="true"></i>Selecione o estado para consultar procedimentos</p>
+        <select class="select-overlay" name="estado" id="select-procedimentos" onclick="event.stopPropagation();" onchange="direciona(this);">
+          <option value="">Selecione</option>
+          <option value="prt14">Acre</option>
+          <option value="prt19">Alagoas</option>
+          <option value="prt8">Amapá</option>
+          <option value="prt11">Amazonas</option>
+          <option value="prt5">Bahia</option>
+          <option value="prt15">Campinas SP</option>
+          <option value="prt7">Ceará</option>
+          <option value="prt10">Distrito Federal</option>
+          <option value="prt17">Espírito Santo</option>
+          <option value="prt18">Goiás</option>
+          <option value="prt16">Maranhão</option>
+          <option value="prt23">Mato Grosso</option>
+          <option value="prt24">Mato Grosso do Sul</option>
+          <option value="prt3">Minas Gerais</option>
+          <option value="prt8">Pará</option>
+          <option value="prt13">Paraíba</option>
+          <option value="prt9">Paraná</option>
+          <option value="prt6">Pernambuco</option>
+          <option value="prt22">Piauí</option>
+          <option value="prt1">Rio de Janeiro</option>
+          <option value="prt21">Rio Grande do Norte</option>
+          <option value="prt4">Rio Grande do Sul</option>
+          <option value="prt14">Rondônia</option>
+          <option value="prt11">Roraima</option>
+          <option value="prt12">Santa Catarina</option>
+          <option value="prt2">São Paulo</option>
+          <option value="prt20">Sergipe</option>
+          <option value="prt10">Tocantins</option>
+        </select>
+      </div>
+      <div class="linha-margem">
+        <p><i class="fa fa-caret-right" aria-hidden="true"></i> Selecione o estado para consultar autenticidade de
+          documentos</p>
+        <select class="select-overlay" name="estado" id="select-autenticidade" onclick="event.stopPropagation();" onchange="direciona(this);">
+          <option value="">Selecione</option>
+          <option value="prt14">Acre</option>
+          <option value="prt19">Alagoas</option>
+          <option value="prt8">Amapá</option>
+          <option value="prt11">Amazonas</option>
+          <option value="prt5">Bahia</option>
+          <option value="prt15">Campinas SP</option>
+          <option value="prt7">Ceará</option>
+          <option value="prt10">Distrito Federal</option>
+          <option value="prt17">Espírito Santo</option>
+          <option value="prt18">Goiás</option>
+          <option value="prt16">Maranhão</option>
+          <option value="prt23">Mato Grosso</option>
+          <option value="prt24">Mato Grosso do Sul</option>
+          <option value="prt3">Minas Gerais</option>
+          <option value="prt8">Pará</option>
+          <option value="prt13">Paraíba</option>
+          <option value="prt9">Paraná</option>
+          <option value="prt6">Pernambuco</option>
+          <option value="prt22">Piauí</option>
+          <option value="prt1">Rio de Janeiro</option>
+          <option value="prt21">Rio Grande do Norte</option>
+          <option value="prt4">Rio Grande do Sul</option>
+          <option value="prt14">Rondônia</option>
+          <option value="prt11">Roraima</option>
+          <option value="prt12">Santa Catarina</option>
+          <option value="prt2">São Paulo</option>
+          <option value="prt20">Sergipe</option>
+          <option value="prt10">Tocantins</option>
+        </select>
+      </div>
+      <div class="linha-margem">
+        <p><a href="https://mpt.mp.br/externo/ccr/pesquisa.php"><i class="fa fa-caret-right" aria-hidden="true"></i> Consultar processos CCR</a></p>
+      </div>
+      <div class="linha-margem">
+        <p><a href="https://mpt.mp.br/pgt/gestao-de-documentos/gestao-de-documentos-do-mpt"><i class="fa fa-caret-right" aria-hidden="true"></i> Gestão de Documentos</a></p>
+      </div>
+    </div>
+
+  </div><!-- OVERLAY - VIDEOS  --><div style="display: none;" class="overlay" id="overlayVideo" onclick="disablevideo(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+    <div class="row linha-video overlay-body">
+      <div class="col-12 p-0 m-0">
+          <div id="div-titulo-radio" class="div-titulo-radio"><h3 id="titulo-radio" style="z-index: 500;"></h3></div>
+          <div class="iframe-video">
+            <iframe id="videoyoutube" width="100%" height="100%" src="/++theme++mpt/" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" class="pr-10 pr-sm-0"></iframe>
+          </div>
+      </div>
+    </div>
+  </div><!-- OVERLAY SMARTLAB --><div class="overlay" id="overlaySmartlab" onclick="disable(this)">
+    <div class="overlay-close"><span><i class="fa fa-times fa-3x" aria-hidden="true"></i></span></div>
+    <div class="overlay-body">
+        <div class="linha-titulo">
+            <div>Promoção do Trabalho Decente Guiada por Dados</div>
+        </div>
+        <div class="linha-imagens row">
+            <div class="item-smartlab col-4  col-md-3 col-lg col-xl">
+                  <h5 class="label-smartlab">Trabalho Decente nos<br /> Municípios Brasileiros</h5>
+                  <div class="imagem-smartlab"><a href="https://smartlabbr.org/trabalhodecente" target="_blank"><img src="/++theme++mpt/images\icoAtivo6.png" alt="" /></a></div>
+            </div>
+            <div class="item-smartlab col-4 col-md-3 col-lg col-xl">
+                  <h5 class="label-smartlab">Trabalho Escravo e<br /> Tráfico de Pessoa</h5>
+                  <div class="imagem-smartlab"><a href="https://smartlabbr.org/trabalhoescravo" target="_blank"><img src="/++theme++mpt/images\icoAtivo8.png" alt="" /></a></div>
+            </div>
+            <div class="item-smartlab col-4 col-md-3 col-lg col-xl">
+                <h5 class="label-smartlab">Segurança e Saúde<br /> no Trabalho</h5>
+                <div class="imagem-smartlab"><a href="https://smartlabbr.org/sst" target="_blank"><img src="/++theme++mpt/images\icoAtivo7.png" alt="" /></a></div>
+          </div>
+          <div class="item-smartlab col-4 col-md-3 col-lg col-xl">
+                <h5 class="label-smartlab">Trabalho Infantil</h5>
+                <div class="imagem-smartlab"><a href="https://smartlabbr.org/trabalhoinfantil" target="_blank"><img src="/++theme++mpt/images\icoAtivo10.png" alt="" /></a></div>
+          </div>
+          <div class="item-smartlab col-4 col-md-3 col-lg col-xl">
+              <h5 class="label-smartlab">Diversidade e Igualdade de<br /> Oportunidades no Trabalho</h5>
+              <div class="imagem-smartlab"><a href="https://smartlabbr.org/diversidade" target="_blank"><img src="/++theme++mpt/images\icoAtivo9.png" alt="" /></a></div>
+        </div>
+
+        </div>
+    </div>
+  </div><!-- OVERRIDES CSS --><link rel="stylesheet" href="/++theme++mpt/common/overrides.css" /><!-- jQuery library   --><script src="/++theme++mpt/plugin-frameworks/jquery-3.3.1.min.js"></script><!-- Latest compiled JavaScript --><script src="/++theme++mpt/plugin-frameworks/bootstrap.min.js"></script><!--SCRIPTS --><!-- REVOLUTION JS FILES --><script src="/++theme++mpt/plugin-frameworks/revolution/js/compressed.js"></script><!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !
+         The following part can be removed on Server for On Demand Loading) --><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.actions.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.carousel.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.kenburn.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.migration.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.navigation.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.parallax.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.slideanims.min.js"></script><script src="/++theme++mpt/plugin-frameworks/revolution/js/extensions/revolution.extension.video.min.js"></script><!-- Swiper Slider --><script src="/++theme++mpt/plugin-frameworks/swiper.min.js"></script><!-- Isotope --><script src="/++theme++mpt/plugin-frameworks/isotope.pkgd.min.js"></script><!-- Jquery Magnific for Image Pop up --><script src="/++theme++mpt/plugin-frameworks/jquery.magnific-popup.min.js"></script><!-- Main Script --><script src="/++theme++mpt/js/script.js"></script><script src="/++theme++mpt/js/funcoes.js"></script><script src="/++theme++mpt/js/index.js"></script><script type="text/javascript" src="/++theme++mpt/common/jquery.slicebox.js"></script><!-- Google Map --><!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVdqNWDaPAucEDcFCpVSs7JYf8d9r37j8&callback=centerPosition"></script> --><script>
+    objetosAPI();
+    campanha_mobile();
+  </script><script src="https://plugin.handtalk.me/web/latest/handtalk.min.js"></script><script>
+    var ht = new HT({token: 'b850dc223fe8e3d65d9a140d6be6a81b', pageSpeech: true})
+
+  </script></body>
+
+</html>
