@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xml:lang="pt-BR">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		Assédio eleitoral no trabalho: análise das denúncias e reclamações no Sul do Brasil
+							| Revista Jurídica Trabalho e Desenvolvimento Humano
+			</title>
+
+	
+<link rel="icon" href="https://rjtdh-prt15.mpt.mp.br/public/journals/1/favicon_pt_BR.jpg" />
+<meta name="generator" content="Open Journal Systems 3.4.0.10" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.Creator.PersonalName" content="Mateus Bender"/>
+<meta name="DC.Creator.PersonalName" content="Thais de Souza Lapa"/>
+<meta name="DC.Date.created" scheme="ISO8601" content="2026-10-24"/>
+<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2026-04-22"/>
+<meta name="DC.Date.issued" scheme="ISO8601" content="2026-03-02"/>
+<meta name="DC.Date.modified" scheme="ISO8601" content="2026-10-24"/>
+<meta name="DC.Description" xml:lang="en" content="Introduction: In the 2022 elections, reports of workplace electoral harassment increased 14-fold compared to the previous general elections, totaling 3,200 cases. This surge spurred complaints and lawsuits regarding political discrimination against over 2,300 companies nationwide, mobilizing the Labor Prosecutor&#039;s Office (MPT) and Judicial Branch institutions.
+Objective: To analyze electoral harassment in the Southern Region of Brazil during the 2022 elections by mapping the volume of reports, the profile of the companies involved, and the scope of the institutional action from the Labor Prosecutor&#039;s Office and the Labor Courts.
+Methodology: Using a mixed-methods (quantitative and qualitative) approach, this study examines MPT proceedings and labor lawsuits filed in the Labor Courts between 2022 and 2023.
+Results: The findings reveal that this practice was predominantly carried out by individuals and small businesses, characterizing a personalistic form of coercion.
+Conclusion: There has been a reconfiguration of coronelism and mandonism (traditional political bossism) into corporate frameworks, where the threat of unemployment is leveraged as a tool of political control.
+KEYWORDS: coronelism; electoral harassment; 2022 general elections; Southern Region."/>
+<meta name="DC.Description" xml:lang="es" content="Introducción: En las elecciones de 2022, las denuncias de acoso electoral en el trabajo aumentaron 14 veces en comparación con las elecciones generales anteriores, alcanzando un total de 3.200 casos. Este incremento impulsó denuncias y demandas por discriminación política contra más de 2.300 empresas en todo el país, movilizando al Ministerio Público del Trabajo y a las instituciones del Poder Judicial.
+Objetivo: Analizar el acoso electoral en la Región Sur de Brasil en las elecciones de 2022, mapeando el volumen de denuncias, el perfil de las empresas involucradas y la actuación institucional del Ministerio Público y de la Justicia del Trabajo.
+Metodología: De carácter cuanti-cualitativo, examina los procedimientos del MPT y las demandas laborales en la Justicia del Trabajo entre 2022 y 2023.
+Resultados: Los resultados revelan que la práctica fue protagonizada mayoritariamente por personas físicas y pequeñas empresas, caracterizando una coacción de carácter personalista.
+Conclusión: Hubo una reconfiguración del coronelismo y el mandonismo hacia moldes empresariales, donde la amenaza de desempleo se utiliza como instrumento de control político.
+PALABRAS CLAVE: acoso electoral; coronelismo; elecciones generales de 2022; Región Sur."/>
+<meta name="DC.Description" xml:lang="pt" content="Introdução: Nas eleições de 2022, as denúncias de assédio eleitoral no trabalho cresceram 14 vezes em relação às eleições gerais anteriores, somando 3.200 casos. O aumento impulsionou denúncias e ações por discriminação política contra mais de 2.300 empresas em todo país, mobilizando o Ministério Público do Trabalho e instituições do Poder Judiciário.
+Objetivo: analisar o assédio eleitoral na Região Sul do Brasil nas eleições de 2022, mapeando o volume de denúncias, o perfil das empresas envolvidas e a atuação institucional do Ministério Público e da Justiça do Trabalho.
+Metodologia: de natureza quanti-qualitativa, examina os procedimentos do MPT e reclamatórias trabalhistas na Justiça do Trabalho entre 2022 e 2023.
+Resultados: Os resultados revelam que a prática foi protagonizada majoritariamente por pessoas físicas e pequenas empresas, caracterizando uma coação de caráter personalista.
+Conclusão: houve uma reconfiguração do coronelismo e mandonismo para moldes empresariais, onde a ameaça de desemprego é utilizada como instrumento de controle político.
+PALAVRAS-CHAVE: assédio eleitoral; coronelismo; eleições gerais de 2022; Região Sul."/>
+<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+<meta name="DC.Format" scheme="IMT" content="text/html"/>
+<meta name="DC.Identifier" content="347"/>
+<meta name="DC.Identifier.DOI" content="10.33239/rjtdh.v9.347"/>
+<meta name="DC.Identifier.URI" content="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/347"/>
+<meta name="DC.Language" scheme="ISO639-1" content="pt"/>
+<meta name="DC.Rights" content="Copyright (c) 2026 Mateus Bender, Thais de Souza Lapa"/>
+<meta name="DC.Rights" content="https://creativecommons.org/licenses/by/4.0"/>
+<meta name="DC.Source" content="Revista Jurídica Trabalho e Desenvolvimento Humano"/>
+<meta name="DC.Source.ISSN" content="2595-9689"/>
+<meta name="DC.Source.Volume" content="9"/>
+<meta name="DC.Source.URI" content="https://rjtdh-prt15.mpt.mp.br/Revista-TDH"/>
+<meta name="DC.Subject" xml:lang="pt" content="Assédio eleitoral"/>
+<meta name="DC.Subject" xml:lang="pt" content="Assédio Eleitoral"/>
+<meta name="DC.Subject" xml:lang="pt" content="Eleições gerais de 2022"/>
+<meta name="DC.Subject" xml:lang="pt" content="Coronelismo"/>
+<meta name="DC.Subject" xml:lang="pt" content="Região Sul."/>
+<meta name="DC.Title" content="Assédio eleitoral no trabalho: análise das denúncias e reclamações no Sul do Brasil"/>
+<meta name="DC.Title.Alternative" xml:lang="en" content="Electoral harassment at work: an analysis of complaints and reports in Southern Brazil"/>
+<meta name="DC.Title.Alternative" xml:lang="es" content="Acoso electoral en el trabajo: un análisis de quejas e informes en el sur de Brasil"/>
+<meta name="DC.Type" content="Text.Serial.Journal"/>
+<meta name="DC.Type.articleType" content="Artigos em Fluxo Contínuo"/>
+<meta name="gs_meta_revision" content="1.1"/>
+<meta name="citation_journal_title" content="Revista Jurídica Trabalho e Desenvolvimento Humano"/>
+<meta name="citation_journal_abbrev" content="RJTDH"/>
+<meta name="citation_issn" content="2595-9689"/> 
+<meta name="citation_author" content="Mateus Bender"/>
+<meta name="citation_author_institution" content="Universidade Federal de Santa Catarina (UFSC)"/>
+<meta name="citation_author" content="Thais de Souza Lapa"/>
+<meta name="citation_author_institution" content="Universidade Federal de Santa Catarina (UFSC)"/>
+<meta name="citation_title" content="Assédio eleitoral no trabalho: análise das denúncias e reclamações no Sul do Brasil"/>
+<meta name="citation_language" content="pt"/>
+<meta name="citation_date" content="2026/10/24"/>
+<meta name="citation_volume" content="9"/>
+<meta name="citation_doi" content="10.33239/rjtdh.v9.347"/>
+<meta name="citation_abstract_html_url" content="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/347"/>
+<meta name="citation_abstract" xml:lang="pt" content="Introdução: Nas eleições de 2022, as denúncias de assédio eleitoral no trabalho cresceram 14 vezes em relação às eleições gerais anteriores, somando 3.200 casos. O aumento impulsionou denúncias e ações por discriminação política contra mais de 2.300 empresas em todo país, mobilizando o Ministério Público do Trabalho e instituições do Poder Judiciário.
+Objetivo: analisar o assédio eleitoral na Região Sul do Brasil nas eleições de 2022, mapeando o volume de denúncias, o perfil das empresas envolvidas e a atuação institucional do Ministério Público e da Justiça do Trabalho.
+Metodologia: de natureza quanti-qualitativa, examina os procedimentos do MPT e reclamatórias trabalhistas na Justiça do Trabalho entre 2022 e 2023.
+Resultados: Os resultados revelam que a prática foi protagonizada majoritariamente por pessoas físicas e pequenas empresas, caracterizando uma coação de caráter personalista.
+Conclusão: houve uma reconfiguração do coronelismo e mandonismo para moldes empresariais, onde a ameaça de desemprego é utilizada como instrumento de controle político.
+PALAVRAS-CHAVE: assédio eleitoral; coronelismo; eleições gerais de 2022; Região Sul."/>
+<meta name="citation_keywords" xml:lang="pt" content="Assédio eleitoral"/>
+<meta name="citation_keywords" xml:lang="pt" content="Assédio Eleitoral"/>
+<meta name="citation_keywords" xml:lang="pt" content="Eleições gerais de 2022"/>
+<meta name="citation_keywords" xml:lang="pt" content="Coronelismo"/>
+<meta name="citation_keywords" xml:lang="pt" content="Região Sul."/>
+<meta name="citation_pdf_url" content="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/download/347/305"/>
+<meta name="citation_fulltext_html_url" content="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/347/306"/>
+<meta name="citation_reference" content="BALAND, Jean-Marie; ROBINSON, James A. Land and power: theory and evidence from Chile. American Economic Review, [S. l.], v. 98, n. 5, p. 1737–1765, dez. 2008."/>
+<meta name="citation_reference" content="BARDIN, Laurence. Análise de conteúdo. Tradução de Luís Antero Reto e Augusto Pinheiro. São Paulo: Edições 70, 2016."/>
+<meta name="citation_reference" content="BRASIL. Lei complementar n. 123, de 14 de dezembro de 2006. Institui o Estatuto Nacional da Microempresa e da Empresa de Pequeno Porte; altera dispositivos das Leis no 8.212 e 8.213, ambas de 24 de julho de 1991, da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei no 5.452, de 1o de maio de 1943, da Lei no 10.189, de 14 de fevereiro de 2001, da Lei Complementar no 63, de 11 de janeiro de 1990; e revoga as Leis no 9.317, de 5 de dezembro de 1996, e 9.841, de 5 de outubro de 1999. Diário Oficial da União: seção 1, Brasília, DF, ano 143, n. 240, p. 1, 15 dez. 2006."/>
+<meta name="citation_reference" content="BRASIL. Lei nº 4.737/1965, de 15 de julho de 1965. Institui o Código Eleitoral. Diário Oficial da União: seção 1, Brasília, DF, p. 6746, 15 jul. 1965."/>
+<meta name="citation_reference" content="BRASIL. Lei n. 9.029, de 13 de abril de 1995. Proíbe a exigência de atestados de gravidez e esterilização, e outras práticas discriminatórias, para efeitos admissionais ou de permanência da relação jurídica de trabalho, e dá outras providências. Diário Oficial da União: seção 1, Brasília, DF, p. 5361, 17 abr. 1995."/>
+<meta name="citation_reference" content="BRASIL. Lei nº 12.527/2011, de 18 de novembro de 2011. Regula o acesso a informações previsto no inciso XXXIII do art. 5o, no inciso II do § 3o do art. 37 e no § 2o do art. 216 da Constituição Federal; altera a Lei no 8 . 11 2 , de 11 de dezembro de 1990; revoga a Lei no 11.111, de 5 de maio de 2005, e dispositivos da Lei no 8.159, de 8 de janeiro de 1991; e dá outras providências. Diário Oficial da União: seção 1, Brasília, DF, ano 148, n. 221-A, p. 1, 18 nov. 2011."/>
+<meta name="citation_reference" content="BRASIL. Ministério Público do Trabalho. Coordenadoria Nacional de Promoção da Igualdade de Oportunidades e Eliminação da Discriminação no Trabalho. Assédio Eleitoral - Eleições 2022: relatório de atividades. [Brasília, DF]: MPT, [2022]. Disponível em: BENDER, Mateus; LAPA, Thaís. Assédio eleitoral no trabalho: análise das denúncias e reclamações no Sul do Brasil."/>
+<meta name="citation_reference" content="Revista Jurídica Trabalho e Desenvolvimento Humano, Campinas, v.9, p. 1-29, 2026. DOI:"/>
+<meta name="citation_reference" content="https://doi.org/10.33239/rjtdh.v9.347."/>
+<meta name="citation_reference" content="https://www.tse.jus.br/++theme++justica_eleitoral/pdfjs/web/viewer.html?file=https://www.tse.jus.br/comunicacao/arquivos/relatorio-assedio-eleitoral-eleicoes-2022-do-mpt-em-15-12.2022/@@download/file/TSE-relatorio-atividades-assedio-eleitoral-eleicoes-2022-mpt-versao-final.pdf. Acesso em: 9 nov. 2023."/>
+<meta name="citation_reference" content="CARVALHO, José Murilo de. Cidadania no Brasil: o longo caminho. 3. ed. Rio de Janeiro: Civilização Brasileira, 1997."/>
+<meta name="citation_reference" content="DELGADO, Mauricio Godinho. Curso de Direito do Trabalho. 19. ed. São Paulo: LTr, 2021."/>
+<meta name="citation_reference" content="DRUCK, Graça; PEDREIRA, Lucia; LIBÓRIO, Vitória; LACERDA, Lily; REIS, Samara. O assédio eleitoral nas eleições presidenciais de 2022 no Brasil: violência no trabalho e nas ruas. Cadernos do CEAS: Revista Crítica de Humanidades. Salvador/Recife, v. 47, n. 257, p. 489-512, set./dez. 2022. https://doi.org/10.25247/2447-861X.2022.n257.p489-512. Acesso em 23 de nov. 2025."/>
+<meta name="citation_reference" content="FAORO, Raymundo. Os donos do poder: formação do patronato político brasileiro. 3. ed. rev. São Paulo: Globo, 2001."/>
+<meta name="citation_reference" content="FELICIANO, Guilherme Guimarães; CONFORTI, Luciana Paula. Sobre o assédio eleitoral no Direito do Trabalho: As novas veredas do velho coronelismo à brasileira. Revista UNIFACS Debate Virtual, Salvador, n. 274, 2023. Disponível em: https://revistas.unifacs.br/index.php/redu/article/view/8166. Acesso em: 11 de nov. 2025."/>
+<meta name="citation_reference" content="LEAL, Victor Nunes. Coronelismo, enxada e voto: o Município e o sistema representativo no País. 7. ed. São Paulo: Cia. das Letras, 2012."/>
+<meta name="citation_reference" content="NAKAJO, Luis. Denúncias ao MPT aumentam 16% em 2022. Prt4.mpt.mp.br, [Porto Alegre], 11 jan. 2023. Disponível em: https://www.prt4.mpt.mp.br/procuradorias/prt-porto-alegre/11794-denuncias-ao-mpt-aumentam-16-em-2022. Acesso em: 10 nov. 2023."/>
+<meta name="citation_reference" content="NOGUEIRA, João Vitor Flavio de Oliveira; SALGADO, Eneida Desiree. Coronelismo, emprego e voto: os velhos inimigos da democracia e o novo voto de cabresto. Revista de Ciências do Estado, Belo Horizonte, v. 10, n. 1, p. 1–20, 2025. DOI: 10.35699/2525-8036.2025.54749. Disponível em: https://periodicos.ufmg.br/index.php/revice/article/view/e54749. Acesso em: 22 jan. 2026."/>
+<meta name="citation_reference" content="ORGANIZAÇÃO INTERNACIONAL DO TRABALHO. C111 – Discriminação em matéria de emprego e ocupação. [Aprovada na 42ª reunião da Conferência Internacional do Trabalho (Genebra — 1958)]. Ilo.org., [Genebra], 3 fev. 2014. Disponível em: https://www.ilo.org/pt-pt/resource/c111-discriminacao-em-materia-de-emprego-e-ocupacao. Acesso em: 14 set. 2026."/>
+<meta name="citation_reference" content="SARLET, Ingo Wolfgang. A eficácia dos direitos fundamentais: uma teoria geral dos direitos fundamentais na perspectiva constitucional. 12. ed. Porto Alegre: Livraria do Advogado, 2015."/>
+<meta property="og:site_name" content="Revista Jurídica Trabalho e Desenvolvimento Humano"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Assédio eleitoral no trabalho: análise das denúncias e reclamações no Sul do Brasil"/>
+<meta name="description" property="og:description" content="Introdução: Nas eleições de 2022, as denúncias de assédio eleitoral no trabalho cresceram 14 vezes em relação às eleições gerais anteriores, somando 3.200 casos. O aumento impulsionou denúncias e ações por discriminação política contra mais de 2.300 empresas em todo país, mobilizando o Ministério Público do Trabalho e instituições do Poder Judiciário.
+
+Objetivo: analisar o assédio eleitoral na Região Sul do Brasil nas eleições de 2022, mapeando o volume de denúncias, o perfil das empresas envolvidas e a atuação institucional do Ministério Público e da Justiça do Trabalho.
+
+Metodologia: de natureza quanti-qualitativa, examina os procedimentos do MPT e reclamatórias trabalhistas na Justiça do Trabalho entre 2022 e 2023.
+
+Resultados: Os resultados revelam que a prática foi protagonizada majoritariamente por pessoas físicas e pequenas empresas, caracterizando uma coação de caráter personalista.
+
+Conclusão: houve uma reconfiguração do coronelismo e mandonismo para moldes empresariais, onde a ameaça de desemprego é utilizada como instrumento de controle político.
+
+PALAVRAS-CHAVE: assédio eleitoral; coronelismo; eleições gerais de 2022; Região Sul.
+"/>
+<meta property="og:url" content="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/347"/>
+<meta name="og:locale" content="pt_BR"/>
+<meta name="image" property="og:image" content="https://rjtdh-prt15.mpt.mp.br/public/journals/1/cover_issue_12_pt_BR.jpg"/>
+<meta name="article:published_time" content="2026-10-24"/>
+<meta name="article:tag" content="Assédio Eleitoral"/>
+<meta name="article:tag" content="Eleições gerais de 2022"/>
+<meta name="article:tag" content="Coronelismo"/>
+<meta name="article:tag" content="Região Sul."/>
+
+	<link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/$$$call$$$/page/page/css?name=stylesheet" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/$$$call$$$/page/page/css?name=font" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/lib/pkp/styles/fontawesome/fontawesome.css?v=3.4.0.10" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citations/css/citations.css?v=3.4.0.10" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/doiInSummary/styles/doi.css?v=3.4.0.10" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/galleysAndAbstractStats/styles/index.css?v=3.4.0.10" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/orcidProfile/css/orcidProfile.css?v=3.4.0.10" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/public/journals/1/styleSheet.css?d=2025-03-31+12%3A26%3A50" type="text/css" /><link rel="stylesheet" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citationStyleLanguage/css/citationStyleLanguagePlugin.css?v=3.4.0.10" type="text/css" />
+</head>
+<body class="pkp_page_article pkp_op_view has_site_logo" dir="ltr">
+
+	<div class="pkp_structure_page">
+
+				<header class="pkp_structure_head" id="headerNavigationContainer" role="banner">
+						
+ <nav class="cmp_skip_to_content" aria-label="Ir para os links de conteúdo">
+	<a href="#pkp_content_main">Ir para o conteúdo principal</a>
+	<a href="#siteNav">Ir para o menu de navegação principal</a>
+		<a href="#pkp_content_footer">Ir para o rodapé</a>
+</nav>
+
+			<div class="pkp_head_wrapper">
+
+				<div class="pkp_site_name_wrapper">
+					<button class="pkp_site_nav_toggle">
+						<span>Open Menu</span>
+					</button>
+										<div class="pkp_site_name">
+																<a href="						https://rjtdh-prt15.mpt.mp.br/Revista-TDH/index
+					" class="is_img">
+							<img src="https://rjtdh-prt15.mpt.mp.br/public/journals/1/pageHeaderLogoImage_pt_BR.jpg" width="1600" height="339" alt="Logo da Revista Jurídica Trabalho e Desenvolvimento Humano " />
+						</a>
+										</div>
+				</div>
+
+				
+				<nav class="pkp_site_nav_menu" aria-label="Navegação no Site">
+					<a id="siteNav"></a>
+					<div class="pkp_navigation_primary_row">
+						<div class="pkp_navigation_primary_wrapper">
+																				<ul id="navigationPrimary" class="pkp_navigation_primary pkp_nav_list">
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/capa">
+					Chamada de Artigos
+				</a>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/announcement">
+					Notícias
+				</a>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/issue/current">
+					Edição Atual
+				</a>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/issue/archive">
+					Edições Anteriores
+				</a>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/editorial">
+					Corpo Editorial
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/equipeeditorial">
+										Equipe Editorial
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/pareceristas">
+										Pareceristas
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/about">
+					Sobre
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/about">
+										Sobre a Revista
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/submissoes">
+										Submissões
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/diretrizes">
+										Diretrizes para Autores
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/fluxoeditorial">
+										Fluxo Editorial
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/about/privacy">
+										Declaração de Privacidade
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/politicas">
+					Políticas
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/periodicidade">
+										Periodicidade
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/direitosautorais">
+										Direitos autorais
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/acesso">
+										Acesso aberto
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/contribuicao">
+										Contribuição dos autores
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/arquivamento">
+										Arquivamento
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/plagio">
+										Plágio e similaridade
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/etica">
+										Ética e Retratação
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/revisao">
+										Revisão por pares
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/AI">
+										Inteligência Artificial Generativa
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/custeio">
+										Fonte de custeio
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/taxas">
+										Taxas de publicação
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/fontes">
+					Fontes
+				</a>
+									<ul>
+																					<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/indexers">
+										Indexadores
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/metricas">
+										Métricas
+									</a>
+								</li>
+																												<li class="">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/redes">
+										Redes Sociais
+									</a>
+								</li>
+																		</ul>
+							</li>
+								<li class="">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/contato">
+					Contato
+				</a>
+							</li>
+			</ul>
+
+				
+
+																						<div class="pkp_navigation_search_wrapper">
+									<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/search" class="pkp_search pkp_search_desktop">
+										<span class="fa fa-search" aria-hidden="true"></span>
+										Buscar
+									</a>
+								</div>
+													</div>
+					</div>
+					<div class="pkp_navigation_user_wrapper" id="navigationUserWrapper">
+							<ul id="navigationUser" class="pkp_navigation_user pkp_nav_list">
+								<li class="profile">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/login">
+					Acesso
+				</a>
+							</li>
+								<li class="profile">
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/user/register">
+					Registrar-se
+				</a>
+							</li>
+										</ul>
+
+					</div>
+				</nav>
+			</div><!-- .pkp_head_wrapper -->
+		</header><!-- .pkp_structure_head -->
+
+						<div class="pkp_structure_content has_sidebar">
+			<div class="pkp_structure_main" role="main">
+				<a id="pkp_content_main"></a>
+
+<div class="page page_article">
+			<nav class="cmp_breadcrumbs" role="navigation" aria-label="Você está aqui:">
+	<ol>
+		<li>
+			<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/index">
+				Início
+			</a>
+			<span class="separator">/</span>
+		</li>
+		<li>
+			<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/issue/archive">
+				Acervo
+			</a>
+			<span class="separator">/</span>
+		</li>
+					<li>
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/issue/view/12">
+					v. 9 (2026)
+				</a>
+				<span class="separator">/</span>
+			</li>
+				<li class="current" aria-current="page">
+			<span aria-current="page">
+									Artigos em Fluxo Contínuo
+							</span>
+		</li>
+	</ol>
+</nav>
+	
+		  	 <article class="obj_article_details">
+
+		
+	<h1 class="page_title">
+		Assédio eleitoral no trabalho
+	</h1>
+
+			<h2 class="subtitle">
+			análise das denúncias e reclamações no Sul do Brasil
+		</h2>
+	
+	<div class="row">
+		<div class="main_entry">
+
+							<section class="item authors">
+					<h2 class="pkp_screen_reader">Autores</h2>
+					<ul class="authors">
+											<li>
+							<span class="name">
+								Mateus Bender
+							</span>
+															<span class="affiliation">
+									Universidade Federal de Santa Catarina (UFSC)
+																	</span>
+																																				<span class="orcid">
+																			<svg class="orcid_icon" viewBox="0 0 256 256" aria-hidden="true">
+	<style type="text/css">
+		.st0{fill:#A6CE39;}
+		.st1{fill:#FFFFFF;}
+	</style>
+	<path class="st0" d="M256,128c0,70.7-57.3,128-128,128C57.3,256,0,198.7,0,128C0,57.3,57.3,0,128,0C198.7,0,256,57.3,256,128z"/>
+	<g>
+		<path class="st1" d="M86.3,186.2H70.9V79.1h15.4v48.4V186.2z"/>
+		<path class="st1" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5
+			c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
+		<path class="st1" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1
+			C84.2,46.7,88.7,51.3,88.7,56.8z"/>
+	</g>
+</svg>
+																		<a href="https://orcid.org/0000-0002-0127-4332" target="_blank">
+										https://orcid.org/0000-0002-0127-4332
+									</a>
+								</span>
+													</li>
+											<li>
+							<span class="name">
+								Thais de Souza Lapa
+							</span>
+															<span class="affiliation">
+									Universidade Federal de Santa Catarina (UFSC)
+																	</span>
+																																		</li>
+										</ul>
+				</section>
+			
+																	<section class="item doi">
+					<h2 class="label">
+												DOI:
+					</h2>
+					<span class="value">
+						<a href="https://doi.org/10.33239/rjtdh.v9.347">
+							https://doi.org/10.33239/rjtdh.v9.347
+						</a>
+					</span>
+				</section>
+			
+
+									<section class="item keywords">
+				<h2 class="label">
+										Palavras-chave:
+				</h2>
+				<span class="value">
+											Assédio Eleitoral, 											Eleições gerais de 2022, 											Coronelismo, 											Região Sul.									</span>
+			</section>
+			
+										<section class="item abstract">
+					<h2 class="label">Resumo</h2>
+					<p><strong>Introdução: </strong>Nas eleições de 2022, as denúncias de assédio eleitoral no trabalho cresceram 14 vezes em relação às eleições gerais anteriores, somando 3.200 casos. O aumento impulsionou denúncias e ações por discriminação política contra mais de 2.300 empresas em todo país, mobilizando o Ministério Público do Trabalho e instituições do Poder Judiciário.</p>
+<p><strong>Objetivo: </strong>analisar o assédio eleitoral na Região Sul do Brasil nas eleições de 2022, mapeando o volume de denúncias, o perfil das empresas envolvidas e a atuação institucional do Ministério Público e da Justiça do Trabalho.</p>
+<p><strong>Metodologia: </strong>de natureza quanti-qualitativa, examina os procedimentos do MPT e reclamatórias trabalhistas na Justiça do Trabalho entre 2022 e 2023.</p>
+<p><strong>Resultados: </strong>Os resultados revelam que a prática foi protagonizada majoritariamente por pessoas físicas e pequenas empresas, caracterizando uma coação de caráter personalista.</p>
+<p><strong>Conclusão: </strong>houve uma reconfiguração do coronelismo e mandonismo para moldes empresariais, onde a ameaça de desemprego é utilizada como instrumento de controle político.</p>
+<p><strong>PALAVRAS-CHAVE: </strong>assédio eleitoral; coronelismo; eleições gerais de 2022; Região Sul.</p>
+				</section>
+			
+			
+
+										
+				<section class="item downloads_chart">
+					<h2 class="label">
+						Downloads
+					</h2>
+					<div class="value">
+						<canvas class="usageStatsGraph" data-object-type="Submission" data-object-id="347"></canvas>
+						<div class="usageStatsUnavailable" data-object-type="Submission" data-object-id="347">
+							Os dados de download ainda não estão disponíveis.
+						</div>
+					</div>
+				</section>
+			
+																																																<section class="item author_bios">
+					<h2 class="label">
+													Biografia do Autor
+											</h2>
+					<ul class="authors">
+																		<li class="sub_item">
+								<div class="label">
+																																							Mateus Bender,  Universidade Federal de Santa Catarina (UFSC) 
+																	</div>
+								<div class="value">
+									<p>Docente no Instituto Federal Catarinense (IFC-Campus Camboriú), na Universidade Estadual do Mato Grosso (UNEMAT) e na Universidade do Sul de Santa Catarina (UNISUL). Doutor em Direito pela Universidade Federal do Paraná (UFPR) e Doutor em Sociologia e Ciência Política pela Universidade Federal de Santa Catarina (UFSC). Pós-Doutorando no Programa de Sociologia e Ciência Política da Universidade Federal de Santa Catarina (UFSC). Professor e Advogado. <strong>Lattes: </strong>http://lattes.cnpq.br/7660997583651796. <strong>ORCID: </strong>https://orcid.org/0000-0002-0127-4332. <strong>E-mail: </strong>mateusbenderoficial@gmail.com.</p>
+								</div>
+							</li>
+																								<li class="sub_item">
+								<div class="label">
+																																							Thais de Souza Lapa,  Universidade Federal de Santa Catarina (UFSC) 
+																	</div>
+								<div class="value">
+									<p>Professora do Programa de Pós-Graduação e do Departamento de Sociologia e Ciência Política da Universidade Federal de Santa Catarina (UFSC), onde coordena o Laboratório de Sociologia do Trabalho (LASTRO). Doutora em Ciências Sociais pela Universidade Estadual de Campinas (Unicamp). Mestre em Sociologia pela Universidade de São Paulo (USP), com doutorado sanduíche no Centre de Recherche Sociologique et Politique de Paris, grupo Genre, Travail, Mobilités (GTM-CRESPPA-CNRS). <strong>Lattes: </strong><strong>http://lattes.cnpq.br/8925056618873884. ORCID: https://orcid.org/0000-0002-1534-2738. E-mail: thais.lapa@ufsc.br. </strong></p>
+								</div>
+							</li>
+																</ul>
+				</section>
+			
+										<section class="item references">
+					<h2 class="label">
+						Referências
+					</h2>
+					<div class="value">
+																					<p>BALAND, Jean-Marie; ROBINSON, James A. Land and power: theory and evidence from Chile. American Economic Review, [S. l.], v. 98, n. 5, p. 1737–1765, dez. 2008. </p>
+															<p>BARDIN, Laurence. Análise de conteúdo. Tradução de Luís Antero Reto e Augusto Pinheiro. São Paulo: Edições 70, 2016. </p>
+															<p>BRASIL. Lei complementar n. 123, de 14 de dezembro de 2006. Institui o Estatuto Nacional da Microempresa e da Empresa de Pequeno Porte; altera dispositivos das Leis no 8.212 e 8.213, ambas de 24 de julho de 1991, da Consolidação das Leis do Trabalho - CLT, aprovada pelo Decreto-Lei no 5.452, de 1o de maio de 1943, da Lei no 10.189, de 14 de fevereiro de 2001, da Lei Complementar no 63, de 11 de janeiro de 1990; e revoga as Leis no 9.317, de 5 de dezembro de 1996, e 9.841, de 5 de outubro de 1999. Diário Oficial da União: seção 1, Brasília, DF, ano 143, n. 240, p. 1, 15 dez. 2006. </p>
+															<p>BRASIL. Lei nº 4.737/1965, de 15 de julho de 1965. Institui o Código Eleitoral. Diário Oficial da União: seção 1, Brasília, DF, p. 6746, 15 jul. 1965. </p>
+															<p>BRASIL. Lei n. 9.029, de 13 de abril de 1995. Proíbe a exigência de atestados de gravidez e esterilização, e outras práticas discriminatórias, para efeitos admissionais ou de permanência da relação jurídica de trabalho, e dá outras providências. Diário Oficial da União: seção 1, Brasília, DF, p. 5361, 17 abr. 1995. </p>
+															<p>BRASIL. Lei nº 12.527/2011, de 18 de novembro de 2011. Regula o acesso a informações previsto no inciso XXXIII do art. 5o, no inciso II do § 3o do art. 37 e no § 2o do art. 216 da Constituição Federal; altera a Lei no 8 . 11 2 , de 11 de dezembro de 1990; revoga a Lei no 11.111, de 5 de maio de 2005, e dispositivos da Lei no 8.159, de 8 de janeiro de 1991; e dá outras providências. Diário Oficial da União: seção 1, Brasília, DF, ano 148, n. 221-A, p. 1, 18 nov. 2011. </p>
+															<p>BRASIL. Ministério Público do Trabalho. Coordenadoria Nacional de Promoção da Igualdade de Oportunidades e Eliminação da Discriminação no Trabalho. Assédio Eleitoral - Eleições 2022: relatório de atividades. [Brasília, DF]: MPT, [2022]. Disponível em: BENDER, Mateus; LAPA, Thaís. Assédio eleitoral no trabalho: análise das denúncias e reclamações no Sul do Brasil. </p>
+															<p>Revista Jurídica Trabalho e Desenvolvimento Humano, Campinas, v.9, p. 1-29, 2026. DOI: </p>
+															<p><a href="https://doi.org/10.33239/rjtdh.v9.347">https://doi.org/10.33239/rjtdh.v9.347</a>. </p>
+															<p><a href="https://www.tse.jus.br/++theme++justica_eleitoral/pdfjs/web/viewer.html?file=https://www.tse.jus.br/comunicacao/arquivos/relatorio-assedio-eleitoral-eleicoes-2022-do-mpt-em-15-12.2022/@@download/file/TSE-relatorio-atividades-assedio-eleitoral-eleicoes-2022-mpt-versao-final.pdf">https://www.tse.jus.br/++theme++justica_eleitoral/pdfjs/web/viewer.html?file=https://www.tse.jus.br/comunicacao/arquivos/relatorio-assedio-eleitoral-eleicoes-2022-do-mpt-em-15-12.2022/@@download/file/TSE-relatorio-atividades-assedio-eleitoral-eleicoes-2022-mpt-versao-final.pdf</a>. Acesso em: 9 nov. 2023. </p>
+															<p>CARVALHO, José Murilo de. Cidadania no Brasil: o longo caminho. 3. ed. Rio de Janeiro: Civilização Brasileira, 1997. </p>
+															<p>DELGADO, Mauricio Godinho. Curso de Direito do Trabalho. 19. ed. São Paulo: LTr, 2021. </p>
+															<p>DRUCK, Graça; PEDREIRA, Lucia; LIBÓRIO, Vitória; LACERDA, Lily; REIS, Samara. O assédio eleitoral nas eleições presidenciais de 2022 no Brasil: violência no trabalho e nas ruas. Cadernos do CEAS: Revista Crítica de Humanidades. Salvador/Recife, v. 47, n. 257, p. 489-512, set./dez. 2022. <a href="https://doi.org/10.25247/2447-861X.2022.n257.p489-512">https://doi.org/10.25247/2447-861X.2022.n257.p489-512</a>. Acesso em 23 de nov. 2025. </p>
+															<p>FAORO, Raymundo. Os donos do poder: formação do patronato político brasileiro. 3. ed. rev. São Paulo: Globo, 2001. </p>
+															<p>FELICIANO, Guilherme Guimarães; CONFORTI, Luciana Paula. Sobre o assédio eleitoral no Direito do Trabalho: As novas veredas do velho coronelismo à brasileira. Revista UNIFACS Debate Virtual, Salvador, n. 274, 2023. Disponível em: <a href="https://revistas.unifacs.br/index.php/redu/article/view/8166">https://revistas.unifacs.br/index.php/redu/article/view/8166</a>. Acesso em: 11 de nov. 2025. </p>
+															<p>LEAL, Victor Nunes. Coronelismo, enxada e voto: o Município e o sistema representativo no País. 7. ed. São Paulo: Cia. das Letras, 2012. </p>
+															<p>NAKAJO, Luis. Denúncias ao MPT aumentam 16% em 2022. Prt4.mpt.mp.br, [Porto Alegre], 11 jan. 2023. Disponível em: <a href="https://www.prt4.mpt.mp.br/procuradorias/prt-porto-alegre/11794-denuncias-ao-mpt-aumentam-16-em-2022">https://www.prt4.mpt.mp.br/procuradorias/prt-porto-alegre/11794-denuncias-ao-mpt-aumentam-16-em-2022</a>. Acesso em: 10 nov. 2023. </p>
+															<p>NOGUEIRA, João Vitor Flavio de Oliveira; SALGADO, Eneida Desiree. Coronelismo, emprego e voto: os velhos inimigos da democracia e o novo voto de cabresto. Revista de Ciências do Estado, Belo Horizonte, v. 10, n. 1, p. 1–20, 2025. DOI: 10.35699/2525-8036.2025.54749. Disponível em: <a href="https://periodicos.ufmg.br/index.php/revice/article/view/e54749">https://periodicos.ufmg.br/index.php/revice/article/view/e54749</a>. Acesso em: 22 jan. 2026. </p>
+															<p>ORGANIZAÇÃO INTERNACIONAL DO TRABALHO. C111 – Discriminação em matéria de emprego e ocupação. [Aprovada na 42ª reunião da Conferência Internacional do Trabalho (Genebra — 1958)]. Ilo.org., [Genebra], 3 fev. 2014. Disponível em: <a href="https://www.ilo.org/pt-pt/resource/c111-discriminacao-em-materia-de-emprego-e-ocupacao">https://www.ilo.org/pt-pt/resource/c111-discriminacao-em-materia-de-emprego-e-ocupacao</a>. Acesso em: 14 set. 2026. </p>
+															<p>SARLET, Ingo Wolfgang. A eficácia dos direitos fundamentais: uma teoria geral dos direitos fundamentais na perspectiva constitucional. 12. ed. Porto Alegre: Livraria do Advogado, 2015. </p>
+																		</div>
+				</section>
+			
+		</div><!-- .main_entry -->
+
+		<div class="entry_details">
+
+										<div class="item cover_image">
+					<div class="sub_item">
+													<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/issue/view/12">
+								<img src="https://rjtdh-prt15.mpt.mp.br/public/journals/1/cover_issue_12_pt_BR.jpg" alt="">
+							</a>
+											</div>
+				</div>
+			
+										<div class="item galleys">
+					<h2 class="pkp_screen_reader">
+						Downloads
+					</h2>
+					<ul class="value galleys_links">
+													<li>
+								
+	
+													
+
+<a class="obj_galley_link pdf" href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/347/305">
+		
+	PDF
+
+	</a>
+							</li>
+													<li>
+								
+	
+													
+
+<a class="obj_galley_link file" href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/347/306">
+		
+	HTML
+
+	</a>
+							</li>
+											</ul>
+				</div>
+						
+						<div class="item published">
+				<section class="sub_item">
+					<h2 class="label">
+						Publicado
+					</h2>
+					<div class="value">
+																			<span>2026-10-24</span>
+																	</div>
+				</section>
+							</div>
+			
+						
+										<div class="item issue">
+
+											<section class="sub_item">
+							<h2 class="label">
+								Edição
+							</h2>
+							<div class="value">
+								<a class="title" href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/issue/view/12">
+									v. 9 (2026)
+								</a>
+							</div>
+						</section>
+					
+											<section class="sub_item">
+							<h2 class="label">
+								Seção
+							</h2>
+							<div class="value">
+								Artigos em Fluxo Contínuo
+							</div>
+						</section>
+					
+									</div>
+			
+						
+										<div class="item copyright">
+					<h2 class="label">
+						Licença
+					</h2>
+																										<p>Copyright (c) 2026 Mateus Bender, Thais de Souza Lapa</p>
+														<a rel="license" href="https://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Este trabalho está licenciado sob uma licença <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+																
+				</div>
+			
+				<div class="item citation">
+		<section class="sub_item citation_display">
+			<h2 class="label">
+				Como Citar
+			</h2>
+			<div class="value">
+				<div id="citationOutput" role="region" aria-live="polite">
+					<div class="csl-bib-body">
+  <div class="csl-entry">Assédio eleitoral no trabalho: análise das denúncias e reclamações no Sul do Brasil. (2026). <i>Revista Jurídica Trabalho E Desenvolvimento Humano</i>, <i>9</i>. <a href="https://doi.org/10.33239/rjtdh.v9.347">https://doi.org/10.33239/rjtdh.v9.347</a></div>
+</div>
+				</div>
+				<div class="citation_formats">
+					<button class="citation_formats_button label" aria-controls="cslCitationFormats" aria-expanded="false" data-csl-dropdown="true">
+						Formatos de Citação
+					</button>
+					<div id="cslCitationFormats" class="citation_formats_list" aria-hidden="true">
+						<ul class="citation_formats_styles">
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/acm-sig-proceedings?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/acm-sig-proceedings?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										ACM
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/acs-nano?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/acs-nano?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										ACS
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/apa?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/apa?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										APA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/associacao-brasileira-de-normas-tecnicas?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										ABNT
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/chicago-author-date?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/chicago-author-date?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										Chicago
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/harvard-cite-them-right?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/harvard-cite-them-right?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										Harvard
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/ieee?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/ieee?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										IEEE
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/modern-language-association?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/modern-language-association?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										MLA
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/turabian-fullnote-bibliography?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										Turabian
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/vancouver?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/vancouver?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										Vancouver
+									</a>
+								</li>
+															<li>
+									<a
+											rel="nofollow"
+											aria-controls="citationOutput"
+											href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/ama?submissionId=347&amp;publicationId=315&amp;issueId=12"
+											data-load-citation
+											data-json-href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/get/ama?submissionId=347&amp;publicationId=315&amp;issueId=12&amp;return=json"
+									>
+										AMA
+									</a>
+								</li>
+													</ul>
+													<div class="label">
+								Baixar Citação
+							</div>
+							<ul class="citation_formats_styles">
+																	<li>
+										<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/download/ris?submissionId=347&amp;publicationId=315&amp;issueId=12">
+											<span class="fa fa-download"></span>
+											Endnote/Zotero/Mendeley (RIS)
+										</a>
+									</li>
+																	<li>
+										<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citationstylelanguage/download/bibtex?submissionId=347&amp;publicationId=315&amp;issueId=12">
+											<span class="fa fa-download"></span>
+											BibTeX
+										</a>
+									</li>
+															</ul>
+											</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+				<link rel="stylesheet" type="text/css" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/shariff/css/shariff.css">
+				<link rel="stylesheet" type="text/css" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/shariff/shariff-3.3.0/shariff.complete.css">
+				<link rel="stylesheet" type="text/css" href="https://rjtdh-prt15.mpt.mp.br/plugins/generic/shariff/css/wcag-themes.css">
+				<div class="item shariffblock"><div>
+				<div class="shariff item" data-lang="pt"
+					data-services="[twitter,facebook,linkedin,whatsapp,telegram,mail]"
+					data-mail-url="mailto:"
+					data-mail-body="https://doi.org/10.33239/rjtdh.v9.347"
+					data-backend-url="https://rjtdh-prt15.mpt.mp.br/shariff-backend"
+					data-theme="white"
+					data-orientation="vertical"
+					data-url="https://doi.org/10.33239/rjtdh.v9.347">
+				</div>
+				</div>
+				</div>
+				<script src="https://rjtdh-prt15.mpt.mp.br/plugins/generic/shariff/shariff-3.3.0/shariff.complete.js"></script><div id="citation-plugin" class="item citations-container" data-citations-url="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/citations/get?doi=10.33239%2Frjtdh.v9.347" data-img-url="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citations/images/">
+    <div id="citations-loader"></div>
+    <div class="citations-count">
+        <div class="citations-count-crossref">
+            <img class="img-fluid" src="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citations/images/crossref.png" alt="Crossref"/>
+            <div class="badge_total"></div>
+        </div>
+        <div class="citations-count-scopus">
+            <img src="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citations/images/scopus.png" alt="Scopus"/>
+            <br/>
+            <span class="badge_total"></span>
+        </div>
+        <div class="citations-count-google">
+            <a href="https://scholar.google.com/scholar?q=10.33239/rjtdh.v9.347" target="_blank" rel="noreferrer">
+                <img src="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citations/images/scholar.png" alt="Google Scholar"/>
+            </a>
+        </div>
+        <div class="citations-count-europepmc">
+            <a href="https://europepmc.org/search?scope=fulltext&query=10.33239/rjtdh.v9.347" target="_blank" rel="noreferrer">
+                <img src="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citations/images/pmc.png" alt="Europe PMC"/>
+                <br/>
+                <span class="badge_total"></span>
+            </a>
+        </div>
+    </div>
+    <div class="citations-list">
+        <div class="cite-itm cite-prototype" style="display: none">
+            <img class="cite-img img-fluid" src="" alt="">
+            <div>
+                <span class="cite-author"></span>
+                <span class="cite-date"></span>
+            </div>
+            <div>
+                <span class="cite-title"></span>
+                <span class="cite-info"></span>
+            </div>
+            <div class="cite-doi"></div>
+        </div>
+    </div>
+            <style>
+            .citations-container {
+                overflow-y: auto;
+                overflow-x: hidden;
+                max-height: 300px;
+            }
+        </style>
+    </div>
+<div class="item views">
+  <div class="label">Visualizações</div>
+  <div class="value">
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      <li style="padding: 5px 0;">Resumo <span id="viewsCount">49</span></li>
+                        <li style="padding: 5px 0;">PDF <span class="task_count" id="viewsCount">15<span></li>
+                  <li style="padding: 5px 0;">HTML <span class="task_count" id="viewsCount">13<span></li>
+                  </ul>
+    <sub></sub>
+  </div>
+</div>
+
+		</div><!-- .entry_details -->
+	</div><!-- .row -->
+
+</article>
+
+	
+
+</div><!-- .page -->
+
+	</div><!-- pkp_structure_main -->
+
+									<div class="pkp_structure_sidebar left" role="complementary">
+				<div class="pkp_block block_make_submission">
+	<h2 class="pkp_screen_reader">
+		Enviar Submissão
+	</h2>
+
+	<div class="content">
+		<a class="block_make_submission_link" href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/about/submissions">
+			Enviar Submissão
+		</a>
+	</div>
+</div>
+<div class="pkp_block block_language">
+	<h2 class="title">
+		Idioma
+	</h2>
+
+	<div class="content">
+		<ul>
+							<li class="locale_en" lang="en">
+					<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/user/setLocale/en?source=%2FRevista-TDH%2Farticle%2Fview%2F347">
+						English
+					</a>
+				</li>
+							<li class="locale_es" lang="es">
+					<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/user/setLocale/es?source=%2FRevista-TDH%2Farticle%2Fview%2F347">
+						Español
+					</a>
+				</li>
+							<li class="locale_pt_BR current" lang="pt-BR">
+					<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/user/setLocale/pt_BR?source=%2FRevista-TDH%2Farticle%2Fview%2F347">
+						Português
+					</a>
+				</li>
+					</ul>
+	</div>
+</div><!-- .block_language -->
+<div class="pkp_block block_custom" id="customblock-ga">
+	<h2 class="title">Índice H </h2>
+	<div class="content">
+		<p><img src="data:image/png;base64,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"></p>
+	</div>
+</div>
+<div class="pkp_block block_developed_by">
+	<div class="content">
+		<span class="title">Mais Lidos</span>			<ul class="most_read">
+							<li class="most_read_article">
+					<div class="most_read_article_title"><a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/340">Jornada de trabalho 6x1: um mal desnecessário</a></div>
+					<div class="most_read_article_journal"><span class="fa fa-eye"></span> 170</div>
+				</li>
+							<li class="most_read_article">
+					<div class="most_read_article_title"><a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/253">Data centers: uma abordagem sobre as suas implicações trabalhistas e ambientais no Brasil</a></div>
+					<div class="most_read_article_journal"><span class="fa fa-eye"></span> 162</div>
+				</li>
+							<li class="most_read_article">
+					<div class="most_read_article_title"><a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/170">O  direito transnacional do trabalho e a emancipação do teletrabalho a partir da pandemia da Covid-19</a></div>
+					<div class="most_read_article_journal"><span class="fa fa-eye"></span> 135</div>
+				</li>
+							<li class="most_read_article">
+					<div class="most_read_article_title"><a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/126">As plataformas digitais de transporte e o lugar do negro no mercado de trabalho: o racismo nas configurações institucionais do trabalho no Brasil do século XXI</a></div>
+					<div class="most_read_article_journal"><span class="fa fa-eye"></span> 132</div>
+				</li>
+							<li class="most_read_article">
+					<div class="most_read_article_title"><a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/article/view/290">A articulação das Convenções Fundamentais da OIT no Tribunal Superior do Trabalho: reflexões na perspectiva do controle de convencionalidade</a></div>
+					<div class="most_read_article_journal"><span class="fa fa-eye"></span> 94</div>
+				</li>
+						</ul>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-indexadores">
+	<h2 class="title pkp_screen_reader">Indexadores</h2>
+	<div class="content">
+		<p><a href="https://latindex.org/latindex/ficha/29099"><img src="https://latindex.org/latindex/images/logo_latindex.png" alt="Logo Latindex" width="423" height="154"></a><img src="data:image/png;base64,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" alt="Revista IDeAS é indexada no DOAJ | Revista IDeAS"></p>
+<p><a href="https://scholar.google.com/citations?user=AvFvzMoAAAAJ&amp;hl=en"><img src="/public/site/images/admin/logo_google.png"></a></p>
+<p><a style="color: #113241;" href="https://miguilim.ibict.br/handle/miguilim/7936"><img src="https://miguilim.ibict.br/image/logo-miguilim.png" alt="logo do projeto miguilim" width="226" height="82"></a><a href="https://sucupira-legado.capes.gov.br/sucupira/public/consultas/coleta/veiculoPublicacaoQualis/listaConsultaGeralPeriodicos.jsf"><img src="https://prppg.ufes.br/sites/prppg.ufes.br/files/styles/imagem_conteudo/public/field/image/2032014-banner-destaque-plat-sucupira.jpg?itok=yb_T_Pyk" alt="Plataforma Sucupira será lançada no dia 27 de março com transmissão ao vivo  | Pró-Reitoria de Pesquisa e Pós-Graduação" width="207" height="109"></a></p>
+<p><a href="http://diadorim.ibict.br/handle/1/2648"><img src="https://revista.tcu.gov.br/ojs/public/site/images/x07268995180/logo_diadorim2.jpg"></a><a href="https://www.scilit.com/publishers/11511"><img src="https://www.scilit.net/_ipx/s_120x48/scilit.svg" alt="Scilit logo" width="282" height="100"></a></p>
+<p><a href="https://www.semanticscholar.org/venue?name=Revista%20Jur%C3%ADdica%20Trabalho%20e%20Desenvolvimento%20Humano"><img src="https://miro.medium.com/v2/resize:fit:1400/1*wuOik0-WI97IW86STIR6Gg.png" alt="Building a Better Search Engine for Semantic Scholar | by Sergey Feldman |  AI2 Blog" width="232" height="163"></a><a href="https://core.ac.uk/data-providers/22728/"><img src="https://rjtdh-prt15.mpt.mp.br/public/site/images/admin/blobid0.png" alt="Mission How it works Governance Research Team Resources Contacts" width="286" height="121"></a></p>
+<p>&nbsp;<a href="https://www.crossref.org/members/prep/18811"><img src="https://www.crossref.org/members/prep/assets/images/Crossref_Logo_Stacked_RGB.svg" width="494" height="321"></a></p>
+	</div>
+</div>
+<div class="pkp_block block_custom" id="customblock-mapa">
+	<h2 class="title pkp_screen_reader">mapa</h2>
+	<div class="content">
+		<p><a title="Visit tracker" href="https://clustrmaps.com/site/1b9mn"><img src="//clustrmaps.com/map_v2.png?cl=ffffff&amp;w=a&amp;t=tt&amp;d=bjbBsts4IzHb7609nkzl-w7jRVFSR2BtIzzlPvNso2U"></a></p>
+	</div>
+</div>
+<div class="pkp_block block_information">
+	<h2 class="title">Informações</h2>
+	<div class="content">
+		<ul>
+							<li>
+					<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/information/readers">
+						Para Leitores
+					</a>
+				</li>
+										<li>
+					<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/information/authors">
+						Para Autores
+					</a>
+				</li>
+										<li>
+					<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/information/librarians">
+						Para Bibliotecários
+					</a>
+				</li>
+					</ul>
+	</div>
+</div>
+<div class="pkp_block block_developed_by">
+	<h2 class="pkp_screen_reader">
+		Desenvolvido por
+	</h2>
+
+	<div class="content">
+		<a href="https://pkp.sfu.ca/ojs/">
+			Open Journal Systems
+		</a>
+	</div>
+</div>
+<div class="pkp_block block_web_feed">
+	<h2 class="title">Artigos mais recentes</h2>
+	<div class="content">
+		<ul>
+			<li>
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/gateway/plugin/WebFeedGatewayPlugin/atom">
+					<img src="https://rjtdh-prt15.mpt.mp.br/lib/pkp/templates/images/atom.svg" alt="Logo Atom">
+				</a>
+			</li>
+			<li>
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/gateway/plugin/WebFeedGatewayPlugin/rss2">
+					<img src="https://rjtdh-prt15.mpt.mp.br/lib/pkp/templates/images/rss20_logo.svg" alt="Logo RSS2">
+				</a>
+			</li>
+			<li>
+				<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/gateway/plugin/WebFeedGatewayPlugin/rss">
+					<img src="https://rjtdh-prt15.mpt.mp.br/lib/pkp/templates/images/rss10_logo.svg" alt="Logo RSS1">
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+			</div><!-- pkp_sidebar.left -->
+			</div><!-- pkp_structure_content -->
+
+<div class="pkp_structure_footer_wrapper" role="contentinfo">
+	<a id="pkp_content_footer"></a>
+
+	<div class="pkp_structure_footer">
+
+					<div class="pkp_footer_content">
+				<p><strong>Este periódico está licenciado sob uma <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License (CC BY 4.0)</a>.</strong></p>
+<p><img src="https://licensebuttons.net/l/by/3.0/88x31.png"></p>
+			</div>
+		
+		<div class="pkp_brand_footer">
+			<a href="https://rjtdh-prt15.mpt.mp.br/Revista-TDH/about/aboutThisPublishingSystem">
+				<img alt="Mais informações sobre o sistema de publicação, a plataforma e o fluxo de publicação do OJS/PKP." src="https://rjtdh-prt15.mpt.mp.br/templates/images/ojs_brand.png">
+			</a>
+		</div>
+	</div>
+</div><!-- pkp_structure_footer_wrapper -->
+
+</div><!-- pkp_structure_page -->
+
+<script src="https://rjtdh-prt15.mpt.mp.br/lib/pkp/lib/vendor/components/jquery/jquery.min.js?v=3.4.0.10" type="text/javascript"></script><script src="https://rjtdh-prt15.mpt.mp.br/lib/pkp/lib/vendor/components/jqueryui/jquery-ui.min.js?v=3.4.0.10" type="text/javascript"></script><script src="https://rjtdh-prt15.mpt.mp.br/plugins/themes/default/js/lib/popper/popper.js?v=3.4.0.10" type="text/javascript"></script><script src="https://rjtdh-prt15.mpt.mp.br/plugins/themes/default/js/lib/bootstrap/util.js?v=3.4.0.10" type="text/javascript"></script><script src="https://rjtdh-prt15.mpt.mp.br/plugins/themes/default/js/lib/bootstrap/dropdown.js?v=3.4.0.10" type="text/javascript"></script><script src="https://rjtdh-prt15.mpt.mp.br/plugins/themes/default/js/main.js?v=3.4.0.10" type="text/javascript"></script><script src="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citationStyleLanguage/js/articleCitation.js?v=3.4.0.10" type="text/javascript"></script><script src="https://rjtdh-prt15.mpt.mp.br/plugins/generic/citations/js/citations.js?v=3.4.0.10" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.data = pkpUsageStats.data || {};pkpUsageStats.data.Submission = pkpUsageStats.data.Submission || {};pkpUsageStats.data.Submission[347] = {"data":{"2026":{"10":"19"}},"label":"Todos os downloads","color":"79,181,217","total":19};</script><script src="https://rjtdh-prt15.mpt.mp.br/lib/pkp/js/lib/Chart.min.js?v=3.4.0.10" type="text/javascript"></script><script type="text/javascript">var pkpUsageStats = pkpUsageStats || {};pkpUsageStats.locale = pkpUsageStats.locale || {};pkpUsageStats.locale.months = ["Jan","Fev","Mar","Abr","Mai","Jun","Jul","Ago","Set","Out","Nov","Dez"];pkpUsageStats.config = pkpUsageStats.config || {};pkpUsageStats.config.chartType = "bar";</script><script src="https://rjtdh-prt15.mpt.mp.br/lib/pkp/js/usage-stats-chart.js?v=3.4.0.10" type="text/javascript"></script><script type="text/javascript">
+(function (w, d, s, l, i) { w[l] = w[l] || []; var f = d.getElementsByTagName(s)[0],
+j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true;
+j.src = 'https://www.googletagmanager.com/gtag/js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+function gtag(){dataLayer.push(arguments)}; gtag('js', new Date()); gtag('config', i); })
+(window, document, 'script', 'dataLayer', 'UA-168442659-1');
+</script>
+
+<span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_id=https%3A%2F%2Frjtdh-prt15.mpt.mp.br%2FRevista-TDH%2Farticle%2Fview%2F347&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.language=pt_BR&amp;rft.genre=article&amp;rft.title=Revista+Jur%C3%ADdica+Trabalho+e+Desenvolvimento+Humano&amp;rft.jtitle=Revista+Jur%C3%ADdica+Trabalho+e+Desenvolvimento+Humano&amp;rft.atitle=Ass%C3%A9dio+eleitoral+no+trabalho%3A+an%C3%A1lise+das+den%C3%BAncias+e+reclama%C3%A7%C3%B5es+no+Sul+do+Brasil&amp;rft.artnum=347&amp;rft.stitle=&amp;rft.volume=9&amp;rft.issue=&amp;rft.aulast=Bender&amp;rft.aufirst=Mateus&amp;rft.date=2026-10-24&amp;rft.au=Mateus+Bender&amp;rft.au=Thais+de+Souza+Lapa&amp;rft_id=info%3Adoi%2F10.33239%2Frjtdh.v9.347&amp;rft.eissn=2595-9689"></span>
+
+</body>
+</html>
