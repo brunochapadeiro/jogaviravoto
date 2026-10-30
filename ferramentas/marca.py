@@ -18,7 +18,7 @@ QUIZ = "https://claude.ai/artifact/2gjCy8t4escdJPcuaYQcwf"
 TABLET = "https://claude.ai/artifact/4yJsk6hwXfsbEjXwj8JyKi"
 HUB = "https://claude.ai/artifact/6RSdWwaWbtrtMnkK4ii9gq"
 GAMES_ARTEFATO = "https://claude.ai/artifact/RVDCxdyzLw9Ncxv53KQXaS"
-FLIPER = "https://jogaviravoto.brunochapadeiro.workers.dev/"  # site dos Games Vira-Voto (Cloudflare)
+FLIPER = "https://vigieademocracia.brunochapadeiro.workers.dev/"  # site Vigie a Democracia (Cloudflare; o endereço antigo, jogaviravoto, redireciona para cá)
 
 ALPHA_WM = 0.07
 _IC = json.loads((B / "icons.json").read_text())

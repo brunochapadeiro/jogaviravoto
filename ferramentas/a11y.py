@@ -170,7 +170,7 @@ JS = """
     sc.onload = function () { try { new window.VLibras.Widget('https://vlibras.gov.br/app');
       setTimeout(function () { var b = document.querySelector('[vw-access-button]'); if (b) b.click(); aviso('Libras: o intérprete virtual aparece no canto da tela. Toque num texto para ele traduzir.'); }, 1500);
     } catch (x) { aviso('Não foi possível abrir o VLibras aqui.'); } };
-    sc.onerror = function () { aviso('Não foi possível abrir o VLibras aqui. No site jogaviravoto ele funciona.'); };
+    sc.onerror = function () { aviso('Não foi possível abrir o VLibras aqui. No site Vigie a Democracia ele funciona.'); };
     document.head.appendChild(sc);
   }
   document.addEventListener('click', function (e) {

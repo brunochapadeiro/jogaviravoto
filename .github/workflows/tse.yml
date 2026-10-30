@@ -21,7 +21,7 @@ jobs:
           GREP: ${{ inputs.grep }}
         run: |
           B=https://resultados.tse.jus.br/oficial
-          echo "::notice title=CORS::$(curl -sS -I -H 'Origin: https://jogaviravoto.brunochapadeiro.workers.dev' "$B/ele2026/6257/dados/br/br-c0001-e006257-u.json" | tr '\r\n' '  ' | cut -c1-1500)"
+          echo "::notice title=CORS::$(curl -sS -I -H 'Origin: https://vigieademocracia.brunochapadeiro.workers.dev' "$B/ele2026/6257/dados/br/br-c0001-e006257-u.json" | tr '\r\n' '  ' | cut -c1-1500)"
           for U in $URLS; do
             case "$U" in http*) ;; *) U="$B/$U";; esac
             C=$(curl -sS -A "Mozilla/5.0" --compressed --max-time 20 -o /tmp/r.json -w "%{http_code}" "$U" || echo ERR)

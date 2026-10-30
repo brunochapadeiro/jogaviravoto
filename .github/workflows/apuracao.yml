@@ -35,7 +35,7 @@ jobs:
           cat > apu.py <<'PY'
           import json, os, time, urllib.request, concurrent.futures as cf
           ELE = os.environ["ELE"]; FIM = time.time() + 60 * float(os.environ["MINUTOS"]); PASSO = float(os.environ["INTERVALO"])
-          SITE = "https://jogaviravoto.brunochapadeiro.workers.dev/api/apuracao?e=" + ELE
+          SITE = "https://vigieademocracia.brunochapadeiro.workers.dev/api/apuracao?e=" + ELE
           UFS = "br zz ac al am ap ba ce df es go ma mg ms mt pa pb pe pi pr rj rn ro rr rs sc se sp to".split()
           def num(x):
               try: return float(str(x if x is not None else "").replace(".", "").replace(",", "."))

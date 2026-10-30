@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Ler /api/placar
         run: |
-          J=$(curl -sS --max-time 20 https://jogaviravoto.brunochapadeiro.workers.dev/api/placar)
+          J=$(curl -sS --max-time 20 https://vigieademocracia.brunochapadeiro.workers.dev/api/placar)
           echo "::notice title=placar::$J"
           echo "$J" >> "$GITHUB_STEP_SUMMARY"

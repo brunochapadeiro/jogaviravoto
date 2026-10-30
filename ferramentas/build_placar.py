@@ -12,6 +12,12 @@ import marca as M
 import a11y as A11
 import congresso_data as C
 
+
+def url_cd(txt, base=3.6, cls="u"):
+    """Endereço num card: numa linha só, com a letra do tamanho que cabe."""
+    t = min(base, 84 / (len(txt) * 0.52))
+    return f'<span class="{cls}" style="font-size:{t:.2f}cqw">{txt}</span>'
+
 E = html.escape
 SITE = M.FLIPER
 CURTO = SITE.replace("https://", "").rstrip("/")
@@ -258,7 +264,7 @@ def montar(dados, res, slug):
     if not vs:
         cards.append(("Semana sem votações nominais", f'<p class="cd-t2">Placar da semana</p><p class="cd-s">{E(per)}</p>'
                       '<p class="cd-x">Nenhuma votação nominal no plenário da Câmara nem do Senado. Votações simbólicas não registram o voto de cada parlamentar.</p>'
-                      f'<p class="cd-s2">Acompanhe: {CURTO}/semana</p>', F_DADOS, "capa"))
+                      f'<p class="cd-s2">Acompanhe:{url_cd(CURTO + '/semana')}</p>', F_DADOS, "capa"))
     else:
         man = res.get("manchete")
         if not man and dest:
@@ -286,7 +292,7 @@ def montar(dados, res, slug):
                   "<li>Só entram votações nominais do plenário: nas simbólicas, ninguém registra o voto.</li>"
                   "<li>Orientação do governo: a do líder do governo na Câmara. O Senado não publica orientação nos dados abertos.</li>"
                   "<li>A bolinha ao lado do partido é o campo dele no Raio-X do Congresso (escala de 519 cientistas políticos).</li></ul>"
-                  f'<p class="cd-s2">Todas as votações e os dados:<br><span class="url">{CURTO}/{slug}</span></p>'
+                  f'<p class="cd-s2">Todas as votações e os dados:<br>{url_cd(CURTO + '/' + slug, cls='url')}</p>'
                   '<p class="cd-x2">Salve e mande para quem precisa ver. Feito com auxílio de IA (Claude), com dados públicos.</p>', F_DADOS, "fim"))
     tot = len(cards)
     html_cards = [card(i + 1, tot, c, f, r, slug, k) for i, (r, c, f, k) in enumerate(cards)]
@@ -329,6 +335,7 @@ html.feed .pl-tag { font-size:3.1cqw; }
 .pl-n { font-size:4cqw; color:#C9D1DB; } .pl-n b { font-family:'Lexend', sans-serif; font-size:8cqw; margin-right:1cqw; }
 html.feed .pl-st { font-size:4.4cqw; } html.feed .pl-n b { font-size:6.6cqw; } html.feed .pl-n { font-size:3.4cqw; }
 .pl-q { color:#FFE58F !important; font-weight:700; }
+.cd .u { display:block; white-space:nowrap; font-weight:700; margin-top:.8cqw; }
 .cd .url { font-size:3.6cqw; white-space:nowrap; font-weight:700; color:#FFE58F; }
 .pl-u { font-size:3.2cqw; font-weight:400; color:#C9D1DB; }
 .cd-lst { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2cqw; }
