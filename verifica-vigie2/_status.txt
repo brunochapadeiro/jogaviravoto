@@ -1,0 +1,11 @@
+200 77178 https://jogaviravoto.brunochapadeiro.workers.dev/
+200 56599 https://jogaviravoto.brunochapadeiro.workers.dev/vota-como-voce
+200 1127423 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Quem_vota_como_voce_carrossel.zip
+200 1322275 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Quem_vota_como_voce_stories.zip
+200 7019 https://jogaviravoto.brunochapadeiro.workers.dev/boato
+200 43870 https://jogaviravoto.brunochapadeiro.workers.dev/praca
+200 63503 https://jogaviravoto.brunochapadeiro.workers.dev/pode-ou-nao
+200 63387 https://jogaviravoto.brunochapadeiro.workers.dev/roleta-saude
+200 92242 https://jogaviravoto.brunochapadeiro.workers.dev/denuncie
+200 163987 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Cartaz_Onde_denunciar.pdf
+200 471184 https://jogaviravoto.brunochapadeiro.workers.dev/arquivos/Kit_pode_ou_nao.pdf

@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vigie a Democracia</title>
+<script>/* endereços antigos dos Games Vira-Voto (/#j5, /#materiais, /#placar) agora ficam em /jogos */
+(function () { var h = location.hash; if (/^#(j\d{1,2}|materiais|conversar|placar|inicio)$/.test(h)) location.replace('jogos' + h); })();</script>
+<meta name="description" content="Fatos com fonte, os votos do Congresso, canais de denúncia e jogos para acompanhar a política o ano inteiro. De graça e sem cadastro.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Vigie a Democracia">
+<meta property="og:title" content="Vigie a Democracia"><meta property="og:description" content="Fatos com fonte, os votos do Congresso, canais de denúncia e jogos para acompanhar a política o ano inteiro. De graça e sem cadastro.">
+<meta property="og:url" content="https://jogaviravoto.brunochapadeiro.workers.dev/"><meta property="og:image" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-vigie.png"><meta property="og:image:secure_url" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-vigie.png">
+<meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Vigie a Democracia: fatos, votos e jogos para vigiar a política, de Prof. Bruno Chapadeiro">
+<meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image">
+<style>
+:root { --papel:#FBF8F1; --cartao:#FFFFFF; --tinta:#17191E; --suave:#4A4D57; --linha:#E2DCCF; --verm:#B3261E; --azul:#1F4E8C; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%2820%2C24%2C30%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark } }
+:root[data-theme="dark"] { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Regular.woff2') format('woff2'); font-weight:400; }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Bold.woff2') format('woff2'); font-weight:700; }
+@font-face { font-family:'Lexend'; src:url('fontes/Lexend-var.woff2') format('woff2'); font-weight:100 900; }
+* { box-sizing:border-box; }
+body { margin:0; background-color:var(--papel); background-image:var(--marca); color:var(--tinta); font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-size:18px; line-height:1.55; }
+a { color:var(--azul); text-underline-offset:.18em; }
+:focus-visible { outline:4px solid var(--azul); outline-offset:3px; border-radius:4px; }
+.wrap { max-width:48rem; margin:0 auto; padding:20px max(16px, env(safe-area-inset-left, 0px)) 48px; display:flex; flex-direction:column; gap:18px; }
+.topo { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:space-between; }
+.placa { align-self:flex-start; margin:0; background:#FFE58F; color:#1B1B1F; font-family:'Lexend', sans-serif; font-weight:700; padding:4px 12px; border:2px solid #1B1B1F; transform:rotate(-1.5deg); }
+h1 { font-family:'Lexend', sans-serif; font-size:clamp(2rem, 7vw, 2.8rem); line-height:1.05; margin:0; } h1 span { color:var(--verm); }
+h2 { font-family:'Lexend', sans-serif; font-size:1.3rem; line-height:1.2; margin:0; }
+.sub { margin:0; font-size:1.06rem; }
+.caixa { background:var(--cartao); border:2px solid var(--linha); border-radius:16px; padding:14px 18px; }
+.caixa ul { margin:8px 0 0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+.rot { background:var(--cartao); border:2px solid var(--linha); border-radius:18px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; scroll-margin-top:12px; }
+.meta { margin:0; color:var(--suave); font-weight:700; font-size:.95rem; }
+.cena { margin:0; font-style:italic; }
+.fala { margin:0; padding-left:1.1em; display:flex; flex-direction:column; gap:6px; }
+.fala li.ind { list-style:none; margin-left:-1.1em; color:var(--suave); font-weight:700; font-size:.95rem; }
+.extra { margin:0; font-size:.95rem; overflow-wrap:anywhere; }
+.acoes { display:flex; flex-wrap:wrap; gap:10px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font:inherit; font-weight:700; min-height:48px; padding:6px 18px; border-radius:999px;
+       border:2px solid var(--tinta); background:transparent; color:var(--tinta); text-decoration:none; cursor:pointer; }
+.btn.forte { background:#B3261E; border-color:#B3261E; color:#fff; }
+.redes { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0; }
+.botao-ig { max-width:100%; display:inline-flex; align-items:center; gap:8px; min-height:46px; padding:6px 16px; border-radius:999px; background:var(--tinta); color:var(--papel); font-weight:700; text-decoration:none; }
+.selo { display:inline-flex; align-items:center; gap:6px; color:var(--suave); font-weight:700; text-decoration:none; font-size:.95rem; } .selo-ic { display:inline-flex; gap:2px; } .ic { width:1.2em; height:1.2em; }
+footer { font-size:.95rem; color:var(--suave); display:flex; flex-direction:column; gap:8px; }
+/* teleprompter */
+.tp { position:fixed; inset:0; z-index:50; background:#000; color:#fff; display:flex; flex-direction:column; }
+.tp[hidden] { display:none; }
+.tp-barra { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; padding:10px max(12px, env(safe-area-inset-left, 0px)); background:#111; border-bottom:2px solid #333; }
+.tp-barra button { font:inherit; font-weight:700; min-height:48px; min-width:48px; padding:4px 14px; border-radius:12px; border:2px solid #fff; background:#000; color:#fff; cursor:pointer; }
+.tp-barra button[aria-pressed="true"] { background:#FFE600; color:#000; border-color:#FFE600; }
+.tp-barra output { min-width:4.5em; text-align:center; font-weight:700; }
+.tp-tela { flex:1; overflow-y:auto; padding:40vh 7vw 70vh; scroll-behavior:auto; }
+.tp-tela.espelho { transform:scaleX(-1); }
+.tp-texto { margin:0 auto; max-width:30em; font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-weight:700; line-height:1.45; }
+.tp-texto p { margin:0 0 .9em; } .tp-texto .ind { color:#FFE600; font-size:.6em; font-weight:700; }
+.tp-guia { position:fixed; left:0; right:0; top:42%; height:0; border-top:3px solid rgba(255,230,0,.55); pointer-events:none; }
+.tp-conta { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; font-size:30vw; font-weight:700; pointer-events:none; }
+.tp-conta:empty { display:none; }
+@media print { .acoes, details.a11y, .tp, .curtir-box, .pular { display:none !important; } body { background:#fff; color:#000; } .rot { break-inside:avoid; } }
+@page { size:A4; margin:14mm; }
+.pular { position:absolute; left:-999px; } .pular:focus { left:16px; top:8px; background:var(--tinta); color:var(--papel); padding:8px 14px; z-index:9; }
+
+html.a11y-zoom body { zoom: var(--a11y-zoom); }
+footer p, footer a, .regras h2, .regras li { overflow-wrap: anywhere; }
+html.a11y-zoom .top { flex-wrap: wrap; row-gap: 6px; } html.a11y-zoom .xp { white-space: normal; }
+html.a11y-zoom .botao-ig, html.a11y-zoom .btn, html.a11y-zoom .redes a { max-width: 100%; white-space: normal; }
+details.a11y { margin: 0; font-size: 15px; }
+details.a11y > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px;
+  border-radius: 999px; border: 2px solid currentColor; font-weight: 700; }
+details.a11y > summary::-webkit-details-marker { display: none; }
+details.a11y > summary svg { width: 1.3em; height: 1.3em; }
+.a11y-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.a11y-bar button, .a11y-bar a { font: inherit; font-weight: 700; min-height: 44px; min-width: 44px; padding: 4px 12px; border-radius: 10px;
+  border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.a11y-bar button[aria-pressed="true"] { background: #1F4E8C; border-color: #1F4E8C; color: #fff; }
+.a11y-zl { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; }
+.a11y-aviso { flex-basis: 100%; margin: 0; font-size: 14px; }
+.a11y-aviso:empty { display: none; }
+html.a11y-contraste body, html.a11y-contraste body *:not(svg):not(svg *):not(i) { background-color: #000 !important; background-image: none !important;
+  color: #fff !important; border-color: #fff !important; text-shadow: none !important; box-shadow: none !important; }
+html.a11y-contraste a, html.a11y-contraste a * { color: #FFE600 !important; }
+html.a11y-contraste button, html.a11y-contraste .btn { border: 2px solid #fff !important; }
+html.a11y-contraste .a11y-bar button[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
+html.a11y-contraste :focus-visible { outline: 4px solid #FFE600 !important; outline-offset: 3px; }
+html.a11y-espaco body * { letter-spacing: .05em !important; word-spacing: .16em !important; line-height: 1.75 !important; }
+html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+.soc { margin: 0; }
+.soc-k { margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.soc-ac { margin: 0 0 2px; }
+.soc-a { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; min-height: 44px; padding: 2px 8px 2px 4px; border-radius: 12px; color: inherit; text-decoration: none; font-size: 16px; }
+.soc-a svg { width: 26px; height: 26px; flex: none; }
+.soc-a b { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; } .soc-a b:empty { display: none; }
+.soc-vp { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.soc-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(76px, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.soc-row > li { display: flex; min-width: 0; }
+.soc-i { flex: 1; min-width: 0; min-height: 58px; padding: 6px 2px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font: inherit; color: inherit; background: transparent; border: 0; border-radius: 12px; cursor: pointer; text-decoration: none; }
+.soc-i:hover, .soc-a:hover { background: rgba(128,128,128,.14); }
+.soc-i:focus-visible, .soc-a:focus-visible, .soc-b:focus-visible { outline: 3px solid #1F4E8C; outline-offset: 2px; }
+.soc-v { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2px 4px; }
+.soc-i svg { width: 24px; height: 24px; flex: none; }
+.soc-i b { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.soc-i b:empty { display: none; }
+.soc-l { font-size: 12.5px; line-height: 1.15; }
+.soc.grande .soc-a b { font-size: 24px; } .soc.grande .soc-a svg { width: 30px; height: 30px; }
+.soc-i[data-soc="curtir"][aria-pressed="true"] svg { fill: #E8173A; stroke: #E8173A; animation: soc-pop .35s ease-out; }
+@keyframes soc-pop { 0% { transform: scale(1); } 45% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .soc-i svg { animation: none !important; } }
+.soc-p { margin: 8px 0 0; padding: 10px 12px; border: 2px solid currentColor; border-radius: 12px; font-size: 15px; }
+.soc-p p { margin: 0; } .soc-bs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px !important; }
+.soc-b { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 14px; border-radius: 999px; border: 2px solid currentColor; color: inherit; font-weight: 700; text-decoration: none; }
+.soc-st { margin: 6px 0 0; font-size: 14px; overflow-wrap: anywhere; } .soc-st:empty { display: none; }
+@media print { .soc { display: none !important; } }
+
+[hidden] { display:none !important; }
+.wrap.home { max-width:62rem; gap:26px; padding-bottom:110px; }
+.abre { display:grid; gap:22px; }
+@media (min-width: 62rem) { .abre { grid-template-columns:minmax(0, 1.08fr) minmax(0, .92fr); align-items:start; gap:36px; } .abre .ronda { margin-top:10px; } }
+.cab { display:flex; flex-direction:column; gap:12px; }
+.marca { display:inline-flex; align-items:center; gap:10px; font-family:'Lexend', sans-serif; font-weight:700; font-size:1.05rem; color:var(--tinta); text-decoration:none; min-height:44px; }
+.marca .olho { width:34px; height:34px; }
+.hero { display:flex; flex-direction:column; gap:16px; padding-top:6px; }
+.wm { font-family:'Lexend', sans-serif; font-weight:800; font-size:clamp(2.75rem, 12.5vw, 6rem); line-height:.9; letter-spacing:-.03em; margin:0; max-width:11ch; }
+.wm .olho { display:inline-block; width:.82em; height:.82em; vertical-align:-.06em; margin-right:.1em; border-radius:.2em; }
+.olho .palp { transform-origin:32px 32px; transform-box:view-box; }
+.wm .olho .palp { animation:pisca 4s ease-in-out .8s 1 both; }
+@keyframes pisca { 0%, 70%, 80%, 100% { transform:scaleY(1); } 75% { transform:scaleY(.06); } }
+@media (prefers-reduced-motion: reduce) { .wm .olho .palp { animation:none; } }
+.hero .sub { font-size:clamp(1.08rem, 2.6vw, 1.3rem); max-width:38rem; line-height:1.45; }
+.busca { display:flex; flex-direction:column; gap:6px; max-width:38rem; }
+.busca label { font-weight:700; }
+.busca input { font:inherit; min-height:54px; padding:8px 16px; border-radius:14px; border:2px solid var(--tinta); background:var(--cartao); color:var(--tinta); width:100%; }
+.achados { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px; max-width:38rem; }
+.achados li a { display:block; padding:10px 12px; border-radius:12px; text-decoration:none; color:var(--tinta); background:var(--cartao); border:1px solid var(--linha); }
+.achados li a b { display:block; color:var(--azul); } .achados li a small { color:var(--suave); }
+.achados-n { margin:0; color:var(--suave); font-weight:700; }
+.achados-n:empty { display:none; }
+/* ronda */
+.ronda { background:#17191E; color:#FBF8F1; border:2px solid var(--linha); border-radius:22px; padding:20px clamp(16px, 4vw, 28px); display:grid; gap:14px; }
+.ronda h2 { font-size:1.45rem; } .ronda p { margin:0; } .ronda a { color:inherit; font-weight:700; }
+.ronda .nivel { font-family:'Lexend', sans-serif; font-weight:700; font-size:clamp(1.5rem, 5vw, 2.1rem); line-height:1.1; color:#FFE58F; }
+.carimbos { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:clamp(6px, 2vw, 16px); }
+.carimbos li { display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; font-weight:700; font-size:clamp(.78rem, 2.6vw, .95rem); line-height:1.15; }
+.carimbos a { text-decoration:none; display:flex; flex-direction:column; align-items:center; gap:6px; min-width:44px; }
+.selo-r { width:clamp(52px, 15vw, 84px); aspect-ratio:1; border-radius:50%; border:3px dashed rgba(251,248,241,.45); display:flex; align-items:center; justify-content:center; }
+.selo-r svg { width:46%; height:46%; opacity:.45; }
+li.feito .selo-r { border:4px double var(--c); color:var(--c); transform:rotate(-9deg); background:color-mix(in srgb, var(--c) 14%, transparent); }
+li.feito .selo-r svg { opacity:1; }
+.ronda .rodape-r { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between; color:rgba(251,248,241,.85); font-size:.95rem; }
+.ronda button.zera { font:inherit; font-size:.9rem; background:none; border:0; color:inherit; text-decoration:underline; cursor:pointer; min-height:44px; padding:0; }
+/* postos */
+.posto { display:flex; flex-direction:column; gap:14px; scroll-margin-top:14px; }
+.posto-cab { display:grid; grid-template-columns:auto 1fr; gap:4px 14px; align-items:center; border-top:3px solid var(--c); padding-top:14px; }
+.posto-cab .mini { grid-row:span 2; align-self:start; width:48px; height:48px; border-radius:50%; border:3px dashed var(--linha); display:flex; align-items:center; justify-content:center; color:var(--suave); }
+.posto-cab .mini svg { width:24px; height:24px; }
+.posto.feito .posto-cab .mini { border:4px double var(--c); color:var(--c); transform:rotate(-9deg); }
+.posto-cab h2 { font-size:clamp(1.35rem, 4vw, 1.75rem); }
+.posto-cab p { margin:0; color:var(--suave); }
+.dest { display:grid; gap:12px; grid-template-columns:repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+.tile { position:relative; background:var(--cartao); border:2px solid var(--linha); border-left:8px solid var(--c); border-radius:16px; padding:16px 18px; display:flex; flex-direction:column; gap:6px; }
+.tile:hover { border-color:var(--c); }
+.tile h3 { margin:0; font-family:'Lexend', sans-serif; font-size:1.3rem; line-height:1.2; }
+.tile h3 a { color:var(--tinta); text-decoration:none; } .tile h3 a::after { content:""; position:absolute; inset:0; border-radius:14px; }
+.tile h3 a:focus-visible { outline:none; } .tile:has(a:focus-visible) { outline:4px solid var(--azul); outline-offset:3px; }
+.tile p { margin:0; } .tipo { color:var(--c); font-weight:700; font-size:.92rem; }
+.tile .extra-t { position:relative; z-index:1; font-weight:700; }
+.lista { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); column-gap:24px; }
+.lista li { border-bottom:1px solid var(--linha); padding:10px 0; display:flex; flex-direction:column; gap:2px; }
+.lista a { font-weight:700; font-size:1.08rem; } .lista p { margin:0; color:var(--suave); }
+.lista .tipo { font-size:.88rem; }
+/* rua, arquivo e app */
+.secao { display:flex; flex-direction:column; gap:12px; }
+.secao > h2 { font-size:clamp(1.35rem, 4vw, 1.75rem); border-top:3px solid var(--tinta); padding-top:14px; }
+.secao > p { margin:0; color:var(--suave); }
+details.grupo { background:var(--cartao); border:2px solid var(--linha); border-radius:14px; padding:4px 16px; }
+details.grupo summary { cursor:pointer; font-family:'Lexend', sans-serif; font-weight:700; font-size:1.1rem; min-height:52px; display:flex; align-items:center; }
+details.grupo .lista { margin-bottom:8px; }
+.app { background:var(--cartao); border:2px solid var(--tinta); border-radius:18px; padding:16px 18px; display:grid; gap:10px; }
+.app h2 { font-size:1.35rem; } .app p { margin:0; }
+.app .olho { width:52px; height:52px; }
+.app-cab { display:flex; gap:14px; align-items:center; }
+/* barra do celular */
+.baixo { position:fixed; left:0; right:0; bottom:0; z-index:40; background:#17191E; border-top:1px solid #3A3D45; padding:6px max(8px, env(safe-area-inset-left, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)); display:none; }
+.baixo ul { list-style:none; margin:0 auto; padding:0; max-width:40rem; display:grid; grid-template-columns:repeat(5, 1fr); gap:2px; }
+.baixo a { display:flex; flex-direction:column; align-items:center; gap:2px; min-height:54px; justify-content:center; color:#FBF8F1; text-decoration:none; font-weight:700; font-size:.78rem; border-radius:12px; }
+.baixo a svg { width:24px; height:24px; }
+.baixo a[aria-current] { background:rgba(251,248,241,.14); color:#FFE58F; }
+.baixo a:focus-visible { outline:3px solid #FFE58F; outline-offset:-3px; }
+@media (max-width: 62rem) { .baixo { display:block; } }
+@media (min-width: 62.01rem) { .wrap.home { padding-bottom:48px; } }
+@media print { .baixo, .busca, .app { display:none !important; } }
+.visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) section[data-posto="congresso"] { --c:#A6C8FF; } }
+:root[data-theme="dark"] section[data-posto="congresso"] { --c:#A6C8FF; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) section[data-posto="fatos"] { --c:#5FD3C2; } }
+:root[data-theme="dark"] section[data-posto="fatos"] { --c:#5FD3C2; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) section[data-posto="trabalho"] { --c:#F0B05A; } }
+:root[data-theme="dark"] section[data-posto="trabalho"] { --c:#F0B05A; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) section[data-posto="denuncia"] { --c:#FF8F84; } }
+:root[data-theme="dark"] section[data-posto="denuncia"] { --c:#FF8F84; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) section[data-posto="jogos"] { --c:#B7B1F2; } }
+:root[data-theme="dark"] section[data-posto="jogos"] { --c:#B7B1F2; }
+</style>
+<link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#17191E"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Vigie">
+</head><body>
+<div class="wrap home">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cab" id="topo-h">
+    <div class="topo"><a class="marca" href="./" aria-label="Vigie a Democracia, início"><svg class="olho" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#17191E"/><g class="palp"><path d="M7 32 Q32 8 57 32 Q32 56 7 32 Z" fill="#FBF8F1"/><circle cx="32" cy="32" r="10.5" fill="#FFE58F" stroke="#17191E" stroke-width="3"/><circle cx="32" cy="32" r="4.6" fill="#17191E"/></g></svg><span>Vigie a Democracia</span></a><p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p></div>
+    <details class="a11y"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5M12 15l-3.5 6M12 15l3.5 6"/></svg>Acessibilidade</summary><div class="a11y-bar" role="group" aria-label="Opções de acessibilidade"><button type="button" data-a11y="menos" aria-label="Diminuir a letra">A−</button><span class="a11y-zl" id="a11y-zl" aria-live="polite">100%</span><button type="button" data-a11y="mais" aria-label="Aumentar a letra">A+</button><button type="button" data-a11y="c" aria-pressed="false">Contraste</button><button type="button" data-a11y="e" aria-pressed="false">Espaçamento</button><button type="button" data-a11y="m" aria-pressed="false">Sem movimento</button><button type="button" data-a11y="ouvir" aria-pressed="false">Ouvir</button><button type="button" data-a11y="libras">Libras</button><a href="https://jogaviravoto.brunochapadeiro.workers.dev/acessibilidade">Ajuda</a><p class="a11y-aviso" id="a11y-aviso" aria-live="polite"></p></div></details>
+  </header>
+  <main id="conteudo" data-a11y-ler>
+  <div class="abre">
+  <section class="hero" aria-labelledby="h-wm">
+    <h1 class="wm" id="h-wm"><svg class="olho" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#17191E"/><g class="palp"><path d="M7 32 Q32 8 57 32 Q32 56 7 32 Z" fill="#FBF8F1"/><circle cx="32" cy="32" r="10.5" fill="#FFE58F" stroke="#17191E" stroke-width="3"/><circle cx="32" cy="32" r="4.6" fill="#17191E"/></g></svg>Vigie a Democracia</h1>
+    <p class="sub">Fatos com fonte, os votos do Congresso, canais de denúncia e jogos para acompanhar a política o ano inteiro. De graça e sem cadastro.</p>
+    <form class="busca" id="f-busca" role="search"><label for="q">O que você procura?</label>
+      <input id="q" type="search" autocomplete="off" placeholder="deputado, assédio, boato, 6x1…" aria-describedby="achados-n"></form>
+    <p class="achados-n" id="achados-n" aria-live="polite"></p>
+    <ul class="achados" id="achados"></ul>
+  </section>
+  <section class="ronda" aria-labelledby="r-t">
+    <h2 id="r-t">Sua ronda</h2>
+    <p>Quem vigia passa por todos os postos. Cada posto ganha um carimbo quando você abre uma página dele. Fica guardado só neste aparelho.</p>
+    <p class="nivel" id="r-nivel" tabindex="-1">Primeiro olhar</p>
+    <ol class="carimbos" aria-label="Postos da ronda"><li id="r-congresso" style="--c:#A6C8FF"><a href="#congresso"><span class="selo-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M4 10h16M12 3 4 7h16zM6 10v8M10 10v8M14 10v8M18 10v8M4 18h16"/></svg></span><span>Congresso</span></a><span class="st visually-hidden"></span></li><li id="r-fatos" style="--c:#5FD3C2"><a href="#fatos"><span class="selo-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 11.5 11.2 14 15.5 9"/><circle cx="12" cy="12" r="9"/></svg></span><span>Fatos</span></a><span class="st visually-hidden"></span></li><li id="r-trabalho" style="--c:#F0B05A"><a href="#trabalho"><span class="selo-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><span>Trabalho</span></a><span class="st visually-hidden"></span></li><li id="r-denuncia" style="--c:#FF8F84"><a href="#denuncia"><span class="selo-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V4M4 4h12l-2 4 2 4H4"/></svg></span><span>Denunciar</span></a><span class="st visually-hidden"></span></li><li id="r-jogos" style="--c:#B7B1F2"><a href="#jogos"><span class="selo-r"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4M15.5 11.5h.01M18 13.5h.01"/></svg></span><span>Jogar</span></a><span class="st visually-hidden"></span></li></ol>
+    <div class="rodape-r"><p id="r-txt" aria-live="polite"></p><button type="button" class="zera" id="r-zera" hidden>Zerar a ronda</button></div>
+  </section>
+  </div>
+  <section class="posto" id="congresso" data-posto="congresso" style="--c:#1F4E8C" aria-labelledby="t-congresso">
+    <div class="posto-cab"><span class="mini" title="Carimbo do posto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M4 10h16M12 3 4 7h16zM6 10v8M10 10v8M14 10v8M18 10v8M4 18h16"/></svg></span><h2 id="t-congresso">Vigie o Congresso</h2><p>Como votou quem foi eleito, com os dados oficiais da Câmara e do Senado.</p></div>
+    <div class="dest"><article class="tile"><p class="tipo">Teste de 5 minutos</p><h3><a href="vota-como-voce">Quem vota como você?</a></h3><p>Responda a 15 afirmações sobre projetos que o Congresso votou de verdade e veja que partidos e parlamentares votaram como você.</p><p class="extra-t" data-teste hidden></p></article><article class="tile"><p class="tipo">Busca</p><h3><a href="parlamentares">A ficha de cada parlamentar</a></h3><p>Votos, presença, alinhamento com o governo e cota parlamentar de 752 deputados e senadores, de 2023 a 2026. Sem ranking.</p></article></div>
+    <ul class="lista"><li><span class="tipo">Votações da semana</span><a href="semana">Placar da semana</a><p>O que a Câmara e o Senado votaram e como votou cada partido.</p></li><li><span class="tipo">Dados do TSE</span><a href="congresso">Raio-X do novo Congresso</a><p>Quem foi eleito em 2026 para a Câmara e o Senado, partido por partido.</p></li></ul>
+  </section><section class="posto" id="fatos" data-posto="fatos" style="--c:#1F7F73" aria-labelledby="t-fatos">
+    <div class="posto-cab"><span class="mini" title="Carimbo do posto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 11.5 11.2 14 15.5 9"/><circle cx="12" cy="12" r="9"/></svg></span><h2 id="t-fatos">Confira antes de compartilhar</h2><p>Frases que circulam no zap, checadas com fonte, e o outro lado de cada tema.</p></div>
+    <div class="dest"><article class="tile"><p class="tipo">10 temas com fonte</p><h3><a href="familia">Fato ou boato: o bolso e a família</a></h3><p>O que se diz de Lula e do PT sobre economia e valores cristãos, e o que mostram os números oficiais e as leis.</p></article></div>
+    <ul class="lista"><li><span class="tipo">Jogo</span><a href="boato">Fato ou boato?</a><p>Doze frases que circulam no zap. Você separa o fato do boato?</p></li><li><span class="tipo">Jogo</span><a href="roleta">Roleta dos fatos</a><p>Um caso por vez: registro público, checagem, investigação ou arquivado, com a versão de cada lado e o link.</p></li><li><span class="tipo">86 checagens</span><a href="checagem">Checagem do debate</a><p>O que era verdadeiro, impreciso ou falso no último debate, segundo Lupa, Estadão Verifica, Aos Fatos e g1.</p></li><li><span class="tipo">Jogo</span><a href="quemdisse">Quem disse?</a><p>Oito frases com data e fonte. Chute quem falou cada uma.</p></li></ul>
+  </section><section class="posto" id="trabalho" data-posto="trabalho" style="--c:#9A5F0C" aria-labelledby="t-trabalho">
+    <div class="posto-cab"><span class="mini" title="Carimbo do posto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><h2 id="t-trabalho">Trabalho e saúde</h2><p>Seus direitos no trabalho e o que fazer quando não são respeitados.</p></div>
+    <div class="dest"><article class="tile"><p class="tipo">Jogo, também no telão</p><h3><a href="roleta-saude">Roleta da saúde no trabalho</a></h3><p>Mito ou verdade? Burnout, assédio moral, pausas, NR-1 e onde buscar ajuda, com a lei e a pesquisa de cada resposta.</p></article></div>
+    <ul class="lista"><li><span class="tipo">Jogo, também no telão</span><a href="pode-ou-nao">Pode ou não pode?</a><p>Situações reais de trabalho na época da eleição. A resposta vem com o que diz a lei e o que fazer.</p></li><li><span class="tipo">Calculadora</span><a href="6x1">Seu tempo vale: o fim da escala 6x1</a><p>A Emenda 141 acabou com a escala 6x1. Quanto da sua semana sobra?</p></li><li><span class="tipo">Calculadora</span><a href="ir">Régua do Imposto de Renda</a><p>Arraste até o seu salário e veja se você paga, paga menos ou não paga mais.</p></li><li><span class="tipo">Teste</span><a href="programas">Quais programas a sua família já usou?</a><p>Bolsa Família, SAMU, Farmácia Popular, ProUni, Pé-de-Meia: marque e veja de quando é cada um.</p></li></ul>
+  </section><section class="posto" id="denuncia" data-posto="denuncia" style="--c:#B3261E" aria-labelledby="t-denuncia">
+    <div class="posto-cab"><span class="mini" title="Carimbo do posto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V4M4 4h12l-2 4 2 4H4"/></svg></span><h2 id="t-denuncia">Denuncie</h2><p>Ameaçar, punir ou demitir alguém por causa do voto é crime. Veja como guardar provas e onde denunciar, até sem se identificar.</p></div>
+    <div class="dest"><article class="tile"><p class="tipo">Canais com QR code</p><h3><a href="denuncie">Onde denunciar assédio eleitoral</a></h3><p>MPT, Ministério do Trabalho, centrais sindicais, Justiça do Trabalho, MP Eleitoral e mais, com link e QR code. Pode ser anônimo.</p></article></div>
+    <ul class="lista"><li><span class="tipo">10 telas com fonte</span><a href="assedio">Assédio eleitoral: como reconhecer</a><p>O que é assédio eleitoral, o que diz a lei, os números de 2022 e de 2026 e como guardar as provas.</p></li><li><span class="tipo">PDF para imprimir</span><a href="arquivos/Cartaz_Onde_denunciar.pdf">Cartaz com os QR codes dos canais</a><p>Uma folha A4 com os canais de denúncia, para o mural do trabalho, do sindicato ou da escola.</p></li></ul>
+  </section><section class="posto" id="jogos" data-posto="jogos" style="--c:#34306B" aria-labelledby="t-jogos">
+    <div class="posto-cab"><span class="mini" title="Carimbo do posto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4M15.5 11.5h.01M18 13.5h.01"/></svg></span><h2 id="t-jogos">Jogue e aprenda</h2><p>Jogos rápidos, cada resposta com a fonte. Sozinho, em grupo ou no telão.</p></div>
+    <div class="dest"><article class="tile"><p class="tipo">Para grupo, telão ou papel</p><h3><a href="praca">Jogos da praça</a></h3><p>Pode ou não pode? e a Roleta da saúde para jogar em roda, com kit para imprimir e placar de equipes.</p></article></div>
+    <ul class="lista"><li><span class="tipo">17 jogos</span><a href="jogos">Games Vira-Voto</a><p>Os jogos curtos da eleição de 2026: quiz, show, baralho, mapa da virada e mais, com fonte em cada resposta.</p></li><li><span class="tipo">32 perguntas</span><a href="quiz">Quiz</a><p>Perguntas rápidas de três opções, com a fonte de cada resposta.</p></li><li><span class="tipo">Jogo</span><a href="show">Show do Vira-Voto</a><p>Dez perguntas em escada, com duas ajudas. Até onde você chega?</p></li><li><span class="tipo">52 cartas</span><a href="baralho">Baralho</a><p>As cartas da banquinha, com roleta, placar, explicação e pergunta de conversa.</p></li></ul>
+  </section>
+  <section class="secao" id="rua" aria-labelledby="rua-t"><h2 id="rua-t">Leve para a rua</h2>
+    <p>Para eventos, rodas de conversa, sindicatos e escolas: imprima e jogue sem internet.</p>
+    <ul class="lista"><li><span class="tipo">PDF, 13 páginas</span><a href="arquivos/Kit_pode_ou_nao.pdf">Kit Pode ou não pode?</a><p>Roteiro, placas, cartas de dobrar, placar e a página dos canais de denúncia.</p></li><li><span class="tipo">PDF, 14 páginas</span><a href="arquivos/Kit_roleta_saude.pdf">Kit Roleta da saúde</a><p>Roleta de papel, cartas e placar para jogar sem internet.</p></li><li><span class="tipo">PDF A4</span><a href="arquivos/Cartaz_Jogos_da_praca.pdf">Cartaz dos Jogos da praça</a><p>Com QR code para jogar no celular.</p></li><li><span class="tipo">Página</span><a href="materiais">Todos os materiais</a><p>Baralho, cartazes, cartilha, apostila, carrosséis, áudios e vídeos, livres para copiar e imprimir.</p></li></ul></section>
+  <section class="secao" id="arquivo" aria-labelledby="arq-t"><h2 id="arq-t">Arquivo das eleições de 2026</h2>
+    <p>Tudo o que fizemos no 1º e no 2º turno continua aqui, com as fontes.</p>
+    <details class="grupo"><summary>A virada</summary><ul class="lista"><li><a href="viramos">Viramos</a><p>Lula eleito com 51,8% dos votos válidos. A história da campanha em 10 telas.</p></li><li><a href="obrigado">Obrigado por acreditarem</a><p>Mensagens que chegaram depois da virada, sem nome nem foto.</p></li><li><a href="apuracao">Apuração</a><p>Os números oficiais do TSE, por estado.</p></li><li><a href="pesquisas">Pesquisas do 2º turno</a><p>A média das pesquisas na reta final.</p></li></ul></details><details class="grupo"><summary>Para conversar</summary><ul class="lista"><li><a href="cartilha">Cartilha Vira-Voto</a><p>Como conversar e ajudar alguém a votar, em 4 minutos. Com áudio e Libras.</p></li><li><a href="apostila">Apostila de argumentos</a><p>Bolso, 6x1, saúde, fome, escola, mulheres: fatos com fonte e resposta pronta.</p></li><li><a href="conversar">Como virar voto numa conversa</a><p>Sete passos e o que pode e não pode.</p></li><li><a href="desculpa">Desarma a desculpa</a><p>A pergunta que abre a conversa com quem diz que não vai votar.</p></li><li><a href="guia">Guia da banquinha</a><p>Pontos, horários, o que levar e o que dizer.</p></li><li><a href="debate">Debate na mão</a><p>O que era fato, falso ou sem contexto nos debates.</p></li></ul></details><details class="grupo"><summary>Dia da votação</summary><ul class="lista"><li><a href="plano">Plano de domingo</a><p>Hora, caminho e companhia em um minuto.</p></li><li><a href="ja-votou">Disseram que você já votou?</a><p>O que fazer na seção eleitoral.</p></li></ul></details><details class="grupo"><summary>Para postar</summary><ul class="lista"><li><a href="kit">Kit de postagens</a><p>Stories, posts, Reels e textos prontos, com texto alternativo.</p></li><li><a href="roteiros">Roteiros para vídeo</a><p>Nove roteiros curtos, com teleprompter.</p></li></ul></details></section>
+  <section class="app" id="app" aria-labelledby="app-t">
+    <div class="app-cab"><svg class="olho" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#17191E"/><g class="palp"><path d="M7 32 Q32 8 57 32 Q32 56 7 32 Z" fill="#FBF8F1"/><circle cx="32" cy="32" r="10.5" fill="#FFE58F" stroke="#17191E" stroke-width="3"/><circle cx="32" cy="32" r="4.6" fill="#17191E"/></g></svg><h2 id="app-t">Tenha o Vigie no celular</h2></div>
+    <p id="app-txt">Instale como aplicativo: abre direto da tela inicial, sem loja, sem cadastro, e as páginas que você já viu funcionam até sem internet.</p>
+    <p><button type="button" class="btn forte" id="instalar" hidden>Instalar o app</button></p>
+    <p id="app-ios" hidden>No iPhone ou iPad, abra esta página no Safari, toque no botão Compartilhar (o quadrado com a seta para cima) e depois em Adicionar à Tela de Início.</p>
+    <p id="app-outro" hidden>No Android, abra no Chrome, toque no menu de três pontos e escolha Instalar app ou Adicionar à tela inicial. No computador, procure o ícone de instalar na barra de endereço.</p>
+  </section>
+  </main>
+  <footer>
+    <div class="soc" data-conta-acesso data-soc-texto="Vigie a Democracia: fatos com fonte, os votos do Congresso, canais de denúncia e jogos. De graça:" data-soc-url="https://jogaviravoto.brunochapadeiro.workers.dev/"><p class="soc-ac"><a class="soc-a" data-soc="ver" href="https://jogaviravoto.brunochapadeiro.workers.dev/#placar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1.6 12S5.4 4.8 12 4.8 22.4 12 22.4 12 18.6 19.2 12 19.2 1.6 12 1.6 12z"/><circle cx="12" cy="12" r="3.3"/></svg><b data-soc-n="acessos"></b><span class="soc-al"></span><span class="soc-vp">Ver o placar</span></a></p><ul class="soc-row" role="list"><li><button type="button" class="soc-i" data-soc="curtir" aria-pressed="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.6s-7.7-4.7-9.7-9.4C.8 7.7 3 4 6.8 4c2.2 0 3.8 1.2 5.2 3 1.4-1.8 3-3 5.2-3 3.8 0 6 3.7 4.5 7.2-2 4.7-9.7 9.4-9.7 9.4z"/></svg><b data-soc-n="curtidas"></b></span><span class="soc-l">curtir</span></button></li><li><button type="button" class="soc-i" data-soc="comentar" aria-expanded="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 16.9A9.2 9.2 0 1 0 17 20.4l4.6 1.2z"/></svg><b data-soc-n="comentarios"></b></span><span class="soc-l">comentar</span></button></li><li><button type="button" class="soc-i" data-soc="repostar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 2.5l3.5 3.5-3.5 3.5"/><path d="M3.5 11.5V9.6A3.6 3.6 0 0 1 7.1 6h13.4"/><path d="M7 21.5L3.5 18 7 14.5"/><path d="M20.5 12.5v1.9a3.6 3.6 0 0 1-3.6 3.6H3.5"/></svg><b data-soc-n="reposts"></b></span><span class="soc-l">repostar</span></button></li><li><a href="https://wa.me/?text=Vigie%20a%20Democracia%3A%20fatos%20com%20fonte%2C%20os%20votos%20do%20Congresso%2C%20canais%20de%20den%C3%BAncia%20e%20jogos.%20De%20gra%C3%A7a%3A%20https%3A%2F%2Fjogaviravoto.brunochapadeiro.workers.dev%2F" target="_blank" rel="noopener" class="soc-i" data-soc="compartilhar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.8 2.6L10.3 13.4"/><path d="M21.8 2.6l-6.9 18.8-4.6-8L2.2 9.2z"/></svg><b data-soc-n="compartilhamentos"></b></span><span class="soc-l">compartilhar</span></a></li></ul><div class="soc-p" hidden><p>Os comentários ficam no Instagram do Prof. Bruno Chapadeiro: lá cada pessoa assina o que escreve, e tem moderação.</p><p class="soc-bs"><a class="soc-b" data-soc-com href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener">Comentar no Instagram</a><a class="soc-b" data-soc-com href="https://ig.me/m/brunochapadeiro" target="_blank" rel="noopener">Mandar mensagem direta</a></p></div><p class="soc-st" aria-live="polite"></p></div>
+    <p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p>
+    <p>© 2026 Prof. Bruno Chapadeiro. Licença Creative Commons CC BY-NC-SA 4.0: pode copiar e adaptar, sem fins comerciais, com crédito e a mesma licença. Feito com auxílio de IA (Claude).</p>
+    <p>Vigie a Democracia: <a href="https://jogaviravoto.brunochapadeiro.workers.dev/">jogaviravoto.brunochapadeiro.workers.dev</a></p>
+  </footer>
+</div>
+<nav class="baixo" aria-label="Seções do site"><ul><li><a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></svg>Início</a></li><li><a href="#congresso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M4 10h16M12 3 4 7h16zM6 10v8M10 10v8M14 10v8M18 10v8M4 18h16"/></svg>Congresso</a></li><li><a href="#fatos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 11.5 11.2 14 15.5 9"/><circle cx="12" cy="12" r="9"/></svg>Fatos</a></li><li><a href="denuncie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V4M4 4h12l-2 4 2 4H4"/></svg>Denunciar</a></li><li><a href="#jogos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4M15.5 11.5h.01M18 13.5h.01"/></svg>Jogar</a></li></ul></nav>
+<script>
+(function () {
+  const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+  const POSTOS = [{"id": "congresso", "nome": "Vigie o Congresso"}, {"id": "fatos", "nome": "Confira antes de compartilhar"}, {"id": "trabalho", "nome": "Trabalho e saúde"}, {"id": "denuncia", "nome": "Denuncie"}, {"id": "jogos", "nome": "Jogue e aprenda"}], MAPA = {"vota-como-voce": "congresso", "parlamentares": "congresso", "semana": "congresso", "congresso": "congresso", "familia": "fatos", "boato": "fatos", "roleta": "fatos", "checagem": "fatos", "quemdisse": "fatos", "roleta-saude": "trabalho", "pode-ou-nao": "trabalho", "6x1": "trabalho", "ir": "trabalho", "programas": "trabalho", "denuncie": "denuncia", "assedio": "denuncia", "praca": "jogos", "jogos": "jogos", "quiz": "jogos", "show": "jogos", "baralho": "jogos"}, NIVEIS = [[0, "Primeiro olhar"], [3, "Olho aberto"], [6, "Sentinela"], [10, "Fiscal da democracia"]], IDX = [{"n": "Quem vota como você?", "d": "Responda a 15 afirmações sobre projetos que o Congresso votou de verdade e veja que partidos e parlamentares votaram como você.", "t": "teste quiz votação deputado senador partido arcabouço reforma tributária 6x1 marco temporal dosimetria blindagem", "h": "vota-como-voce", "p": "Vigie o Congresso"}, {"n": "A ficha de cada parlamentar", "d": "Votos, presença, alinhamento com o governo e cota parlamentar de 752 deputados e senadores, de 2023 a 2026. Sem ranking.", "t": "deputado deputada senador senadora ficha cota gastos presença faltas governo", "h": "parlamentares", "p": "Vigie o Congresso"}, {"n": "Placar da semana", "d": "O que a Câmara e o Senado votaram e como votou cada partido.", "t": "semana votação plenário partido", "h": "semana", "p": "Vigie o Congresso"}, {"n": "Raio-X do novo Congresso", "d": "Quem foi eleito em 2026 para a Câmara e o Senado, partido por partido.", "t": "eleitos 2026 bancada pl pt centrão", "h": "congresso", "p": "Vigie o Congresso"}, {"n": "Fato ou boato: o bolso e a família", "d": "O que se diz de Lula e do PT sobre economia e valores cristãos, e o que mostram os números oficiais e as leis.", "t": "boato fake news lula pt igreja cristão família economia inflação salário", "h": "familia", "p": "Confira antes de compartilhar"}, {"n": "Fato ou boato?", "d": "Doze frases que circulam no zap. Você separa o fato do boato?", "t": "boato fake news jogo", "h": "boato", "p": "Confira antes de compartilhar"}, {"n": "Roleta dos fatos", "d": "Um caso por vez: registro público, checagem, investigação ou arquivado, com a versão de cada lado e o link.", "t": "roleta fatos investigação checagem", "h": "roleta", "p": "Confira antes de compartilhar"}, {"n": "Checagem do debate", "d": "O que era verdadeiro, impreciso ou falso no último debate, segundo Lupa, Estadão Verifica, Aos Fatos e g1.", "t": "debate checagem lupa aos fatos", "h": "checagem", "p": "Confira antes de compartilhar"}, {"n": "Quem disse?", "d": "Oito frases com data e fonte. Chute quem falou cada uma.", "t": "frase jogo lula flávio", "h": "quemdisse", "p": "Confira antes de compartilhar"}, {"n": "Roleta da saúde no trabalho", "d": "Mito ou verdade? Burnout, assédio moral, pausas, NR-1 e onde buscar ajuda, com a lei e a pesquisa de cada resposta.", "t": "saúde mental burnout assédio moral nr-1 trabalho jogo roleta", "h": "roleta-saude", "p": "Trabalho e saúde"}, {"n": "Pode ou não pode?", "d": "Situações reais de trabalho na época da eleição. A resposta vem com o que diz a lei e o que fazer.", "t": "assédio eleitoral patrão chefe empresa voto jogo", "h": "pode-ou-nao", "p": "Trabalho e saúde"}, {"n": "Seu tempo vale: o fim da escala 6x1", "d": "A Emenda 141 acabou com a escala 6x1. Quanto da sua semana sobra?", "t": "6x1 jornada folga escala 40 horas", "h": "6x1", "p": "Trabalho e saúde"}, {"n": "Régua do Imposto de Renda", "d": "Arraste até o seu salário e veja se você paga, paga menos ou não paga mais.", "t": "imposto de renda ir isenção 5 mil salário", "h": "ir", "p": "Trabalho e saúde"}, {"n": "Quais programas a sua família já usou?", "d": "Bolsa Família, SAMU, Farmácia Popular, ProUni, Pé-de-Meia: marque e veja de quando é cada um.", "t": "programas sociais bolsa família samu farmácia popular prouni pé-de-meia", "h": "programas", "p": "Trabalho e saúde"}, {"n": "Onde denunciar assédio eleitoral", "d": "MPT, Ministério do Trabalho, centrais sindicais, Justiça do Trabalho, MP Eleitoral e mais, com link e QR code. Pode ser anônimo.", "t": "denúncia denunciar mpt ministério do trabalho anônimo qr code assédio eleitoral sindicato", "h": "denuncie", "p": "Denuncie"}, {"n": "Assédio eleitoral: como reconhecer", "d": "O que é assédio eleitoral, o que diz a lei, os números de 2022 e de 2026 e como guardar as provas.", "t": "assédio eleitoral lei crime provas demissão", "h": "assedio", "p": "Denuncie"}, {"n": "Cartaz com os QR codes dos canais", "d": "Uma folha A4 com os canais de denúncia, para o mural do trabalho, do sindicato ou da escola.", "t": "cartaz imprimir qr code", "h": "arquivos/Cartaz_Onde_denunciar.pdf", "p": "Denuncie"}, {"n": "Jogos da praça", "d": "Pode ou não pode? e a Roleta da saúde para jogar em roda, com kit para imprimir e placar de equipes.", "t": "praça grupo telão evento kit imprimir equipe", "h": "praca", "p": "Jogue e aprenda"}, {"n": "Games Vira-Voto", "d": "Os jogos curtos da eleição de 2026: quiz, show, baralho, mapa da virada e mais, com fonte em cada resposta.", "t": "games vira-voto fliperama jogos eleição", "h": "jogos", "p": "Jogue e aprenda"}, {"n": "Quiz", "d": "Perguntas rápidas de três opções, com a fonte de cada resposta.", "t": "quiz perguntas", "h": "quiz", "p": "Jogue e aprenda"}, {"n": "Show do Vira-Voto", "d": "Dez perguntas em escada, com duas ajudas. Até onde você chega?", "t": "show perguntas", "h": "show", "p": "Jogue e aprenda"}, {"n": "Baralho", "d": "As cartas da banquinha, com roleta, placar, explicação e pergunta de conversa.", "t": "baralho cartas banquinha tablet", "h": "baralho", "p": "Jogue e aprenda"}, {"n": "Kit Pode ou não pode?", "d": "Roteiro, placas, cartas de dobrar, placar e a página dos canais de denúncia.", "t": "imprimir pdf kit cartaz rua", "h": "arquivos/Kit_pode_ou_nao.pdf", "p": "Leve para a rua"}, {"n": "Kit Roleta da saúde", "d": "Roleta de papel, cartas e placar para jogar sem internet.", "t": "imprimir pdf kit cartaz rua", "h": "arquivos/Kit_roleta_saude.pdf", "p": "Leve para a rua"}, {"n": "Cartaz dos Jogos da praça", "d": "Com QR code para jogar no celular.", "t": "imprimir pdf kit cartaz rua", "h": "arquivos/Cartaz_Jogos_da_praca.pdf", "p": "Leve para a rua"}, {"n": "Todos os materiais", "d": "Baralho, cartazes, cartilha, apostila, carrosséis, áudios e vídeos, livres para copiar e imprimir.", "t": "imprimir pdf kit cartaz rua", "h": "materiais", "p": "Leve para a rua"}, {"n": "Viramos", "d": "Lula eleito com 51,8% dos votos válidos. A história da campanha em 10 telas.", "t": "eleição 2026 A virada", "h": "viramos", "p": "Arquivo das eleições de 2026"}, {"n": "Obrigado por acreditarem", "d": "Mensagens que chegaram depois da virada, sem nome nem foto.", "t": "eleição 2026 A virada", "h": "obrigado", "p": "Arquivo das eleições de 2026"}, {"n": "Apuração", "d": "Os números oficiais do TSE, por estado.", "t": "eleição 2026 A virada", "h": "apuracao", "p": "Arquivo das eleições de 2026"}, {"n": "Pesquisas do 2º turno", "d": "A média das pesquisas na reta final.", "t": "eleição 2026 A virada", "h": "pesquisas", "p": "Arquivo das eleições de 2026"}, {"n": "Cartilha Vira-Voto", "d": "Como conversar e ajudar alguém a votar, em 4 minutos. Com áudio e Libras.", "t": "eleição 2026 Para conversar", "h": "cartilha", "p": "Arquivo das eleições de 2026"}, {"n": "Apostila de argumentos", "d": "Bolso, 6x1, saúde, fome, escola, mulheres: fatos com fonte e resposta pronta.", "t": "eleição 2026 Para conversar", "h": "apostila", "p": "Arquivo das eleições de 2026"}, {"n": "Como virar voto numa conversa", "d": "Sete passos e o que pode e não pode.", "t": "eleição 2026 Para conversar", "h": "conversar", "p": "Arquivo das eleições de 2026"}, {"n": "Desarma a desculpa", "d": "A pergunta que abre a conversa com quem diz que não vai votar.", "t": "eleição 2026 Para conversar", "h": "desculpa", "p": "Arquivo das eleições de 2026"}, {"n": "Guia da banquinha", "d": "Pontos, horários, o que levar e o que dizer.", "t": "eleição 2026 Para conversar", "h": "guia", "p": "Arquivo das eleições de 2026"}, {"n": "Debate na mão", "d": "O que era fato, falso ou sem contexto nos debates.", "t": "eleição 2026 Para conversar", "h": "debate", "p": "Arquivo das eleições de 2026"}, {"n": "Plano de domingo", "d": "Hora, caminho e companhia em um minuto.", "t": "eleição 2026 Dia da votação", "h": "plano", "p": "Arquivo das eleições de 2026"}, {"n": "Disseram que você já votou?", "d": "O que fazer na seção eleitoral.", "t": "eleição 2026 Dia da votação", "h": "ja-votou", "p": "Arquivo das eleições de 2026"}, {"n": "Kit de postagens", "d": "Stories, posts, Reels e textos prontos, com texto alternativo.", "t": "eleição 2026 Para postar", "h": "kit", "p": "Arquivo das eleições de 2026"}, {"n": "Roteiros para vídeo", "d": "Nove roteiros curtos, com teleprompter.", "t": "eleição 2026 Para postar", "h": "roteiros", "p": "Arquivo das eleições de 2026"}];
+  const le = k => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch (e) { return null; } };
+  const dataBR = d => d ? d.slice(8, 10) + '/' + d.slice(5, 7) : '';
+  // ronda: carimbo em cada posto que teve uma página aberta
+  function ronda() {
+    const vis = le('vigie-visitas') || {};
+    const paginas = Object.keys(vis).filter(s => s !== 'inicio');
+    const feitos = {};
+    for (const s of paginas) { const p = MAPA[s]; if (p && (!feitos[p] || vis[s] < feitos[p])) feitos[p] = vis[s]; }
+    const n = Object.keys(feitos).length;
+    let nivel = NIVEIS[0][1]; for (const [min, nome] of NIVEIS) if (paginas.length >= min) nivel = nome;
+    if (n === POSTOS.length && paginas.length >= NIVEIS[NIVEIS.length - 1][0]) nivel = 'Guardiã e guardião da democracia';
+    $('#r-nivel').textContent = nivel;
+    for (const p of POSTOS) {
+      const li = $('#r-' + p.id), sec = $('section[data-posto="' + p.id + '"]'), ok = !!feitos[p.id];
+      li.classList.toggle('feito', ok); if (sec) sec.classList.toggle('feito', ok);
+      li.querySelector('.st').textContent = ok ? 'carimbado em ' + dataBR(feitos[p.id]) : 'falta visitar';
+    }
+    const falta = POSTOS.find(p => !feitos[p.id]);
+    $('#r-txt').replaceChildren(document.createTextNode(n + (n === 1 ? ' posto carimbado' : ' postos carimbados') + ' de ' + POSTOS.length + ', ' + paginas.length + (paginas.length === 1 ? ' página aberta. ' : ' páginas abertas. ')));
+    if (falta) { const a = document.createElement('a'); a.href = '#' + falta.id; a.textContent = 'Próximo posto: ' + falta.nome; $('#r-txt').append(a); }
+    else $('#r-txt').append('Ronda completa. Volte sempre: o Congresso vota toda semana.');
+    $('#r-zera').hidden = !paginas.length;
+    const r = le('vv-respostas'), nr = r ? Object.keys(r).length : 0, ex = $('[data-teste]');
+    if (ex && nr) { ex.hidden = false; ex.textContent = nr >= 3 ? 'Você já respondeu ' + nr + '. Abra para ver o resultado.' : 'Você respondeu ' + nr + '. Faltam ' + (3 - nr) + ' para ver o resultado.'; }
+  }
+  $('#r-zera').addEventListener('click', () => { try { localStorage.removeItem('vigie-visitas'); } catch (e) {} ronda(); $('#r-nivel').focus(); });
+  ronda(); addEventListener('pageshow', ronda);
+  // busca
+  const sem = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const T = IDX.map(x => sem([x.n, x.d, x.t, x.p].join(' ')));
+  const q = $('#q'), out = $('#achados'), cont = $('#achados-n');
+  function busca() {
+    const v = sem(q.value.trim()); out.replaceChildren(); cont.textContent = '';
+    if (v.length < 2) return;
+    const ps = v.split(/\s+/);
+    const L = IDX.filter((x, k) => ps.every(p => T[k].includes(p))).slice(0, 8);
+    cont.textContent = L.length ? (L.length === 1 ? '1 resultado' : L.length + ' resultados') : 'Nada encontrado. Tente outra palavra, como deputado, boato, assédio ou 6x1.';
+    for (const x of L) { const li = document.createElement('li'), a = document.createElement('a'), b = document.createElement('b'), sm = document.createElement('small');
+      a.href = x.h; b.textContent = x.n; sm.textContent = x.p + '. ' + x.d; a.append(b, sm); li.append(a); out.append(li); }
+  }
+  q.addEventListener('input', busca);
+  q.addEventListener('keydown', e => { if (e.key === 'Escape') { q.value = ''; busca(); } });
+  $('#f-busca').addEventListener('submit', e => { e.preventDefault(); const a = out.querySelector('a'); if (a) a.focus(); });
+  // barra do celular: marca a seção visível
+  if ('IntersectionObserver' in window) {
+    const links = { congresso: 1, fatos: 1, jogos: 1 };
+    const io = new IntersectionObserver(es => { for (const e of es) if (e.isIntersecting) { $$('.baixo a').forEach(a => a.removeAttribute('aria-current'));
+      const id = e.target.id; const a = links[id] ? $('.baixo a[href="#' + id + '"]') : (id === 'topo-h' ? $('.baixo a[href="./"]') : null); if (a) a.setAttribute('aria-current', 'page'); } }, { rootMargin: '-45% 0px -50% 0px' });
+    ['topo-h', 'congresso', 'fatos', 'jogos'].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+  }
+  // instalar o app
+  let pedido = null; const bt = $('#instalar'), ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const instalado = matchMedia('(display-mode: standalone)').matches || navigator.standalone;
+  if (instalado) { $('#app-txt').textContent = 'Você já está usando o app. Ele abre sozinho, sem barra do navegador, e as páginas que você já viu funcionam até sem internet.'; }
+  else if (ios) { $('#app-ios').hidden = false; }
+  else { $('#app-outro').hidden = false; }
+  addEventListener('beforeinstallprompt', e => { e.preventDefault(); pedido = e; bt.hidden = false; $('#app-outro').hidden = true; });
+  bt.addEventListener('click', async () => { if (!pedido) return; pedido.prompt(); const r = await pedido.userChoice.catch(() => null); pedido = null; bt.hidden = true;
+    $('#app-txt').textContent = r && r.outcome === 'accepted' ? 'Pronto: o Vigie está na sua tela inicial.' : 'Tudo bem. Se mudar de ideia, use o menu do navegador e escolha Instalar app.'; });
+  addEventListener('appinstalled', () => { bt.hidden = true; $('#app-txt').textContent = 'Pronto: o Vigie está na sua tela inicial.'; });
+})();
+</script>
+<script>
+(function () {
+  var H = document.documentElement, K = 'vv-a11y', st = { z: 1, c: 0, e: 0, m: 0 }, Z = [0.9, 1, 1.15, 1.3, 1.5], CONT = 'https://jogaviravoto.brunochapadeiro.workers.dev/api/placar';
+  try { var g = JSON.parse(localStorage.getItem(K) || '{}'); for (var k in g) st[k] = g[k]; } catch (x) {}
+  function aviso(t) { var a = document.getElementById('a11y-aviso'); if (a) a.textContent = t; }
+  function aplica() {
+    H.style.setProperty('--a11y-zoom', st.z); H.classList.toggle('a11y-zoom', st.z !== 1); H.classList.toggle('a11y-contraste', !!st.c); H.classList.toggle('a11y-espaco', !!st.e); H.classList.toggle('a11y-parado', !!st.m);
+    document.querySelectorAll('[data-a11y="c"],[data-a11y="e"],[data-a11y="m"]').forEach(function (b) { b.setAttribute('aria-pressed', String(!!st[b.getAttribute('data-a11y')])); });
+    var zl = document.getElementById('a11y-zl'); if (zl) zl.textContent = Math.round(st.z * 100) + '%';
+    try { localStorage.setItem(K, JSON.stringify(st)); } catch (x) {}
+  }
+  function zoom(d) { var i = Z.indexOf(st.z); if (i < 0) i = 1; st.z = Z[Math.max(0, Math.min(Z.length - 1, i + d))]; aplica(); }
+  var falando = false;
+  function ouvir(b) {
+    var s = window.speechSynthesis;
+    if (!s || !window.SpeechSynthesisUtterance) { aviso('Este navegador não lê em voz alta. Use o leitor de tela do celular (TalkBack ou VoiceOver).'); return; }
+    if (falando) { s.cancel(); falando = false; b.setAttribute('aria-pressed', 'false'); return; }
+    var alvo = document.querySelector('[data-a11y-ler]') || document.querySelector('main') || document.body;
+    var t = (alvo.innerText || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+    var partes = t.match(/[^.!?:]+[.!?:]*/g) || [t], vz = s.getVoices();
+    var v = vz.filter(function (x) { return /pt[-_]BR/i.test(x.lang); })[0] || vz.filter(function (x) { return /^pt/i.test(x.lang); })[0];
+    s.cancel(); falando = true; b.setAttribute('aria-pressed', 'true'); aviso('Lendo em voz alta. Toque em Ouvir de novo para parar.');
+    partes.forEach(function (p, i) {
+      var u = new SpeechSynthesisUtterance(p.trim()); u.lang = 'pt-BR'; if (v) u.voice = v;
+      if (i === partes.length - 1) u.onend = function () { falando = false; b.setAttribute('aria-pressed', 'false'); aviso(''); };
+      s.speak(u);
+    });
+  }
+  function libras() {
+    var ab = document.querySelector('[vw-access-button]');
+    if (window.VLibras && ab) { ab.click(); return; }
+    aviso('Abrindo o VLibras…');
+    var d = document.createElement('div'); d.setAttribute('vw', ''); d.className = 'enabled';
+    d.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+    document.body.appendChild(d);
+    var sc = document.createElement('script'); sc.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    sc.onload = function () { try { new window.VLibras.Widget('https://vlibras.gov.br/app');
+      setTimeout(function () { var b = document.querySelector('[vw-access-button]'); if (b) b.click(); aviso('Libras: o intérprete virtual aparece no canto da tela. Toque num texto para ele traduzir.'); }, 1500);
+    } catch (x) { aviso('Não foi possível abrir o VLibras aqui.'); } };
+    sc.onerror = function () { aviso('Não foi possível abrir o VLibras aqui. No site jogaviravoto ele funciona.'); };
+    document.head.appendChild(sc);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-a11y]'); if (!b) return; var k = b.getAttribute('data-a11y');
+    if (k === 'mais') zoom(1); else if (k === 'menos') zoom(-1); else if (k === 'ouvir') ouvir(b); else if (k === 'libras') libras(); else { st[k] = st[k] ? 0 : 1; aplica(); }
+  });
+  aplica();
+})();
+</script><script>
+(function () {
+  var CONT = 'https://jogaviravoto.brunochapadeiro.workers.dev/api/placar', D = null, base = {}, nota = '', seq = 0, ult = {};
+  var PUB = (function () { try { return location.protocol === 'file:' || (/^https?:$/.test(location.protocol) && !/claude|anthropic/.test(location.hostname)); } catch (x) { return false; } })();
+  var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
+  function fmt(n) { return (n || 0).toLocaleString('pt-BR'); }
+  function tot(k) { return D ? ((D.totais && D.totais[k]) || 0) + (base[k] || 0) : null; }
+  var NOME = { ver: function (n) { return n + ' acessos' + (base.acessos ? ' desde 15/10, com estimativa de 15 a 20/10' : '') + '. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
+    comentar: function (n) { return 'Comentar no Instagram. ' + n + ' vezes'; }, repostar: function (n) { return 'Repostar. ' + n + ' reposts'; },
+    compartilhar: function (n) { return 'Compartilhar no WhatsApp. ' + n + ' compartilhamentos'; } };
+  var CH = { ver: 'acessos', curtir: 'curtidas', comentar: 'comentarios', repostar: 'reposts', compartilhar: 'compartilhamentos' };
+  function prepara(el) {
+    if (!el.getAttribute('data-soc-id')) { seq += 1; var id = 'soc-p-' + seq + '-' + Math.random().toString(36).slice(2, 6); el.setAttribute('data-soc-id', id);
+      var p = el.querySelector('.soc-p'), b = el.querySelector('[data-soc="comentar"]'); if (p && b) { p.id = id; b.setAttribute('aria-controls', id); } }
+    el.querySelectorAll('[data-soc]').forEach(function (b) {
+      var k = b.getAttribute('data-soc'), n = tot(CH[k]), nb = b.querySelector('[data-soc-n]');
+      if (nb) nb.textContent = n === null ? '' : fmt(n);
+      var al = b.querySelector('.soc-al'); if (al) al.textContent = n === null ? '' : (n === 1 ? 'acesso' : 'acessos');
+      var nome = n === null ? { ver: 'Ver o placar de acessos', curtir: 'Curtir', comentar: 'Comentar no Instagram', repostar: 'Repostar', compartilhar: 'Compartilhar no WhatsApp' }[k] : NOME[k](fmt(n));
+      b.setAttribute('aria-label', nome);
+      if (k === 'curtir') b.setAttribute('aria-pressed', String(ja));
+    });
+  }
+  function pintaTudo() { document.querySelectorAll('.soc').forEach(prepara); }
+  function dados(d) { if (!d || !d.totais) return; D = d; base = d.base || {}; nota = d.base_nota || ''; pintaTudo(); }
+  function soma(k) { if (!D) return; D.totais = D.totais || {}; D.totais[k] = (D.totais[k] || 0) + 1; pintaTudo(); }
+  function envia(e) {
+    if (!PUB) return; var u = CONT + '?e=' + e;
+    try { if (navigator.sendBeacon && navigator.sendBeacon(u)) return; } catch (x) {}
+    try { fetch(u, { method: 'POST', mode: 'cors', keepalive: true }).catch(function () {}); } catch (x) {}
+  }
+  function conta(e) { var t = Date.now(); if (ult[e] && t - ult[e] < 15000) return; ult[e] = t; envia(e); soma(e); }
+  function st(el, t) { var s = el.querySelector('.soc-st'); if (s) s.textContent = t; }
+  window.vvSocial = { prepara: prepara, dados: dados, pinta: pintaTudo, nota: function () { return nota; } };
+  pintaTudo();
+  if (document.querySelector('.soc[data-conta-acesso]') && PUB) {
+    var a = false; try { a = sessionStorage.getItem('vv-acesso') === '1'; sessionStorage.setItem('vv-acesso', '1'); } catch (x) {}
+    if (!a) envia('acessos');
+  }
+  if (PUB && document.querySelector('.soc')) setTimeout(function () {
+    if (D) return;
+    try { fetch(CONT, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && !D) dados(d); }).catch(function () {}); } catch (x) {}
+  }, 700);
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-soc],[data-soc-com]'); if (!t) return;
+    var bar = t.closest('.soc'); if (!bar) return;
+    if (t.hasAttribute('data-soc-com')) { conta('comentarios'); return; }
+    var k = t.getAttribute('data-soc');
+    if (k === 'curtir') {
+      if (ja) { st(bar, 'Você já curtiu daqui. Obrigado!'); return; }
+      ja = true; try { localStorage.setItem(CK, '1'); } catch (x) {}
+      envia('curtidas'); soma('curtidas'); if (!D) pintaTudo(); st(bar, 'Curtido. Obrigado!');
+    } else if (k === 'comentar') {
+      var p = bar.querySelector('.soc-p'), ab = p.hidden; p.hidden = !ab; t.setAttribute('aria-expanded', String(ab));
+      if (ab) { var l = p.querySelector('a'); if (l) l.focus(); }
+    } else if (k === 'repostar') {
+      var tx = bar.getAttribute('data-soc-texto') || document.title, u = bar.getAttribute('data-soc-url') || location.href;
+      var copia = function () {
+        var ok = function () { conta('reposts'); st(bar, 'Link copiado. Cole no seu story, status ou post.'); };
+        try { navigator.clipboard.writeText(tx + ' ' + u).then(ok, function () { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }); }
+        catch (x) { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }
+      };
+      if (navigator.share) navigator.share({ title: document.title, text: tx, url: u }).then(function () { conta('reposts'); st(bar, 'Obrigado por repostar!'); },
+        function (er) { if (!(er && er.name === 'AbortError')) copia(); });
+      else copia();
+    } else if (k === 'compartilhar') { conta('compartilhamentos'); }
+  });
+})();
+</script>
+<script src="/vigia.js" defer></script>
+</body></html>

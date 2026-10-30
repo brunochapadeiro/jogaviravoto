@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dois jogos rápidos para jogar em grupo, no telão ou no papel, e no celular. Cada resposta tem a fonte.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Vigie a Democracia">
+<meta property="og:title" content="Jogos da praça: assédio eleitoral e saúde no trabalho"><meta property="og:description" content="Dois jogos rápidos para jogar em grupo, no telão ou no papel, e no celular. Cada resposta tem a fonte.">
+<meta property="og:url" content="https://jogaviravoto.brunochapadeiro.workers.dev/praca">
+<meta property="og:image" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-praca.png"><meta property="og:image:secure_url" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-praca.png"><meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Jogos da praça, de Prof. Bruno Chapadeiro">
+<meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="icone.svg" type="image/svg+xml">
+<title>Jogos da praça</title>
+<style>
+:root { --papel:#FBF8F1; --cartao:#FFFFFF; --tinta:#17191E; --suave:#4A4D57; --linha:#E2DCCF; --verm:#B3261E; --azul:#1F4E8C; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%2820%2C24%2C30%2C.045%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.045%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark } }
+:root[data-theme="dark"] { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.045%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Regular.woff2') format('woff2'); font-weight:400; }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Bold.woff2') format('woff2'); font-weight:700; }
+@font-face { font-family:'Lexend'; src:url('fontes/Lexend-var.woff2') format('woff2'); font-weight:100 900; }
+* { box-sizing:border-box; }
+body { margin:0; background-color:var(--papel); background-image:var(--marca); color:var(--tinta); font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-size:18px; line-height:1.55; }
+a { color:var(--azul); text-underline-offset:.18em; }
+:focus-visible { outline:4px solid var(--azul); outline-offset:3px; border-radius:4px; }
+.wrap { max-width:48rem; margin:0 auto; padding:20px max(16px, env(safe-area-inset-left, 0px)) 48px; display:flex; flex-direction:column; gap:18px; }
+.topo { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:space-between; }
+.placa { align-self:flex-start; margin:0; background:#FFE58F; color:#1B1B1F; font-family:'Lexend', sans-serif; font-weight:700; padding:4px 12px; border:2px solid #1B1B1F; transform:rotate(-1.5deg); }
+h1 { font-family:'Lexend', sans-serif; font-size:clamp(2rem, 7vw, 2.8rem); line-height:1.05; margin:0; } h1 span { color:var(--verm); }
+h2 { font-family:'Lexend', sans-serif; font-size:1.3rem; line-height:1.2; margin:0; }
+.sub { margin:0; font-size:1.06rem; }
+.caixa { background:var(--cartao); border:2px solid var(--linha); border-radius:16px; padding:14px 18px; }
+.caixa ul { margin:8px 0 0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+.rot { background:var(--cartao); border:2px solid var(--linha); border-radius:18px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; scroll-margin-top:12px; }
+.meta { margin:0; color:var(--suave); font-weight:700; font-size:.95rem; }
+.cena { margin:0; font-style:italic; }
+.fala { margin:0; padding-left:1.1em; display:flex; flex-direction:column; gap:6px; }
+.fala li.ind { list-style:none; margin-left:-1.1em; color:var(--suave); font-weight:700; font-size:.95rem; }
+.extra { margin:0; font-size:.95rem; overflow-wrap:anywhere; }
+.acoes { display:flex; flex-wrap:wrap; gap:10px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font:inherit; font-weight:700; min-height:48px; padding:6px 18px; border-radius:999px;
+       border:2px solid var(--tinta); background:transparent; color:var(--tinta); text-decoration:none; cursor:pointer; }
+.btn.forte { background:#B3261E; border-color:#B3261E; color:#fff; }
+.redes { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0; }
+.botao-ig { max-width:100%; display:inline-flex; align-items:center; gap:8px; min-height:46px; padding:6px 16px; border-radius:999px; background:var(--tinta); color:var(--papel); font-weight:700; text-decoration:none; }
+.selo { display:inline-flex; align-items:center; gap:6px; color:var(--suave); font-weight:700; text-decoration:none; font-size:.95rem; } .selo-ic { display:inline-flex; gap:2px; } .ic { width:1.2em; height:1.2em; }
+footer { font-size:.95rem; color:var(--suave); display:flex; flex-direction:column; gap:8px; }
+/* teleprompter */
+.tp { position:fixed; inset:0; z-index:50; background:#000; color:#fff; display:flex; flex-direction:column; }
+.tp[hidden] { display:none; }
+.tp-barra { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; padding:10px max(12px, env(safe-area-inset-left, 0px)); background:#111; border-bottom:2px solid #333; }
+.tp-barra button { font:inherit; font-weight:700; min-height:48px; min-width:48px; padding:4px 14px; border-radius:12px; border:2px solid #fff; background:#000; color:#fff; cursor:pointer; }
+.tp-barra button[aria-pressed="true"] { background:#FFE600; color:#000; border-color:#FFE600; }
+.tp-barra output { min-width:4.5em; text-align:center; font-weight:700; }
+.tp-tela { flex:1; overflow-y:auto; padding:40vh 7vw 70vh; scroll-behavior:auto; }
+.tp-tela.espelho { transform:scaleX(-1); }
+.tp-texto { margin:0 auto; max-width:30em; font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-weight:700; line-height:1.45; }
+.tp-texto p { margin:0 0 .9em; } .tp-texto .ind { color:#FFE600; font-size:.6em; font-weight:700; }
+.tp-guia { position:fixed; left:0; right:0; top:42%; height:0; border-top:3px solid rgba(255,230,0,.55); pointer-events:none; }
+.tp-conta { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; font-size:30vw; font-weight:700; pointer-events:none; }
+.tp-conta:empty { display:none; }
+@media print { .acoes, details.a11y, .tp, .curtir-box, .pular { display:none !important; } body { background:#fff; color:#000; } .rot { break-inside:avoid; } }
+@page { size:A4; margin:14mm; }
+.pular { position:absolute; left:-999px; } .pular:focus { left:16px; top:8px; background:var(--tinta); color:var(--papel); padding:8px 14px; z-index:9; }
+
+html.a11y-zoom body { zoom: var(--a11y-zoom); }
+footer p, footer a, .regras h2, .regras li { overflow-wrap: anywhere; }
+html.a11y-zoom .top { flex-wrap: wrap; row-gap: 6px; } html.a11y-zoom .xp { white-space: normal; }
+html.a11y-zoom .botao-ig, html.a11y-zoom .btn, html.a11y-zoom .redes a { max-width: 100%; white-space: normal; }
+details.a11y { margin: 0; font-size: 15px; }
+details.a11y > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px;
+  border-radius: 999px; border: 2px solid currentColor; font-weight: 700; }
+details.a11y > summary::-webkit-details-marker { display: none; }
+details.a11y > summary svg { width: 1.3em; height: 1.3em; }
+.a11y-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.a11y-bar button, .a11y-bar a { font: inherit; font-weight: 700; min-height: 44px; min-width: 44px; padding: 4px 12px; border-radius: 10px;
+  border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.a11y-bar button[aria-pressed="true"] { background: #1F4E8C; border-color: #1F4E8C; color: #fff; }
+.a11y-zl { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; }
+.a11y-aviso { flex-basis: 100%; margin: 0; font-size: 14px; }
+.a11y-aviso:empty { display: none; }
+html.a11y-contraste body, html.a11y-contraste body *:not(svg):not(svg *):not(i) { background-color: #000 !important; background-image: none !important;
+  color: #fff !important; border-color: #fff !important; text-shadow: none !important; box-shadow: none !important; }
+html.a11y-contraste a, html.a11y-contraste a * { color: #FFE600 !important; }
+html.a11y-contraste button, html.a11y-contraste .btn { border: 2px solid #fff !important; }
+html.a11y-contraste .a11y-bar button[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
+html.a11y-contraste :focus-visible { outline: 4px solid #FFE600 !important; outline-offset: 3px; }
+html.a11y-espaco body * { letter-spacing: .05em !important; word-spacing: .16em !important; line-height: 1.75 !important; }
+html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+.soc { margin: 0; }
+.soc-k { margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.soc-ac { margin: 0 0 2px; }
+.soc-a { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; min-height: 44px; padding: 2px 8px 2px 4px; border-radius: 12px; color: inherit; text-decoration: none; font-size: 16px; }
+.soc-a svg { width: 26px; height: 26px; flex: none; }
+.soc-a b { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; } .soc-a b:empty { display: none; }
+.soc-vp { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.soc-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(76px, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.soc-row > li { display: flex; min-width: 0; }
+.soc-i { flex: 1; min-width: 0; min-height: 58px; padding: 6px 2px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font: inherit; color: inherit; background: transparent; border: 0; border-radius: 12px; cursor: pointer; text-decoration: none; }
+.soc-i:hover, .soc-a:hover { background: rgba(128,128,128,.14); }
+.soc-i:focus-visible, .soc-a:focus-visible, .soc-b:focus-visible { outline: 3px solid #1F4E8C; outline-offset: 2px; }
+.soc-v { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2px 4px; }
+.soc-i svg { width: 24px; height: 24px; flex: none; }
+.soc-i b { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.soc-i b:empty { display: none; }
+.soc-l { font-size: 12.5px; line-height: 1.15; }
+.soc.grande .soc-a b { font-size: 24px; } .soc.grande .soc-a svg { width: 30px; height: 30px; }
+.soc-i[data-soc="curtir"][aria-pressed="true"] svg { fill: #E8173A; stroke: #E8173A; animation: soc-pop .35s ease-out; }
+@keyframes soc-pop { 0% { transform: scale(1); } 45% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .soc-i svg { animation: none !important; } }
+.soc-p { margin: 8px 0 0; padding: 10px 12px; border: 2px solid currentColor; border-radius: 12px; font-size: 15px; }
+.soc-p p { margin: 0; } .soc-bs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px !important; }
+.soc-b { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 14px; border-radius: 999px; border: 2px solid currentColor; color: inherit; font-weight: 700; text-decoration: none; }
+.soc-st { margin: 6px 0 0; font-size: 14px; overflow-wrap: anywhere; } .soc-st:empty { display: none; }
+@media print { .soc { display: none !important; } }
+
+main { display:flex; flex-direction:column; gap:18px; }
+#jogo { scroll-margin-top:8px; }
+.cartao { background:var(--cartao); border:3px solid var(--linha); border-radius:22px; padding:clamp(16px, 3vw, 36px); display:flex; flex-direction:column; gap:clamp(12px, 2vw, 22px); }
+.linha-top { display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; justify-content:space-between; font-weight:700; color:var(--suave); }
+.chip { display:inline-flex; align-items:center; gap:6px; font-weight:700; font-size:.9rem; letter-spacing:.03em; padding:4px 12px; border-radius:999px; color:#fff; }
+.frase { font-family:'Lexend', sans-serif; font-weight:700; font-size:clamp(1.35rem, 4.4vw, 2rem); line-height:1.22; margin:0; }
+.opcoes { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.opcoes button { font:inherit; font-family:'Lexend', sans-serif; font-weight:800; font-size:clamp(1.2rem, 4.5vw, 1.8rem); min-height:clamp(64px, 12vw, 110px);
+  border-radius:18px; border:4px solid currentColor; background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; }
+.opcoes .op-S, .opcoes .op-V { color:#1F7F73; } .opcoes .op-N, .opcoes .op-M { color:#9A5F0C; }
+.opcoes button[aria-pressed="true"] { color:#fff; } .opcoes .op-S[aria-pressed="true"], .opcoes .op-V[aria-pressed="true"] { background:#1F7F73; border-color:#1F7F73; }
+.opcoes .op-N[aria-pressed="true"], .opcoes .op-M[aria-pressed="true"] { background:#9A5F0C; border-color:#9A5F0C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .opcoes .op-S, :root:not([data-theme="light"]) .opcoes .op-V { color:#5FD3C2; }
+  :root:not([data-theme="light"]) .opcoes .op-N, :root:not([data-theme="light"]) .opcoes .op-M { color:#F0B05A; } }
+.veredito { font-family:'Lexend', sans-serif; font-weight:800; font-size:clamp(2rem, 9vw, 4.4rem); line-height:1; margin:0; padding:clamp(10px, 2vw, 22px) clamp(14px, 3vw, 28px);
+  border-radius:18px; color:#fff; display:flex; align-items:center; gap:14px; }
+.feed { font-weight:700; font-size:1.15rem; margin:0; }
+.expl { font-size:clamp(1.05rem, 2.6vw, 1.45rem); line-height:1.4; margin:0; }
+.fazer { margin:0; font-size:clamp(1rem, 2.2vw, 1.25rem); border-left:6px solid #FFE58F; padding:6px 0 6px 12px; }
+.fonte { margin:0; color:var(--suave); font-size:.95rem; }
+.barra { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+.barra .btn { min-height:52px; }
+.placar { display:flex; flex-wrap:wrap; gap:10px; align-items:stretch; }
+.time { flex:1 1 9rem; border:3px solid var(--linha); border-radius:16px; padding:8px 12px; display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.time b { font-family:'Lexend', sans-serif; font-size:clamp(1.6rem, 5vw, 2.6rem); font-variant-numeric:tabular-nums; }
+.time .nm { font-weight:700; overflow-wrap:anywhere; }
+.time button { font:inherit; font-weight:800; min-width:52px; min-height:52px; border-radius:12px; border:2px solid var(--tinta); background:transparent; color:var(--tinta); cursor:pointer; }
+.cron { font-family:'Lexend', sans-serif; font-weight:800; font-size:clamp(1.4rem, 4vw, 2.2rem); font-variant-numeric:tabular-nums; min-width:3.2em; text-align:center; }
+.cron.zero { color:#B3261E; }
+.dica { margin:0; color:var(--suave); font-size:.95rem; }
+.cfg { display:flex; flex-direction:column; gap:10px; }
+.cfg label { font-weight:700; display:flex; gap:10px; align-items:center; }
+.cfg input[type=text] { font:inherit; min-height:48px; padding:6px 10px; border-radius:12px; border:2px solid var(--linha); background:var(--cartao); color:var(--tinta); max-width:16rem; }
+.cfg input[type=checkbox] { width:26px; height:26px; }
+.nomes { display:flex; flex-wrap:wrap; gap:10px; }
+.roda-wrap { display:flex; flex-direction:column; align-items:center; gap:12px; }
+.roda { width:min(78vw, 58vh, 460px); height:auto; }
+.roda g.giro { transform-origin:200px 200px; transition:transform 2.6s cubic-bezier(.17,.67,.2,1); }
+html.a11y-parado .roda g.giro { transition:none; }
+@media (prefers-reduced-motion: reduce) { .roda g.giro { transition:none; } }
+.cats { display:grid; grid-template-columns:repeat(auto-fit, minmax(10rem, 1fr)); gap:8px; width:100%; }
+.cats button { font:inherit; font-size:clamp(1rem, 1.6vw, 1.4rem); font-weight:700; min-height:52px; border-radius:12px; border:3px solid; background:transparent; color:var(--tinta); cursor:pointer; text-align:left; padding:6px 10px; }
+.canais { display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
+.canais div { border:2px solid var(--linha); border-radius:14px; padding:10px 12px; } .canais b { display:block; } .canais p { margin:4px 0 0; }
+.sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+/* telão */
+html.telao .wrap { max-width:none; padding:clamp(10px, 2vw, 28px); min-height:100vh; }
+html.telao .topo, html.telao details.a11y, html.telao footer, html.telao .so-fora, html.telao .placa, html.telao h1, html.telao .sub-pag { display:none !important; }
+html.telao .cartao { min-height:calc(100vh - 40px); justify-content:center; }
+html.telao .frase { font-size:clamp(2rem, 4.6vw, 4.6rem); }
+html.telao .expl { font-size:clamp(1.3rem, 2.4vw, 2.3rem); }
+html.telao .fazer { font-size:clamp(1.2rem, 2vw, 1.9rem); }
+html.telao .roda { width:min(42vh, 440px); } html.telao .res-roda { font-size:clamp(1.4rem, 2.6vw, 2.6rem); } html.telao .cartao { gap:clamp(8px, 1.4vh, 18px); }
+.so-telao { display:none; } html.telao .so-telao { display:block; }
+footer a, main li a { overflow-wrap:anywhere; }
+</style>
+<link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#17191E"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Vigie">
+</head><body>
+<div class="wrap">
+  <a class="pular" href="#jogos">Pular para os jogos</a>
+  <div class="topo"><a href="https://jogaviravoto.brunochapadeiro.workers.dev/">← Vigie a Democracia</a><p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p></div>
+  <details class="a11y"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5M12 15l-3.5 6M12 15l3.5 6"/></svg>Acessibilidade</summary><div class="a11y-bar" role="group" aria-label="Opções de acessibilidade"><button type="button" data-a11y="menos" aria-label="Diminuir a letra">A−</button><span class="a11y-zl" id="a11y-zl" aria-live="polite">100%</span><button type="button" data-a11y="mais" aria-label="Aumentar a letra">A+</button><button type="button" data-a11y="c" aria-pressed="false">Contraste</button><button type="button" data-a11y="e" aria-pressed="false">Espaçamento</button><button type="button" data-a11y="m" aria-pressed="false">Sem movimento</button><button type="button" data-a11y="ouvir" aria-pressed="false">Ouvir</button><button type="button" data-a11y="libras">Libras</button><a href="https://jogaviravoto.brunochapadeiro.workers.dev/acessibilidade">Ajuda</a><p class="a11y-aviso" id="a11y-aviso" aria-live="polite"></p></div></details>
+  <p class="placa">UFF NAS PRAÇAS · 31/10</p>
+  <h1>Jogos da <span>praça</span></h1>
+  <p class="sub">Dois jogos rápidos para jogar em grupo, no telão ou no papel, e sozinho no celular: assédio eleitoral e saúde no trabalho. Cada resposta tem a fonte.</p>
+  <main data-a11y-ler id="jogos">
+  <div class="caixa"><h2>Pode ou não pode?</h2><p class="sub" style="margin-top:4px">Assédio eleitoral no trabalho. Situações reais de trabalho na época da eleição. Em cada uma, diga se pode ou não pode. A resposta vem com o que diz a lei e o que fazer.</p>
+      <p class="acoes" style="margin-top:10px"><a class="btn forte" href="pode-ou-nao">Jogar</a><a class="btn" href="arquivos/Kit_pode_ou_nao.pdf" download>Kit para imprimir (PDF)</a></p></div><div class="caixa"><h2>Roleta da saúde no trabalho</h2><p class="sub" style="margin-top:4px">Mito ou verdade? Gire a roleta, tire uma carta e diga se é mito ou verdade. Cada resposta traz o que diz a lei ou a pesquisa e onde buscar ajuda.</p>
+      <p class="acoes" style="margin-top:10px"><a class="btn forte" href="roleta-saude">Jogar</a><a class="btn" href="arquivos/Kit_roleta_saude.pdf" download>Kit para imprimir (PDF)</a></p></div>
+  <section class="caixa" aria-labelledby="cm-t"><h2 id="cm-t">Como jogar ao vivo</h2><ul>
+    <li><b>No telão:</b> abra o jogo, toque em “Jogar no telão” e leia cada carta em voz alta. O público vota com as placas ou levantando a mão; aperte Espaço para revelar e de novo para passar. As teclas 1 e 2 dão ponto aos times.</li>
+    <li><b>No papel:</b> imprima o kit. Quem apresenta lê a frente da carta, o público vota com as placas e a resposta está no verso. Na roleta, gire um clipe preso por um lápis no centro ou jogue um dado.</li>
+    <li><b>No celular:</b> cada pessoa aponta a câmera para o QR do cartaz e joga sozinha.</li>
+    <li><b>Cuidado:</b> ninguém precisa contar em quem votou nem falar da própria saúde. Se alguém relatar um caso, acolha e mostre os canais no fim do jogo.</li></ul>
+    <p class="acoes" style="margin-top:10px"><a class="btn" href="arquivos/Cartaz_Jogos_da_praca.pdf" download>Cartaz com QR (PDF)</a></p></section>
+  </main>
+  <footer>
+    <div class="soc" data-conta-acesso data-soc-texto="Jogos da praça: assédio eleitoral e saúde no trabalho, com fonte em cada resposta." data-soc-url="https://jogaviravoto.brunochapadeiro.workers.dev/praca"><p class="soc-ac"><a class="soc-a" data-soc="ver" href="https://jogaviravoto.brunochapadeiro.workers.dev/#placar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1.6 12S5.4 4.8 12 4.8 22.4 12 22.4 12 18.6 19.2 12 19.2 1.6 12 1.6 12z"/><circle cx="12" cy="12" r="3.3"/></svg><b data-soc-n="acessos"></b><span class="soc-al"></span><span class="soc-vp">Ver o placar</span></a></p><ul class="soc-row" role="list"><li><button type="button" class="soc-i" data-soc="curtir" aria-pressed="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.6s-7.7-4.7-9.7-9.4C.8 7.7 3 4 6.8 4c2.2 0 3.8 1.2 5.2 3 1.4-1.8 3-3 5.2-3 3.8 0 6 3.7 4.5 7.2-2 4.7-9.7 9.4-9.7 9.4z"/></svg><b data-soc-n="curtidas"></b></span><span class="soc-l">curtir</span></button></li><li><button type="button" class="soc-i" data-soc="comentar" aria-expanded="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 16.9A9.2 9.2 0 1 0 17 20.4l4.6 1.2z"/></svg><b data-soc-n="comentarios"></b></span><span class="soc-l">comentar</span></button></li><li><button type="button" class="soc-i" data-soc="repostar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 2.5l3.5 3.5-3.5 3.5"/><path d="M3.5 11.5V9.6A3.6 3.6 0 0 1 7.1 6h13.4"/><path d="M7 21.5L3.5 18 7 14.5"/><path d="M20.5 12.5v1.9a3.6 3.6 0 0 1-3.6 3.6H3.5"/></svg><b data-soc-n="reposts"></b></span><span class="soc-l">repostar</span></button></li><li><a href="https://wa.me/?text=Jogos%20da%20pra%C3%A7a%3A%20ass%C3%A9dio%20eleitoral%20e%20sa%C3%BAde%20no%20trabalho%2C%20com%20fonte%20em%20cada%20resposta.%20https%3A%2F%2Fjogaviravoto.brunochapadeiro.workers.dev%2Fpraca" target="_blank" rel="noopener" class="soc-i" data-soc="compartilhar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.8 2.6L10.3 13.4"/><path d="M21.8 2.6l-6.9 18.8-4.6-8L2.2 9.2z"/></svg><b data-soc-n="compartilhamentos"></b></span><span class="soc-l">compartilhar</span></a></li></ul><div class="soc-p" hidden><p>Os comentários ficam no Instagram do Prof. Bruno Chapadeiro: lá cada pessoa assina o que escreve, e tem moderação.</p><p class="soc-bs"><a class="soc-b" data-soc-com href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener">Comentar no Instagram</a><a class="soc-b" data-soc-com href="https://ig.me/m/brunochapadeiro" target="_blank" rel="noopener">Mandar mensagem direta</a></p></div><p class="soc-st" aria-live="polite"></p></div>
+    <p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p>
+    <p>© 2026 Prof. Bruno Chapadeiro. Licença Creative Commons CC BY-NC-SA 4.0. Feito com auxílio de IA (Claude).</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var H = document.documentElement, K = 'vv-a11y', st = { z: 1, c: 0, e: 0, m: 0 }, Z = [0.9, 1, 1.15, 1.3, 1.5], CONT = 'https://jogaviravoto.brunochapadeiro.workers.dev/api/placar';
+  try { var g = JSON.parse(localStorage.getItem(K) || '{}'); for (var k in g) st[k] = g[k]; } catch (x) {}
+  function aviso(t) { var a = document.getElementById('a11y-aviso'); if (a) a.textContent = t; }
+  function aplica() {
+    H.style.setProperty('--a11y-zoom', st.z); H.classList.toggle('a11y-zoom', st.z !== 1); H.classList.toggle('a11y-contraste', !!st.c); H.classList.toggle('a11y-espaco', !!st.e); H.classList.toggle('a11y-parado', !!st.m);
+    document.querySelectorAll('[data-a11y="c"],[data-a11y="e"],[data-a11y="m"]').forEach(function (b) { b.setAttribute('aria-pressed', String(!!st[b.getAttribute('data-a11y')])); });
+    var zl = document.getElementById('a11y-zl'); if (zl) zl.textContent = Math.round(st.z * 100) + '%';
+    try { localStorage.setItem(K, JSON.stringify(st)); } catch (x) {}
+  }
+  function zoom(d) { var i = Z.indexOf(st.z); if (i < 0) i = 1; st.z = Z[Math.max(0, Math.min(Z.length - 1, i + d))]; aplica(); }
+  var falando = false;
+  function ouvir(b) {
+    var s = window.speechSynthesis;
+    if (!s || !window.SpeechSynthesisUtterance) { aviso('Este navegador não lê em voz alta. Use o leitor de tela do celular (TalkBack ou VoiceOver).'); return; }
+    if (falando) { s.cancel(); falando = false; b.setAttribute('aria-pressed', 'false'); return; }
+    var alvo = document.querySelector('[data-a11y-ler]') || document.querySelector('main') || document.body;
+    var t = (alvo.innerText || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+    var partes = t.match(/[^.!?:]+[.!?:]*/g) || [t], vz = s.getVoices();
+    var v = vz.filter(function (x) { return /pt[-_]BR/i.test(x.lang); })[0] || vz.filter(function (x) { return /^pt/i.test(x.lang); })[0];
+    s.cancel(); falando = true; b.setAttribute('aria-pressed', 'true'); aviso('Lendo em voz alta. Toque em Ouvir de novo para parar.');
+    partes.forEach(function (p, i) {
+      var u = new SpeechSynthesisUtterance(p.trim()); u.lang = 'pt-BR'; if (v) u.voice = v;
+      if (i === partes.length - 1) u.onend = function () { falando = false; b.setAttribute('aria-pressed', 'false'); aviso(''); };
+      s.speak(u);
+    });
+  }
+  function libras() {
+    var ab = document.querySelector('[vw-access-button]');
+    if (window.VLibras && ab) { ab.click(); return; }
+    aviso('Abrindo o VLibras…');
+    var d = document.createElement('div'); d.setAttribute('vw', ''); d.className = 'enabled';
+    d.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+    document.body.appendChild(d);
+    var sc = document.createElement('script'); sc.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    sc.onload = function () { try { new window.VLibras.Widget('https://vlibras.gov.br/app');
+      setTimeout(function () { var b = document.querySelector('[vw-access-button]'); if (b) b.click(); aviso('Libras: o intérprete virtual aparece no canto da tela. Toque num texto para ele traduzir.'); }, 1500);
+    } catch (x) { aviso('Não foi possível abrir o VLibras aqui.'); } };
+    sc.onerror = function () { aviso('Não foi possível abrir o VLibras aqui. No site jogaviravoto ele funciona.'); };
+    document.head.appendChild(sc);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-a11y]'); if (!b) return; var k = b.getAttribute('data-a11y');
+    if (k === 'mais') zoom(1); else if (k === 'menos') zoom(-1); else if (k === 'ouvir') ouvir(b); else if (k === 'libras') libras(); else { st[k] = st[k] ? 0 : 1; aplica(); }
+  });
+  aplica();
+})();
+</script><script>
+(function () {
+  var CONT = 'https://jogaviravoto.brunochapadeiro.workers.dev/api/placar', D = null, base = {}, nota = '', seq = 0, ult = {};
+  var PUB = (function () { try { return location.protocol === 'file:' || (/^https?:$/.test(location.protocol) && !/claude|anthropic/.test(location.hostname)); } catch (x) { return false; } })();
+  var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
+  function fmt(n) { return (n || 0).toLocaleString('pt-BR'); }
+  function tot(k) { return D ? ((D.totais && D.totais[k]) || 0) + (base[k] || 0) : null; }
+  var NOME = { ver: function (n) { return n + ' acessos' + (base.acessos ? ' desde 15/10, com estimativa de 15 a 20/10' : '') + '. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
+    comentar: function (n) { return 'Comentar no Instagram. ' + n + ' vezes'; }, repostar: function (n) { return 'Repostar. ' + n + ' reposts'; },
+    compartilhar: function (n) { return 'Compartilhar no WhatsApp. ' + n + ' compartilhamentos'; } };
+  var CH = { ver: 'acessos', curtir: 'curtidas', comentar: 'comentarios', repostar: 'reposts', compartilhar: 'compartilhamentos' };
+  function prepara(el) {
+    if (!el.getAttribute('data-soc-id')) { seq += 1; var id = 'soc-p-' + seq + '-' + Math.random().toString(36).slice(2, 6); el.setAttribute('data-soc-id', id);
+      var p = el.querySelector('.soc-p'), b = el.querySelector('[data-soc="comentar"]'); if (p && b) { p.id = id; b.setAttribute('aria-controls', id); } }
+    el.querySelectorAll('[data-soc]').forEach(function (b) {
+      var k = b.getAttribute('data-soc'), n = tot(CH[k]), nb = b.querySelector('[data-soc-n]');
+      if (nb) nb.textContent = n === null ? '' : fmt(n);
+      var al = b.querySelector('.soc-al'); if (al) al.textContent = n === null ? '' : (n === 1 ? 'acesso' : 'acessos');
+      var nome = n === null ? { ver: 'Ver o placar de acessos', curtir: 'Curtir', comentar: 'Comentar no Instagram', repostar: 'Repostar', compartilhar: 'Compartilhar no WhatsApp' }[k] : NOME[k](fmt(n));
+      b.setAttribute('aria-label', nome);
+      if (k === 'curtir') b.setAttribute('aria-pressed', String(ja));
+    });
+  }
+  function pintaTudo() { document.querySelectorAll('.soc').forEach(prepara); }
+  function dados(d) { if (!d || !d.totais) return; D = d; base = d.base || {}; nota = d.base_nota || ''; pintaTudo(); }
+  function soma(k) { if (!D) return; D.totais = D.totais || {}; D.totais[k] = (D.totais[k] || 0) + 1; pintaTudo(); }
+  function envia(e) {
+    if (!PUB) return; var u = CONT + '?e=' + e;
+    try { if (navigator.sendBeacon && navigator.sendBeacon(u)) return; } catch (x) {}
+    try { fetch(u, { method: 'POST', mode: 'cors', keepalive: true }).catch(function () {}); } catch (x) {}
+  }
+  function conta(e) { var t = Date.now(); if (ult[e] && t - ult[e] < 15000) return; ult[e] = t; envia(e); soma(e); }
+  function st(el, t) { var s = el.querySelector('.soc-st'); if (s) s.textContent = t; }
+  window.vvSocial = { prepara: prepara, dados: dados, pinta: pintaTudo, nota: function () { return nota; } };
+  pintaTudo();
+  if (document.querySelector('.soc[data-conta-acesso]') && PUB) {
+    var a = false; try { a = sessionStorage.getItem('vv-acesso') === '1'; sessionStorage.setItem('vv-acesso', '1'); } catch (x) {}
+    if (!a) envia('acessos');
+  }
+  if (PUB && document.querySelector('.soc')) setTimeout(function () {
+    if (D) return;
+    try { fetch(CONT, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && !D) dados(d); }).catch(function () {}); } catch (x) {}
+  }, 700);
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-soc],[data-soc-com]'); if (!t) return;
+    var bar = t.closest('.soc'); if (!bar) return;
+    if (t.hasAttribute('data-soc-com')) { conta('comentarios'); return; }
+    var k = t.getAttribute('data-soc');
+    if (k === 'curtir') {
+      if (ja) { st(bar, 'Você já curtiu daqui. Obrigado!'); return; }
+      ja = true; try { localStorage.setItem(CK, '1'); } catch (x) {}
+      envia('curtidas'); soma('curtidas'); if (!D) pintaTudo(); st(bar, 'Curtido. Obrigado!');
+    } else if (k === 'comentar') {
+      var p = bar.querySelector('.soc-p'), ab = p.hidden; p.hidden = !ab; t.setAttribute('aria-expanded', String(ab));
+      if (ab) { var l = p.querySelector('a'); if (l) l.focus(); }
+    } else if (k === 'repostar') {
+      var tx = bar.getAttribute('data-soc-texto') || document.title, u = bar.getAttribute('data-soc-url') || location.href;
+      var copia = function () {
+        var ok = function () { conta('reposts'); st(bar, 'Link copiado. Cole no seu story, status ou post.'); };
+        try { navigator.clipboard.writeText(tx + ' ' + u).then(ok, function () { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }); }
+        catch (x) { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }
+      };
+      if (navigator.share) navigator.share({ title: document.title, text: tx, url: u }).then(function () { conta('reposts'); st(bar, 'Obrigado por repostar!'); },
+        function (er) { if (!(er && er.name === 'AbortError')) copia(); });
+      else copia();
+    } else if (k === 'compartilhar') { conta('compartilhamentos'); }
+  });
+})();
+</script>
+<script src="/vigia.js" defer data-nav></script>
+</body></html>
