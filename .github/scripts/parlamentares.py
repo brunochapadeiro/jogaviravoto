@@ -251,7 +251,7 @@ def senado(anos):
             if not meu:
                 continue
             n += 1
-            if meu[0] in CODS_PRESENTE:
+            if meu[0] in CODS_PRESENTE or meu[0].startswith("Presidente"):
                 pres += 1
             elif meu[0] != "NCom":
                 just += 1
@@ -339,14 +339,16 @@ def main():
     (sai / "votacoes.json").write_text(json.dumps(resumo, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     cod = {"Sim": "S", "Não": "N", "Abstenção": "A", "Obstrução": "O", "Artigo 17": "P", "Presidente": "P", "P-NRV": "R", "NCom": "F"}
-    vv = {}
+    vv, brutos = {}, Counter()
     for casa, votos in (("C", cvotos), ("S", svotos)):
         for k, d in votos.items():
             if (casa == "C" and k in cv) or (casa == "S" and k in sv):
-                vv[f"{casa}:{k}"] = {pid: [cod.get(x[0], "J"), x[1]] for pid, x in d.items()}
+                vv[f"{casa}:{k}"] = {pid: ["P" if x[0].startswith("Presidente") else cod.get(x[0], "J"), x[1]] for pid, x in d.items()}
+                if casa == "S":
+                    brutos.update(x[0] for x in d.values())
     (sai / "votos.json").write_text(json.dumps(vv, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     meta = dict(gerado=dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), anos=anos, deputados=len(deps), senadores=len(sens),
-                votacoes_camara=len(cv), votacoes_senado=len(sv), lider_governo_senado=lider,
+                votacoes_camara=len(cv), votacoes_senado=len(sv), lider_governo_senado=lider, codigos_senado=dict(brutos.most_common()),
                 fontes=["https://dadosabertos.camara.leg.br", "https://www.camara.leg.br/cotas", "https://legis.senado.leg.br/dadosabertos",
                         "https://www.senado.leg.br/transparencia/LAI/verba"])
     (sai / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
