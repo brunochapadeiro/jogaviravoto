@@ -1,0 +1,6 @@
+200 77178 https://vigieademocracia.brunochapadeiro.workers.dev/
+200 56599 https://vigieademocracia.brunochapadeiro.workers.dev/vota-como-voce
+200 102449 https://vigieademocracia.brunochapadeiro.workers.dev/denuncie
+200 887 https://vigieademocracia.brunochapadeiro.workers.dev/api/placar
+200 1834 https://vigieademocracia.brunochapadeiro.workers.dev/sw.js
+200 1377 https://vigieademocracia.brunochapadeiro.workers.dev/manifest.webmanifest
