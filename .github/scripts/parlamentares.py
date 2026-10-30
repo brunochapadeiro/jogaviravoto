@@ -19,9 +19,10 @@ csv.field_size_limit(10**8)
 
 
 def baixa(url, tentativas=4, timeout=300):
+    hdr = dict(UA) if "/dadosabertos" in url else {"User-Agent": UA["User-Agent"], "Accept": "*/*"}
     for i in range(tentativas):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=hdr), timeout=timeout) as r:
                 return r.read()
         except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.IncompleteRead, http.client.HTTPException) as e:
             if i == tentativas - 1:
