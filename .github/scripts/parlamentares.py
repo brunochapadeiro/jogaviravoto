@@ -281,8 +281,17 @@ def main():
     o = a.parse_args()
     anos = [int(x) for x in o.anos.split(",")]
     sai = Path(o.saida); sai.mkdir(parents=True, exist_ok=True)
-    deps, cv, cvotos = camara(anos)
-    sens, sv, svotos, lider = senado(anos)
+    import traceback
+    try:
+        deps, cv, cvotos = camara(anos)
+    except Exception:
+        traceback.print_exc(); deps, cv, cvotos = {}, {}, {}
+        (sai / "_erro_camara.txt").write_text(traceback.format_exc(), encoding="utf-8")
+    try:
+        sens, sv, svotos, lider = senado(anos)
+    except Exception:
+        traceback.print_exc(); sens, sv, svotos, lider = {}, {}, {}, None
+        (sai / "_erro_senado.txt").write_text(traceback.format_exc(), encoding="utf-8")
 
     pars = []
     for p in list(deps.values()) + list(sens.values()):
