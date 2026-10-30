@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 290, in main
+    raise RuntimeError("Câmara pulada (--casas)")
+RuntimeError: Câmara pulada (--casas)

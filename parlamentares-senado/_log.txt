@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 290, in main
+    raise RuntimeError("Câmara pulada (--casas)")
+RuntimeError: Câmara pulada (--casas)
+senadores com exercício na legislatura: 107
+senado 2023 141
+senado 2024 236
+senado 2025 364
+senado 2026 426
+FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2023.csv HTTP Error 406: Not Acceptable
+FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2024.csv HTTP Error 406: Not Acceptable
+FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2025.csv HTTP Error 406: Not Acceptable
+FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2026.csv HTTP Error 406: Not Acceptable
