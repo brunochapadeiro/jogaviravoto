@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 290, in main
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 291, in main
     raise RuntimeError("Câmara pulada (--casas)")
 RuntimeError: Câmara pulada (--casas)
 senadores com exercício na legislatura: 107
@@ -7,7 +7,8 @@ senado 2023 141
 senado 2024 236
 senado 2025 364
 senado 2026 426
-FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2023.csv HTTP Error 406: Not Acceptable
-FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2024.csv HTTP Error 406: Not Acceptable
-FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2025.csv HTTP Error 406: Not Acceptable
-FALHOU https://www.senado.leg.br/transparencia/LAI/verba/despesa_ceaps_2026.csv HTTP Error 406: Not Acceptable
+ceaps 2023
+ceaps 2024
+ceaps 2025
+ceaps 2026
+CEAPS sem correspondência: [('WEVERTON ROCHA', 905), ('SAMUEL ARAUJO', 49), ('DARIO BERGER', 25), ('JOSE SERRA', 25), ('NILDA GONDIM', 17), ('ELMANO FERRER', 16), ('FERNANDO BEZERRA COELHO', 14), ('TELMARIO MOTA', 13), ('JEAN PAUL PRATES', 11), ('PAULO ROCHA', 11), ('LASIER MARTINS', 10), ('BISPO JOSE', 9), ('ACIR GURGACZ', 7), ('FERNANDO COLLOR', 6), ('ROSE DE FREITAS', 6)]
