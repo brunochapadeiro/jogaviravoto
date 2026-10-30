@@ -1,0 +1,8 @@
+200 74 https://registro.br/v2/ajax/avail/raw/vigieademocracia.com.br
+200 74 https://registro.br/v2/ajax/avail/raw/vigieademocracia.org.br
+200 74 https://registro.br/v2/ajax/avail/raw/vigieademocracia.ong.br
+200 74 https://registro.br/v2/ajax/avail/raw/vigieademocracia.net.br
+200 63 https://registro.br/v2/ajax/avail/raw/vigie.org.br
+404 2938 https://rdap.org/domain/vigieademocracia.org
+404 0 https://rdap.org/domain/vigieademocracia.com
+404 0 https://rdap.org/domain/vigieademocracia.net
