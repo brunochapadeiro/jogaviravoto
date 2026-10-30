@@ -1,6 +1,6 @@
 /* Vigie a Democracia: guarda as páginas já abertas para funcionar sem internet. Não guarda nada pessoal.
    © 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0 · Feito com auxílio de IA. */
-const V = 'vigie-eec70cb162';
+const V = 'vigie-e346d948c2';
 const PRE = ["/", "/offline", "/denuncie", "/vota-como-voce", "/parlamentares", "/dados/vota-como-voce.json", "/dados/parlamentares.json", "/vigia.js", "/vigie.css", "/icone.svg", "/icone-192.png", "/fontes/AtkinsonHyperlegible-Regular.woff2", "/fontes/AtkinsonHyperlegible-Bold.woff2", "/fontes/Lexend-var.woff2"];
 const GRANDE = /\.(pdf|mp4|mp3|zip)$/i;
 self.addEventListener('install', e => {
