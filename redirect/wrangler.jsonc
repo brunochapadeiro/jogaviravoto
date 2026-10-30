@@ -1,0 +1,12 @@
+{
+  // Endereço antigo: jogaviravoto.brunochapadeiro.workers.dev. Só redireciona para o mesmo caminho no endereço novo,
+  // para os QR codes e links já impressos e compartilhados continuarem funcionando. Não guarda nada.
+  // No painel do Cloudflare: Workers e Pages > Criar > Importar um repositório > brunochapadeiro/jogaviravoto,
+  // nome "jogaviravoto" e comando de deploy: npx wrangler deploy --config redirect/wrangler.jsonc
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "jogaviravoto",
+  "main": "index.js",
+  "compatibility_date": "2025-09-01",
+  "vars": { "NOVO_ENDERECO": "https://vigieademocracia.brunochapadeiro.workers.dev" },
+  "observability": { "enabled": true }
+}
