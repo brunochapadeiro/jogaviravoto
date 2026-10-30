@@ -1,5 +1,5 @@
 {
- "gerado": "2026-10-30T16:10:28+00:00",
+ "gerado": "2026-10-30T16:12:59+00:00",
  "anos": [
   2023,
   2024,
@@ -11,6 +11,20 @@
  "votacoes_camara": 0,
  "votacoes_senado": 186,
  "lider_governo_senado": "581",
+ "codigos_senado": {
+  "Sim": 9548,
+  "Não": 2596,
+  "P-NRV": 1062,
+  "AP": 986,
+  "LS": 314,
+  "MIS": 223,
+  "Presidente (art. 51 RISF)": 186,
+  "NCom": 79,
+  "Abstenção": 33,
+  "LP": 32,
+  "NA": 6,
+  "LAP": 1
+ },
  "fontes": [
   "https://dadosabertos.camara.leg.br",
   "https://www.camara.leg.br/cotas",
