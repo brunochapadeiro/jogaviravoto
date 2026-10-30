@@ -1,0 +1,94 @@
+câmara 2023 votações do plenário: 1086
+câmara 2024 votações do plenário: 2144
+câmara 2025 votações do plenário: 2041
+câmara 2026 votações do plenário: 1396
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados?idLegislatura=57&itens=100&pagina=2&ordem=ASC&ordenarPor=nome HTTP Error 504: Gateway Timeout
+deputados: 645
+histórico 0
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/160527 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204549 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/73579 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220676 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/123756 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/141391 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/160665 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/69871 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/109429 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220683 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/74052 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/143942 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220548 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204572 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204476 HTTP Error 504: Gateway Timeout
+histórico 100
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220595 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220561 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220583 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220652 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/221339 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220610 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204518 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220570 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204481 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204351 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220528 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204412 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220674 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/204541 HTTP Error 504: Gateway Timeout
+histórico 200
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/141470 HTTP Error 504: Gateway Timeout
+histórico 300
+histórico 400
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/74283 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/220601 HTTP Error 504: Gateway Timeout
+histórico 500
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/115200 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/228042 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/229225 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/230762 HTTP Error 504: Gateway Timeout
+histórico 600
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/233218 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/233598 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/77003 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/234840 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/235776 HTTP Error 504: Gateway Timeout
+FALHOU https://dadosabertos.camara.leg.br/api/v2/deputados/236518 HTTP Error 504: Gateway Timeout
+ceap câmara 2023
+ceap câmara 2024
+ceap câmara 2025
+ceap câmara 2026
+senadores com exercício na legislatura: 107
+senado 2023 141
+senado 2024 236
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/http/client.py", line 600, in _read_chunked
+    while (chunk_left := self._get_chunk_left()) is not None:
+                         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 582, in _get_chunk_left
+    self._safe_read(2)  # toss the CRLF at the end of the chunk
+    ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 650, in _safe_read
+    raise IncompleteRead(data, amt - len(data))
+http.client.IncompleteRead: IncompleteRead(0 bytes read, 2 more expected)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 291, in main
+    sens, sv, svotos, lider = senado(anos)
+                              ^^^^^^^^^^^^
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 218, in senado
+    d = js(f"{SEN}/votacao?dataInicio={a}&dataFim={b}") or []
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 34, in js
+    b = baixa(url, timeout=90)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 25, in baixa
+    return r.read()
+           ^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 478, in read
+    return self._read_chunked(amt)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/client.py", line 612, in _read_chunked
+    raise IncompleteRead(b''.join(value)) from exc
+http.client.IncompleteRead: IncompleteRead(1744698 bytes read)

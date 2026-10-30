@@ -1,0 +1,20 @@
+{
+ "gerado": "2026-10-30T13:12:38+00:00",
+ "anos": [
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "deputados": 645,
+ "senadores": 0,
+ "votacoes_camara": 1128,
+ "votacoes_senado": 0,
+ "lider_governo_senado": null,
+ "fontes": [
+  "https://dadosabertos.camara.leg.br",
+  "https://www.camara.leg.br/cotas",
+  "https://legis.senado.leg.br/dadosabertos",
+  "https://www.senado.leg.br/transparencia/LAI/verba"
+ ]
+}
