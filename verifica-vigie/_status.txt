@@ -1,0 +1,14 @@
+200 77214 https://jogaviravoto.brunochapadeiro.workers.dev/
+200 279082 https://jogaviravoto.brunochapadeiro.workers.dev/jogos
+200 56077 https://jogaviravoto.brunochapadeiro.workers.dev/vota-como-voce
+200 52095 https://jogaviravoto.brunochapadeiro.workers.dev/parlamentares
+200 62813 https://jogaviravoto.brunochapadeiro.workers.dev/dados/vota-como-voce.json
+200 497950 https://jogaviravoto.brunochapadeiro.workers.dev/dados/parlamentares.json
+200 1377 https://jogaviravoto.brunochapadeiro.workers.dev/manifest.webmanifest
+200 1834 https://jogaviravoto.brunochapadeiro.workers.dev/sw.js
+200 3995 https://jogaviravoto.brunochapadeiro.workers.dev/vigia.js
+200 21052 https://jogaviravoto.brunochapadeiro.workers.dev/icone-512.png
+200 13430 https://jogaviravoto.brunochapadeiro.workers.dev/offline
+200 92242 https://jogaviravoto.brunochapadeiro.workers.dev/denuncie
+200 107412 https://jogaviravoto.brunochapadeiro.workers.dev/og-vigie.png
+404 6972 https://jogaviravoto.brunochapadeiro.workers.dev/naoexiste
