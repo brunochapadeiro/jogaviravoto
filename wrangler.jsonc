@@ -1,5 +1,6 @@
 {
-  // Site dos Games Vira-Voto: o nome precisa ser igual ao do Worker no painel do Cloudflare.
+  // Vigie a Democracia (antigo Games Vira-Voto), endereço jogaviravoto: o nome precisa ser igual ao do Worker no painel do Cloudflare.
+  // O mesmo site também sai no endereço novo pelo Worker "vigieademocracia" (configuração em vigie/wrangler.jsonc).
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "jogaviravoto",
   "main": "src/index.js",

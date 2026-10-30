@@ -1,0 +1,20 @@
+{
+  // Vigie a Democracia no endereço novo: o mesmo site (public/) e o mesmo placar do Worker "jogaviravoto".
+  // No painel do Cloudflare: Workers e Pages > Criar > Importar um repositório > brunochapadeiro/jogaviravoto,
+  // nome "vigieademocracia" e comando de deploy: npx wrangler deploy --config vigie/wrangler.jsonc
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "vigieademocracia",
+  "main": "../src/index.js",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "../public",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  // o placar (acessos, curtidas, compartilhamentos) continua guardado no Worker antigo: os números são os mesmos nos dois endereços
+  "durable_objects": {
+    "bindings": [{ "name": "PLACAR", "class_name": "Placar", "script_name": "jogaviravoto" }]
+  },
+  "observability": { "enabled": true }
+}

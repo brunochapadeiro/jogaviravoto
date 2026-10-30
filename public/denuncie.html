@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Todos os canais oficiais para denunciar assédio eleitoral no trabalho, com link e QR code. Pode ser anônimo.">
-<meta property="og:type" content="website"><meta property="og:site_name" content="Games Vira-Voto">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Vigie a Democracia">
 <meta property="og:title" content="Onde denunciar assédio eleitoral"><meta property="og:description" content="Todos os canais oficiais para denunciar assédio eleitoral no trabalho, com link e QR code. Pode ser anônimo.">
 <meta property="og:url" content="https://jogaviravoto.brunochapadeiro.workers.dev/denuncie">
 <meta property="og:image" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-denuncie.png"><meta property="og:image:secure_url" content="https://jogaviravoto.brunochapadeiro.workers.dev/og-denuncie.png"><meta property="og:image:type" content="image/png">
@@ -127,6 +127,7 @@ main { display:flex; flex-direction:column; gap:18px; }
 @media (max-width: 420px) { .canal { grid-template-columns:1fr; } .canal .qr { grid-row:auto; grid-column:1; width:120px; height:120px; } }
 footer a, main li a { overflow-wrap:anywhere; }
 </style>
+<link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#17191E"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Vigie">
 </head><body>
 <div class="wrap">
   <a class="pular" href="#canais">Pular para o conteúdo</a>
@@ -296,4 +297,5 @@ footer a, main li a { overflow-wrap:anywhere; }
   });
 })();
 </script>
+<script src="/vigia.js" defer data-nav></script>
 </body></html>

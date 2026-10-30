@@ -1,0 +1,73 @@
+{
+ "id": "/",
+ "name": "Vigie a Democracia",
+ "short_name": "Vigie",
+ "description": "Fatos com fonte, os votos do Congresso, canais de denúncia e jogos para acompanhar a política o ano inteiro. De graça e sem cadastro.",
+ "lang": "pt-BR",
+ "dir": "ltr",
+ "start_url": "/?origem=app",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#FBF8F1",
+ "theme_color": "#17191E",
+ "categories": [
+  "news",
+  "education",
+  "politics"
+ ],
+ "icons": [
+  {
+   "src": "/icone-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icone-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/icone-mascara-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Quem vota como você?",
+   "short_name": "Teste",
+   "url": "/vota-como-voce",
+   "icons": [
+    {
+     "src": "/icone-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "A ficha de cada parlamentar",
+   "short_name": "Fichas",
+   "url": "/parlamentares",
+   "icons": [
+    {
+     "src": "/icone-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "Onde denunciar assédio eleitoral",
+   "short_name": "Denunciar",
+   "url": "/denuncie",
+   "icons": [
+    {
+     "src": "/icone-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
+ ]
+}

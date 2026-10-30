@@ -2,7 +2,7 @@
   "name": "jogaviravoto",
   "private": true,
   "version": "1.0.0",
-  "description": "Games Vira-Voto: site e placar público (Cloudflare Worker)",
+  "description": "Vigie a Democracia: site, app e placar público (Cloudflare Worker)",
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev"

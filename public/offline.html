@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sem internet · Vigie a Democracia</title>
+<style>
+:root { --papel:#FBF8F1; --cartao:#FFFFFF; --tinta:#17191E; --suave:#4A4D57; --linha:#E2DCCF; --verm:#B3261E; --azul:#1F4E8C; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%2820%2C24%2C30%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark } }
+:root[data-theme="dark"] { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Regular.woff2') format('woff2'); font-weight:400; }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Bold.woff2') format('woff2'); font-weight:700; }
+@font-face { font-family:'Lexend'; src:url('fontes/Lexend-var.woff2') format('woff2'); font-weight:100 900; }
+* { box-sizing:border-box; }
+body { margin:0; background-color:var(--papel); background-image:var(--marca); color:var(--tinta); font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-size:18px; line-height:1.55; }
+a { color:var(--azul); text-underline-offset:.18em; }
+:focus-visible { outline:4px solid var(--azul); outline-offset:3px; border-radius:4px; }
+.wrap { max-width:48rem; margin:0 auto; padding:20px max(16px, env(safe-area-inset-left, 0px)) 48px; display:flex; flex-direction:column; gap:18px; }
+.topo { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:space-between; }
+.placa { align-self:flex-start; margin:0; background:#FFE58F; color:#1B1B1F; font-family:'Lexend', sans-serif; font-weight:700; padding:4px 12px; border:2px solid #1B1B1F; transform:rotate(-1.5deg); }
+h1 { font-family:'Lexend', sans-serif; font-size:clamp(2rem, 7vw, 2.8rem); line-height:1.05; margin:0; } h1 span { color:var(--verm); }
+h2 { font-family:'Lexend', sans-serif; font-size:1.3rem; line-height:1.2; margin:0; }
+.sub { margin:0; font-size:1.06rem; }
+.caixa { background:var(--cartao); border:2px solid var(--linha); border-radius:16px; padding:14px 18px; }
+.caixa ul { margin:8px 0 0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+.rot { background:var(--cartao); border:2px solid var(--linha); border-radius:18px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; scroll-margin-top:12px; }
+.meta { margin:0; color:var(--suave); font-weight:700; font-size:.95rem; }
+.cena { margin:0; font-style:italic; }
+.fala { margin:0; padding-left:1.1em; display:flex; flex-direction:column; gap:6px; }
+.fala li.ind { list-style:none; margin-left:-1.1em; color:var(--suave); font-weight:700; font-size:.95rem; }
+.extra { margin:0; font-size:.95rem; overflow-wrap:anywhere; }
+.acoes { display:flex; flex-wrap:wrap; gap:10px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font:inherit; font-weight:700; min-height:48px; padding:6px 18px; border-radius:999px;
+       border:2px solid var(--tinta); background:transparent; color:var(--tinta); text-decoration:none; cursor:pointer; }
+.btn.forte { background:#B3261E; border-color:#B3261E; color:#fff; }
+.redes { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0; }
+.botao-ig { max-width:100%; display:inline-flex; align-items:center; gap:8px; min-height:46px; padding:6px 16px; border-radius:999px; background:var(--tinta); color:var(--papel); font-weight:700; text-decoration:none; }
+.selo { display:inline-flex; align-items:center; gap:6px; color:var(--suave); font-weight:700; text-decoration:none; font-size:.95rem; } .selo-ic { display:inline-flex; gap:2px; } .ic { width:1.2em; height:1.2em; }
+footer { font-size:.95rem; color:var(--suave); display:flex; flex-direction:column; gap:8px; }
+/* teleprompter */
+.tp { position:fixed; inset:0; z-index:50; background:#000; color:#fff; display:flex; flex-direction:column; }
+.tp[hidden] { display:none; }
+.tp-barra { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; padding:10px max(12px, env(safe-area-inset-left, 0px)); background:#111; border-bottom:2px solid #333; }
+.tp-barra button { font:inherit; font-weight:700; min-height:48px; min-width:48px; padding:4px 14px; border-radius:12px; border:2px solid #fff; background:#000; color:#fff; cursor:pointer; }
+.tp-barra button[aria-pressed="true"] { background:#FFE600; color:#000; border-color:#FFE600; }
+.tp-barra output { min-width:4.5em; text-align:center; font-weight:700; }
+.tp-tela { flex:1; overflow-y:auto; padding:40vh 7vw 70vh; scroll-behavior:auto; }
+.tp-tela.espelho { transform:scaleX(-1); }
+.tp-texto { margin:0 auto; max-width:30em; font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-weight:700; line-height:1.45; }
+.tp-texto p { margin:0 0 .9em; } .tp-texto .ind { color:#FFE600; font-size:.6em; font-weight:700; }
+.tp-guia { position:fixed; left:0; right:0; top:42%; height:0; border-top:3px solid rgba(255,230,0,.55); pointer-events:none; }
+.tp-conta { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; font-size:30vw; font-weight:700; pointer-events:none; }
+.tp-conta:empty { display:none; }
+@media print { .acoes, details.a11y, .tp, .curtir-box, .pular { display:none !important; } body { background:#fff; color:#000; } .rot { break-inside:avoid; } }
+@page { size:A4; margin:14mm; }
+.pular { position:absolute; left:-999px; } .pular:focus { left:16px; top:8px; background:var(--tinta); color:var(--papel); padding:8px 14px; z-index:9; }
+
+html.a11y-zoom body { zoom: var(--a11y-zoom); }
+footer p, footer a, .regras h2, .regras li { overflow-wrap: anywhere; }
+html.a11y-zoom .top { flex-wrap: wrap; row-gap: 6px; } html.a11y-zoom .xp { white-space: normal; }
+html.a11y-zoom .botao-ig, html.a11y-zoom .btn, html.a11y-zoom .redes a { max-width: 100%; white-space: normal; }
+details.a11y { margin: 0; font-size: 15px; }
+details.a11y > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px;
+  border-radius: 999px; border: 2px solid currentColor; font-weight: 700; }
+details.a11y > summary::-webkit-details-marker { display: none; }
+details.a11y > summary svg { width: 1.3em; height: 1.3em; }
+.a11y-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.a11y-bar button, .a11y-bar a { font: inherit; font-weight: 700; min-height: 44px; min-width: 44px; padding: 4px 12px; border-radius: 10px;
+  border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.a11y-bar button[aria-pressed="true"] { background: #1F4E8C; border-color: #1F4E8C; color: #fff; }
+.a11y-zl { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; }
+.a11y-aviso { flex-basis: 100%; margin: 0; font-size: 14px; }
+.a11y-aviso:empty { display: none; }
+html.a11y-contraste body, html.a11y-contraste body *:not(svg):not(svg *):not(i) { background-color: #000 !important; background-image: none !important;
+  color: #fff !important; border-color: #fff !important; text-shadow: none !important; box-shadow: none !important; }
+html.a11y-contraste a, html.a11y-contraste a * { color: #FFE600 !important; }
+html.a11y-contraste button, html.a11y-contraste .btn { border: 2px solid #fff !important; }
+html.a11y-contraste .a11y-bar button[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
+html.a11y-contraste :focus-visible { outline: 4px solid #FFE600 !important; outline-offset: 3px; }
+html.a11y-espaco body * { letter-spacing: .05em !important; word-spacing: .16em !important; line-height: 1.75 !important; }
+html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+.soc { margin: 0; }
+.soc-k { margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.soc-ac { margin: 0 0 2px; }
+.soc-a { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; min-height: 44px; padding: 2px 8px 2px 4px; border-radius: 12px; color: inherit; text-decoration: none; font-size: 16px; }
+.soc-a svg { width: 26px; height: 26px; flex: none; }
+.soc-a b { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; } .soc-a b:empty { display: none; }
+.soc-vp { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.soc-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(76px, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.soc-row > li { display: flex; min-width: 0; }
+.soc-i { flex: 1; min-width: 0; min-height: 58px; padding: 6px 2px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font: inherit; color: inherit; background: transparent; border: 0; border-radius: 12px; cursor: pointer; text-decoration: none; }
+.soc-i:hover, .soc-a:hover { background: rgba(128,128,128,.14); }
+.soc-i:focus-visible, .soc-a:focus-visible, .soc-b:focus-visible { outline: 3px solid #1F4E8C; outline-offset: 2px; }
+.soc-v { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2px 4px; }
+.soc-i svg { width: 24px; height: 24px; flex: none; }
+.soc-i b { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.soc-i b:empty { display: none; }
+.soc-l { font-size: 12.5px; line-height: 1.15; }
+.soc.grande .soc-a b { font-size: 24px; } .soc.grande .soc-a svg { width: 30px; height: 30px; }
+.soc-i[data-soc="curtir"][aria-pressed="true"] svg { fill: #E8173A; stroke: #E8173A; animation: soc-pop .35s ease-out; }
+@keyframes soc-pop { 0% { transform: scale(1); } 45% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .soc-i svg { animation: none !important; } }
+.soc-p { margin: 8px 0 0; padding: 10px 12px; border: 2px solid currentColor; border-radius: 12px; font-size: 15px; }
+.soc-p p { margin: 0; } .soc-bs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px !important; }
+.soc-b { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 14px; border-radius: 999px; border: 2px solid currentColor; color: inherit; font-weight: 700; text-decoration: none; }
+.soc-st { margin: 6px 0 0; font-size: 14px; overflow-wrap: anywhere; } .soc-st:empty { display: none; }
+@media print { .soc { display: none !important; } }
+.wrap { max-width:36rem; } .olho { width:64px; height:64px; }</style>
+<link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#17191E"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Vigie">
+</head><body><div class="wrap"><main>
+<svg class="olho" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#17191E"/><g class="palp"><path d="M7 32 Q32 8 57 32 Q32 56 7 32 Z" fill="#FBF8F1"/><circle cx="32" cy="32" r="10.5" fill="#FFE58F" stroke="#17191E" stroke-width="3"/><circle cx="32" cy="32" r="4.6" fill="#17191E"/></g></svg>
+<h1>Sem internet agora</h1>
+<p class="sub">Esta página ainda não foi guardada no aparelho. As que você já abriu continuam funcionando:</p>
+<p class="acoes"><a class="btn" href="/">Início</a><a class="btn" href="/denuncie">Onde denunciar</a><a class="btn" href="/vota-como-voce">Quem vota como você?</a><a class="btn" href="/parlamentares">Fichas</a></p>
+<p>Quando a conexão voltar, recarregue a página.</p>
+<p class="sub" style="font-size:.95rem">© 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0 · @brunochapadeiro</p>
+</main></div><script src="/vigia.js" defer></script>
+</body></html>

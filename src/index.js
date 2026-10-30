@@ -1,4 +1,5 @@
-// Site dos Games Vira-Voto (Cloudflare Worker com arquivos estáticos em public/) + placar público.
+// Vigie a Democracia, antigo Games Vira-Voto (Cloudflare Worker com arquivos estáticos em public/) + placar público.
+// O mesmo código roda em dois Workers: jogaviravoto (endereço antigo, guarda o placar) e vigieademocracia (endereço novo).
 // O placar conta acessos, curtidas, comentários (toques em Comentar no Instagram), reposts, compartilhamentos, partidas,
 // pessoas atendidas e leituras da Cartilha, da Apostila e do Guia.
 // Não guarda IP, nome nem cookie: só números. Fica num Durable Object com SQLite, que já vem no plano grátis
@@ -46,7 +47,7 @@ function origemOk(req) {
   const o = req.headers.get('Origin');
   if (!o || o === 'null') return true;
   try {
-    return /viravoto|brunochapadeiro/.test(new URL(o).hostname);
+    return /viravoto|vigie|brunochapadeiro/.test(new URL(o).hostname);
   } catch (e) {
     return false;
   }
@@ -166,6 +167,12 @@ export default {
     const url = new URL(req.url);
     if (url.pathname === '/api/placar' || url.pathname === '/api/placar/') return placar(req, env);
     if (url.pathname === '/api/apuracao' || url.pathname === '/api/apuracao/') return apuracao(req, env);
+    // Mudança de endereço: com NOVO_ENDERECO definido (e "run_worker_first" ligado) no Worker antigo, as páginas do endereço antigo
+    // levam ao mesmo caminho no novo. Assim os QR codes já impressos continuam funcionando. O placar (/api) responde nos dois.
+    if (env.NOVO_ENDERECO && (req.method === 'GET' || req.method === 'HEAD')) {
+      const novo = new URL(env.NOVO_ENDERECO);
+      if (url.hostname !== novo.hostname) return Response.redirect(novo.origin + url.pathname + url.search + url.hash, 301);
+    }
     // tudo o mais: os arquivos do site (páginas, PDFs, áudios, imagens)
     return env.ASSETS.fetch(req);
   },
