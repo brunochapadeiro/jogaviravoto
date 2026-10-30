@@ -1,5 +1,5 @@
 Traceback (most recent call last):
-  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 291, in main
+  File "/home/runner/work/jogaviravoto/jogaviravoto/.github/scripts/parlamentares.py", line 316, in main
     raise RuntimeError("Câmara pulada (--casas)")
 RuntimeError: Câmara pulada (--casas)
 senadores com exercício na legislatura: 107
@@ -11,4 +11,4 @@ ceaps 2023
 ceaps 2024
 ceaps 2025
 ceaps 2026
-CEAPS sem correspondência: [('WEVERTON ROCHA', 905), ('SAMUEL ARAUJO', 49), ('DARIO BERGER', 25), ('JOSE SERRA', 25), ('NILDA GONDIM', 17), ('ELMANO FERRER', 16), ('FERNANDO BEZERRA COELHO', 14), ('TELMARIO MOTA', 13), ('JEAN PAUL PRATES', 11), ('PAULO ROCHA', 11), ('LASIER MARTINS', 10), ('BISPO JOSE', 9), ('ACIR GURGACZ', 7), ('FERNANDO COLLOR', 6), ('ROSE DE FREITAS', 6)]
+CEAPS sem correspondência: [('DARIO BERGER', 25), ('JOSE SERRA', 25), ('NILDA GONDIM', 17), ('ELMANO FERRER', 16), ('FERNANDO BEZERRA COELHO', 14), ('TELMARIO MOTA', 13), ('JEAN PAUL PRATES', 11), ('PAULO ROCHA', 11), ('LASIER MARTINS', 10), ('BISPO JOSE', 9), ('ACIR GURGACZ', 7), ('FERNANDO COLLOR', 6), ('ROSE DE FREITAS', 6), ('KATIA ABREU', 5), ('TASSO JEREISSATI', 4)]
