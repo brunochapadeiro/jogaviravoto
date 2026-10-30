@@ -4,6 +4,10 @@
   var slug = location.pathname.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '') || 'inicio';
   try { var v = JSON.parse(localStorage.getItem('vigie-visitas') || '{}'); if (!v[slug]) { v[slug] = new Date(Date.now() - 3 * 36e5).toISOString().slice(0, 10); localStorage.setItem('vigie-visitas', JSON.stringify(v)); } } catch (e) {}
   if ('serviceWorker' in navigator && location.protocol === 'https:') addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+  // menu Acessibilidade do topo: fecha com Esc (o foco volta para o botão) e com um toque fora dele
+  document.addEventListener('keydown', function (e) { if (e.key !== 'Escape') return; var d = document.querySelector('.vg-topo details.a11y[open]');
+    if (d) { d.open = false; var sm = d.querySelector('summary'); if (sm) sm.focus(); } });
+  document.addEventListener('click', function (e) { var d = document.querySelector('.vg-topo details.a11y[open]'); if (d && !d.contains(e.target)) d.open = false; });
   if (document.querySelector('.vg-nav')) { var bd = function () { document.body.classList.add('vg-com-nav'); }; if (document.body) bd(); else addEventListener('DOMContentLoaded', bd); return; }
   var s = document.currentScript; if (!s || !s.hasAttribute('data-nav') || document.querySelector('nav.baixo')) return;
   var MAPA = {"vota-como-voce": "congresso", "parlamentares": "congresso", "semana": "congresso", "congresso": "congresso", "familia": "fatos", "boato": "fatos", "roleta": "fatos", "checagem": "fatos", "quemdisse": "fatos", "roleta-saude": "trabalho", "pode-ou-nao": "trabalho", "6x1": "trabalho", "ir": "trabalho", "programas": "trabalho", "denuncie": "denuncia", "assedio": "denuncia", "praca": "jogos", "jogos": "jogos", "quiz": "jogos", "show": "jogos", "baralho": "jogos"}, atual = MAPA[slug] || (slug === 'denuncie' ? 'denuncia' : '');
