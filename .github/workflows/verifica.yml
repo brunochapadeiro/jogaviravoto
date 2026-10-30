@@ -1,0 +1,29 @@
+# Confere endereços do site: código HTTP, redirecionamento e conteúdo (só leitura; o resultado aparece nas anotações da execução).
+name: Verificar endereços
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Endereços separados por espaço"
+        required: true
+      procurar:
+        description: "Texto a procurar no conteúdo final (opcional)"
+        required: false
+        default: ""
+permissions:
+  contents: read
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir
+        env:
+          URLS: ${{ inputs.urls }}
+          PROC: ${{ inputs.procurar }}
+        run: |
+          for U in $URLS; do
+            R=$(curl -sS -o /dev/null --max-time 30 -w "%{http_code} -> %{redirect_url}" "$U" || echo erro)
+            F=$(curl -sS -L --max-time 30 -o /tmp/p -w "%{http_code} %{url_effective}" "$U" || echo erro)
+            N=""; [ -n "$PROC" ] && N=" | '$PROC': $(grep -o "$PROC" /tmp/p | wc -l)"
+            echo "::notice title=$U::$R | final $F$N"
+          done
