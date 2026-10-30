@@ -8,8 +8,8 @@ Funciona como aplicativo (PWA): `manifest.webmanifest`, `sw.js` e `vigia.js` em 
 
 - `public/`: o site (páginas, PDFs, áudios, imagens). É gerado automaticamente; não edite à mão.
 - `src/index.js`: o placar público (um Durable Object com SQLite, sem nenhum banco para configurar).
-- `wrangler.jsonc`: configuração padrão do site e do placar; com o nome `jogaviravoto`, redireciona as páginas para o endereço novo.
-- `vigie/wrangler.jsonc`: o Worker `vigieademocracia`, para quem usa `--config vigie/wrangler.jsonc`.
+- `wrangler.jsonc`: o Worker `vigieademocracia` (o antigo `jogaviravoto`, renomeado): o site e o placar.
+- `vigie/wrangler.jsonc`: cópia da configuração acima.
 - `redirect/`: o Worker `jogaviravoto` (endereço antigo), que só redireciona para o endereço novo.
 
 Cada envio para a branch `main` publica o site sozinho: pelo Cloudflare Workers Builds (repositório conectado no painel) ou, como plano B manual, pelo GitHub Actions (`.github/workflows/publicar.yml`).

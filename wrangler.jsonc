@@ -1,19 +1,15 @@
 {
-  // Endereço antigo (jogaviravoto): o nome precisa ser igual ao do Worker no painel do Cloudflare.
-  // Este Worker guarda o placar e manda as páginas para o endereço novo, no mesmo caminho (os QR codes já impressos continuam valendo).
-  // O site em si sai pelo Worker "vigieademocracia" (configuração em vigie/wrangler.jsonc).
+  // Vigie a Democracia: o Worker "vigieademocracia" (o antigo "jogaviravoto", renomeado) serve o site e guarda o placar. O nome precisa ser igual ao do painel.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "jogaviravoto",
+  "name": "vigieademocracia",
   "main": "src/index.js",
   "compatibility_date": "2025-09-01",
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page",
-    "run_worker_first": true
+    "not_found_handling": "404-page"
   },
-  "vars": { "NOVO_ENDERECO": "https://vigieademocracia.brunochapadeiro.workers.dev/" },
   "durable_objects": {
     "bindings": [{ "name": "PLACAR", "class_name": "Placar" }]
   },
