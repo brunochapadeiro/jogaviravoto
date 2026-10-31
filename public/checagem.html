@@ -190,6 +190,21 @@ html.so-cards .cds-h, html.so-cards .baixar-cds, html.so-cards .cds-nota { displ
 .cd-tb { width:100%; border-collapse:collapse; font-size:4.6cqw; } .cd-tb th, .cd-tb td { text-align:left; padding:1.6cqw 1cqw; border-bottom:1px solid rgba(255,255,255,.16); }
 .cd-tb thead th { font-size:3.6cqw; color:#C9D1DB; } .cd-tb td { font-family:'Lexend', sans-serif; font-weight:700; }
 html.feed .cd-tb { font-size:4cqw; } html.feed .cd-tb th, html.feed .cd-tb td { padding:1.1cqw 1cqw; }
+
+.quando { display:grid; grid-template-columns:auto minmax(0,1fr); gap:6px 12px; margin:10px 0 0; }
+.quando dt { font-weight:700; } .quando dd { margin:0; min-width:0; overflow-wrap:anywhere; }
+html.a11y-zoom .quando { grid-template-columns:minmax(0,1fr); } html.a11y-zoom .quando dd { margin-bottom:6px; }
+.temas { display:flex; flex-direction:column; gap:12px; }
+.tema { background:var(--cartao); border:2px solid var(--linha); border-radius:16px; padding:12px 14px; display:flex; flex-direction:column; gap:8px; scroll-margin-top:64px; }
+.tema-cab { display:grid; grid-template-columns:auto minmax(0,1fr); gap:10px; align-items:center; }
+.tema-cab h3 { margin:0; font-family:'Lexend', sans-serif; font-size:1.12rem; line-height:1.2; }
+.tic { width:1.8rem; height:1.8rem; color:var(--azul); }
+.ancora { margin:0; font-weight:700; }
+.tema details > summary { cursor:pointer; font-weight:700; color:var(--azul); min-height:44px; display:flex; align-items:center; }
+.fatos { margin:4px 0 8px; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+.perg, .resp, .nao-d, .mais { margin:6px 0 0; } .nao-d { color:var(--suave); } .mais a { font-weight:700; }
+.lista { margin:8px 0 0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+@media print { .tema details { display:block; } }
 </style>
 <link rel="stylesheet" href="/vigie.css"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#17191E"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Vigie">
 </head><body>
@@ -198,7 +213,7 @@ html.feed .cd-tb { font-size:4cqw; } html.feed .cd-tb th, html.feed .cd-tb td { 
   <header class="vg-topo" id="topo"><a class="vg-marca" href="/" aria-label="Vigie a Democracia, página inicial"><svg class="olho" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#17191E"/><g class="palp"><path d="M7 32 Q32 8 57 32 Q32 56 7 32 Z" fill="#FBF8F1"/><circle cx="32" cy="32" r="10.5" fill="#FFE58F" stroke="#17191E" stroke-width="3"/><circle cx="32" cy="32" r="4.6" fill="#17191E"/></g></svg><span>Vigie a Democracia</span></a><nav class="vg-nav" aria-label="Seções do site"><ul><li><a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></svg><span>Início</span></a></li><li><a href="/#congresso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18M4 10h16M12 3 4 7h16zM6 10v8M10 10v8M14 10v8M18 10v8M4 18h16"/></svg><span>Congresso</span></a></li><li><a href="/#fatos" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 11.5 11.2 14 15.5 9"/><circle cx="12" cy="12" r="9"/></svg><span>Fatos</span></a></li><li><a href="/denuncie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V4M4 4h12l-2 4 2 4H4"/></svg><span>Denunciar</span></a></li><li><a href="/#jogos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4M15.5 11.5h.01M18 13.5h.01"/></svg><span>Jogar</span></a></li></ul></nav><div class="vg-acoes"><details class="a11y"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5M12 15l-3.5 6M12 15l3.5 6"/></svg><span class="vg-rot">Acessibilidade</span></summary><div class="a11y-bar" role="group" aria-label="Opções de acessibilidade"><button type="button" data-a11y="menos" aria-label="Diminuir a letra">A−</button><span class="a11y-zl" id="a11y-zl" aria-live="polite">100%</span><button type="button" data-a11y="mais" aria-label="Aumentar a letra">A+</button><button type="button" data-a11y="c" aria-pressed="false">Contraste</button><button type="button" data-a11y="e" aria-pressed="false">Espaçamento</button><button type="button" data-a11y="m" aria-pressed="false">Sem movimento</button><button type="button" data-a11y="ouvir" aria-pressed="false">Ouvir</button><button type="button" data-a11y="libras">Libras</button><a href="https://vigieademocracia.brunochapadeiro.workers.dev/acessibilidade">Ajuda</a><p class="a11y-aviso" id="a11y-aviso" aria-live="polite"></p></div></details><a class="vg-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener" aria-label="Siga @brunochapadeiro no Instagram" title="Siga @brunochapadeiro no Instagram"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></div></header>
   <p class="placa">DEBATE DA GLOBO · 23/10</p>
   <h1>O que as agências <span>checaram</span></h1>
-  <p class="sub">86 checagens de 4 agências profissionais, cada uma com o link. Atualizado em 24/10/2026, 8h30. Lupa e Estadão Verifica já fecharam a lista; Aos Fatos e g1 seguem atualizando.</p>
+  <p class="sub">O último debate do 2º turno, em 23/10/2026: 86 checagens de 4 agências profissionais, cada uma com o link, e os temas do debate com fonte. Checagens atualizadas em 24/10/2026, 8h30.</p>
   <ul class="chips" aria-label="Agências"><li>Agência Lupa</li><li>Estadão Verifica</li><li>Aos Fatos</li><li>g1 Fato ou Fake</li></ul>
   <main data-a11y-ler>
   <section class="caixa" aria-labelledby="ct-t" id="cenario"><h2 id="ct-t">Cenário total: a média das agências</h2>
@@ -224,7 +239,161 @@ html.feed .cd-tb { font-size:4cqw; } html.feed .cd-tb th, html.feed .cd-tb td { 
   <section class="caixa" aria-labelledby="fm-t"><h2 id="fm-t">E o flaviomentiu.com.br?</h2><p style="margin:8px 0 0">flaviomentiu.com.br, do perfil Lula Memes: diz contar 31 mentiras de Flávio no debate; na página dava para ver 18 (5 “mentira” e 13 “mentira parcial”). Mistura frases da entrevista de 16/10, não checa as falas de Lula e às vezes discorda da própria agência que cita. É militância: fica fora da média. <a href="https://flaviomentiu.com.br" target="_blank" rel="noopener">Ver o site</a>.</p></section>
   <section class="caixa" aria-labelledby="fo-t"><h2 id="fo-t">O que ficou de fora, e por quê</h2><ul class="fora"><li><b>Sites e perfis de militância.</b> flaviomentiu.com.br (Lula Memes), ICL Notícias e Revista Fórum: apresentadores ou linha ligados a uma campanha.</li><li><b>Placares feitos por IA.</b> Ferramentas automáticas, como a Checagem Ao Vivo, divulgaram placares sem a lista de frases para conferir.</li><li><b>Cards e posts sem a lista de frases.</b> Cards com porcentagem de acerto, como o do Verifique os Fatos, e posts de Instagram que não trazem as frases checadas.</li><li><b>Listas sem a agência.</b> Listas que trazem o selo, mas não dizem qual agência checou.</li></ul>
     <p class="sub" style="margin-top:8px;font-size:.95rem">UOL Confere, Folha, Agência Pública, USP, FENAJ e Rede Nacional de Combate à Desinformação: nada publicado em texto que desse para conferir até a manhã de 24/10.</p></section>
-  <section class="so-cards-alvo" aria-labelledby="cd-t"><h2 id="cd-t" class="cds-h">Cards para repostar</h2>
+  <section class="caixa" aria-labelledby="q-t" id="como-foi"><h2 id="q-t">Como foi o debate</h2>
+    <dl class="quando"><dt>Quando</dt><dd>Sexta, 23/10/2026, às 21h20 (horário de Brasília), logo depois do Jornal Nacional.</dd>
+      <dt>Onde</dt><dd>TV Globo, GloboNews e g1. Inteiro no Globoplay e no g1.</dd>
+      <dt>Quem mediou</dt><dd>César Tralli.</dd>
+      <dt>Blocos</dt><dd>1. As cinco regiões do país. 2. Temas: cada candidato escolheu 6 de uma lista de 10 da Globo, como SUS e escola em tempo integral. 3. Tema livre e considerações finais.</dd></dl>
+    <p class="sub" style="margin-top:8px;font-size:.95rem">Fontes: <a href="https://www.poder360.com.br/poder-eleicoes-2026/saiba-quais-serao-as-regras-do-debate-da-globo/" target="_blank" rel="noopener">Poder360 (regras)</a> e <a href="https://bpmoney.com.br/politica/debate-2-turno-lula-flavio-bolsonaro-tv-globo-sexta-23/" target="_blank" rel="noopener">BP Money (horário)</a>. Pesquisas da véspera: <a href="https://vigieademocracia.brunochapadeiro.workers.dev/pesquisas">Pesquisas do 2º turno</a>.</p></section>
+  <section aria-labelledby="temas-t" id="temas"><h2 id="temas-t">Os temas do debate, com fonte</h2>
+    <p class="sub" style="font-size:.98rem;margin:4px 0 10px">O que estava em jogo em cada tema, com os fatos da <a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila">Apostila Vira-Voto</a> e a fonte de cada um.</p>
+    <div class="temas"><article class="tema" id="t-sigilo" data-tema="sigilo">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><h3 id="h-sigilo">Sigilo e caso Master</h3>
+    </div>
+  <p class="ancora">Quem pede voto explica de onde vem o dinheiro. Lula aceitou as condições de Flávio e entregou as autorizações; Flávio ainda não entregou.</p>
+  <details data-det="sigilo"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Em 20/10, Lula protocolou no TSE a autorização para abrir os sigilos bancário, fiscal e telefônico dos últimos 8 anos, dele e da família, se Flávio fizer o mesmo (<a href="https://sbtnews.sbt.com.br/noticia/politica/lula-protocola-quebra-de-sigilo-bancario-e-telefonico-no-tse" target="_blank" rel="noopener">SBT News</a>).</li><li>Flávio respondeu com 19 condições, como abrir dados de ex-assessores de Lula e do Instituto Lula. Em 21/10, a campanha de Lula aceitou todas (<a href="https://www.congressoemfoco.com.br/noticia/123489/campanha-diz-que-lula-aceita-exigencias-de-flavio-para-quebrar-sigilo" target="_blank" rel="noopener">Congresso em Foco</a>).</li><li>Em 22/10, a campanha de Lula entregou ao TSE as autorizações; a de Flávio disse que só entrega depois de analisar os documentos de Lula, sem prazo (<a href="https://mais.opovo.com.br/jornal/politica/2026/10/23/campanhas-de-lula-e-flavio-bolsonaro-concordam-em-abrir-sigilos-ainda-nesta-quinta-feira.html" target="_blank" rel="noopener">O Povo, 23/10</a>).</li><li>O ministro André Mendonça, do TSE, disse que cada um pode abrir os próprios dados quando quiser, e que isso não substitui investigação (<a href="https://www.cnnbrasil.com.br/blogs/teo-cury/eleicoes/tse-lula-e-flavio-podem-abrir-sigilos-por-conta-propria-diz-mendonca/" target="_blank" rel="noopener">CNN Brasil, 22/10</a>).</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Se o acordo foi fechado, o que falta para abrir?”</p>
+    <p class="resp"><b>Se disserem:</b> “Isso é perseguição.”<br><b>Responda:</b> “Então fica fácil: abre as contas, como o Lula autorizou. Quem não deve não teme.”</p>
+    <p class="nao-d"><b>Não diga:</b> acusação sem fonte, montagem e “dossiê” anônimo que circula no zap: use só o que tem veículo, data e link.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#sigilo">Na Apostila, com áudio</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/roleta">Roleta dos fatos</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/boato">Fato ou boato</a></p>
+  </details>
+</article><article class="tema" id="t-bolso" data-tema="bolso">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 15h2"/></svg><h3 id="h-bolso">Imposto de Renda, salário e emprego</h3>
+    </div>
+  <p class="ancora">Quem ganha até R$ 5 mil não paga Imposto de Renda desde janeiro.</p>
+  <details data-det="bolso"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Até R$ 5 mil por mês, isento; até R$ 7.350, paga menos (<a href="https://www12.senado.leg.br/noticias/materias/2025/11/27/sancionada-isencao-do-imposto-de-renda-para-quem-ganha-ate-r-5-mil-por-mes" target="_blank" rel="noopener">Lei 15.270/2025</a>).</li><li>Salário mínimo de R$ 1.621 em 2026, alta de 6,79% (Decreto 12.797/2025).</li><li>Desemprego de 5,3% de maio a julho de 2026; renda do trabalho 3,3% acima da inflação em 12 meses (<a href="https://www.gov.br/fazenda/pt-br/central-de-conteudo/publicacoes/conjuntura-economica/emprego-e-renda/defeso-eleitoral-2026/informativo-pnad-jul2026.pdf" target="_blank" rel="noopener">IBGE, via Fazenda</a>).</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Você viu a diferença no seu contracheque este ano?”</p>
+    <p class="resp"><b>Se disserem:</b> “A comida está cara.”<br><b>Responda:</b> “Está, e pesa. Mas a renda subiu 3,3% acima da inflação em um ano. Cortar R$ 200 bilhões sem dizer de onde ajuda?”</p>
+    <p class="nao-d"><b>Não diga:</b> ranking sem fonte do trimestre; “Flávio vai congelar o mínimo” como fato.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#bolso">Na Apostila, com áudio</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/ir">Régua do IR</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/#j3">Antes × Agora</a></p>
+  </details>
+</article><article class="tema" id="t-6x1" data-tema="6x1">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M9 7V5h6v2M3 12h18"/></svg><h3 id="h-6x1">Escala 6x1 e jornada</h3>
+    </div>
+  <p class="ancora">Duas folgas por semana, sem cortar salário.</p>
+  <details data-det="6x1"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Acabou: a Emenda 141 foi promulgada em 16/10. Em 60 dias, duas folgas por semana e até 42 horas; 40 horas cerca de um ano depois (<a href="https://www12.senado.leg.br/noticias/materias/2026/10/16/congresso-promulga-o-fim-da-escala-6x1-e-aposentadoria-de-agentes-de-saude" target="_blank" rel="noopener">Agência Senado</a>).</li><li>Sem redução de salário. Servidores públicos não entram nessa regra.</li><li>Estudo do <a href="https://madeusp.com.br/publicacoes/artigos/impactos-economicos-e-redistributivos-da-reducao-da-jornada-de-trabalho-no-brasil-uma-abordagem-a-partir-da-matriz-de-contabilidade-social/" target="_blank" rel="noopener">Made/USP</a> (14/10): mais produção e mais renda, porque cria empregos, com inflação moderada.</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Quantos domingos você passou com a família este mês?”</p>
+    <p class="resp"><b>Se disserem:</b> “Vai quebrar o comércio.”<br><b>Responda:</b> “A proposta prevê transição. O que precisaria para funcionar no seu trabalho?”</p>
+    <p class="nao-d"><b>Não diga:</b> “já vale hoje”: as duas folgas começam em 60 dias.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#6x1">Na Apostila, com áudio</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/6x1">Seu tempo vale</a></p>
+  </details>
+</article><article class="tema" id="t-corte" data-tema="corte">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="7" r="3"/><circle cx="6" cy="17" r="3"/><path d="M8.5 8.5 20 18M8.5 15.5 20 6"/></svg><h3 id="h-corte">Corte de gastos e ministérios</h3>
+    </div>
+  <p class="ancora">Cortar uns R$ 200 bilhões sem dizer de onde: de onde sai?</p>
+  <details data-det="corte"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>A economista apontada para o plano de Flávio defendeu corte de gastos de 1,5% do PIB (<a href="https://blogdoibre.fgv.br/node/2342" target="_blank" rel="noopener">O Globo, via IBRE/FGV</a>).</li><li>1,5% do PIB são perto de R$ 190 a 200 bilhões.</li><li>Os detalhes do que seria cortado ainda não foram apresentados.</li><li>Flávio promete um “tesouraço” e cortar ao menos 10 ministérios (<a href="https://oantagonista.com.br/brasil/flavio-bolsonaro-promete-tesouraco-e-reducao-de-ao-menos-10-ministerios/" target="_blank" rel="noopener">O Antagonista</a>; <a href="https://www.gazetadopovo.com.br/eleicoes/2026/flavio-bolsonaro-diz-que-vai-governar-com-autonomia-e-reduzir-ministerios/" target="_blank" rel="noopener">Gazeta do Povo</a>). Servidor federal: extinguir ministério não extingue cargo, mas cargo extinto leva à disponibilidade, com salário proporcional (Constituição, art. 41). Simule no <a href="https://starlit-licorice-a72d97.netlify.app/" target="_blank" rel="noopener">Simulador da disponibilidade</a>.</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Se você tivesse que cortar R$ 200 bilhões do governo, de onde tiraria?”</p>
+    <p class="resp"><b>Se disserem:</b> “Precisa cortar gasto mesmo.”<br><b>Responda:</b> “Concordo que gasto tem que ser bem feito. A questão é dizer de onde sai antes da eleição.”</p>
+    <p class="nao-d"><b>Não diga:</b> “vai acabar com o Bolsa Família, o SUS ou o Pé-de-Meia” como fato. Cite a fala da equipe dele.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#corte">Na Apostila, com áudio</a></p>
+  </details>
+</article><article class="tema" id="t-saude" data-tema="saude">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg><h3 id="h-saude">SUS e remédios</h3>
+    </div>
+  <p class="ancora">Remédio de pressão, diabetes e asma de graça na farmácia do bairro.</p>
+  <details data-det="saude"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Os 41 itens do Farmácia Popular são de graça desde fevereiro de 2025 (<a href="https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2025/02/todos-os-medicamentos-do-farmacia-popular-serao-gratuitos-a-toda-a-populacao" target="_blank" rel="noopener">Secom</a>).</li><li>SAMU 192 implantado no país em 2003.</li><li>Mais Médicos: criado em 2013 (governo Dilma) e retomado em 2023.</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Alguém na sua casa toma remédio todo mês?”</p>
+    <p class="resp"><b>Se disserem:</b> “A fila do SUS é enorme.”<br><b>Responda:</b> “É, e é o maior problema. Um corte de R$ 200 bilhões pode cair justamente aí. De onde sai?”</p>
+    <p class="nao-d"><b>Não diga:</b> “Flávio vai acabar com o SUS”.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#saude">Na Apostila, com áudio</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/programas">Programas na sua vida</a></p>
+  </details>
+</article><article class="tema" id="t-dificeis" data-tema="dificeis">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></svg><h3 id="h-dificeis">Segurança e corrupção</h3>
+    </div>
+  <p class="ancora">Nestes temas, pergunte mais e afirme menos.</p>
+  <details data-det="dificeis"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li><strong>Segurança:</strong> concorde com o medo e leve para milícia, investigação e o dinheiro do crime.</li><li><strong>Soberania:</strong> em 2025 os EUA taxaram produtos brasileiros em 50%; em 2026 citaram até o Pix. “Quem ganha se o Pix virar problema?”</li><li><strong>Corrupção:</strong> “houve corrupção e houve punição; quem quer combater quer PF e CGU fortes.”</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “O que você acha que resolveria a violência aqui no bairro?”</p>
+    <p class="resp"><b>Se disserem:</b> “Lula foi preso.”<br><b>Responda:</b> “Foi, e em 2021 o STF anulou as condenações: tribunal errado e juiz parcial. Você pode discordar, mas foi a Justiça.”</p>
+    <p class="nao-d"><b>Não diga:</b> “Flávio é condenado”: ele não foi; e “traidor da pátria”.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#dificeis">Na Apostila, com áudio</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/quemdisse">Quem disse?</a></p>
+  </details>
+</article><article class="tema" id="t-educacao" data-tema="educacao">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg><h3 id="h-educacao">Escola e Pé-de-Meia</h3>
+    </div>
+  <p class="ancora">Pé-de-Meia: até R$ 9.200 para o jovem terminar o ensino médio.</p>
+  <details data-det="educacao"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Pé-de-Meia, por ano: R$ 200 na matrícula, R$ 1.800 pela frequência e R$ 1.000 de poupança, liberada na formatura; mais R$ 200 se fizer o Enem (Lei 14.818/2024).</li><li>Institutos Federais criados em 2008 (Lei 11.892/2008).</li><li>Royalties do petróleo: 75% para a educação (Lei 12.858/2013).</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Tem algum adolescente na família no ensino médio?”</p>
+    <p class="resp"><b>Se disserem:</b> “É compra de voto.”<br><b>Responda:</b> “É lei, com regra: matrícula, frequência e formatura. O dinheiro só sai se o jovem estiver na escola.”</p>
+    <p class="nao-d"><b>Não diga:</b> “o Pé-de-Meia acaba se Flávio ganhar” como fato.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#educacao">Na Apostila, com áudio</a></p>
+  </details>
+</article><article class="tema" id="t-fome" data-tema="fome">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/></svg><h3 id="h-fome">Fome e Bolsa Família</h3>
+    </div>
+  <p class="ancora">O Brasil saiu do Mapa da Fome em 2014 e de novo em 2025.</p>
+  <details data-det="fome"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Saída do Mapa da Fome da ONU em 2025 (<a href="https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/brasil-sai-do-mapa-da-fome-da-onu-conquista-historica-reflete-politicas-publicas-eficazes" target="_blank" rel="noopener">MDS</a>).</li><li>Pobreza: de 36,8% da população em 2021 para 23,1% em 2024 (<a href="https://www.metropoles.com/brasil/ibge-mais-de-86-milhoes-deixam-pobreza-em-melhor-numero-desde-2012" target="_blank" rel="noopener">IBGE, via Metrópoles</a>).</li><li>Bolsa Família: mínimo de R$ 600 e mais R$ 150 por criança de até 6 anos, pago de preferência à mãe (Lei 14.601/2023).</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Você conhece alguém que passou aperto para comer?”</p>
+    <p class="resp"><b>Se disserem:</b> “É esmola.”<br><b>Responda:</b> “Tem regra: criança na escola, vacina em dia e pré-natal. E quem recebe sabe da própria vida.”</p>
+    <p class="nao-d"><b>Não diga:</b> “Flávio vai acabar com o Bolsa Família” como fato. Pergunte de onde sai o corte de R$ 200 bilhões.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#fome">Na Apostila, com áudio</a></p>
+  </details>
+</article><article class="tema" id="t-aposentados" data-tema="aposentados">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg><h3 id="h-aposentados">Aposentados, BPC e moradia</h3>
+    </div>
+  <p class="ancora">Aposentadoria do piso e BPC sobem com o mínimo, acima da inflação.</p>
+  <details data-det="aposentados"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>O piso do INSS e o BPC são de um salário mínimo: R$ 1.621 em 2026.</li><li>Os remédios do Farmácia Popular são de graça desde 2025.</li><li>Minha Casa, Minha Vida: criado em 2009 e retomado em 2023 (Lei 14.620/2023).</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Quanto o senhor ou a senhora gasta de remédio por mês?”</p>
+    <p class="resp"><b>Se disserem:</b> “A Previdência vai quebrar.”<br><b>Responda:</b> “É um debate real. Mas um corte de R$ 200 bilhões sem dizer de onde cai em cima de quem?”</p>
+    <p class="nao-d"><b>Não diga:</b> “Flávio vai congelar as aposentadorias”: vem de vazamento sem fonte firme.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#aposentados">Na Apostila, com áudio</a></p>
+  </details>
+</article><article class="tema" id="t-mulheres" data-tema="mulheres">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/></svg><h3 id="h-mulheres">Mulheres</h3>
+    </div>
+  <p class="ancora">Mesmo trabalho, mesmo salário: virou lei em 2023.</p>
+  <details data-det="mulheres"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Lei de Igualdade Salarial (Lei 14.611/2023).</li><li>Lei Maria da Penha, sancionada por Lula em 2006 (Lei 11.340/2006).</li><li>Bolsa Família pago de preferência à mãe.</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Você já viu uma mulher ganhar menos fazendo o mesmo trabalho?”</p>
+    <p class="resp"><b>Se disserem:</b> “É pauta identitária.”<br><b>Responda:</b> “É salário e segurança dentro de casa: bolso e vida.”</p>
+    <p class="nao-d"><b>Não diga:</b> a Casa da Mulher Brasileira como obra de Lula; é do governo Dilma. Diga “governos do PT”.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#mulheres">Na Apostila, com áudio</a></p>
+  </details>
+</article><article class="tema" id="t-saude-mental" data-tema="saude-mental">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg><h3 id="h-saude-mental">Saúde mental e trabalho</h3>
+    </div>
+  <p class="ancora">Trabalho não pode adoecer.</p>
+  <details data-det="saude-mental"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Afastamentos do INSS por transtorno mental: de 219,8 mil em 2023 para 393,6 mil até novembro de 2025; burnout de 1.760 para 6.985 (<a href="https://oimparcial.com.br/noticias/2026/01/afastamentos-por-transtorno-mental-aumentam-79-em-dois-anos/" target="_blank" rel="noopener">Anamt/INSS, via O Imparcial</a>).</li><li>Desde 26/5/2026, a NR-1 obriga a empresa a avaliar metas abusivas, jornada longa e assédio.</li><li>67% dizem que a escala 6x1 piora a saúde mental (Instituto Locomotiva, junho de 2026).</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “O seu trabalho já tirou o seu sono?”</p>
+    <p class="resp"><b>Se disserem:</b> “Isso é frescura.”<br><b>Responda:</b> “Foram 393 mil afastamentos em 11 meses. Quando alguém afasta, a equipe e a família sentem.”</p>
+    <p class="nao-d"><b>Não diga:</b> diagnóstico de ninguém. Se a pessoa contar sofrimento grave: escute e indique a UBS, o CAPS ou o CVV (188, de graça).</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#saude-mental">Na Apostila, com áudio</a></p>
+  </details>
+</article><article class="tema" id="t-ambiente" data-tema="ambiente">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19 13 11"/></svg><h3 id="h-ambiente">Amazônia e clima</h3>
+    </div>
+  <p class="ancora">O desmatamento na Amazônia caiu pela metade desde 2022.</p>
+  <details data-det="ambiente"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>5.731 km² em 2025, a menor taxa em 11 anos (<a href="https://www.gov.br/inpe/pt-br/assuntos/ultimas-noticias/sistema-do-inpe-aponta-5-731-km2-de-desmatamento-na-amazonia-em-2025" target="_blank" rel="noopener">INPE/PRODES</a>).</li><li>De 2004 a 2012, a taxa anual caiu 83,5% (INPE).</li><li>Fundo Amazônia: criado em 2008 e retomado em 2023.</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Você sentiu o calor diferente nos últimos anos?”</p>
+    <p class="resp"><b>Se disserem:</b> “Esses números são do governo.”<br><b>Responda:</b> “São do INPE, o mesmo satélite que mede desde 1988, em qualquer governo.”</p>
+    <p class="nao-d"><b>Não diga:</b> “−79%” e “+50% de área protegida”, que circulam sem fonte.</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#ambiente">Na Apostila, com áudio</a></p>
+  </details>
+</article><article class="tema" id="t-pcd" data-tema="pcd">
+  <div class="tema-cab"><svg class="tic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8"/><path d="M12 7v6h5l2 5"/><path d="M8.5 10.5a5.5 5.5 0 1 0 7 7"/></svg><h3 id="h-pcd">Pessoas com deficiência</h3>
+    </div>
+  <p class="ancora">Acessibilidade é direito, não favor.</p>
+  <details data-det="pcd"><summary>Ver os fatos, com fonte</summary>
+    <ul class="fatos"><li>Novo Viver sem Limite, lançado em 2023, com R$ 6,5 bilhões previstos em ações para pessoas com deficiência (<a href="https://agenciagov.ebc.com.br/noticias/202311/no-palacio-do-planalto-governo-federal-lanca-o-novo-viver-sem-limite-com-r-6-5-bi-de-investimento-em-acoes-para-pessoas-com-deficiencia" target="_blank" rel="noopener">Agência Gov</a>).</li><li>Lei Brasileira de Inclusão, de 2015 (Lei 13.146/2015).</li><li>Na urna: Braille, áudio com fone, Libras na tela e acompanhante de confiança.</li></ul>
+    <p class="perg"><b>Pergunta para amanhã:</b> “Tem alguém na sua família que precisa de acessibilidade?”</p>
+    <p class="resp"><b>Se disserem:</b> “Isso é gasto demais.”<br><b>Responda:</b> “É direito previsto em lei. E quem cuida de alguém sabe quanto custa não ter.”</p>
+    <p class="nao-d"><b>Não diga:</b> números de gasto sem a fonte oficial aberta na hora (Portal da Transparência ou SIOP).</p>
+    <p class="mais"><a href="https://vigieademocracia.brunochapadeiro.workers.dev/apostila#pcd">Na Apostila, com áudio</a></p>
+  </details>
+</article></div></section>
+  <section class="caixa" aria-labelledby="tr-t" id="truques"><h2 id="tr-t">Truques que aparecem em debate</h2><ul class="lista"><li><b>Número sem fonte.</b> “Explodiu”, “nunca antes”, “o pior da história”. Pergunte: qual número, de quem, de quando?</li><li><b>Mudar de assunto.</b> Responde outra coisa e ataca. Anote a pergunta que ficou sem resposta.</li><li><b>“E você?”.</b> Rebate uma crítica com outra. As duas podem ser verdade: confira cada uma.</li><li><b>Corte fora de contexto.</b> Amanhã vão circular trechos de 10 segundos. Veja o trecho inteiro antes de repassar.</li></ul>
+    <p class="sub" style="margin-top:8px">Treine em 2 minutos: <a href="https://vigieademocracia.brunochapadeiro.workers.dev/jogos#j6">Pega o truque</a> e <a href="https://vigieademocracia.brunochapadeiro.workers.dev/quemdisse">Quem disse?</a></p></section>
+  <section class="so-cards-alvo" aria-labelledby="cd-t" id="cards"><h2 id="cd-t" class="cds-h">Cards para repostar</h2>
     <p class="sub cds-nota">Os cards abaixo são parte desta página: sem foto, sem voz e sem imagem gerada. Baixe para os Stories (9:16) ou para o carrossel (4:5).</p>
     <div class="baixar-cds"><a class="btn forte" href="arquivos/Checagem_debate_Globo_stories.zip" download>Baixar cards para Stories</a>
       <a class="btn" href="arquivos/Checagem_debate_Globo_carrossel.zip" download>Baixar carrossel</a></div>
@@ -235,7 +404,7 @@ html.feed .cd-tb { font-size:4cqw; } html.feed .cd-tb th, html.feed .cd-tb td { 
     <li><a href="https://www.estadao.com.br/estadao-verifica/debate-tv-globo-checagem-tempo-real-ao-vivo/" target="_blank" rel="noopener">Estadão Verifica: checagem em tempo real</a> (reprodução: <a href="https://www.ojanelao.com.br/checagem-do-debate-lula-x-flavio-na-globo/" target="_blank" rel="noopener">O Janelão</a>)</li>
     <li><a href="https://g1.globo.com/fato-ou-fake/eleicoes/noticia/2026/10/23/veja-o-que-e-fato-ou-fake-nas-falas-de-flavio-bolsonaro-e-lula-no-debate-da-globo-no-2o-turno-das-eleicoes-2026.ghtml" target="_blank" rel="noopener">g1 Fato ou Fake: o que é fato ou fake no debate</a> (reprodução: <a href="https://tmc.com.br/politica/fato-ou-fake-veja-o-que-foi-checado-no-debate-entre-lula-e-flavio-bolsonaro/" target="_blank" rel="noopener">TMC</a>)</li>
     <li><a href="https://vigieademocracia.brunochapadeiro.workers.dev/pesquisas">Pesquisas do 2º turno: todas, com a média</a></li>
-    <li><a href="https://vigieademocracia.brunochapadeiro.workers.dev/debate">Debate na mão: os temas com fonte</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/roleta">Roleta dos fatos</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/plano">Plano de domingo</a></li></ul></section>
+    <li><a href="https://vigieademocracia.brunochapadeiro.workers.dev/roleta">Roleta dos fatos</a> · <a href="https://vigieademocracia.brunochapadeiro.workers.dev/familia">Fato ou boato: o bolso e a família</a></li></ul></section>
   <p class="acoes"><a class="btn forte" href="https://wa.me/?text=O%20que%20as%20ag%C3%AAncias%20de%20checagem%20disseram%20do%20debate%20da%20Globo%2C%20com%20o%20link%20de%20cada%20checagem%3A%20https%3A%2F%2Fvigieademocracia.brunochapadeiro.workers.dev%2Fchecagem" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg> Mandar no WhatsApp</a></p>
   </main>
   <footer>
