@@ -343,6 +343,11 @@ export class Sala extends DurableObject {
         const p = palavra(d.p); if (!p || tl.i < 0) return false;
         const oc = m.ocultas || {}; oc[tl.i] = [...new Set([...(oc[tl.i] || []), p])].slice(0, 200); this.poe('ocultas', oc);
         this.avisaTelao(true); return true;
+      } else if (d.c === 'jogo') {   // outro jogo na mesma sala: a plateia continua conectada
+        if (!/^[a-z0-9-]{2,24}$/.test(String(d.jogo || ''))) return false;
+        this.poe('jogo', d.jogo);
+        this.sql.exec('DELETE FROM voto'); this.poe('tipos', {}); this.poe('ns', {}); this.poe('ocultas', {}); this.poe('fim', false);
+        this.poe('tela', { i: -1, tipo: 'espera', n: 0, fase: 'espera' });
       } else if (d.c === 'zera') {   // nova rodada com o mesmo QR code: apaga as respostas
         this.sql.exec('DELETE FROM voto'); this.poe('tipos', {}); this.poe('ns', {}); this.poe('ocultas', {}); this.poe('fim', false);
         this.poe('tela', { i: -1, tipo: 'espera', n: 0, fase: 'espera' });
