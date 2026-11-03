@@ -1,0 +1,24 @@
+# Testa a sala ao vivo (telão + celulares) no endereço publicado: cria uma sala de teste, vota por WebSocket e por consulta e confere
+# os resultados. Só leitura do repositório; o resultado aparece nas anotações da execução. A sala de teste se apaga sozinha em 6 horas.
+name: Testar sala ao vivo
+on:
+  workflow_dispatch:
+    inputs:
+      endereco:
+        description: "Endereço do site"
+        required: false
+        default: "https://vigieademocracia.brunochapadeiro.workers.dev"
+permissions:
+  contents: read
+jobs:
+  testar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Testar
+        env:
+          ENDERECO: ${{ inputs.endereco }}
+        run: node ferramentas/teste_sala.mjs "$ENDERECO"

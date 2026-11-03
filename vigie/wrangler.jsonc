@@ -11,8 +11,8 @@
     "not_found_handling": "404-page"
   },
   "durable_objects": {
-    "bindings": [{ "name": "PLACAR", "class_name": "Placar" }]
+    "bindings": [{ "name": "PLACAR", "class_name": "Placar" }, { "name": "SALA", "class_name": "Sala" }]
   },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Placar"] }],
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Placar"] }, { "tag": "v2", "new_sqlite_classes": ["Sala"] }],
   "observability": { "enabled": true }
 }

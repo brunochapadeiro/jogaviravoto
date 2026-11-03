@@ -1,5 +1,5 @@
 {
-  // Vigie a Democracia: o Worker "vigieademocracia" (o antigo "jogaviravoto", renomeado) serve o site e guarda o placar. O nome precisa ser igual ao do painel.
+  // Vigie a Democracia: o Worker "vigieademocracia" (o antigo "jogaviravoto", renomeado) serve o site, guarda o placar e as salas ao vivo (telão + celulares). O nome precisa ser igual ao do painel.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "vigieademocracia",
   "main": "src/index.js",
@@ -11,8 +11,8 @@
     "not_found_handling": "404-page"
   },
   "durable_objects": {
-    "bindings": [{ "name": "PLACAR", "class_name": "Placar" }]
+    "bindings": [{ "name": "PLACAR", "class_name": "Placar" }, { "name": "SALA", "class_name": "Sala" }]
   },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Placar"] }],
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Placar"] }, { "tag": "v2", "new_sqlite_classes": ["Sala"] }],
   "observability": { "enabled": true }
 }

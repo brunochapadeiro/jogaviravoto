@@ -7,7 +7,7 @@ assédio eleitoral, jogos e o arquivo das eleições de 2026, com placar públic
 Funciona como aplicativo (PWA): `manifest.webmanifest`, `sw.js` e `vigia.js` em `public/`.
 
 - `public/`: o site (páginas, PDFs, áudios, imagens). É gerado automaticamente; não edite à mão.
-- `src/index.js`: o placar público (um Durable Object com SQLite, sem nenhum banco para configurar).
+- `src/index.js`: o placar público e as salas ao vivo dos jogos no telão (Durable Objects com SQLite, sem nenhum banco para configurar).
 - `wrangler.jsonc`: o Worker `vigieademocracia` (o antigo `jogaviravoto`, renomeado): o site e o placar.
 - `vigie/wrangler.jsonc`: cópia da configuração acima.
 - `redirect/`: o Worker `jogaviravoto` (endereço antigo), que só redireciona para o endereço novo.
