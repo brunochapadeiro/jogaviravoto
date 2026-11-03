@@ -75,8 +75,8 @@ tel.send(JSON.stringify({ c: 'tela', i: 'fim', tipo: 'fim', n: 0 })); await espe
 ok(cels[4].ultimo.tela.tipo === 'fim', 'plateia recebe o fim');
 ok(Array.isArray(tel.ultimo.historico) && tel.ultimo.historico.length === 4, 'histórico com 4 telas');
 // outro jogo na mesma sala: a plateia continua conectada e recebe o jogo novo
-tel.send(JSON.stringify({ c: 'jogo', jogo: 'nexo' })); await espera(400);
-ok(cels[3].ultimo.jogo === 'nexo' && cels[3].ultimo.tela.i === -1 && tel.ultimo.respostas === undefined, 'troca de jogo na mesma sala');
+tel.send(JSON.stringify({ c: 'jogo', jogo: 'cuidado' })); await espera(400);
+ok(cels[3].ultimo.jogo === 'cuidado' && cels[3].ultimo.tela.i === -1 && tel.ultimo.respostas === undefined, 'troca de jogo na mesma sala');
 // celular não controla
 cels[0].send(JSON.stringify({ c: 'tela', i: 0, tipo: 'escolha', n: 4 })); await espera(300);
 ok(tel.ultimo.tela.tipo === 'espera', 'celular não troca a tela');
@@ -86,7 +86,7 @@ ok((await fetch(`${B}/api/sala/ab1/estado`)).status === 400, 'código inválido 
 // reconexão do celular mantém o voto
 cels[1].close(); await espera(300);
 const volta = await conecta('plateia', 'pessoa1abcdef'); await espera(300);
-ok(volta.ultimo && volta.ultimo.jogo === 'nexo', 'reconecta');
+ok(volta.ultimo && volta.ultimo.jogo === 'cuidado', 'reconecta');
 for (const w of [tel, volta, ...cels]) try { w.close(); } catch (e) {}
 log((GH ? (falhas ? '::error title=Sala ao vivo::' : '::notice title=Sala ao vivo::') : '') + (falhas ? `${falhas} falha(s), ${oks} ok` : `TUDO OK: ${oks} conferências, sala ${s.codigo}`));
 process.exit(falhas ? 1 : 0);
