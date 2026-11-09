@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cruze os dados · Vigie a Democracia</title>
+<meta name="description" content="Estado, assunto e partido: veja como votou a bancada, o que deu a urna, quem foi eleito em 2026 e o que dizem os estudos científicos, com a fonte e um card pronto para postar.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Vigie a Democracia">
+<meta property="og:title" content="Cruze os dados · Vigie a Democracia"><meta property="og:description" content="Estado, assunto e partido: veja como votou a bancada, o que deu a urna, quem foi eleito em 2026 e o que dizem os estudos científicos, com a fonte e um card pronto para postar.">
+<meta property="og:url" content="https://vigieademocracia.brunochapadeiro.workers.dev/cruzar"><meta property="og:image" content="https://vigieademocracia.brunochapadeiro.workers.dev/og-cruzar.png"><meta property="og:image:secure_url" content="https://vigieademocracia.brunochapadeiro.workers.dev/og-cruzar.png">
+<meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cruze os dados · Vigie a Democracia, de Prof. Bruno Chapadeiro">
+<meta property="og:locale" content="pt_BR"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/icone.svg" type="image/svg+xml">
+<style>
+:root { --papel:#FBF8F1; --cartao:#FFFFFF; --tinta:#17191E; --suave:#4A4D57; --linha:#E2DCCF; --verm:#B3261E; --azul:#1F4E8C; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%2820%2C24%2C30%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark } }
+:root[data-theme="dark"] { --papel:#131417; --cartao:#1C1E22; --tinta:#F2F0EA; --suave:#C9C6BE; --linha:#34363D; --verm:#FF8F84; --azul:#A6C8FF; --marca: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22340%22%20height%3D%22340%22%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%20transform%3D%22rotate%28-30%20170.0%20170.0%29%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20fill%3D%22rgba%28242%2C240%2C234%2C.04%29%22%3EProf.%20Bruno%20Chapadeiro%3C/text%3E%3C/svg%3E"); color-scheme: dark }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Regular.woff2') format('woff2'); font-weight:400; }
+@font-face { font-family:'Atkinson Hyperlegible'; src:url('fontes/AtkinsonHyperlegible-Bold.woff2') format('woff2'); font-weight:700; }
+@font-face { font-family:'Lexend'; src:url('fontes/Lexend-var.woff2') format('woff2'); font-weight:100 900; }
+* { box-sizing:border-box; }
+body { margin:0; background-color:var(--papel); background-image:var(--marca); color:var(--tinta); font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-size:18px; line-height:1.55; }
+a { color:var(--azul); text-underline-offset:.18em; }
+:focus-visible { outline:4px solid var(--azul); outline-offset:3px; border-radius:4px; }
+.wrap { max-width:48rem; margin:0 auto; padding:20px max(16px, env(safe-area-inset-left, 0px)) 48px; display:flex; flex-direction:column; gap:18px; }
+.topo { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; justify-content:space-between; }
+.placa { align-self:flex-start; margin:0; background:#FFE58F; color:#1B1B1F; font-family:'Lexend', sans-serif; font-weight:700; padding:4px 12px; border:2px solid #1B1B1F; transform:rotate(-1.5deg); }
+h1 { font-family:'Lexend', sans-serif; font-size:clamp(2rem, 7vw, 2.8rem); line-height:1.05; margin:0; } h1 span { color:var(--verm); }
+h2 { font-family:'Lexend', sans-serif; font-size:1.3rem; line-height:1.2; margin:0; }
+.sub { margin:0; font-size:1.06rem; }
+.caixa { background:var(--cartao); border:2px solid var(--linha); border-radius:16px; padding:14px 18px; }
+.caixa ul { margin:8px 0 0; padding-left:1.2em; display:flex; flex-direction:column; gap:6px; }
+.rot { background:var(--cartao); border:2px solid var(--linha); border-radius:18px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; scroll-margin-top:12px; }
+.meta { margin:0; color:var(--suave); font-weight:700; font-size:.95rem; }
+.cena { margin:0; font-style:italic; }
+.fala { margin:0; padding-left:1.1em; display:flex; flex-direction:column; gap:6px; }
+.fala li.ind { list-style:none; margin-left:-1.1em; color:var(--suave); font-weight:700; font-size:.95rem; }
+.extra { margin:0; font-size:.95rem; overflow-wrap:anywhere; }
+.acoes { display:flex; flex-wrap:wrap; gap:10px; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font:inherit; font-weight:700; min-height:48px; padding:6px 18px; border-radius:999px;
+       border:2px solid var(--tinta); background:transparent; color:var(--tinta); text-decoration:none; cursor:pointer; }
+.btn.forte { background:#B3261E; border-color:#B3261E; color:#fff; }
+.redes { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:0; }
+.botao-ig { max-width:100%; display:inline-flex; align-items:center; gap:8px; min-height:46px; padding:6px 16px; border-radius:999px; background:var(--tinta); color:var(--papel); font-weight:700; text-decoration:none; }
+.selo { display:inline-flex; align-items:center; gap:6px; color:var(--suave); font-weight:700; text-decoration:none; font-size:.95rem; } .selo-ic { display:inline-flex; gap:2px; } .ic { width:1.2em; height:1.2em; }
+footer { font-size:.95rem; color:var(--suave); display:flex; flex-direction:column; gap:8px; }
+/* teleprompter */
+.tp { position:fixed; inset:0; z-index:50; background:#000; color:#fff; display:flex; flex-direction:column; }
+.tp[hidden] { display:none; }
+.tp-barra { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; padding:10px max(12px, env(safe-area-inset-left, 0px)); background:#111; border-bottom:2px solid #333; }
+.tp-barra button { font:inherit; font-weight:700; min-height:48px; min-width:48px; padding:4px 14px; border-radius:12px; border:2px solid #fff; background:#000; color:#fff; cursor:pointer; }
+.tp-barra button[aria-pressed="true"] { background:#FFE600; color:#000; border-color:#FFE600; }
+.tp-barra output { min-width:4.5em; text-align:center; font-weight:700; }
+.tp-tela { flex:1; overflow-y:auto; padding:40vh 7vw 70vh; scroll-behavior:auto; }
+.tp-tela.espelho { transform:scaleX(-1); }
+.tp-texto { margin:0 auto; max-width:30em; font-family:'Atkinson Hyperlegible', system-ui, sans-serif; font-weight:700; line-height:1.45; }
+.tp-texto p { margin:0 0 .9em; } .tp-texto .ind { color:#FFE600; font-size:.6em; font-weight:700; }
+.tp-guia { position:fixed; left:0; right:0; top:42%; height:0; border-top:3px solid rgba(255,230,0,.55); pointer-events:none; }
+.tp-conta { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; font-size:30vw; font-weight:700; pointer-events:none; }
+.tp-conta:empty { display:none; }
+@media print { .acoes, details.a11y, .tp, .curtir-box, .pular { display:none !important; } body { background:#fff; color:#000; } .rot { break-inside:avoid; } }
+@page { size:A4; margin:14mm; }
+.pular { position:absolute; left:-999px; } .pular:focus { left:16px; top:8px; background:var(--tinta); color:var(--papel); padding:8px 14px; z-index:9; }
+
+html.a11y-zoom body { zoom: var(--a11y-zoom); }
+footer p, footer a, .regras h2, .regras li { overflow-wrap: anywhere; }
+html.a11y-zoom .top { flex-wrap: wrap; row-gap: 6px; } html.a11y-zoom .xp { white-space: normal; }
+html.a11y-zoom .botao-ig, html.a11y-zoom .btn, html.a11y-zoom .redes a { max-width: 100%; white-space: normal; }
+details.a11y { margin: 0; font-size: 15px; }
+details.a11y > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 4px 14px;
+  border-radius: 999px; border: 2px solid currentColor; font-weight: 700; }
+details.a11y > summary::-webkit-details-marker { display: none; }
+details.a11y > summary svg { width: 1.3em; height: 1.3em; }
+.a11y-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+.a11y-bar button, .a11y-bar a { font: inherit; font-weight: 700; min-height: 44px; min-width: 44px; padding: 4px 12px; border-radius: 10px;
+  border: 2px solid currentColor; background: transparent; color: inherit; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.a11y-bar button[aria-pressed="true"] { background: #1F4E8C; border-color: #1F4E8C; color: #fff; }
+.a11y-zl { font-variant-numeric: tabular-nums; min-width: 3.2em; text-align: center; }
+.a11y-aviso { flex-basis: 100%; margin: 0; font-size: 14px; }
+.a11y-aviso:empty { display: none; }
+html.a11y-contraste body, html.a11y-contraste body *:not(svg):not(svg *):not(i) { background-color: #000 !important; background-image: none !important;
+  color: #fff !important; border-color: #fff !important; text-shadow: none !important; box-shadow: none !important; }
+html.a11y-contraste a, html.a11y-contraste a * { color: #FFE600 !important; }
+html.a11y-contraste button, html.a11y-contraste .btn { border: 2px solid #fff !important; }
+html.a11y-contraste .a11y-bar button[aria-pressed="true"] { background: #FFE600 !important; color: #000 !important; }
+html.a11y-contraste :focus-visible { outline: 4px solid #FFE600 !important; outline-offset: 3px; }
+html.a11y-espaco body * { letter-spacing: .05em !important; word-spacing: .16em !important; line-height: 1.75 !important; }
+html.a11y-parado *, html.a11y-parado *::before, html.a11y-parado *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+.soc { margin: 0; }
+.soc-k { margin: 0 0 4px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.soc-ac { margin: 0 0 2px; }
+.soc-a { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; min-height: 44px; padding: 2px 8px 2px 4px; border-radius: 12px; color: inherit; text-decoration: none; font-size: 16px; }
+.soc-a svg { width: 26px; height: 26px; flex: none; }
+.soc-a b { font-size: 19px; font-weight: 700; font-variant-numeric: tabular-nums; } .soc-a b:empty { display: none; }
+.soc-vp { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+.soc-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(76px, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.soc-row > li { display: flex; min-width: 0; }
+.soc-i { flex: 1; min-width: 0; min-height: 58px; padding: 6px 2px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font: inherit; color: inherit; background: transparent; border: 0; border-radius: 12px; cursor: pointer; text-decoration: none; }
+.soc-i:hover, .soc-a:hover { background: rgba(128,128,128,.14); }
+.soc-i:focus-visible, .soc-a:focus-visible, .soc-b:focus-visible { outline: 3px solid #1F4E8C; outline-offset: 2px; }
+.soc-v { display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 2px 4px; }
+.soc-i svg { width: 24px; height: 24px; flex: none; }
+.soc-i b { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.soc-i b:empty { display: none; }
+.soc-l { font-size: 12.5px; line-height: 1.15; }
+.soc.grande .soc-a b { font-size: 24px; } .soc.grande .soc-a svg { width: 30px; height: 30px; }
+.soc-i[data-soc="curtir"][aria-pressed="true"] svg { fill: #E8173A; stroke: #E8173A; animation: soc-pop .35s ease-out; }
+@keyframes soc-pop { 0% { transform: scale(1); } 45% { transform: scale(1.3); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { .soc-i svg { animation: none !important; } }
+.soc-p { margin: 8px 0 0; padding: 10px 12px; border: 2px solid currentColor; border-radius: 12px; font-size: 15px; }
+.soc-p p { margin: 0; } .soc-bs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px !important; }
+.soc-b { display: inline-flex; align-items: center; min-height: 44px; padding: 4px 14px; border-radius: 999px; border: 2px solid currentColor; color: inherit; font-weight: 700; text-decoration: none; }
+.soc-st { margin: 6px 0 0; font-size: 14px; overflow-wrap: anywhere; } .soc-st:empty { display: none; }
+@media print { .soc { display: none !important; } }
+
+
+
+[hidden] { display:none !important; }
+.visually-hidden { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.wrap.larga { max-width:68rem; gap:0; padding-top:10px; padding-bottom:56px; }
+.larga main { display:flex; flex-direction:column; gap:44px; padding-top:18px; }
+.larga h2 { font-family:'Lexend', sans-serif; font-size:clamp(1.3rem, 3.4vw, 1.6rem); line-height:1.15; margin:0; letter-spacing:-.01em; }
+.sec-cab { display:flex; flex-direction:column; gap:4px; margin-bottom:14px; } .sec-cab p { margin:0; color:var(--suave); }
+.sec-cab .mais-l { font-weight:700; }
+/* intenções */
+.intencoes { list-style:none; margin:0; padding:0; display:grid; gap:12px; grid-template-columns:minmax(0, 1fr); }
+@media (min-width: 36rem) { .intencoes { grid-template-columns:repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 60rem) { .intencoes { grid-template-columns:repeat(3, minmax(0, 1fr)); } }
+.intencao { position:relative; background:var(--cartao); border:1px solid var(--linha); border-radius:20px; padding:16px; display:flex; gap:14px; align-items:center; }
+.intencao:hover { border-color:var(--c); }
+.intencao .ic-a { width:48px; height:48px; border-radius:15px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:var(--c); color:#fff; }
+.intencao .ic-a svg { width:26px; height:26px; }
+.intencao a { font-family:'Lexend', sans-serif; font-weight:700; font-size:1.05rem; line-height:1.2; color:var(--tinta); text-decoration:none; display:block; }
+.intencao a::after { content:""; position:absolute; inset:0; border-radius:20px; }
+.intencao a:focus-visible { outline:none; } .intencao:has(a:focus-visible) { outline:4px solid var(--azul); outline-offset:3px; }
+.intencao p { margin:2px 0 0; font-size:.92rem; line-height:1.35; color:var(--suave); }
+/* grade de temas */
+.temas-g { list-style:none; margin:0; padding:0; display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 19.5rem), 1fr)); }
+.tema-c { background:var(--cartao); border:1px solid var(--linha); border-top:6px solid var(--c); border-radius:20px; padding:18px; display:flex; flex-direction:column; gap:12px; }
+.tema-c .tema-cab { display:flex; gap:12px; align-items:flex-start; }
+.ic-a { width:44px; height:44px; border-radius:14px; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:var(--c); color:#fff; }
+.ic-a svg { width:24px; height:24px; }
+.tema-c h3 { margin:0; font-family:'Lexend', sans-serif; font-size:1.25rem; line-height:1.15; }
+.tema-c h3 a { color:var(--tinta); text-decoration:none; } .tema-c h3 a:hover { text-decoration:underline; }
+.tema-c .tema-cab p { margin:4px 0 0; color:var(--suave); font-size:.94rem; line-height:1.4; }
+.tema-c .visto { margin-left:auto; flex-shrink:0; font-size:.78rem; font-weight:700; color:var(--c); border:2px solid var(--c); border-radius:999px; padding:1px 8px; }
+.tema-c ul { list-style:none; margin:0; padding:0; }
+.tema-c li { border-top:1px solid var(--linha); }
+.tema-c li a { display:flex; justify-content:space-between; gap:10px; align-items:center; padding:9px 2px; min-height:44px; font-weight:700; text-decoration:none; }
+.tema-c li a .f { flex-shrink:0; font-size:.78rem; font-weight:700; color:var(--suave); }
+.tema-c .ver { margin-top:auto; display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; border-radius:999px; background:var(--c); color:#fff; font-weight:700; text-decoration:none; }
+.tema-c .ver svg { width:20px; height:20px; }
+/* cruze (faixa) */
+.faixa { background:#17191E; color:#FBF8F1; border-radius:22px; padding:22px clamp(16px, 4vw, 32px); display:grid; gap:16px; }
+@media (min-width: 52rem) { .faixa { grid-template-columns:minmax(0, 1.2fr) minmax(0, 1fr); align-items:center; } }
+.faixa h2 { color:#FBF8F1; } .faixa p { margin:0; color:#E6E3DA; } .faixa .kicker { color:#FFE58F; font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:.85rem; }
+.faixa ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.faixa li a { display:flex; align-items:center; gap:10px; min-height:52px; padding:8px 14px; border-radius:14px; background:rgba(251,248,241,.08); border:1px solid #3A3D45; color:#FBF8F1; text-decoration:none; font-weight:700; }
+.faixa li a:hover { background:rgba(251,248,241,.16); } .faixa li a svg { width:22px; height:22px; flex-shrink:0; color:#FFE58F; }
+.faixa :focus-visible { outline-color:#FFE58F; }
+.faixa .btn { border-color:#FFE58F; background:#FFE58F; color:#17191E; justify-self:start; }
+/* novidades */
+.novas { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }
+.novas li { border-top:1px solid var(--linha); padding:12px 0; display:grid; gap:2px 14px; grid-template-columns:auto minmax(0, 1fr); }
+.novas li:last-child { border-bottom:1px solid var(--linha); }
+.novas time { grid-row:span 3; font-family:'Lexend', sans-serif; font-weight:700; font-size:.95rem; color:var(--suave); min-width:3.3em; padding-top:2px; }
+.novas a { font-weight:700; font-size:1.05rem; } .novas p { margin:0; color:var(--suave); font-size:.95rem; }
+.chip-t { display:inline-flex; align-items:center; gap:5px; font-size:.78rem; font-weight:700; color:var(--c); }
+.chip-t svg { width:15px; height:15px; }
+/* cartões de itens */
+.cartoes { list-style:none; margin:0; padding:0; display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+.cartao a { height:100%; display:flex; flex-direction:column; gap:5px; padding:14px 16px; min-height:56px; background:var(--cartao); border:1px solid var(--linha); border-left:6px solid var(--c);
+  border-radius:16px; text-decoration:none; color:var(--tinta); }
+.cartao a:hover { border-color:var(--c); }
+.cartao .topo-c { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; }
+.cartao .fmt { font-size:.74rem; font-weight:700; letter-spacing:.02em; padding:2px 8px; border-radius:6px; background:var(--tinta); color:var(--papel); }
+.cartao b { color:var(--azul); font-size:1.06rem; line-height:1.25; }
+.cartao .d { font-size:.93rem; color:var(--suave); line-height:1.4; }
+.cartao .como { font-size:.84rem; font-weight:700; color:var(--c); }
+.cartao .quem { font-size:.85rem; font-style:italic; color:var(--suave); }
+.cartao.grande a { padding:18px; border-left-width:8px; } .cartao.grande b { font-family:'Lexend', sans-serif; font-size:1.2rem; color:var(--tinta); }
+/* página de tema */
+.tema-topo { display:flex; flex-direction:column; gap:12px; padding-top:6px; }
+.tema-topo .linha { display:flex; gap:16px; align-items:center; }
+.tema-topo .ic-a { width:64px; height:64px; border-radius:20px; } .tema-topo .ic-a svg { width:36px; height:36px; }
+.tema-topo h1 { font-size:clamp(2rem, 6vw, 3.2rem); }
+.tema-topo .sub { color:var(--suave); max-width:44rem; font-size:clamp(1.05rem, 2.4vw, 1.2rem); }
+.tema-topo .meta { margin:0; font-size:.95rem; color:var(--suave); font-weight:700; }
+.indice { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+.indice a { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:6px 14px; border-radius:999px; border:2px solid var(--linha); background:var(--cartao); font-weight:700; text-decoration:none; color:var(--tinta); }
+.indice a:hover { border-color:var(--c, var(--tinta)); } .indice svg { width:18px; height:18px; color:var(--c, var(--suave)); }
+.ciencia-l { list-style:none; margin:0; padding:0; display:grid; gap:12px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
+.ciencia-l li { background:var(--cartao); border:1px solid var(--linha); border-radius:16px; padding:14px 16px; display:flex; flex-direction:column; gap:6px; }
+.ciencia-l .tipo-e { margin:0; font-size:.8rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; color:var(--suave); }
+.ciencia-l p { margin:0; } .ciencia-l .ref { font-size:.88rem; color:var(--suave); overflow-wrap:anywhere; }
+.nota { margin:10px 0 0; font-size:.92rem; color:var(--suave); }
+/* ronda com seis postos */
+.carimbos.seis { grid-template-columns:repeat(3, minmax(0, 1fr)); row-gap:14px; }
+@media (min-width: 40rem) { .carimbos.seis { grid-template-columns:repeat(6, minmax(0, 1fr)); } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.ic-a, .tema-c .ver, .carimbos li.feito .selo-r) { color:#17191E; } }
+:root[data-theme="dark"] :is(.ic-a, .tema-c .ver, .carimbos li.feito .selo-r) { color:#17191E; }
+html.a11y-contraste .faixa, html.a11y-contraste .faixa * { background-color:#000 !important; }
+@media print { .faixa, .busca, .app, .ronda, .indice { display:none !important; } .cartao a { border:1px solid #999; } }
+
+
+.cz-form { background:var(--cartao); border:2px solid var(--linha); border-radius:20px; padding:16px clamp(14px, 3vw, 22px); display:grid; gap:14px;
+  grid-template-columns:repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); align-items:end; }
+.cz-form label, .cz-form legend { font-weight:700; display:block; margin-bottom:4px; }
+.cz-form select { font:inherit; width:100%; min-height:52px; padding:6px 12px; border-radius:14px; border:2px solid var(--linha); background:var(--papel); color:var(--tinta); }
+.cz-form select:focus { border-color:var(--tinta); }
+.cz-form fieldset { border:0; margin:0; padding:0; min-width:0; }
+.cz-seg { display:flex; gap:4px; flex-wrap:wrap; }
+.cz-seg label { margin:0; display:inline-flex; align-items:center; gap:6px; min-height:48px; padding:4px 14px; border-radius:999px; border:2px solid var(--linha); background:var(--papel); font-weight:700; cursor:pointer; }
+.cz-seg input { width:20px; height:20px; accent-color:var(--azul); }
+.cz-seg label:has(input:checked) { border-color:var(--tinta); background:var(--tinta); color:var(--papel); }
+.cz-seg label:has(input:focus-visible) { outline:4px solid var(--azul); outline-offset:2px; }
+.cz-eu { grid-column:1 / -1; display:flex; gap:10px; align-items:flex-start; }
+.cz-eu input { width:24px; height:24px; margin-top:2px; accent-color:var(--azul); flex-shrink:0; }
+.cz-eu label { margin:0; } .cz-eu small { display:block; font-weight:400; color:var(--suave); }
+.cz-form .btn, .cz-form fieldset { grid-column:1 / -1; justify-self:start; }
+#cz-res { display:grid; gap:16px; grid-template-columns:minmax(0, 1fr); }
+@media (min-width: 60rem) { #cz-res { grid-template-columns:repeat(2, minmax(0, 1fr)); } #cz-res > .cz-novo, #cz-res > .cz-largo { grid-column:1 / -1; }
+  .cz-votos { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:28px; } }
+.cz-card { background:var(--cartao); border:1px solid var(--linha); border-radius:20px; padding:18px clamp(14px, 3vw, 22px); display:flex; flex-direction:column; gap:10px; min-width:0; }
+.cz-card h2 { font-size:clamp(1.2rem, 3vw, 1.4rem); } .cz-card h3 { margin:6px 0 0; font-size:1.02rem; font-family:'Lexend', sans-serif; }
+.cz-card p { margin:0; }
+.cz-novo { border:2px solid var(--tinta); }
+.cz-kicker { font-weight:700; letter-spacing:.06em; text-transform:uppercase; font-size:.82rem; color:var(--verm); }
+.cz-num { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; }
+.cz-num b { font-family:'Lexend', sans-serif; font-weight:800; font-size:clamp(3rem, 12vw, 5.2rem); line-height:1; letter-spacing:-.03em; }
+.cz-num span { font-family:'Lexend', sans-serif; font-weight:700; font-size:clamp(1.05rem, 3vw, 1.35rem); }
+.cz-frase { font-size:1.08rem; }
+.cz-nota, .cz-fonte { font-size:.9rem; color:var(--suave); overflow-wrap:anywhere; }
+.cz-af { font-style:italic; color:var(--suave); font-size:.95rem; }
+.cz-votos { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }
+.cz-votos > li { border-top:1px solid var(--linha); padding:12px 0; display:flex; flex-direction:column; gap:6px; }
+.cz-barra { display:flex; height:22px; border-radius:6px; overflow:hidden; background:var(--linha); }
+.cz-barra span { display:block; height:100%; }
+.cz-S { background:#1F6F3A; } .cz-N { background:#B3261E; } .cz-O { background:#B07A12; } .cz-F { background:repeating-linear-gradient(45deg, #8A8D96 0 4px, #B9BCC3 4px 8px); }
+.cz-uL { background:#C9281D; } .cz-uF { background:#1F4E8C; }
+.cz-urna { height:30px; }
+.cz-leg { display:flex; flex-wrap:wrap; gap:4px 14px; font-size:.9rem; }
+.cz-l::before { content:""; display:inline-block; width:.8em; height:.8em; border-radius:3px; margin-right:5px; vertical-align:-.05em; }
+.cz-lS::before { background:#1F6F3A; } .cz-lN::before { background:#B3261E; } .cz-lO::before { background:#B07A12; } .cz-lF::before { background:#8A8D96; }
+.cz-luL::before { background:#C9281D; } .cz-luF::before { background:#1F4E8C; }
+.cz-cruza { border-top:2px dashed var(--linha); padding-top:10px; }
+.cz-cruza ul { margin:6px 0; padding-left:1.2em; }
+details.cz-o-que summary, details.cz-part summary { cursor:pointer; font-weight:700; color:var(--azul); min-height:44px; display:flex; align-items:center; }
+.cz-tab-w { overflow-x:auto; } .cz-tab { border-collapse:collapse; font-size:.95rem; min-width:16rem; }
+.cz-tab th, .cz-tab td { text-align:left; padding:6px 12px 6px 0; border-bottom:1px solid var(--linha); } .cz-tab td { font-variant-numeric:tabular-nums; }
+.cz-dl { margin:0; display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 10rem), 1fr)); }
+.cz-dl div { background:var(--papel); border-radius:14px; padding:10px 12px; }
+.cz-dl dt { font-size:.88rem; color:var(--suave); font-weight:700; } .cz-dl dd { margin:2px 0 0; font-family:'Lexend', sans-serif; font-weight:800; font-size:1.6rem; }
+.cz-dl small { display:block; font-family:'Atkinson Hyperlegible', sans-serif; font-weight:400; font-size:.85rem; color:var(--suave); }
+.cz-chips { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px; }
+.cz-chips li { padding:3px 10px; border-radius:999px; border:1px solid var(--linha); background:var(--papel); font-size:.92rem; }
+.cz-chips li.on { border:2px solid var(--tinta); background:#FFE58F; color:#17191E; }
+.cz-sci { list-style:none; margin:0; padding:0; display:grid; gap:14px 22px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); }
+.cz-sci li { border-left:4px solid var(--azul); padding-left:12px; display:flex; flex-direction:column; gap:4px; }
+.cz-tipo { font-size:.8rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; color:var(--suave); }
+.cz-links { list-style:none; margin:0; padding:0; }
+.cz-links li { border-top:1px solid var(--linha); } .cz-links a { display:flex; gap:10px; align-items:center; min-height:48px; padding:6px 0; text-decoration:none; }
+.cz-links .fmt { flex-shrink:0; font-size:.72rem; font-weight:700; padding:2px 7px; border-radius:6px; background:var(--tinta); color:var(--papel); }
+.cz-comp .acoes { margin:0; } .cz-st { font-weight:700; } .cz-st:empty { display:none; }
+.cz-aviso { font-weight:700; } .cz-aviso:empty { display:none; }
+.cz-como { margin:0; padding-left:1.2em; display:flex; flex-direction:column; gap:4px; }
+html.a11y-contraste .cz-barra span { border-right:2px solid #000; }
+@media print { .cz-form, .cz-comp { display:none !important; } }
+
+[data-tema="congresso"] { --c:#1F4E8C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="congresso"] { --c:#A6C8FF; } }
+:root[data-theme="dark"] [data-tema="congresso"] { --c:#A6C8FF; }
+[data-tema="fatos"] { --c:#1F7F73; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="fatos"] { --c:#5FD3C2; } }
+:root[data-theme="dark"] [data-tema="fatos"] { --c:#5FD3C2; }
+[data-tema="trabalho"] { --c:#9A5F0C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="trabalho"] { --c:#F0B05A; } }
+:root[data-theme="dark"] [data-tema="trabalho"] { --c:#F0B05A; }
+[data-tema="direitos"] { --c:#B3261E; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="direitos"] { --c:#FF8F84; } }
+:root[data-theme="dark"] [data-tema="direitos"] { --c:#FF8F84; }
+[data-tema="bolso"] { --c:#2D6A2E; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="bolso"] { --c:#93D896; } }
+:root[data-theme="dark"] [data-tema="bolso"] { --c:#93D896; }
+[data-tema="eleicoes"] { --c:#4B3F99; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="eleicoes"] { --c:#B7B1F2; } }
+:root[data-theme="dark"] [data-tema="eleicoes"] { --c:#B7B1F2; }
+</style>
+<link rel="stylesheet" href="/vigie.css"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#17191E"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="apple-mobile-web-app-title" content="Vigie">
+</head><body class="vg-com-nav">
+<div class="wrap larga">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <header class="vg-topo" id="topo"><a class="vg-marca" href="/" aria-label="Vigie a Democracia, página inicial"><svg class="olho" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="15" fill="#17191E"/><g class="palp"><path d="M7 32 Q32 8 57 32 Q32 56 7 32 Z" fill="#FBF8F1"/><circle cx="32" cy="32" r="10.5" fill="#FFE58F" stroke="#17191E" stroke-width="3"/><circle cx="32" cy="32" r="4.6" fill="#17191E"/></g></svg><span>Vigie a Democracia</span></a><nav class="vg-nav" aria-label="Seções do site"><ul><li><a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></svg><span>Início</span></a></li><li><a href="/#temas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg><span>Temas</span></a></li><li><a href="/cruzar" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg><span>Cruzar</span></a></li><li><a href="/jogar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="7" width="19" height="11" rx="5"/><path d="M7 10.5v4M5 12.5h4M15.5 11.5h.01M18 13.5h.01"/></svg><span>Jogar</span></a></li><li><a href="/denuncie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V4M4 4h12l-2 4 2 4H4"/></svg><span>Denunciar</span></a></li></ul></nav><div class="vg-acoes"><details class="a11y"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2"/><path d="M4 8.5l8 1.5 8-1.5M12 10v5M12 15l-3.5 6M12 15l3.5 6"/></svg><span class="vg-rot">Acessibilidade</span></summary><div class="a11y-bar" role="group" aria-label="Opções de acessibilidade"><button type="button" data-a11y="menos" aria-label="Diminuir a letra">A−</button><span class="a11y-zl" id="a11y-zl" aria-live="polite">100%</span><button type="button" data-a11y="mais" aria-label="Aumentar a letra">A+</button><button type="button" data-a11y="c" aria-pressed="false">Contraste</button><button type="button" data-a11y="e" aria-pressed="false">Espaçamento</button><button type="button" data-a11y="m" aria-pressed="false">Sem movimento</button><button type="button" data-a11y="ouvir" aria-pressed="false">Ouvir</button><button type="button" data-a11y="libras">Libras</button><a href="https://vigieademocracia.brunochapadeiro.workers.dev/acessibilidade">Ajuda</a><p class="a11y-aviso" id="a11y-aviso" aria-live="polite"></p></div></details><a class="vg-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener" aria-label="Siga @brunochapadeiro no Instagram" title="Siga @brunochapadeiro no Instagram"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></div></header>
+  <!--vg-trilha--><nav class="vg-trilha" aria-label="Você está em"><ol><li><a href="/">Início</a></li><li><span aria-current="page">Cruze os dados</span></li></ol></nav><!--/vg-trilha-->
+  <main id="conteudo" data-a11y-ler>
+  <section class="tema-topo" data-tema="congresso" aria-labelledby="h1">
+    <div class="linha"><span class="ic-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></span><h1 id="h1">Cruze os dados</h1></div>
+    <p class="sub">Escolha o lugar, o assunto e o partido. O site junta os votos da Câmara e do Senado, a urna do TSE, os eleitos de 2026 e estudos científicos e mostra um dado novo, sempre com a fonte.</p>
+  </section>
+  <p class="cz-aviso" id="cz-aviso" role="status">Carregando os dados…</p>
+  <form class="cz-form" id="cz-form" hidden aria-describedby="cz-ajuda">
+    <div><label for="cz-uf">Onde?</label><select id="cz-uf" name="uf"></select></div>
+    <div><label for="cz-as">Qual assunto?</label><select id="cz-as" name="assunto"></select></div>
+    <div><label for="cz-pt">Qual partido? <small>(partido atual)</small></label><select id="cz-pt" name="partido"></select></div>
+    <fieldset><legend>Qual Casa?</legend><div class="cz-seg">
+      <label><input type="radio" name="casa" value="CS" checked> As duas</label><label><input type="radio" name="casa" value="C"> Câmara</label><label><input type="radio" name="casa" value="S"> Senado</label></div></fieldset>
+    <div class="cz-eu"><input type="checkbox" id="cz-eu" name="eu" disabled><label for="cz-eu">Comparar com as minhas respostas do teste
+      <small id="cz-eu-txt">Responda a pelo menos 3 afirmações no <a href="/vota-como-voce">Quem vota como você?</a> para liberar.</small></label></div>
+    <button type="submit" class="btn forte">Ver o resultado</button>
+  </form>
+  <p id="cz-ajuda" class="nota">Os resultados mudam na hora, a cada escolha. O endereço da página guarda o cruzamento: copie e mande para alguém.</p>
+  <p class="visually-hidden" id="cz-resumo" aria-live="polite"></p>
+  <div id="cz-res"></div>
+  <section class="caixa" aria-labelledby="cm-t"><h2 id="cm-t">De onde vêm os dados</h2>
+    <ul class="cz-como">
+      <li>Votos, presença, alinhamento com o governo e cota: dados abertos da Câmara dos Deputados e do Senado Federal, de 2023 a 2026, com o placar de cada votação conferido contra o oficial.</li>
+      <li>Urna: arquivos oficiais de divulgação do TSE, com 100% das seções apuradas, do 1º e do 2º turno para Presidente.</li>
+      <li>Eleitos de 2026: Portal de Dados Abertos do TSE.</li>
+      <li>Ciência: estudos revisados por pares, com DOI, conferidos no PubMed ou na página da revista. Quando não há estudo que meça o efeito de uma votação, dizemos isso.</li>
+      <li>Nada do que você escolhe sai do seu aparelho. O site não tem ranking de parlamentares e não diz em quem votar.</li></ul></section>
+  </main>
+  <aside class="vg-convite" aria-label="Apoio e novidades"><p>Adoeceu por causa do trabalho? O projeto <a href="https://wa.me/5524988091268/?text=Ol%C3%A1%2C+tenho+um+problema+de+sa%C3%BAde+relacionado+ao+meu+trabalho+e+gostaria+de+apoio." target="_blank" rel="noopener">Caminhos do Trabalho (UFF)<span class="visually-hidden"> (abre o WhatsApp)</span></a> acolhe pelo WhatsApp (24) 98809-1268. E siga <a href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener">@brunochapadeiro<span class="visually-hidden"> no Instagram (abre outro site)</span></a> para as novidades.</p></aside>
+  <footer>
+    <div class="soc" data-conta-acesso data-soc-texto="Cruze os dados do seu estado: votos, urna, eleitos e ciência, com fonte:" data-soc-url="https://vigieademocracia.brunochapadeiro.workers.dev/cruzar"><p class="soc-ac"><a class="soc-a" data-soc="ver" href="https://vigieademocracia.brunochapadeiro.workers.dev/#placar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M1.6 12S5.4 4.8 12 4.8 22.4 12 22.4 12 18.6 19.2 12 19.2 1.6 12 1.6 12z"/><circle cx="12" cy="12" r="3.3"/></svg><b data-soc-n="acessos"></b><span class="soc-al"></span><span class="soc-vp">Ver o placar</span></a></p><ul class="soc-row" role="list"><li><button type="button" class="soc-i" data-soc="curtir" aria-pressed="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20.6s-7.7-4.7-9.7-9.4C.8 7.7 3 4 6.8 4c2.2 0 3.8 1.2 5.2 3 1.4-1.8 3-3 5.2-3 3.8 0 6 3.7 4.5 7.2-2 4.7-9.7 9.4-9.7 9.4z"/></svg><b data-soc-n="curtidas"></b></span><span class="soc-l">curtir</span></button></li><li><button type="button" class="soc-i" data-soc="comentar" aria-expanded="false"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 16.9A9.2 9.2 0 1 0 17 20.4l4.6 1.2z"/></svg><b data-soc-n="comentarios"></b></span><span class="soc-l">comentar</span></button></li><li><button type="button" class="soc-i" data-soc="repostar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M17 2.5l3.5 3.5-3.5 3.5"/><path d="M3.5 11.5V9.6A3.6 3.6 0 0 1 7.1 6h13.4"/><path d="M7 21.5L3.5 18 7 14.5"/><path d="M20.5 12.5v1.9a3.6 3.6 0 0 1-3.6 3.6H3.5"/></svg><b data-soc-n="reposts"></b></span><span class="soc-l">repostar</span></button></li><li><a href="https://wa.me/?text=Cruze%20os%20dados%20do%20seu%20estado%3A%20votos%2C%20urna%2C%20eleitos%20e%20ci%C3%AAncia%2C%20com%20fonte%3A%20https%3A%2F%2Fvigieademocracia.brunochapadeiro.workers.dev%2Fcruzar" target="_blank" rel="noopener" class="soc-i" data-soc="compartilhar"><span class="soc-v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.8 2.6L10.3 13.4"/><path d="M21.8 2.6l-6.9 18.8-4.6-8L2.2 9.2z"/></svg><b data-soc-n="compartilhamentos"></b></span><span class="soc-l">compartilhar</span></a></li></ul><div class="soc-p" hidden><p>Os comentários ficam no Instagram do Prof. Bruno Chapadeiro: lá cada pessoa assina o que escreve, e tem moderação.</p><p class="soc-bs"><a class="soc-b" data-soc-com href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener">Comentar no Instagram</a><a class="soc-b" data-soc-com href="https://ig.me/m/brunochapadeiro" target="_blank" rel="noopener">Mandar mensagem direta</a></p></div><p class="soc-st" aria-live="polite"></p></div>
+    <p class="redes"><a class="botao-ig" href="https://instagram.com/brunochapadeiro" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>Siga @brunochapadeiro no Instagram</a> <a class="selo" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br" title="Licença Creative Commons CC BY-NC-SA 4.0"><span class="selo-ic"><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M245.83 214.87l-33.22 17.28c-9.43-19.58-25.24-19.93-27.46-19.93-22.13 0-33.22 14.61-33.22 43.84 0 23.57 9.21 43.84 33.22 43.84 14.47 0 24.65-7.09 30.57-21.26l30.55 15.5c-6.17 11.51-25.69 38.98-65.1 38.98-22.6 0-73.96-10.32-73.96-77.05 0-58.69 43-77.06 72.63-77.06 30.72-.01 52.7 11.95 65.99 35.86zm143.05 0l-32.78 17.28c-9.5-19.77-25.72-19.93-27.9-19.93-22.14 0-33.22 14.61-33.22 43.84 0 23.55 9.23 43.84 33.22 43.84 14.45 0 24.65-7.09 30.54-21.26l31 15.5c-2.1 3.75-21.39 38.98-65.09 38.98-22.69 0-73.96-9.87-73.96-77.05 0-58.67 42.97-77.06 72.63-77.06 30.71-.01 52.58 11.95 65.56 35.86zM247.56 8.05C104.74 8.05 0 123.11 0 256.05c0 138.49 113.6 248 247.56 248 129.93 0 248.44-100.87 248.44-248 0-137.87-106.62-248-248.44-248zm.87 450.81c-112.54 0-203.7-93.04-203.7-202.81 0-105.42 85.43-203.27 203.72-203.27 112.53 0 202.82 89.46 202.82 203.26-.01 121.69-99.68 202.82-202.84 202.82z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M314.9 194.4v101.4h-28.3v120.5h-77.1V295.9h-28.3V194.4c0-4.4 1.6-8.2 4.6-11.3 3.1-3.1 6.9-4.7 11.3-4.7H299c4.1 0 7.8 1.6 11.1 4.7 3.1 3.2 4.8 6.9 4.8 11.3zm-101.5-63.7c0-23.3 11.5-35 34.5-35s34.5 11.7 34.5 35c0 23-11.5 34.5-34.5 34.5s-34.5-11.5-34.5-34.5zM247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C387.4 8 496 115.9 496 256c0 147.2-118.5 248-248.4 248C113.1 504 0 393.2 0 256 0 123.1 104.7 8 247.6 8zM55.8 189.1c-7.4 20.4-11.1 42.7-11.1 66.9 0 110.9 92.1 202.4 203.7 202.4 122.4 0 177.2-101.8 178.5-104.1l-93.4-41.6c-7.7 37.1-41.2 53-68.2 55.4v38.1h-28.8V368c-27.5-.3-52.6-10.2-75.3-29.7l34.1-34.5c31.7 29.4 86.4 31.8 86.4-2.2 0-6.2-2.2-11.2-6.6-15.1-14.2-6-1.8-.1-219.3-97.4zM248.4 52.3c-38.4 0-112.4 8.7-170.5 93l94.8 42.5c10-31.3 40.4-42.9 63.8-44.3v-38.1h28.8v38.1c22.7 1.2 43.4 8.9 62 23L295 199.7c-42.7-29.9-83.5-8-70 11.1 53.4 24.1 43.8 19.8 93 41.6l127.1 56.7c4.1-17.4 6.2-35.1 6.2-53.1 0-57-19.8-105-59.3-143.9-39.3-39.9-87.2-59.8-143.6-59.8z"/></svg><svg class="ic" viewBox="0 0 496 512" aria-hidden="true"><path fill="currentColor" d="M247.6 8C389.4 8 496 118.1 496 256c0 147.1-118.5 248-248.4 248C113.6 504 0 394.5 0 256 0 123.1 104.7 8 247.6 8zm.8 44.7C130.2 52.7 44.7 150.6 44.7 256c0 109.8 91.2 202.8 203.7 202.8 103.2 0 202.8-81.1 202.8-202.8.1-113.8-90.2-203.3-202.8-203.3zM137.7 221c13-83.9 80.5-95.7 108.9-95.7 99.8 0 127.5 82.5 127.5 134.2 0 63.6-41 132.9-128.9 132.9-38.9 0-99.1-20-109.4-97h62.5c1.5 30.1 19.6 45.2 54.5 45.2 23.3 0 58-18.2 58-82.8 0-82.5-49.1-80.6-56.7-80.6-33.1 0-51.7 14.6-55.8 43.8h18.2l-49.2 49.2-49-49.2h19.4z"/></svg></span><span class="selo-tx">CC BY-NC-SA 4.0</span></a></p>
+    <p>© 2026 Prof. Bruno Chapadeiro. Licença Creative Commons CC BY-NC-SA 4.0: pode copiar e adaptar, sem fins comerciais, com crédito e a mesma licença. Feito com auxílio de IA (Claude).</p>
+    <p>Vigie a Democracia: <a href="https://vigieademocracia.brunochapadeiro.workers.dev/">vigieademocracia.brunochapadeiro.workers.dev</a></p>
+  </footer>
+</div>
+<script>
+(function () {
+  var H = document.documentElement, K = 'vv-a11y', st = { z: 1, c: 0, e: 0, m: 0 }, Z = [0.9, 1, 1.15, 1.3, 1.5], CONT = 'https://vigieademocracia.brunochapadeiro.workers.dev/api/placar';
+  try { var g = JSON.parse(localStorage.getItem(K) || '{}'); for (var k in g) st[k] = g[k]; } catch (x) {}
+  function aviso(t) { var a = document.getElementById('a11y-aviso'); if (a) a.textContent = t; }
+  function aplica() {
+    H.style.setProperty('--a11y-zoom', st.z); H.classList.toggle('a11y-zoom', st.z !== 1); H.classList.toggle('a11y-contraste', !!st.c); H.classList.toggle('a11y-espaco', !!st.e); H.classList.toggle('a11y-parado', !!st.m);
+    document.querySelectorAll('[data-a11y="c"],[data-a11y="e"],[data-a11y="m"]').forEach(function (b) { b.setAttribute('aria-pressed', String(!!st[b.getAttribute('data-a11y')])); });
+    var zl = document.getElementById('a11y-zl'); if (zl) zl.textContent = Math.round(st.z * 100) + '%';
+    try { localStorage.setItem(K, JSON.stringify(st)); } catch (x) {}
+  }
+  function zoom(d) { var i = Z.indexOf(st.z); if (i < 0) i = 1; st.z = Z[Math.max(0, Math.min(Z.length - 1, i + d))]; aplica(); }
+  var falando = false;
+  function ouvir(b) {
+    var s = window.speechSynthesis;
+    if (!s || !window.SpeechSynthesisUtterance) { aviso('Este navegador não lê em voz alta. Use o leitor de tela do celular (TalkBack ou VoiceOver).'); return; }
+    if (falando) { s.cancel(); falando = false; b.setAttribute('aria-pressed', 'false'); return; }
+    var alvo = document.querySelector('[data-a11y-ler]') || document.querySelector('main') || document.body;
+    var t = (alvo.innerText || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+    var partes = t.match(/[^.!?:]+[.!?:]*/g) || [t], vz = s.getVoices();
+    var v = vz.filter(function (x) { return /pt[-_]BR/i.test(x.lang); })[0] || vz.filter(function (x) { return /^pt/i.test(x.lang); })[0];
+    s.cancel(); falando = true; b.setAttribute('aria-pressed', 'true'); aviso('Lendo em voz alta. Toque em Ouvir de novo para parar.');
+    partes.forEach(function (p, i) {
+      var u = new SpeechSynthesisUtterance(p.trim()); u.lang = 'pt-BR'; if (v) u.voice = v;
+      if (i === partes.length - 1) u.onend = function () { falando = false; b.setAttribute('aria-pressed', 'false'); aviso(''); };
+      s.speak(u);
+    });
+  }
+  function libras() {
+    var ab = document.querySelector('[vw-access-button]');
+    if (window.VLibras && ab) { ab.click(); return; }
+    aviso('Abrindo o VLibras…');
+    var d = document.createElement('div'); d.setAttribute('vw', ''); d.className = 'enabled';
+    d.innerHTML = '<div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div>';
+    document.body.appendChild(d);
+    var sc = document.createElement('script'); sc.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    sc.onload = function () { try { new window.VLibras.Widget('https://vlibras.gov.br/app');
+      setTimeout(function () { var b = document.querySelector('[vw-access-button]'); if (b) b.click(); aviso('Libras: o intérprete virtual aparece no canto da tela. Toque num texto para ele traduzir.'); }, 1500);
+    } catch (x) { aviso('Não foi possível abrir o VLibras aqui.'); } };
+    sc.onerror = function () { aviso('Não foi possível abrir o VLibras aqui. No site Vigie a Democracia ele funciona.'); };
+    document.head.appendChild(sc);
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('[data-a11y]'); if (!b) return; var k = b.getAttribute('data-a11y');
+    if (k === 'mais') zoom(1); else if (k === 'menos') zoom(-1); else if (k === 'ouvir') ouvir(b); else if (k === 'libras') libras(); else { st[k] = st[k] ? 0 : 1; aplica(); }
+  });
+  aplica();
+})();
+</script><script>
+(function () {
+  var CONT = 'https://vigieademocracia.brunochapadeiro.workers.dev/api/placar', D = null, base = {}, nota = '', seq = 0, ult = {};
+  var PUB = (function () { try { return location.protocol === 'file:' || (/^https?:$/.test(location.protocol) && !/claude|anthropic/.test(location.hostname)); } catch (x) { return false; } })();
+  var CK = 'vv-curtiu', ja = false; try { ja = localStorage.getItem(CK) === '1'; } catch (x) {}
+  function fmt(n) { return (n || 0).toLocaleString('pt-BR'); }
+  function tot(k) { return D ? ((D.totais && D.totais[k]) || 0) + (base[k] || 0) : null; }
+  var NOME = { ver: function (n) { return n + ' acessos' + (base.acessos ? ' desde 15/10, com estimativa de 15 a 20/10' : '') + '. Ver o placar'; }, curtir: function (n) { return 'Curtir. ' + n + ' curtidas'; },
+    comentar: function (n) { return 'Comentar no Instagram. ' + n + ' vezes'; }, repostar: function (n) { return 'Repostar. ' + n + ' reposts'; },
+    compartilhar: function (n) { return 'Compartilhar no WhatsApp. ' + n + ' compartilhamentos'; } };
+  var CH = { ver: 'acessos', curtir: 'curtidas', comentar: 'comentarios', repostar: 'reposts', compartilhar: 'compartilhamentos' };
+  function prepara(el) {
+    if (!el.getAttribute('data-soc-id')) { seq += 1; var id = 'soc-p-' + seq + '-' + Math.random().toString(36).slice(2, 6); el.setAttribute('data-soc-id', id);
+      var p = el.querySelector('.soc-p'), b = el.querySelector('[data-soc="comentar"]'); if (p && b) { p.id = id; b.setAttribute('aria-controls', id); } }
+    el.querySelectorAll('[data-soc]').forEach(function (b) {
+      var k = b.getAttribute('data-soc'), n = tot(CH[k]), nb = b.querySelector('[data-soc-n]');
+      if (nb) nb.textContent = n === null ? '' : fmt(n);
+      var al = b.querySelector('.soc-al'); if (al) al.textContent = n === null ? '' : (n === 1 ? 'acesso' : 'acessos');
+      var nome = n === null ? { ver: 'Ver o placar de acessos', curtir: 'Curtir', comentar: 'Comentar no Instagram', repostar: 'Repostar', compartilhar: 'Compartilhar no WhatsApp' }[k] : NOME[k](fmt(n));
+      b.setAttribute('aria-label', nome);
+      if (k === 'curtir') b.setAttribute('aria-pressed', String(ja));
+    });
+  }
+  function pintaTudo() { document.querySelectorAll('.soc').forEach(prepara); }
+  function dados(d) { if (!d || !d.totais) return; D = d; base = d.base || {}; nota = d.base_nota || ''; pintaTudo(); }
+  function soma(k) { if (!D) return; D.totais = D.totais || {}; D.totais[k] = (D.totais[k] || 0) + 1; pintaTudo(); }
+  function envia(e) {
+    if (!PUB) return; var u = CONT + '?e=' + e;
+    try { if (navigator.sendBeacon && navigator.sendBeacon(u)) return; } catch (x) {}
+    try { fetch(u, { method: 'POST', mode: 'cors', keepalive: true }).catch(function () {}); } catch (x) {}
+  }
+  function conta(e) { var t = Date.now(); if (ult[e] && t - ult[e] < 15000) return; ult[e] = t; envia(e); soma(e); }
+  function st(el, t) { var s = el.querySelector('.soc-st'); if (s) s.textContent = t; }
+  window.vvSocial = { prepara: prepara, dados: dados, pinta: pintaTudo, nota: function () { return nota; } };
+  pintaTudo();
+  if (document.querySelector('.soc[data-conta-acesso]') && PUB) {
+    var a = false; try { a = sessionStorage.getItem('vv-acesso') === '1'; sessionStorage.setItem('vv-acesso', '1'); } catch (x) {}
+    if (!a) envia('acessos');
+  }
+  if (PUB && document.querySelector('.soc')) setTimeout(function () {
+    if (D) return;
+    try { fetch(CONT, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) { if (d && !D) dados(d); }).catch(function () {}); } catch (x) {}
+  }, 700);
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest && e.target.closest('[data-soc],[data-soc-com]'); if (!t) return;
+    var bar = t.closest('.soc'); if (!bar) return;
+    if (t.hasAttribute('data-soc-com')) { conta('comentarios'); return; }
+    var k = t.getAttribute('data-soc');
+    if (k === 'curtir') {
+      if (ja) { st(bar, 'Você já curtiu daqui. Obrigado!'); return; }
+      ja = true; try { localStorage.setItem(CK, '1'); } catch (x) {}
+      envia('curtidas'); soma('curtidas'); if (!D) pintaTudo(); st(bar, 'Curtido. Obrigado!');
+    } else if (k === 'comentar') {
+      var p = bar.querySelector('.soc-p'), ab = p.hidden; p.hidden = !ab; t.setAttribute('aria-expanded', String(ab));
+      if (ab) { var l = p.querySelector('a'); if (l) l.focus(); }
+    } else if (k === 'repostar') {
+      var tx = bar.getAttribute('data-soc-texto') || document.title, u = bar.getAttribute('data-soc-url') || location.href;
+      var copia = function () {
+        var ok = function () { conta('reposts'); st(bar, 'Link copiado. Cole no seu story, status ou post.'); };
+        try { navigator.clipboard.writeText(tx + ' ' + u).then(ok, function () { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }); }
+        catch (x) { st(bar, 'Copie este link e cole no seu story, status ou post: ' + u); }
+      };
+      if (navigator.share) navigator.share({ title: document.title, text: tx, url: u }).then(function () { conta('reposts'); st(bar, 'Obrigado por repostar!'); },
+        function (er) { if (!(er && er.name === 'AbortError')) copia(); });
+      else copia();
+    } else if (k === 'compartilhar') { conta('compartilhamentos'); }
+  });
+})();
+</script>
+<script src="/qr.js"></script>
+<script>window.CZ = {"ordem": ["Trabalho", "Impostos", "Contas públicas", "Direitos", "Terra e ambiente", "Democracia", "Redes", "Segurança"], "sci": {"Trabalho": [{"tipo": "Estimativa OMS/OIT, 194 países", "achado": "Trabalhar 55 horas ou mais por semana foi ligado a cerca de 745 mil mortes por infarto e AVC no mundo em 2016, segundo a OMS e a OIT. Eram 488 milhões de pessoas nessa jornada.", "ref": "Pega F, et al. Environment International, 2021", "doi": "10.1016/j.envint.2021.106595", "titulo": "Global, regional, and national burdens of ischemic heart disease and stroke attributable to exposure to long working hours for 194 countries, 2000–2016"}, {"tipo": "Meta-análise, 603.838 pessoas", "achado": "Quem trabalha 55 horas ou mais por semana teve risco 33% maior de AVC do que quem trabalha de 35 a 40 horas. Quanto mais horas, maior o risco.", "ref": "Kivimäki M, et al. The Lancet, 2015", "doi": "10.1016/S0140-6736(15)60295-1", "titulo": "Long working hours and risk of coronary heart disease and stroke: a systematic review and meta-analysis"}, {"tipo": "Estudo de intervenção, 2.896 trabalhadores em 141 empresas", "achado": "Com quatro dias de trabalho e o mesmo salário, por seis meses, melhoraram o burnout, a satisfação com o trabalho e a saúde mental e física. Nas 12 empresas de comparação, não.", "ref": "Fan W, et al. Nature Human Behaviour, 2025", "doi": "10.1038/s41562-025-02259-6", "titulo": "Work time reduction via a 4-day workweek finds improvements in workers' well-being"}, {"tipo": "Estudo quase-experimental, dados de empresas da Dinamarca", "achado": "Quando a lei obrigou as empresas a divulgar salários por sexo, a diferença entre homens e mulheres caiu cerca de 2 pontos percentuais (13%), sem afetar o lucro das empresas.", "ref": "Bennedsen M, et al. The Journal of Finance, 2022", "doi": "10.1111/jofi.13136", "titulo": "Do Firms Respond to Gender Pay Gap Transparency?"}], "Impostos": [{"tipo": "Estudo com dados do Imposto de Renda", "achado": "Pelos dados do Imposto de Renda, o 1% mais rico ficou com quase 25% da renda do país entre 2006 e 2012, e o 0,1% mais rico, sozinho, com 11%. As pesquisas domiciliares subestimavam o topo.", "ref": "Medeiros M, Souza PHGF, Castro FA. Dados – Revista de Ciências Sociais, 2015", "doi": "10.1590/00115258201537", "titulo": "O topo da distribuição de renda no Brasil: primeiras estimativas com dados tributários e comparação com pesquisas domiciliares (2006-2012)"}, {"tipo": "Estudo com vazamentos de dados e registros fiscais", "achado": "Com dados de vazamentos de contas no exterior, os 0,01% mais ricos sonegavam cerca de 25% dos impostos que deviam, enquanto as auditorias comuns achavam menos de 5% de sonegação em todas as faixas. A sonegação cresce com a riqueza.", "ref": "Alstadsæter A, Johannesen N, Zucman G. American Economic Review, 2019", "doi": "10.1257/aer.20172043", "titulo": "Tax Evasion and Inequality"}], "Contas públicas": [], "Direitos": [{"tipo": "Estudo com dados de universidades brasileiras", "achado": "As cotas aumentaram a matrícula de estudantes de escola pública e de pessoas negras, inclusive nos cursos mais disputados. Só as cotas com critério racial mudaram o perfil racial dos alunos.", "ref": "Vieira RS, Arends-Kuenning M. Economics of Education Review, 2019", "doi": "10.1016/j.econedurev.2019.101931", "titulo": "Affirmative action in Brazilian universities: Effects on the enrollment of targeted groups"}], "Terra e ambiente": [{"tipo": "Estudo com imagens de satélite, 1982–2016", "achado": "Terras indígenas com a demarcação concluída (homologadas) têm significativamente menos desmatamento; nas que não têm o direito pleno, o efeito não aparece.", "ref": "Baragwanath K, Bayi E. PNAS, 2020", "doi": "10.1073/pnas.1917874117", "titulo": "Collective property rights reduce deforestation in the Brazilian Amazon"}, {"tipo": "Estudo com imagens de satélite da Amazônia", "achado": "Terras indígenas e unidades de conservação freiam o desmatamento e o fogo; muitas terras indígenas impediram o desmatamento mesmo cercadas por ele. São a principal barreira ao desmatamento na Amazônia.", "ref": "Nepstad D, et al. Conservation Biology, 2006", "doi": "10.1111/j.1523-1739.2006.00351.x", "titulo": "Inhibition of Amazon deforestation and fire by parks and indigenous lands"}, {"tipo": "Estudo com dados de municípios da Amazônia", "achado": "As políticas de fiscalização e controle de 2004 e 2008 evitaram cerca de 73 mil km² de desmatamento de 2005 a 2009, mais da metade do que seria derrubado sem elas.", "ref": "Assunção J, Gandour C, Rocha R. Environment and Development Economics, 2015", "doi": "10.1017/S1355770X15000078", "titulo": "Deforestation slowdown in the Brazilian Amazon: prices or policies?"}], "Democracia": [{"tipo": "Estudo com dados do V-Dem desde 1900", "achado": "Hoje as democracias costumam recuar aos poucos e por dentro: em 33 de 47 casos desde 1994, quem enfraqueceu a democracia foram governantes eleitos, usando leis e processos de fachada.", "ref": "Lührmann A, Lindberg SI. Democratization, 2019", "doi": "10.1080/13510347.2019.1582029", "titulo": "A third wave of autocratization is here: what is new about it?"}], "Redes": [{"tipo": "Estudo com 126 mil boatos no Twitter, 2006–2017", "achado": "A mentira se espalhou mais longe, mais rápido e para mais gente do que a verdade, sobretudo na política. Quem espalha são pessoas, não robôs: a novidade e a surpresa atraem o compartilhamento.", "ref": "Vosoughi S, Roy D, Aral S. Science, 2018", "doi": "10.1126/science.aap9559", "titulo": "The spread of true and false news online"}, {"tipo": "Meta-análise de 30 estudos, 20.963 pessoas", "achado": "A checagem de fatos corrige crenças falsas, mas o efeito cai quando a checagem desmente só parte da frase, usa escalas de verdade ou mexe com as convicções políticas de quem lê.", "ref": "Walter N, et al. Political Communication, 2020", "doi": "10.1080/10584609.2019.1668894", "titulo": "Fact-Checking: A Meta-Analysis of What Works and for Whom"}, {"tipo": "Dois estudos, 3.446 pessoas", "achado": "Quem para para pensar acredita menos em notícia falsa, mesmo quando ela agrada ao seu lado político. O problema maior é a pressa, mais do que o partidarismo.", "ref": "Pennycook G, Rand DG. Cognition, 2019", "doi": "10.1016/j.cognition.2018.06.011", "titulo": "Lazy, not biased: Susceptibility to partisan fake news is better explained by lack of reasoning than by motivated reasoning"}], "Segurança": [{"tipo": "Estudo de caso de Portugal", "achado": "Depois que Portugal deixou de tratar o porte para uso como crime, em 2001, o uso de drogas não explodiu, caíram o uso problemático e os danos ligados às drogas, e o sistema penal ficou menos sobrecarregado.", "ref": "Hughes CE, Stevens A. British Journal of Criminology, 2010", "doi": "10.1093/bjc/azq038", "titulo": "What can we learn from the Portuguese decriminalization of illicit drugs?"}]}, "sem": {"Contas públicas": "Não há estudo científico que meça o efeito do arcabouço fiscal de 2023 sobre a vida das pessoas; as fontes aqui são a lei e os relatórios oficiais."}, "links": {"Trabalho": [{"n": "Seu tempo vale: o fim da escala 6x1", "h": "/jogos#j4", "f": "Calculadora"}, {"n": "Saúde mental e riscos psicossociais relacionados ao trabalho", "h": "/saude-mental", "f": "Jogo"}, {"n": "Roleta da saúde no trabalho", "h": "/roleta-saude", "f": "Jogo"}, {"n": "Assédio, discriminação e violência no trabalho", "h": "/assedio", "f": "Leitura com fonte"}, {"n": "Onde denunciar e buscar apoio", "h": "/denuncie", "f": "Dados e busca"}], "Impostos": [{"n": "Régua do Imposto de Renda", "h": "/jogos#j14", "f": "Calculadora"}, {"n": "Antes × Agora", "h": "/jogos#j3", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "Programas na sua vida", "h": "/jogos#j17", "f": "Teste"}], "Contas públicas": [{"n": "Antes × Agora", "h": "/jogos#j3", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}], "Direitos": [{"n": "Onde denunciar e buscar apoio", "h": "/denuncie", "f": "Dados e busca"}, {"n": "Assédio, discriminação e violência no trabalho", "h": "/assedio", "f": "Leitura com fonte"}, {"n": "Pode ou não pode?", "h": "/pode-ou-nao", "f": "Jogo"}], "Terra e ambiente": [{"n": "Desenhe a linha", "h": "/jogos#j13", "f": "Jogo"}, {"n": "Exército dos Povos Indígenas", "h": "https://linktr.ee/exercitodospovosindigenas", "f": "Canal externo"}, {"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}], "Democracia": [{"n": "Quem vota como você?", "h": "/vota-como-voce", "f": "Teste"}, {"n": "A ficha de cada parlamentar", "h": "/parlamentares", "f": "Dados e busca"}, {"n": "Placar da semana", "h": "/semana", "f": "Dados e busca"}, {"n": "Raio-X do novo Congresso", "h": "/congresso", "f": "Dados e busca"}], "Redes": [{"n": "Fato ou Boato?", "h": "/jogos#j2", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "Checagem do debate", "h": "/checagem", "f": "Leitura com fonte"}, {"n": "Pega o truque", "h": "/jogos#j6", "f": "Jogo"}], "Segurança": [{"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}, {"n": "Quem vota como você?", "h": "/vota-como-voce", "f": "Teste"}, {"n": "A ficha de cada parlamentar", "h": "/parlamentares", "f": "Dados e busca"}]}, "tema": {"Trabalho": {"id": "trabalho", "nome": "Saúde mental e trabalho"}, "Impostos": {"id": "bolso", "nome": "Bolso e direitos sociais"}, "Contas públicas": {"id": "bolso", "nome": "Bolso e direitos sociais"}, "Direitos": {"id": "direitos", "nome": "Assédio e denúncia"}, "Terra e ambiente": {"id": "fatos", "nome": "Fatos e boatos"}, "Democracia": {"id": "congresso", "nome": "Congresso e votos"}, "Redes": {"id": "fatos", "nome": "Fatos e boatos"}, "Segurança": {"id": "congresso", "nome": "Congresso e votos"}}};</script>
+<script>/* Vigie a Democracia: Cruze os dados. Junta, no aparelho de quem usa, os votos da Câmara e do Senado (dados abertos),
+   a urna do TSE, os eleitos de 2026 e estudos científicos. Nada sai do aparelho: as respostas do teste ficam só nele.
+   © 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0 · Feito com auxílio de IA (Claude). */
+(function () {
+  'use strict';
+  var CZ = window.CZ;
+  var $ = function (s) { return document.querySelector(s); };
+  function el(t, a) {
+    var e = document.createElement(t), k;
+    if (a) for (k in a) { var v = a[k]; if (v == null || v === false) continue;
+      if (k === 'class') e.className = v; else if (k === 'text') e.textContent = v; else e.setAttribute(k, v === true ? '' : v); }
+    for (var i = 2; i < arguments.length; i++) add(e, arguments[i]);
+    return e;
+  }
+  function add(e, c) { if (c == null || c === false) return; if (Array.isArray(c)) { c.forEach(function (x) { add(e, x); }); return; } e.append(c.nodeType ? c : document.createTextNode(String(c))); }
+  function pct(a, b) { return b ? Math.round(1000 * a / b) / 10 : 0; }
+  function fP(n) { return n.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%'; }
+  function fN(n) { return n.toLocaleString('pt-BR'); }
+  function dBR(d) { return d.slice(8, 10) + '/' + d.slice(5, 7) + '/' + d.slice(0, 4); }
+  var CASA = { C: 'Câmara', S: 'Senado' }, NA = { C: 'na Câmara', S: 'no Senado' }, TODA = { C: 'Toda a Câmara', S: 'Todo o Senado' },
+      INTEIRA = { C: 'Na Câmara inteira', S: 'No Senado inteiro' }, DA = { C: 'da Câmara', S: 'do Senado' }, QUEM = { C: ['deputado', 'deputados', 'deputada ou deputado'], S: ['senador', 'senadores', 'senadora ou senador'] };
+  var NOME = { 'LULA': 'Lula', 'FLAVIO BOLSONARO': 'Flávio Bolsonaro', 'RONALDO CAIADO': 'Ronaldo Caiado', 'ESCRITOR AUGUSTO CURY': 'Augusto Cury' };
+  function nome(n) { return NOME[n] || n.toLowerCase().replace(/(^|\s)\S/g, function (m) { return m.toUpperCase(); }); }
+  var NO_CONGRESSO = { 'Deputado Federal': 1, 'Senador': 1, 'mandato-2031': 1 };
+  var P = null, U = null, R = {}, ultimo = null;
+  try { R = JSON.parse(localStorage.getItem('vv-respostas') || '{}') || {}; } catch (e) { R = {}; }
+  var form = $('#cz-form'), out = $('#cz-res'), aviso = $('#cz-aviso'), resumo = $('#cz-resumo');
+
+  Promise.all([fetch('/dados/parlamentares.json').then(function (r) { return r.json(); }), fetch('/dados/cruzar.json').then(function (r) { return r.json(); })])
+    .then(function (x) { P = x[0]; U = x[1]; monta(); })
+    .catch(function () { aviso.textContent = 'Não foi possível carregar os dados. Confira a internet e recarregue a página.'; });
+
+  function opcao(sel, v, t) { sel.append(el('option', { value: v }, t)); }
+
+  function monta() {
+    var q = new URLSearchParams(location.search);
+    var uf = $('#cz-uf'), as = $('#cz-as'), pt = $('#cz-pt');
+    opcao(uf, 'BR', 'Brasil (todos os estados)');
+    Object.keys(U.ufs).sort(function (a, b) { return U.ufs[a].nome.localeCompare(U.ufs[b].nome, 'pt'); })
+      .forEach(function (k) { opcao(uf, k, U.ufs[k].nome); });
+    CZ.ordem.forEach(function (a) {
+      var n = P.perguntas.filter(function (p) { return p.tema === a; }).length;
+      if (n) opcao(as, a, a + ' (' + n + (n === 1 ? ' votação)' : ' votações)'));
+    });
+    var conta = {};
+    P.fichas.forEach(function (f) { if (f.partido) conta[f.partido] = (conta[f.partido] || 0) + 1; });
+    opcao(pt, '', 'Todos os partidos');
+    Object.keys(conta).sort(function (a, b) { return conta[b] - conta[a] || a.localeCompare(b); }).forEach(function (k) { opcao(pt, k, k); });
+    if (q.get('uf') && (U.ufs[q.get('uf')] || q.get('uf') === 'BR')) uf.value = q.get('uf');
+    if (q.get('assunto') && CZ.ordem.indexOf(q.get('assunto')) >= 0) as.value = q.get('assunto');
+    if (q.get('partido') && conta[q.get('partido')]) pt.value = q.get('partido');
+    var casa = q.get('casa'); if (casa === 'C' || casa === 'S') form.querySelector('input[name="casa"][value="' + casa + '"]').checked = true;
+    var nr = Object.keys(R).length, eu = $('#cz-eu');
+    if (nr >= 3) { eu.disabled = false; $('#cz-eu-txt').textContent = 'Você respondeu ' + nr + ' afirmações do teste neste aparelho.'; if (q.get('eu') === '1') eu.checked = true; }
+    form.addEventListener('change', calcula);
+    form.addEventListener('submit', function (e) { e.preventDefault(); calcula(); var h = out.querySelector('h2'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } });
+    aviso.textContent = '';
+    form.hidden = false;
+    calcula();
+  }
+
+  function estado() {
+    return { uf: $('#cz-uf').value, as: $('#cz-as').value, pt: $('#cz-pt').value,
+             casa: (form.querySelector('input[name="casa"]:checked') || {}).value || 'CS', eu: $('#cz-eu').checked };
+  }
+
+  function escolhe(f, s) { return (s.uf === 'BR' || f.uf === s.uf) && (!s.pt || f.partido === s.pt) && (s.casa === 'CS' || f.casa === s.casa); }
+
+  function conta(fichas, k) {
+    var c = { S: 0, N: 0, O: 0, F: 0 };
+    fichas.forEach(function (f) { var v = f.chave[k];
+      if (v === 'S' || v === 'N') c[v]++; else if (v === 'A' || v === 'O' || v === 'P' || v === 'R') c.O++; else if (v === 'F' || v === 'J' || v === '.') c.F++; });
+    c.votou = c.S + c.N + c.O; c.tot = c.votou + c.F;
+    return c;
+  }
+
+  function lugar(s) { return s.uf === 'BR' ? (s.pt ? 'no Brasil' : '') : U.ufs[s.uf].em; }
+  function deUF(s) { return s.uf === 'BR' ? '' : U.ufs[s.uf].em.replace(/^no /, 'do ').replace(/^na /, 'da ').replace(/^em /, 'de '); }
+  function doPartido(s) { return s.pt ? 'do ' + s.pt : ''; }
+  function junta() { return Array.prototype.filter.call(arguments, Boolean).join(' '); }
+
+  function barra(c, rot) {
+    var t = c.tot || 1, partes = [['S', 'Sim', c.S], ['N', 'Não', c.N], ['O', 'Abstenção ou obstrução', c.O], ['F', 'Ausente ou não votou', c.F]];
+    var desc = rot + ': ' + partes.filter(function (p) { return p[2]; }).map(function (p) { return p[1] + ' ' + fN(p[2]); }).join(', ') + '.';
+    var b = el('div', { class: 'cz-barra', role: 'img', 'aria-label': desc });
+    partes.forEach(function (p) { if (p[2]) b.append(el('span', { class: 'cz-' + p[0], style: 'width:' + (100 * p[2] / t) + '%' })); });
+    var leg = el('p', { class: 'cz-leg', 'aria-hidden': 'true' }, el('b', null, rot), ' ',
+      partes.filter(function (p) { return p[2]; }).map(function (p) { return el('span', { class: 'cz-l cz-l' + p[0] }, p[1] + ' ' + fN(p[2])); }));
+    return [b, leg];
+  }
+
+  function calcula() {
+    if (!P) return;
+    var s = estado(); ultimo = null;
+    var qs = new URLSearchParams(); qs.set('uf', s.uf); qs.set('assunto', s.as); if (s.pt) qs.set('partido', s.pt); if (s.casa !== 'CS') qs.set('casa', s.casa); if (s.eu) qs.set('eu', '1');
+    try { history.replaceState(null, '', '?' + qs.toString()); } catch (e) {}
+    var sel = P.fichas.filter(function (f) { return escolhe(f, s); });
+    var votos = [];
+    P.perguntas.forEach(function (q, k) {
+      if (q.tema !== s.as) return;
+      Object.keys(q.casas).forEach(function (h) {
+        if (s.casa !== 'CS' && s.casa !== h) return;
+        var fs = sel.filter(function (f) { return f.casa === h; });
+        votos.push({ q: q, k: k, h: h, c: conta(fs, k), br: conta(P.fichas.filter(function (f) { return f.casa === h; }), k), fs: fs });
+      });
+    });
+    votos.sort(function (a, b) { return b.q.casas[b.h].data.localeCompare(a.q.casas[a.h].data); });
+    out.replaceChildren();
+    var com = votos.filter(function (v) { return v.c.votou > 0; });
+    if (!com.length) {
+      out.append(el('section', { class: 'cz-card' }, el('h2', null, 'Nenhum voto nesta combinação'),
+        el('p', null, 'Não há ' + (s.pt ? 'parlamentares do ' + s.pt + ' ' : 'parlamentares ') + (s.uf === 'BR' ? '' : U.ufs[s.uf].em + ' ') +
+          'que tenham votado ' + (s.casa === 'CS' ? '' : NA[s.casa] + ' ') + 'sobre ' + s.as + '. Troque o partido, a Casa ou o assunto.')));
+      resumo.textContent = 'Nenhum voto nesta combinação.';
+      urna(s); novo(s, null); ciencia(s); aprofunde(s);
+      return;
+    }
+    var recente = function (q) { return Object.keys(q.casas).map(function (h) { return q.casas[h].data; }).sort().pop(); };
+    var v0 = com.slice().sort(function (a, b) { return recente(b.q).localeCompare(recente(a.q)) || b.c.votou - a.c.votou; })[0];
+    var q0 = v0.q, h0 = v0.h, c0 = v0.c, quem = QUEM[h0][1];
+    var p0 = pct(c0.S, c0.votou), pb = pct(v0.br.S, v0.br.votou);
+    var grupo = junta(quem, doPartido(s), deUF(s));
+    var frase = 'Dos ' + fN(c0.votou) + ' ' + grupo + ' que votaram, ' + fN(c0.S) + ' disseram Sim e ' + fN(c0.N) + ' disseram Não' +
+      (c0.O ? ' (' + fN(c0.O) + (c0.O === 1 ? ' se absteve ou obstruiu)' : ' se abstiveram ou obstruíram)') : '') + '.';
+    var comp = (s.uf === 'BR' && !s.pt) ? '' : INTEIRA[h0] + ', ' + fP(pb) + ' votaram Sim.';
+    ultimo = { s: s, q: q0, h: h0, p: p0, pb: pb, frase: frase, comp: comp, rot: 'dos ' + grupo + ' que votaram disseram Sim', c: c0, br: v0.br };
+    // 1. o novo dado
+    var cab = el('section', { class: 'cz-card cz-novo', 'aria-labelledby': 'cz-t1' },
+      el('p', { class: 'cz-kicker' }, 'O dado que você cruzou'),
+      el('h2', { id: 'cz-t1' }, q0.curto + ' · ' + CASA[h0] + ', ' + dBR(q0.casas[h0].data)),
+      el('p', { class: 'cz-num' }, el('b', null, fP(p0)), el('span', null, ' ' + ultimo.rot)),
+      el('p', { class: 'cz-frase' }, frase, ' ', comp),
+      el('details', { class: 'cz-o-que' }, el('summary', null, 'O que foi votado'), el('p', null, q0.explica),
+        el('p', null, el('a', { href: q0.casas[h0].url, target: '_blank', rel: 'noopener' }, 'Ver a votação no site ' + DA[h0], el('span', { class: 'visually-hidden' }, ' (abre outro site)')))),
+      reeleitos(v0, s));
+    out.append(cab);
+    resumo.textContent = q0.curto + ': ' + fP(p0) + ' ' + ultimo.rot + '.';
+    compartilha();
+    // 2. todas as votações do assunto
+    var lista = el('section', { class: 'cz-card cz-largo', 'aria-labelledby': 'cz-t2' }, el('h2', { id: 'cz-t2' }, 'Todas as votações sobre ' + s.as),
+      el('p', { class: 'cz-nota' }, 'Cada barra é um voto do plenário. Partido atual de cada parlamentar; alguns mudaram de partido desde a votação.'));
+    var ul = el('ul', { class: 'cz-votos' });
+    votos.forEach(function (v) {
+      var li = el('li', null, el('h3', null, v.q.curto + ' · ' + CASA[v.h] + ', ' + dBR(v.q.casas[v.h].data)), el('p', { class: 'cz-af' }, '“' + v.q.afirmacao + '”'));
+      if (v.c.tot) add(li, barra(v.c, s.uf === 'BR' && !s.pt ? TODA[v.h] : junta('Seleção:', doPartido(s), lugar(s))));
+      else li.append(el('p', { class: 'cz-nota' }, 'Ninguém desta seleção estava no mandato nesta votação.'));
+      if (s.uf !== 'BR' || s.pt) add(li, barra(v.br, TODA[v.h]));
+      if (s.uf !== 'BR' && !s.pt && v.c.votou) li.append(partidos(v));
+      li.append(el('p', { class: 'cz-fonte' }, el('a', { href: v.q.casas[v.h].url, target: '_blank', rel: 'noopener' }, 'Fonte: ' + CASA[v.h] + ', votação de ' + dBR(v.q.casas[v.h].data), el('span', { class: 'visually-hidden' }, ' (abre outro site)'))));
+      ul.append(li);
+    });
+    lista.append(ul); out.append(lista);
+    // 3. você x bancada
+    if (s.eu) out.append(voce(s, sel));
+    bancada(s, sel); urna(s); novo(s, sel); aprofunde(s); ciencia(s);
+  }
+
+  function partidos(v) {
+    var m = {};
+    v.fs.forEach(function (f) { var x = f.chave[v.k]; if (x !== 'S' && x !== 'N') return; m[f.partido] = m[f.partido] || { S: 0, N: 0 }; m[f.partido][x]++; });
+    var ks = Object.keys(m).sort(function (a, b) { return (m[b].S + m[b].N) - (m[a].S + m[a].N) || a.localeCompare(b); });
+    var t = el('table', { class: 'cz-tab' }, el('caption', { class: 'visually-hidden' }, 'Votos por partido atual'),
+      el('thead', null, el('tr', null, el('th', { scope: 'col' }, 'Partido atual'), el('th', { scope: 'col' }, 'Sim'), el('th', { scope: 'col' }, 'Não'))));
+    var tb = el('tbody'); ks.forEach(function (k) { tb.append(el('tr', null, el('th', { scope: 'row' }, k), el('td', null, fN(m[k].S)), el('td', null, fN(m[k].N)))); });
+    t.append(tb);
+    return el('details', { class: 'cz-part' }, el('summary', null, 'Por partido'), el('div', { class: 'cz-tab-w' }, t));
+  }
+
+  function reeleitos(v, s) {
+    function grupo(letra) {
+      var fs = v.fs.filter(function (f) { return f.chave[v.k] === letra; });
+      var n = fs.filter(function (f) { return NO_CONGRESSO[f.e26]; }).length;
+      return [fs.length, n];
+    }
+    var a = grupo('S'), b = grupo('N');
+    if (!a[0] && !b[0]) return null;
+    function linha(rot, g) { return g[0] ? el('li', null, el('b', null, rot + ': '), fN(g[1]) + ' de ' + fN(g[0]) + ' (' + fP(pct(g[1], g[0])) + ') estarão no Congresso em 2027') : null; }
+    return el('div', { class: 'cz-cruza' }, el('h3', null, 'Cruzamento: quem votou assim volta em 2027?'),
+      el('ul', null, linha('Votaram Sim', a), linha('Votaram Não', b)),
+      el('p', { class: 'cz-nota' }, 'Conta quem foi eleito em 2026 e os senadores com mandato até 2031. Quem não volta pode não ter se candidatado. Fontes: Câmara, Senado e TSE.'));
+  }
+
+  function voce(s, sel) {
+    var qsA = P.perguntas.map(function (q, k) { return [q, k]; }).filter(function (x) { return R[x[0].id] && x[0].tema === s.as; });
+    var todo = !qsA.length;
+    if (todo) qsA = P.perguntas.map(function (q, k) { return [q, k]; }).filter(function (x) { return R[x[0].id]; });
+    var maioria = 0, metade = 0, minoria = 0;
+    sel.forEach(function (f) { var n = 0, ig = 0;
+      qsA.forEach(function (x) { var v = f.chave[x[1]]; if (!x[0].casas[f.casa] || (v !== 'S' && v !== 'N')) return; n++; if (v === R[x[0].id]) ig++; });
+      if (!n) return; if (ig * 2 > n) maioria++; else if (ig * 2 === n) metade++; else minoria++; });
+    var t = maioria + metade + minoria;
+    var sec = el('section', { class: 'cz-card cz-voce', 'aria-labelledby': 'cz-t3' }, el('h2', { id: 'cz-t3' }, 'Você e esta bancada'));
+    if (!t) { sec.append(el('p', null, 'Ninguém desta seleção votou nas afirmações que você respondeu. Troque o assunto ou responda mais no teste.')); return sec; }
+    sec.append(el('p', { class: 'cz-num' }, el('b', null, fN(maioria)), el('span', null, ' de ' + fN(t) + ' votaram como você na maioria das vezes')),
+      el('p', null, (todo ? 'Você não respondeu às afirmações sobre ' + s.as + '; a conta usa todas as ' + qsA.length + ' que você respondeu. ' : 'Nas ' + qsA.length + ' afirmações sobre ' + s.as + ' que você respondeu. ') +
+        fN(metade) + ' concordaram com você em metade dos votos e ' + fN(minoria) + ' em menos da metade. Suas respostas ficam só neste aparelho.'),
+      el('p', null, el('a', { href: '/vota-como-voce' }, 'Ver nome a nome no teste Quem vota como você?')));
+    return sec;
+  }
+
+  function bancada(s, sel) {
+    function soma(fs) { var a = 0, b = 0, c = 0, d = 0; fs.forEach(function (f) { a += f.part.votou; b += f.part.n; c += f.gov.igual; d += f.gov.n; }); return { pres: pct(a, b), gov: pct(c, d), n: fs.length }; }
+    var casaF = function (f) { return s.casa === 'CS' || f.casa === s.casa; };
+    var x = soma(sel.filter(function (f) { return f.part.n; })), br = soma(P.fichas.filter(function (f) { return casaF(f) && f.part.n; }));
+    var sec = el('section', { class: 'cz-card', 'aria-labelledby': 'cz-t4' }, el('h2', { id: 'cz-t4' }, 'A bancada nos 4 anos (2023 a 2026)'),
+      el('dl', { class: 'cz-dl' },
+        el('div', null, el('dt', null, 'Parlamentares na seleção'), el('dd', null, fN(x.n))),
+        el('div', null, el('dt', null, 'Presença nas votações'), el('dd', null, fP(x.pres), el('small', null, 'Congresso: ' + fP(br.pres)))),
+        el('div', null, el('dt', null, 'Votou como o governo orientou'), el('dd', null, fP(x.gov), el('small', null, 'Congresso: ' + fP(br.gov))))),
+      el('p', { class: 'cz-nota' }, 'Inclui suplentes que exerceram o mandato. Presença: votações nominais em que a pessoa votou, entre as que ocorreram no seu mandato. Dados abertos da Câmara e do Senado até ' + dBR(P.atualizado) + '. Sem ranking: ',
+        el('a', { href: '/parlamentares' }, 'veja a ficha de cada um'), '.'));
+    out.append(sec);
+  }
+
+  function urna(s) {
+    var d = s.uf === 'BR' ? U.br : U.ufs[s.uf], br = U.br;
+    var sec = el('section', { class: 'cz-card', 'aria-labelledby': 'cz-t5' }, el('h2', { id: 'cz-t5' }, 'A urna ' + d.em + ' (Presidente, 2026)'));
+    var c = d.t2.cand;
+    var b = el('div', { class: 'cz-barra cz-urna', role: 'img', 'aria-label': '2º turno ' + d.em + ': ' + c.map(function (x) { return nome(x.nome) + ' ' + fP(x.pct); }).join(', ') });
+    c.forEach(function (x, i) { b.append(el('span', { class: 'cz-u' + (x.nome === 'LULA' ? 'L' : 'F'), style: 'width:' + x.pct + '%' })); });
+    sec.append(el('h3', null, '2º turno, 25/10'), b,
+      el('p', { class: 'cz-leg', 'aria-hidden': 'true' }, c.map(function (x) { return el('span', { class: 'cz-l cz-lu' + (x.nome === 'LULA' ? 'L' : 'F') }, nome(x.nome) + ' ' + fP(x.pct)); })),
+      el('p', null, 'Abstenção: ' + fP(d.t2.abst) + ' dos ' + fN(d.t2.eleitores) + ' eleitores.' + (s.uf === 'BR' ? '' : ' No Brasil: ' + nome(br.t2.cand[0].nome) + ' ' + fP(br.t2.cand[0].pct) + ', ' + nome(br.t2.cand[1].nome) + ' ' + fP(br.t2.cand[1].pct) + '.')),
+      el('h3', null, '1º turno, 4/10'),
+      el('p', null, d.t1.cand.map(function (x) { return nome(x.nome) + ' ' + fP(x.pct); }).join(' · ') + '. Abstenção: ' + fP(d.t1.abst) + '.'),
+      el('p', { class: 'cz-fonte' }, 'Fonte: TSE, arquivos oficiais de divulgação (totalização de 100% das seções). ', el('a', { href: '/apuracao' }, 'Veja a apuração completa')));
+    out.append(sec);
+  }
+
+  function novo(s, sel) {
+    var d = s.uf === 'BR' ? U.br : U.ufs[s.uf];
+    var sec = el('section', { class: 'cz-card', 'aria-labelledby': 'cz-t6' }, el('h2', { id: 'cz-t6' }, 'O Congresso que começa em 2027 ' + d.em));
+    function chips(obj, rot) {
+      var ks = Object.keys(obj); if (!ks.length) return null;
+      var tot = ks.reduce(function (a, k) { return a + obj[k]; }, 0);
+      return [el('h3', null, rot + ' eleitos em 2026: ' + fN(tot)), el('ul', { class: 'cz-chips' }, ks.map(function (k) {
+        return el('li', { class: k === s.pt ? 'on' : null }, el('b', null, k), ' ' + fN(obj[k])); }))];
+    }
+    add(sec, chips(d.eleitos.C, 'Deputados federais'));
+    add(sec, chips(d.eleitos.S, 'Senadores'));
+    if (s.pt) {
+      var hoje = P.fichas.filter(function (f) { return f.casa === 'C' && f.situacao === 'Exercício' && f.partido === s.pt && (s.uf === 'BR' || f.uf === s.uf); }).length;
+      var depois = d.eleitos.C[s.pt] || 0;
+      sec.append(el('p', { class: 'cz-frase' }, 'O ' + s.pt + ' tem hoje ' + fN(hoje) + (hoje === 1 ? ' deputado em exercício ' : ' deputados em exercício ') + d.em + ' e elegeu ' + fN(depois) + ' para a próxima legislatura.'));
+    }
+    sec.append(el('p', { class: 'cz-fonte' }, 'Fonte: TSE, candidatos eleitos em 2026. ', el('a', { href: '/congresso' }, 'Veja o Raio-X do novo Congresso')));
+    out.append(sec);
+  }
+
+  function ciencia(s) {
+    var L = CZ.sci[s.as] || [];
+    var sec = el('section', { class: 'cz-card cz-ciencia cz-largo', 'aria-labelledby': 'cz-t7' }, el('h2', { id: 'cz-t7' }, 'O que diz a ciência sobre ' + s.as));
+    if (!L.length) { sec.append(el('p', null, CZ.sem[s.as] || 'Não encontramos estudo científico que meça diretamente o efeito destas votações. As fontes aqui são os registros oficiais.')); out.append(sec); return; }
+    var ul = el('ul', { class: 'cz-sci' });
+    L.forEach(function (e) {
+      ul.append(el('li', null, el('p', { class: 'cz-tipo' }, e.tipo), el('p', null, e.achado),
+        el('p', { class: 'cz-fonte' }, e.ref + '. ', el('a', { href: 'https://doi.org/' + e.doi, target: '_blank', rel: 'noopener', lang: 'en' }, e.titulo, el('span', { class: 'visually-hidden', lang: 'pt-BR' }, ' (abre outro site)')))));
+    });
+    sec.append(ul, el('p', { class: 'cz-nota' }, 'Estudos revisados por pares, conferidos no PubMed ou na página da revista. Estudo observacional mostra associação, não prova sozinho a causa.'));
+    out.append(sec);
+  }
+
+  function aprofunde(s) {
+    var L = CZ.links[s.as] || [], t = CZ.tema[s.as];
+    var sec = el('section', { class: 'cz-card', 'aria-labelledby': 'cz-t8' }, el('h2', { id: 'cz-t8' }, 'Jogue e aprofunde'));
+    var ul = el('ul', { class: 'cz-links' });
+    L.forEach(function (x) { ul.append(el('li', null, el('a', { href: x.h }, el('span', { class: 'fmt' }, x.f), el('b', null, x.n)))); });
+    sec.append(ul);
+    if (t) sec.append(el('p', null, el('a', { class: 'btn', href: '/tema/' + t.id }, 'Tudo sobre ' + t.nome)));
+    out.append(sec);
+  }
+
+  function publico() { var u = new URL(location.href); u.searchParams.delete('eu'); return u.toString(); }
+  function texto() {
+    var u = ultimo; if (!u) return '';
+    return u.q.curto + ' (' + CASA[u.h] + '): ' + u.frase + (u.comp ? ' ' + u.comp : '') + '\nFontes: dados abertos da Câmara e do Senado e TSE.\nCruze você também: ' + publico();
+  }
+
+  function compartilha() {
+    if (!ultimo) return;
+    var sec = el('section', { class: 'cz-card cz-comp cz-largo', 'aria-labelledby': 'cz-t9' }, el('h2', { id: 'cz-t9' }, 'Leve este cruzamento'),
+      el('p', null, 'O card sai com a fonte, a licença e o endereço do site, pronto para o Instagram e o WhatsApp.'));
+    var st = el('p', { class: 'cz-st', 'aria-live': 'polite' });
+    var b1 = el('button', { type: 'button', class: 'btn forte' }, 'Baixar o card (imagem)');
+    var b2 = el('button', { type: 'button', class: 'btn' }, 'Copiar o texto');
+    var b3 = el('a', { class: 'btn', href: 'https://wa.me/?text=' + encodeURIComponent(texto()), target: '_blank', rel: 'noopener' }, 'Mandar no WhatsApp');
+    var b4 = el('button', { type: 'button', class: 'btn' }, 'Copiar o link');
+    b1.addEventListener('click', function () { card().then(function () { st.textContent = 'Card baixado.'; }, function () { st.textContent = 'Não foi possível gerar a imagem neste navegador.'; }); });
+    b2.addEventListener('click', function () { copia(texto(), st, 'Texto copiado.'); });
+    b4.addEventListener('click', function () { copia(publico(), st, 'Link copiado.'); });
+    sec.append(el('p', { class: 'acoes' }, b1, b2, b3, b4), st);
+    out.append(sec);
+  }
+
+  function copia(t, st, ok) {
+    function velho() { var a = el('textarea'); a.value = t; document.body.append(a); a.select(); try { document.execCommand('copy'); st.textContent = ok; } catch (e) { st.textContent = 'Copie manualmente: ' + t; } a.remove(); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function () { st.textContent = ok; }, velho); else velho();
+  }
+
+  // card 1080x1350 para as redes, com a marca d'água, a licença e o endereço
+  function card() {
+    var u = ultimo, W = 1080, H = 1350, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+    var g = cv.getContext('2d');
+    var fontes = document.fonts ? Promise.all(['800 120px Lexend', '700 40px Lexend', '400 34px "Atkinson Hyperlegible"', '700 34px "Atkinson Hyperlegible"'].map(function (f) { return document.fonts.load(f); })) : Promise.resolve();
+    return fontes.then(function () {
+      g.fillStyle = '#FBF8F1'; g.fillRect(0, 0, W, H);
+      g.save(); g.fillStyle = 'rgba(20,24,30,.05)'; g.font = '700 26px "Atkinson Hyperlegible", sans-serif'; g.rotate(-Math.PI / 6);
+      for (var y = -200; y < 2200; y += 190) for (var x = -900; x < 1500; x += 430) g.fillText('Prof. Bruno Chapadeiro', x, y);
+      g.restore();
+      g.fillStyle = '#FFE58F'; g.strokeStyle = '#17191E'; g.lineWidth = 4;
+      g.fillRect(70, 70, 470, 70); g.strokeRect(70, 70, 470, 70);
+      g.fillStyle = '#17191E'; g.font = '700 34px Lexend, sans-serif'; g.fillText('CRUZE OS DADOS', 96, 118);
+      g.fillStyle = '#B3261E'; g.font = '700 34px "Atkinson Hyperlegible", sans-serif';
+      var y0 = quebra(g, (u.q.curto + ' · ' + CASA[u.h]).toUpperCase(), 70, 220, 940, 44);
+      g.fillStyle = '#17191E'; g.font = '800 200px Lexend, sans-serif'; g.fillText(fP(u.p), 62, y0 + 200);
+      g.font = '700 44px Lexend, sans-serif';
+      var y1 = quebra(g, u.rot + (u.s.uf === 'BR' && !u.s.pt ? ' ' + NA[u.h] : ''), 70, y0 + 280, 940, 56);
+      g.fillStyle = '#2A2D35'; g.font = '400 36px "Atkinson Hyperlegible", sans-serif';
+      var y2 = quebra(g, u.frase + (u.comp ? ' ' + u.comp : ''), 70, y1 + 34, 940, 48);
+      g.fillStyle = '#4A4D57'; g.font = '400 28px "Atkinson Hyperlegible", sans-serif';
+      var y3 = quebra(g, 'Fontes: dados abertos da Câmara e do Senado (votação de ' + dBR(u.q.casas[u.h].data) + ') e TSE.', 70, Math.min(y2 + 16, 960), 940, 36);
+      // barras: a seleção e a Casa inteira
+      var yb = Math.min(Math.max(y3, 900), 960), wb = 640;
+      function barras(c, rot, y) {
+        var t = c.tot || 1, x = 70, cores = [['S', '#1F6F3A'], ['N', '#B3261E'], ['O', '#B07A12'], ['F', '#9A9DA5']];
+        g.fillStyle = '#17191E'; g.font = '700 24px "Atkinson Hyperlegible", sans-serif'; g.fillText(rot + ': Sim ' + fN(c.S) + ' (verde) · Não ' + fN(c.N) + ' (vermelho)', 70, y);
+        cores.forEach(function (k) { var w = wb * c[k[0]] / t; if (w > 0) { g.fillStyle = k[1]; g.fillRect(x, y + 12, w, 30); x += w; } });
+        return y + 80;
+      }
+      var yy = barras(u.c, 'Seleção', yb + 24);
+      if (u.s.uf !== 'BR' || u.s.pt) yy = barras(u.br, u.h === 'C' ? 'Câmara inteira' : 'Senado inteiro', yy);
+      g.fillStyle = '#4A4D57'; g.font = '400 20px "Atkinson Hyperlegible", sans-serif'; g.fillText('Cinza: ausente ou não votou.', 70, Math.min(yy - 10, 1160));
+      // QR code do cruzamento
+      if (window.qrcode) {
+        var qr = window.qrcode(0, 'M'); qr.addData(publico()); qr.make();
+        var n = qr.getModuleCount(), lado = 190, m = lado / (n + 8), qx = W - 70 - lado, qy = Math.min(Math.max(y3, 900), 950);
+        g.fillStyle = '#FFFFFF'; g.fillRect(qx, qy, lado, lado); g.fillStyle = '#17191E';
+        for (var r = 0; r < n; r++) for (var cc = 0; cc < n; cc++) if (qr.isDark(r, cc)) g.fillRect(qx + (cc + 4) * m, qy + (r + 4) * m, Math.ceil(m), Math.ceil(m));
+        g.font = '700 20px "Atkinson Hyperlegible", sans-serif'; g.textAlign = 'center'; g.fillText('Cruze você também', qx + lado / 2, qy + lado + 26); g.textAlign = 'left';
+      }
+      g.fillStyle = '#17191E'; g.fillRect(0, H - 170, W, 170);
+      g.fillStyle = '#FFE58F'; g.font = '700 22px "Atkinson Hyperlegible", sans-serif'; g.fillText('Adoeceu pelo trabalho? Caminhos do Trabalho UFF acolhe: WhatsApp (24) 98809-1268', 70, H - 126);
+      g.fillStyle = '#FBF8F1'; g.font = '700 40px "Atkinson Hyperlegible", sans-serif'; g.fillText('@brunochapadeiro', 70, H - 74);
+      g.font = '400 26px "Atkinson Hyperlegible", sans-serif'; g.fillText('vigieademocracia.brunochapadeiro.workers.dev/cruzar', 70, H - 32);
+      g.textAlign = 'right'; g.fillText('© Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0', W - 70, H - 74);
+      g.textAlign = 'left';
+      return new Promise(function (ok, erro) {
+        cv.toBlob(function (b) { if (!b) return erro(); var a = document.createElement('a'); a.href = URL.createObjectURL(b);
+          a.download = 'Cruze_os_dados_' + (u.s.uf) + '_' + u.q.id + '.png'; document.body.append(a); a.click(); a.remove();
+          setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000); ok(); }, 'image/png');
+      });
+    });
+  }
+
+  function quebra(g, t, x, y, w, lh) {
+    var ps = t.split(' '), l = '';
+    for (var i = 0; i < ps.length; i++) { var tst = l ? l + ' ' + ps[i] : ps[i]; if (g.measureText(tst).width > w && l) { g.fillText(l, x, y); y += lh; l = ps[i]; } else l = tst; }
+    if (l) { g.fillText(l, x, y); y += lh; }
+    return y;
+  }
+})();
+</script>
+<script src="/vigia.js" defer></script>
+</body></html>

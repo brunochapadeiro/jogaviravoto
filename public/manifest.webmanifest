@@ -2,7 +2,7 @@
  "id": "/",
  "name": "Vigie a Democracia",
  "short_name": "Vigie",
- "description": "Fatos com fonte, os votos do Congresso, canais de denúncia e jogos para acompanhar a política o ano inteiro. De graça e sem cadastro.",
+ "description": "Fatos com fonte, os votos do Congresso, canais de denúncia, jogos e o cruzador de dados, em seis temas. De graça e sem cadastro.",
  "lang": "pt-BR",
  "dir": "ltr",
  "start_url": "/?origem=app",
@@ -37,6 +37,17 @@
  ],
  "shortcuts": [
   {
+   "name": "Cruze os dados",
+   "short_name": "Cruzar",
+   "url": "/cruzar",
+   "icons": [
+    {
+     "src": "/icone-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
    "name": "Quem vota como você?",
    "short_name": "Teste",
    "url": "/vota-como-voce",
@@ -48,9 +59,9 @@
    ]
   },
   {
-   "name": "A ficha de cada parlamentar",
-   "short_name": "Fichas",
-   "url": "/parlamentares",
+   "name": "Jogar e aprender",
+   "short_name": "Jogar",
+   "url": "/jogar",
    "icons": [
     {
      "src": "/icone-192.png",

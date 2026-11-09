@@ -1,0 +1,18 @@
+[
+  {"data": "2026-11-09", "tema": "congresso", "titulo": "Site organizado por temas e o novo Cruze os dados",
+   "desc": "Seis temas, uma página para cada um, a página Jogar e o cruzador: escolha o estado, o assunto e o partido e veja a bancada, a urna do TSE, os eleitos de 2026 e o que dizem os estudos científicos.", "href": "/cruzar"},
+  {"data": "2026-11-09", "tema": "bolso", "titulo": "#BetsNuncaMais: situação no STF atualizada",
+   "desc": "O ministro Luiz Fux, relator da ADI 8027, fez a audiência pública sobre a proibição das bets em 3/11. O julgamento ainda não foi marcado.", "href": "/tema/bolso#participe"},
+  {"data": "2026-11-05", "tema": "trabalho", "titulo": "Saúde mental: área aberta a todos os públicos",
+   "desc": "12 jogos para o celular, o telão e o papel, com kits em A4 para cada um e a linha do tempo da NR-1.", "href": "/saude-mental"},
+  {"data": "2026-11-03", "tema": "congresso", "titulo": "Novo jogo: De quem cobrar no Brasil?",
+   "desc": "97 situações em 8 temas, com a lei de cada resposta, e o mapa completo em A4.", "href": "/quem-cobrar"},
+  {"data": "2026-10-31", "tema": "direitos", "titulo": "Cartaz e panfleto: onde denunciar no trabalho",
+   "desc": "Os canais de denúncia e de acolhimento com QR code, em A4 e quatro por folha.", "href": "/arquivos/Cartaz_Onde_denunciar_no_trabalho.pdf"},
+  {"data": "2026-10-30", "tema": "congresso", "titulo": "A ficha de cada parlamentar e o teste Quem vota como você?",
+   "desc": "Votos, presença, alinhamento com o governo e cota parlamentar de 752 deputados e senadores, com os dados abertos até 30/10/2026.", "href": "/parlamentares"},
+  {"data": "2026-10-27", "tema": "eleicoes", "titulo": "Viramos: a eleição em 10 telas",
+   "desc": "O resultado oficial do 2º turno e as mensagens que chegaram depois.", "href": "/viramos"},
+  {"data": "2026-10-27", "tema": "congresso", "titulo": "Placar da semana de 13 a 17 de outubro",
+   "desc": "O que a Câmara e o Senado votaram e como votou cada partido.", "href": "/semana"}
+]

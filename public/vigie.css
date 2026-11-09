@@ -49,3 +49,41 @@ html.a11y-contraste .vg-nav, html.a11y-contraste .vg-nav * { background-color:#0
 :root[data-theme="dark"] .olho { box-shadow:0 0 0 1.5px rgba(242,240,234,.35); }
 /* menos ruído nas páginas internas */
 .wrap > .placa { transform:none; font-size:.9rem; padding:3px 10px; border-width:2px; }
+/*vg-temas*/
+.vg-trilha { margin:2px 0 -4px; } body > .vg-trilha { max-width:46rem; margin:4px auto 0; padding:0 max(16px, env(safe-area-inset-left, 0px)); box-sizing:border-box; }
+.vg-trilha ol { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; align-items:center; font-size:.92rem; }
+.vg-trilha li { display:inline-flex; align-items:center; }
+.vg-trilha li + li::before { content:"›"; margin:0 8px; color:var(--suave); }
+.vg-trilha a { display:inline-flex; align-items:center; min-height:44px; font-weight:700; }
+.vg-trilha [aria-current] { color:var(--suave); }
+.vg-mais { border-top:3px solid var(--c, var(--tinta)); padding-top:16px; margin-top:12px; display:flex; flex-direction:column; gap:12px; }
+.vg-mais h2 { margin:0; font-family:'Lexend', sans-serif; font-size:1.3rem; line-height:1.2; }
+.vg-mais ul { list-style:none; margin:0; padding:0; display:grid; gap:8px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
+.vg-mais li a { display:flex; flex-direction:column; gap:2px; height:100%; padding:10px 14px; min-height:52px; border-radius:14px; border:1px solid var(--linha); border-left:5px solid var(--c, var(--tinta));
+  background:var(--cartao); text-decoration:none; color:var(--tinta); }
+.vg-mais li a b { color:var(--azul); } .vg-mais li a small { color:var(--suave); font-size:.85rem; font-weight:700; }
+.vg-mais .vg-btns { display:flex; flex-wrap:wrap; gap:8px; margin:0; }
+.vg-mais .vg-btns a { display:inline-flex; align-items:center; min-height:48px; padding:6px 18px; border-radius:999px; border:2px solid var(--tinta); color:var(--tinta); font-weight:700; text-decoration:none; }
+.vg-mais .vg-btns a.forte { background:var(--tinta); color:var(--papel); }
+.vg-convite { margin:16px 0 0; padding:12px 16px; border-radius:14px; background:var(--cartao); border:1px dashed var(--linha); font-size:.95rem; }
+.vg-mais .vg-convite { margin:0; } aside.vg-convite p { margin:0; }
+@media print { .vg-trilha, .vg-mais { display:none !important; } }
+[data-tema="congresso"] { --c:#1F4E8C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="congresso"] { --c:#A6C8FF; } }
+:root[data-theme="dark"] [data-tema="congresso"] { --c:#A6C8FF; }
+[data-tema="fatos"] { --c:#1F7F73; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="fatos"] { --c:#5FD3C2; } }
+:root[data-theme="dark"] [data-tema="fatos"] { --c:#5FD3C2; }
+[data-tema="trabalho"] { --c:#9A5F0C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="trabalho"] { --c:#F0B05A; } }
+:root[data-theme="dark"] [data-tema="trabalho"] { --c:#F0B05A; }
+[data-tema="direitos"] { --c:#B3261E; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="direitos"] { --c:#FF8F84; } }
+:root[data-theme="dark"] [data-tema="direitos"] { --c:#FF8F84; }
+[data-tema="bolso"] { --c:#2D6A2E; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="bolso"] { --c:#93D896; } }
+:root[data-theme="dark"] [data-tema="bolso"] { --c:#93D896; }
+[data-tema="eleicoes"] { --c:#4B3F99; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-tema="eleicoes"] { --c:#B7B1F2; } }
+:root[data-theme="dark"] [data-tema="eleicoes"] { --c:#B7B1F2; }
+/*/vg-temas*/
