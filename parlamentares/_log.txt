@@ -1,7 +1,7 @@
 câmara 2023 votações do plenário: 1086
 câmara 2024 votações do plenário: 2144
 câmara 2025 votações do plenário: 2041
-câmara 2026 votações do plenário: 1396
+câmara 2026 votações do plenário: 1424
 deputados: 648
 histórico 0
 histórico 100
@@ -18,7 +18,7 @@ senadores com exercício na legislatura: 107
 senado 2023 141
 senado 2024 236
 senado 2025 364
-senado 2026 426
+senado 2026 430
 ceaps 2023
 ceaps 2024
 ceaps 2025
