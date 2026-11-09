@@ -1,0 +1,7 @@
+200 9455 https://apisidra.ibge.gov.br/values/t/4099/n3/all/v/4099/p/last%201
+200 7745 https://apisidra.ibge.gov.br/values/t/6579/n3/all/v/9324/p/last%201
+400 29 https://apisidra.ibge.gov.br/values/t/5429/n3/all/v/all/p/last%201
+200 18105 https://apisidra.ibge.gov.br/values/t/7435/n3/all/v/all/p/last%201
+200 21060 https://apisidra.ibge.gov.br/values/t/7113/n3/all/v/all/p/last%201
+200 64028 https://apisidra.ibge.gov.br/values/t/8529/n3/all/v/all/p/last%201
+200 104402 https://apisidra.ibge.gov.br/values/t/5436/n3/all/v/all/p/last%201
