@@ -137,7 +137,7 @@ item("materiais", "/jogos#materiais", "Todos os materiais da campanha", "Baralho
 
 # Participe: campanhas e canais de fora do site (não são órgãos públicos: dizemos quem organiza)
 item("bets", "https://betsnuncamais.com.br/", "#BetsNuncaMais: abaixo-assinado contra a volta das bets",
-     "A MP 1.394/2026, de 25/9, proibiu as apostas de quota fixa. No STF, a associação das empresas de apostas pede a suspensão da MP (ADI 8027); o relator, ministro Luiz Fux, fez audiência pública em 3/11 e não marcou o julgamento. O abaixo-assinado pede que a proibição continue, o fim do patrocínio das bets e tratamento público para quem se viciou. Pede nome, e-mail e CPF.",
+     "A MP 1.394/2026, de 25/9, proibiu as apostas de quota fixa. No STF, a associação das empresas de apostas pede a suspensão da MP (ADI 8027); o relator, ministro Luiz Fux, fez audiência pública em 3/11 e, em 8/11, a pedido da PGR, suspendeu os processos sobre a MP nas outras instâncias até o STF decidir. O julgamento ainda não tem data. O abaixo-assinado pede que a proibição continue, o fim do patrocínio das bets e tratamento público para quem se viciou. Pede nome, e-mail e CPF.",
      "bolso", "campanha", externo=True, quem="Organiza: Instituto Conhecimento Liberta. Conferido em 9/11/2026.",
      tags="bets apostas jogo vício abaixo-assinado petição stf participe campanha")
 item("antirracista", "https://whatsapp.com/channel/0029Vb92L295Ui2P899ACd1k", "Exército Antirracista",
