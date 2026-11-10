@@ -202,6 +202,38 @@ html.a11y-contraste .faixa, html.a11y-contraste .faixa * { background-color:#000
 @media print { .faixa, .busca, .app, .ronda, .indice { display:none !important; } .cartao a { border:1px solid #999; } }
 
 
+
+.ce { display:flex; flex-direction:column; gap:12px; scroll-margin-top:12px; }
+.ce-ex-t { margin:0; font-weight:700; }
+.ce-ex { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+.ce-ex .btn { min-height:48px; }
+.ce-form { grid-template-columns:repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+.ce-form .btn { grid-column:auto; }
+.ce-card h3 { font-size:clamp(1.15rem, 3vw, 1.35rem); } .ce-card h4 { margin:8px 0 0; font-family:'Lexend', sans-serif; font-size:1rem; }
+.ce-fig { margin:0; } .ce-fig figcaption { font-size:.9rem; color:var(--suave); margin-top:4px; }
+.ce-svg { width:100%; height:auto; display:block; background:var(--papel); border:1px solid var(--linha); border-radius:14px; }
+.ce-grade { stroke:var(--linha); stroke-width:1; }
+.ce-eixo { fill:var(--suave); font-size:12px; font-family:'Atkinson Hyperlegible', sans-serif; }
+.ce-rot { fill:var(--tinta); font-size:13px; font-weight:700; font-family:'Atkinson Hyperlegible', sans-serif; }
+.ce-pt circle { fill:var(--azul); stroke:var(--papel); stroke-width:1.5; }
+.ce-pt text { fill:var(--papel); font-size:9.5px; font-weight:700; font-family:'Atkinson Hyperlegible', sans-serif; pointer-events:none; }
+.ce-pt.ce-sel circle { fill:var(--verm); stroke:var(--tinta); stroke-width:3; } .ce-pt.ce-sel text { font-size:11px; }
+.ce-br rect { fill:var(--tinta); stroke:var(--papel); stroke-width:2; } .ce-br text { paint-order:stroke; stroke:var(--papel); stroke-width:4px; stroke-linejoin:round; fill:var(--tinta); font-size:12px; font-weight:700; font-family:'Atkinson Hyperlegible', sans-serif; }
+.ce-barras { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; }
+.ce-barras li { display:grid; grid-template-columns:minmax(6.5rem, 9.5rem) minmax(0, 1fr) auto; gap:8px; align-items:center; padding:2px 6px; border-radius:8px; }
+.ce-barras li.ce-sel { background:var(--papel); outline:2px solid var(--verm); }
+.ce-uf { font-size:.92rem; overflow-wrap:anywhere; } .ce-barras b { font-size:.92rem; white-space:nowrap; }
+.ce-trilho { height:14px; border-radius:7px; background:var(--linha); overflow:hidden; } .ce-barra { display:block; height:100%; background:var(--azul); border-radius:7px; }
+.ce-sel .ce-barra { background:var(--verm); }
+.ce-tab summary { cursor:pointer; font-weight:700; min-height:44px; display:flex; align-items:center; }
+.ce-rolar { overflow-x:auto; max-width:100%; }
+.ce-tab table { border-collapse:collapse; width:100%; font-size:.95rem; }
+.ce-tab th, .ce-tab td { padding:6px 8px; border-bottom:1px solid var(--linha); text-align:left; }
+.ce-tab td { text-align:right; white-space:nowrap; } .ce-tab thead th:not(:first-child) { text-align:right; }
+.ce-tab tr.ce-sel { background:var(--papel); outline:2px solid var(--verm); } .ce-tbr th, .ce-tbr td { font-weight:700; }
+.ce-ord { font:inherit; font-weight:700; background:none; border:0; color:var(--azul); cursor:pointer; min-height:44px; padding:0; text-align:inherit; text-decoration:underline; }
+th[aria-sort="ascending"] .ce-ord::after { content:" ▲"; } th[aria-sort="descending"] .ce-ord::after { content:" ▼"; }
+.ce-fontes { margin:0; padding-left:1.1em; font-size:.92rem; overflow-wrap:anywhere; } .ce-fontes li + li { margin-top:4px; }
 .cz-form { background:var(--cartao); border:2px solid var(--linha); border-radius:20px; padding:16px clamp(14px, 3vw, 22px); display:grid; gap:14px;
   grid-template-columns:repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); align-items:end; }
 .cz-form label, .cz-form legend { font-weight:700; display:block; margin-bottom:4px; }
@@ -294,7 +326,7 @@ html.a11y-contraste .cz-barra span { border-right:2px solid #000; }
   <main id="conteudo" data-a11y-ler>
   <section class="tema-topo" data-tema="congresso" aria-labelledby="h1">
     <div class="linha"><span class="ic-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></span><h1 id="h1">Cruze os dados</h1></div>
-    <p class="sub">Escolha o lugar, o assunto e o partido. O site junta os votos da Câmara e do Senado, a urna do TSE, os eleitos de 2026 e estudos científicos e mostra um dado novo, sempre com a fonte.</p>
+    <p class="sub">Escolha o lugar, o assunto e o partido. O site junta os votos da Câmara e do Senado, a urna do TSE, os eleitos de 2026, os dados do IBGE e estudos científicos e mostra um dado novo, sempre com a fonte. Mais abaixo, <a href="#ce">compare os estados</a> cruzando quaisquer dois dados.</p>
   </section>
   <p class="cz-aviso" id="cz-aviso" role="status">Carregando os dados…</p>
   <form class="cz-form" id="cz-form" hidden aria-describedby="cz-ajuda">
@@ -310,10 +342,33 @@ html.a11y-contraste .cz-barra span { border-right:2px solid #000; }
   <p id="cz-ajuda" class="nota">Os resultados mudam na hora, a cada escolha. O endereço da página guarda o cruzamento: copie e mande para alguém.</p>
   <p class="visually-hidden" id="cz-resumo" aria-live="polite"></p>
   <div id="cz-res"></div>
+  <section class="ce" id="ce" aria-labelledby="ce-t" hidden>
+    <div class="sec-cab"><h2 id="ce-t">Compare os estados</h2>
+    <p>Escolha <b>dois dados quaisquer</b> e veja os 27 estados lado a lado: urna, eleitos, votos das bancadas, presença, trabalho e renda. São 49 dados, que se cruzam de todas as formas. O resultado vem em frase, em gráfico e em tabela.</p></div>
+    <p class="ce-ex-t" id="ce-ex-t">Comece por um exemplo:</p>
+    <ul class="ce-ex" aria-labelledby="ce-ex-t">
+      <li><button type="button" class="btn" data-cx="desocupacao" data-cy="lula-t2">Desemprego × voto em Lula</button></li>
+      <li><button type="button" class="btn" data-cx="rendimento" data-cy="comparec-t2">Renda × comparecimento</button></li>
+      <li><button type="button" class="btn" data-cx="informalidade" data-cy="voto-6x1-C">Informalidade × fim da 6x1</button></li>
+      <li><button type="button" class="btn" data-cx="gini" data-cy="eleitos-pl">Desigualdade × eleitos do PL</button></li>
+      <li><button type="button" class="btn" data-cx="gov-C" data-cy="lula-t2">Bancada com o governo × voto em Lula</button></li>
+      <li><button type="button" class="btn" data-cx="rendimento" data-cy="">Renda, estado por estado</button></li>
+    </ul>
+    <div class="cz-form ce-form">
+      <div><label for="ce-x">Primeiro dado</label><select id="ce-x"></select></div>
+      <div><label for="ce-y">Segundo dado</label><select id="ce-y"></select></div>
+      <button type="button" class="btn" id="ce-trocar">Trocar os dois de lugar</button>
+    </div>
+    <p class="nota">Para destacar um estado, escolha-o em “Onde?”, lá em cima. O endereço da página guarda a comparação.</p>
+    <p class="visually-hidden" id="ce-frase" aria-live="polite"></p>
+    <div id="ce-res"></div>
+  </section>
   <section class="caixa" aria-labelledby="cm-t"><h2 id="cm-t">De onde vêm os dados</h2>
     <ul class="cz-como">
       <li>Votos, presença, alinhamento com o governo e cota: dados abertos da Câmara dos Deputados e do Senado Federal, de 2023 a 2026, com o placar de cada votação conferido contra o oficial.</li>
       <li>Urna: arquivos oficiais de divulgação do TSE, com 100% das seções apuradas, do 1º e do 2º turno para Presidente.</li>
+      <li>Trabalho, renda e população: IBGE, Sidra (PNAD Contínua e Estimativas de População), com a tabela e o período de cada número.</li>
+      <li>Quer ir além? Veja o <a href="/bases">guia das bases de dados</a>: Base dos Dados, gráficos do Nexo, HubPolítico e as fontes oficiais.</li>
       <li>Eleitos de 2026: Portal de Dados Abertos do TSE.</li>
       <li>Ciência: estudos revisados por pares, com DOI, conferidos no PubMed ou na página da revista. Quando não há estudo que meça o efeito de uma votação, dizemos isso.</li>
       <li>Nada do que você escolhe sai do seu aparelho. O site não tem ranking de parlamentares e não diz em quem votar.</li></ul></section>
@@ -444,7 +499,7 @@ html.a11y-contraste .cz-barra span { border-right:2px solid #000; }
 })();
 </script>
 <script src="/qr.js"></script>
-<script>window.CZ = {"ordem": ["Trabalho", "Impostos", "Contas públicas", "Direitos", "Terra e ambiente", "Democracia", "Redes", "Segurança"], "sci": {"Trabalho": [{"tipo": "Estimativa OMS/OIT, 194 países", "achado": "Trabalhar 55 horas ou mais por semana foi ligado a cerca de 745 mil mortes por infarto e AVC no mundo em 2016, segundo a OMS e a OIT. Eram 488 milhões de pessoas nessa jornada.", "ref": "Pega F, et al. Environment International, 2021", "doi": "10.1016/j.envint.2021.106595", "titulo": "Global, regional, and national burdens of ischemic heart disease and stroke attributable to exposure to long working hours for 194 countries, 2000–2016"}, {"tipo": "Meta-análise, 603.838 pessoas", "achado": "Quem trabalha 55 horas ou mais por semana teve risco 33% maior de AVC do que quem trabalha de 35 a 40 horas. Quanto mais horas, maior o risco.", "ref": "Kivimäki M, et al. The Lancet, 2015", "doi": "10.1016/S0140-6736(15)60295-1", "titulo": "Long working hours and risk of coronary heart disease and stroke: a systematic review and meta-analysis"}, {"tipo": "Estudo de intervenção, 2.896 trabalhadores em 141 empresas", "achado": "Com quatro dias de trabalho e o mesmo salário, por seis meses, melhoraram o burnout, a satisfação com o trabalho e a saúde mental e física. Nas 12 empresas de comparação, não.", "ref": "Fan W, et al. Nature Human Behaviour, 2025", "doi": "10.1038/s41562-025-02259-6", "titulo": "Work time reduction via a 4-day workweek finds improvements in workers' well-being"}, {"tipo": "Estudo quase-experimental, dados de empresas da Dinamarca", "achado": "Quando a lei obrigou as empresas a divulgar salários por sexo, a diferença entre homens e mulheres caiu cerca de 2 pontos percentuais (13%), sem afetar o lucro das empresas.", "ref": "Bennedsen M, et al. The Journal of Finance, 2022", "doi": "10.1111/jofi.13136", "titulo": "Do Firms Respond to Gender Pay Gap Transparency?"}], "Impostos": [{"tipo": "Estudo com dados do Imposto de Renda", "achado": "Pelos dados do Imposto de Renda, o 1% mais rico ficou com quase 25% da renda do país entre 2006 e 2012, e o 0,1% mais rico, sozinho, com 11%. As pesquisas domiciliares subestimavam o topo.", "ref": "Medeiros M, Souza PHGF, Castro FA. Dados – Revista de Ciências Sociais, 2015", "doi": "10.1590/00115258201537", "titulo": "O topo da distribuição de renda no Brasil: primeiras estimativas com dados tributários e comparação com pesquisas domiciliares (2006-2012)"}, {"tipo": "Estudo com vazamentos de dados e registros fiscais", "achado": "Com dados de vazamentos de contas no exterior, os 0,01% mais ricos sonegavam cerca de 25% dos impostos que deviam, enquanto as auditorias comuns achavam menos de 5% de sonegação em todas as faixas. A sonegação cresce com a riqueza.", "ref": "Alstadsæter A, Johannesen N, Zucman G. American Economic Review, 2019", "doi": "10.1257/aer.20172043", "titulo": "Tax Evasion and Inequality"}], "Contas públicas": [], "Direitos": [{"tipo": "Estudo com dados de universidades brasileiras", "achado": "As cotas aumentaram a matrícula de estudantes de escola pública e de pessoas negras, inclusive nos cursos mais disputados. Só as cotas com critério racial mudaram o perfil racial dos alunos.", "ref": "Vieira RS, Arends-Kuenning M. Economics of Education Review, 2019", "doi": "10.1016/j.econedurev.2019.101931", "titulo": "Affirmative action in Brazilian universities: Effects on the enrollment of targeted groups"}], "Terra e ambiente": [{"tipo": "Estudo com imagens de satélite, 1982–2016", "achado": "Terras indígenas com a demarcação concluída (homologadas) têm significativamente menos desmatamento; nas que não têm o direito pleno, o efeito não aparece.", "ref": "Baragwanath K, Bayi E. PNAS, 2020", "doi": "10.1073/pnas.1917874117", "titulo": "Collective property rights reduce deforestation in the Brazilian Amazon"}, {"tipo": "Estudo com imagens de satélite da Amazônia", "achado": "Terras indígenas e unidades de conservação freiam o desmatamento e o fogo; muitas terras indígenas impediram o desmatamento mesmo cercadas por ele. São a principal barreira ao desmatamento na Amazônia.", "ref": "Nepstad D, et al. Conservation Biology, 2006", "doi": "10.1111/j.1523-1739.2006.00351.x", "titulo": "Inhibition of Amazon deforestation and fire by parks and indigenous lands"}, {"tipo": "Estudo com dados de municípios da Amazônia", "achado": "As políticas de fiscalização e controle de 2004 e 2008 evitaram cerca de 73 mil km² de desmatamento de 2005 a 2009, mais da metade do que seria derrubado sem elas.", "ref": "Assunção J, Gandour C, Rocha R. Environment and Development Economics, 2015", "doi": "10.1017/S1355770X15000078", "titulo": "Deforestation slowdown in the Brazilian Amazon: prices or policies?"}], "Democracia": [{"tipo": "Estudo com dados do V-Dem desde 1900", "achado": "Hoje as democracias costumam recuar aos poucos e por dentro: em 33 de 47 casos desde 1994, quem enfraqueceu a democracia foram governantes eleitos, usando leis e processos de fachada.", "ref": "Lührmann A, Lindberg SI. Democratization, 2019", "doi": "10.1080/13510347.2019.1582029", "titulo": "A third wave of autocratization is here: what is new about it?"}], "Redes": [{"tipo": "Estudo com 126 mil boatos no Twitter, 2006–2017", "achado": "A mentira se espalhou mais longe, mais rápido e para mais gente do que a verdade, sobretudo na política. Quem espalha são pessoas, não robôs: a novidade e a surpresa atraem o compartilhamento.", "ref": "Vosoughi S, Roy D, Aral S. Science, 2018", "doi": "10.1126/science.aap9559", "titulo": "The spread of true and false news online"}, {"tipo": "Meta-análise de 30 estudos, 20.963 pessoas", "achado": "A checagem de fatos corrige crenças falsas, mas o efeito cai quando a checagem desmente só parte da frase, usa escalas de verdade ou mexe com as convicções políticas de quem lê.", "ref": "Walter N, et al. Political Communication, 2020", "doi": "10.1080/10584609.2019.1668894", "titulo": "Fact-Checking: A Meta-Analysis of What Works and for Whom"}, {"tipo": "Dois estudos, 3.446 pessoas", "achado": "Quem para para pensar acredita menos em notícia falsa, mesmo quando ela agrada ao seu lado político. O problema maior é a pressa, mais do que o partidarismo.", "ref": "Pennycook G, Rand DG. Cognition, 2019", "doi": "10.1016/j.cognition.2018.06.011", "titulo": "Lazy, not biased: Susceptibility to partisan fake news is better explained by lack of reasoning than by motivated reasoning"}], "Segurança": [{"tipo": "Estudo de caso de Portugal", "achado": "Depois que Portugal deixou de tratar o porte para uso como crime, em 2001, o uso de drogas não explodiu, caíram o uso problemático e os danos ligados às drogas, e o sistema penal ficou menos sobrecarregado.", "ref": "Hughes CE, Stevens A. British Journal of Criminology, 2010", "doi": "10.1093/bjc/azq038", "titulo": "What can we learn from the Portuguese decriminalization of illicit drugs?"}]}, "sem": {"Contas públicas": "Não há estudo científico que meça o efeito do arcabouço fiscal de 2023 sobre a vida das pessoas; as fontes aqui são a lei e os relatórios oficiais."}, "links": {"Trabalho": [{"n": "Seu tempo vale: o fim da escala 6x1", "h": "/jogos#j4", "f": "Calculadora"}, {"n": "Saúde mental e riscos psicossociais relacionados ao trabalho", "h": "/saude-mental", "f": "Jogo"}, {"n": "Roleta da saúde no trabalho", "h": "/roleta-saude", "f": "Jogo"}, {"n": "Assédio, discriminação e violência no trabalho", "h": "/assedio", "f": "Leitura com fonte"}, {"n": "Onde denunciar e buscar apoio", "h": "/denuncie", "f": "Dados e busca"}], "Impostos": [{"n": "Régua do Imposto de Renda", "h": "/jogos#j14", "f": "Calculadora"}, {"n": "Antes × Agora", "h": "/jogos#j3", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "Programas na sua vida", "h": "/jogos#j17", "f": "Teste"}], "Contas públicas": [{"n": "Antes × Agora", "h": "/jogos#j3", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}], "Direitos": [{"n": "Onde denunciar e buscar apoio", "h": "/denuncie", "f": "Dados e busca"}, {"n": "Assédio, discriminação e violência no trabalho", "h": "/assedio", "f": "Leitura com fonte"}, {"n": "Pode ou não pode?", "h": "/pode-ou-nao", "f": "Jogo"}], "Terra e ambiente": [{"n": "Desenhe a linha", "h": "/jogos#j13", "f": "Jogo"}, {"n": "Exército dos Povos Indígenas", "h": "https://linktr.ee/exercitodospovosindigenas", "f": "Canal externo"}, {"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}], "Democracia": [{"n": "Quem vota como você?", "h": "/vota-como-voce", "f": "Teste"}, {"n": "A ficha de cada parlamentar", "h": "/parlamentares", "f": "Dados e busca"}, {"n": "Placar da semana", "h": "/semana", "f": "Dados e busca"}, {"n": "Raio-X do novo Congresso", "h": "/congresso", "f": "Dados e busca"}], "Redes": [{"n": "Fato ou Boato?", "h": "/jogos#j2", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "Checagem do debate", "h": "/checagem", "f": "Leitura com fonte"}, {"n": "Pega o truque", "h": "/jogos#j6", "f": "Jogo"}], "Segurança": [{"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}, {"n": "Quem vota como você?", "h": "/vota-como-voce", "f": "Teste"}, {"n": "A ficha de cada parlamentar", "h": "/parlamentares", "f": "Dados e busca"}]}, "tema": {"Trabalho": {"id": "trabalho", "nome": "Saúde mental e trabalho"}, "Impostos": {"id": "bolso", "nome": "Bolso e direitos sociais"}, "Contas públicas": {"id": "bolso", "nome": "Bolso e direitos sociais"}, "Direitos": {"id": "direitos", "nome": "Assédio e denúncia"}, "Terra e ambiente": {"id": "fatos", "nome": "Fatos e boatos"}, "Democracia": {"id": "congresso", "nome": "Congresso e votos"}, "Redes": {"id": "fatos", "nome": "Fatos e boatos"}, "Segurança": {"id": "congresso", "nome": "Congresso e votos"}}};</script>
+<script>window.CZ = {"ordem": ["Trabalho", "Impostos", "Contas públicas", "Direitos", "Terra e ambiente", "Democracia", "Redes", "Segurança"], "sci": {"Trabalho": [{"tipo": "Estimativa OMS/OIT, 194 países", "achado": "Trabalhar 55 horas ou mais por semana foi ligado a cerca de 745 mil mortes por infarto e AVC no mundo em 2016, segundo a OMS e a OIT. Eram 488 milhões de pessoas nessa jornada.", "ref": "Pega F, et al. Environment International, 2021", "doi": "10.1016/j.envint.2021.106595", "titulo": "Global, regional, and national burdens of ischemic heart disease and stroke attributable to exposure to long working hours for 194 countries, 2000–2016"}, {"tipo": "Meta-análise, 603.838 pessoas", "achado": "Quem trabalha 55 horas ou mais por semana teve risco 33% maior de AVC do que quem trabalha de 35 a 40 horas. Quanto mais horas, maior o risco.", "ref": "Kivimäki M, et al. The Lancet, 2015", "doi": "10.1016/S0140-6736(15)60295-1", "titulo": "Long working hours and risk of coronary heart disease and stroke: a systematic review and meta-analysis"}, {"tipo": "Estudo de intervenção, 2.896 trabalhadores em 141 empresas", "achado": "Com quatro dias de trabalho e o mesmo salário, por seis meses, melhoraram o burnout, a satisfação com o trabalho e a saúde mental e física. Nas 12 empresas de comparação, não.", "ref": "Fan W, et al. Nature Human Behaviour, 2025", "doi": "10.1038/s41562-025-02259-6", "titulo": "Work time reduction via a 4-day workweek finds improvements in workers' well-being"}, {"tipo": "Estudo quase-experimental, dados de empresas da Dinamarca", "achado": "Quando a lei obrigou as empresas a divulgar salários por sexo, a diferença entre homens e mulheres caiu cerca de 2 pontos percentuais (13%), sem afetar o lucro das empresas.", "ref": "Bennedsen M, et al. The Journal of Finance, 2022", "doi": "10.1111/jofi.13136", "titulo": "Do Firms Respond to Gender Pay Gap Transparency?"}], "Impostos": [{"tipo": "Estudo com dados do Imposto de Renda", "achado": "Pelos dados do Imposto de Renda, o 1% mais rico ficou com quase 25% da renda do país entre 2006 e 2012, e o 0,1% mais rico, sozinho, com 11%. As pesquisas domiciliares subestimavam o topo.", "ref": "Medeiros M, Souza PHGF, Castro FA. Dados – Revista de Ciências Sociais, 2015", "doi": "10.1590/00115258201537", "titulo": "O topo da distribuição de renda no Brasil: primeiras estimativas com dados tributários e comparação com pesquisas domiciliares (2006-2012)"}, {"tipo": "Estudo com vazamentos de dados e registros fiscais", "achado": "Com dados de vazamentos de contas no exterior, os 0,01% mais ricos sonegavam cerca de 25% dos impostos que deviam, enquanto as auditorias comuns achavam menos de 5% de sonegação em todas as faixas. A sonegação cresce com a riqueza.", "ref": "Alstadsæter A, Johannesen N, Zucman G. American Economic Review, 2019", "doi": "10.1257/aer.20172043", "titulo": "Tax Evasion and Inequality"}], "Contas públicas": [], "Direitos": [{"tipo": "Estudo com dados de universidades brasileiras", "achado": "As cotas aumentaram a matrícula de estudantes de escola pública e de pessoas negras, inclusive nos cursos mais disputados. Só as cotas com critério racial mudaram o perfil racial dos alunos.", "ref": "Vieira RS, Arends-Kuenning M. Economics of Education Review, 2019", "doi": "10.1016/j.econedurev.2019.101931", "titulo": "Affirmative action in Brazilian universities: Effects on the enrollment of targeted groups"}], "Terra e ambiente": [{"tipo": "Estudo com imagens de satélite, 1982–2016", "achado": "Terras indígenas com a demarcação concluída (homologadas) têm significativamente menos desmatamento; nas que não têm o direito pleno, o efeito não aparece.", "ref": "Baragwanath K, Bayi E. PNAS, 2020", "doi": "10.1073/pnas.1917874117", "titulo": "Collective property rights reduce deforestation in the Brazilian Amazon"}, {"tipo": "Estudo com imagens de satélite da Amazônia", "achado": "Terras indígenas e unidades de conservação freiam o desmatamento e o fogo; muitas terras indígenas impediram o desmatamento mesmo cercadas por ele. São a principal barreira ao desmatamento na Amazônia.", "ref": "Nepstad D, et al. Conservation Biology, 2006", "doi": "10.1111/j.1523-1739.2006.00351.x", "titulo": "Inhibition of Amazon deforestation and fire by parks and indigenous lands"}, {"tipo": "Estudo com dados de municípios da Amazônia", "achado": "As políticas de fiscalização e controle de 2004 e 2008 evitaram cerca de 73 mil km² de desmatamento de 2005 a 2009, mais da metade do que seria derrubado sem elas.", "ref": "Assunção J, Gandour C, Rocha R. Environment and Development Economics, 2015", "doi": "10.1017/S1355770X15000078", "titulo": "Deforestation slowdown in the Brazilian Amazon: prices or policies?"}], "Democracia": [{"tipo": "Estudo com dados do V-Dem desde 1900", "achado": "Hoje as democracias costumam recuar aos poucos e por dentro: em 33 de 47 casos desde 1994, quem enfraqueceu a democracia foram governantes eleitos, usando leis e processos de fachada.", "ref": "Lührmann A, Lindberg SI. Democratization, 2019", "doi": "10.1080/13510347.2019.1582029", "titulo": "A third wave of autocratization is here: what is new about it?"}], "Redes": [{"tipo": "Estudo com 126 mil boatos no Twitter, 2006–2017", "achado": "A mentira se espalhou mais longe, mais rápido e para mais gente do que a verdade, sobretudo na política. Quem espalha são pessoas, não robôs: a novidade e a surpresa atraem o compartilhamento.", "ref": "Vosoughi S, Roy D, Aral S. Science, 2018", "doi": "10.1126/science.aap9559", "titulo": "The spread of true and false news online"}, {"tipo": "Meta-análise de 30 estudos, 20.963 pessoas", "achado": "A checagem de fatos corrige crenças falsas, mas o efeito cai quando a checagem desmente só parte da frase, usa escalas de verdade ou mexe com as convicções políticas de quem lê.", "ref": "Walter N, et al. Political Communication, 2020", "doi": "10.1080/10584609.2019.1668894", "titulo": "Fact-Checking: A Meta-Analysis of What Works and for Whom"}, {"tipo": "Dois estudos, 3.446 pessoas", "achado": "Quem para para pensar acredita menos em notícia falsa, mesmo quando ela agrada ao seu lado político. O problema maior é a pressa, mais do que o partidarismo.", "ref": "Pennycook G, Rand DG. Cognition, 2019", "doi": "10.1016/j.cognition.2018.06.011", "titulo": "Lazy, not biased: Susceptibility to partisan fake news is better explained by lack of reasoning than by motivated reasoning"}], "Segurança": [{"tipo": "Estudo de caso de Portugal", "achado": "Depois que Portugal deixou de tratar o porte para uso como crime, em 2001, o uso de drogas não explodiu, caíram o uso problemático e os danos ligados às drogas, e o sistema penal ficou menos sobrecarregado.", "ref": "Hughes CE, Stevens A. British Journal of Criminology, 2010", "doi": "10.1093/bjc/azq038", "titulo": "What can we learn from the Portuguese decriminalization of illicit drugs?"}]}, "sem": {"Contas públicas": "Não há estudo científico que meça o efeito do arcabouço fiscal de 2023 sobre a vida das pessoas; as fontes aqui são a lei e os relatórios oficiais."}, "links": {"Trabalho": [{"n": "Seu tempo vale: o fim da escala 6x1", "h": "/jogos#j4", "f": "Calculadora"}, {"n": "Saúde Mental Relacionada ao Trabalho (SMRT) e riscos psicossociais", "h": "/saude-mental", "f": "Jogo"}, {"n": "Roleta da saúde no trabalho", "h": "/roleta-saude", "f": "Jogo"}, {"n": "Assédio, discriminação e violência no trabalho", "h": "/assedio", "f": "Leitura com fonte"}, {"n": "Onde denunciar e buscar apoio", "h": "/denuncie", "f": "Dados e busca"}], "Impostos": [{"n": "Régua do Imposto de Renda", "h": "/jogos#j14", "f": "Calculadora"}, {"n": "Antes × Agora", "h": "/jogos#j3", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "Programas na sua vida", "h": "/jogos#j17", "f": "Teste"}], "Contas públicas": [{"n": "Antes × Agora", "h": "/jogos#j3", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}], "Direitos": [{"n": "Onde denunciar e buscar apoio", "h": "/denuncie", "f": "Dados e busca"}, {"n": "Assédio, discriminação e violência no trabalho", "h": "/assedio", "f": "Leitura com fonte"}, {"n": "Pode ou não pode?", "h": "/pode-ou-nao", "f": "Jogo"}], "Terra e ambiente": [{"n": "Desenhe a linha", "h": "/jogos#j13", "f": "Jogo"}, {"n": "Exército dos Povos Indígenas", "h": "https://linktr.ee/exercitodospovosindigenas", "f": "Canal externo"}, {"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}], "Democracia": [{"n": "Quem vota como você?", "h": "/vota-como-voce", "f": "Teste"}, {"n": "A ficha de cada parlamentar", "h": "/parlamentares", "f": "Dados e busca"}, {"n": "Placar da semana", "h": "/semana", "f": "Dados e busca"}, {"n": "Raio-X do novo Congresso", "h": "/congresso", "f": "Dados e busca"}], "Redes": [{"n": "Fato ou Boato?", "h": "/jogos#j2", "f": "Jogo"}, {"n": "Fato ou boato: o bolso e a família", "h": "/familia", "f": "Leitura com fonte"}, {"n": "Checagem do debate", "h": "/checagem", "f": "Leitura com fonte"}, {"n": "Pega o truque", "h": "/jogos#j6", "f": "Jogo"}], "Segurança": [{"n": "De quem cobrar no Brasil?", "h": "/quem-cobrar", "f": "Jogo"}, {"n": "Quem vota como você?", "h": "/vota-como-voce", "f": "Teste"}, {"n": "A ficha de cada parlamentar", "h": "/parlamentares", "f": "Dados e busca"}]}, "tema": {"Trabalho": {"id": "trabalho", "nome": "Saúde do Trabalhador e da Trabalhadora"}, "Impostos": {"id": "bolso", "nome": "Bolso e direitos sociais"}, "Contas públicas": {"id": "bolso", "nome": "Bolso e direitos sociais"}, "Direitos": {"id": "direitos", "nome": "Assédio e denúncia"}, "Terra e ambiente": {"id": "fatos", "nome": "Fatos e boatos"}, "Democracia": {"id": "congresso", "nome": "Congresso e votos"}, "Redes": {"id": "fatos", "nome": "Fatos e boatos"}, "Segurança": {"id": "congresso", "nome": "Congresso e votos"}}};</script>
 <script>/* Vigie a Democracia: Cruze os dados. Junta, no aparelho de quem usa, os votos da Câmara e do Senado (dados abertos),
    a urna do TSE, os eleitos de 2026 e estudos científicos. Nada sai do aparelho: as respostas do teste ficam só nele.
    © 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0 · Feito com auxílio de IA (Claude). */
@@ -804,6 +859,172 @@ html.a11y-contraste .cz-barra span { border-right:2px solid #000; }
     for (var i = 0; i < ps.length; i++) { var tst = l ? l + ' ' + ps[i] : ps[i]; if (g.measureText(tst).width > w && l) { g.fillText(l, x, y); y += lh; l = ps[i]; } else l = tst; }
     if (l) { g.fillText(l, x, y); y += lh; }
     return y;
+  }
+})();
+</script>
+<script>/* Vigie a Democracia: Compare os estados. Cruza quaisquer dois dados dos 27 estados (urna, eleitos, votos das bancadas,
+   presença, alinhamento e IBGE) e mostra o resultado de três jeitos: uma frase, um gráfico e uma tabela.
+   Roda no aparelho de quem usa; nada é enviado. Não é ranking de parlamentares: os números são de estados e de bancadas.
+   © 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0 · Feito com auxílio de IA (Claude). */
+(function () {
+  'use strict';
+  var $ = function (s) { return document.querySelector(s); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var D = null, IND = {}, ORD = [], sortCol = 'x', sortDir = -1;
+  var box = $('#ce'), fx = $('#ce-x'), fy = $('#ce-y'), out = $('#ce-res'), frase = $('#ce-frase');
+  if (!box) return;
+
+  function el(t, a) {
+    var e = document.createElement(t), k;
+    if (a) for (k in a) { var v = a[k]; if (v == null || v === false) continue;
+      if (k === 'class') e.className = v; else if (k === 'text') e.textContent = v; else e.setAttribute(k, v === true ? '' : v); }
+    for (var i = 2; i < arguments.length; i++) add(e, arguments[i]);
+    return e;
+  }
+  function add(e, c) { if (c == null || c === false) return; if (Array.isArray(c)) { c.forEach(function (x) { add(e, x); }); return; } e.append(c.nodeType ? c : document.createTextNode(String(c))); }
+  function sv(t, a) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); return e; }
+  function fmt(i, v) {
+    if (v == null) return 'sem dado';
+    if (i.unid === '%') return v.toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + '%';
+    if (i.unid === 'R$') return 'R$ ' + Math.round(v).toLocaleString('pt-BR');
+    if (i.unid === 'índice') return v.toLocaleString('pt-BR', { minimumFractionDigits: 3, maximumFractionDigits: 3 });
+    if (v >= 1e6) return (v / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' milhões';
+    return Math.round(v).toLocaleString('pt-BR');
+  }
+  function curtoN(i, v) { // rótulo curto para o eixo
+    if (i.unid === 'R$') return 'R$ ' + (v >= 1000 ? (v / 1000).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' mil' : Math.round(v));
+    if (i.unid === 'pessoas' && v >= 1e6) return (v / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 0 }) + ' mi';
+    return fmt(i, v);
+  }
+
+  fetch('/dados/estados.json').then(function (r) { return r.json(); }).then(function (d) { D = d; monta(); })
+    .catch(function () { frase.textContent = 'Não foi possível carregar os dados dos estados. Confira a internet e recarregue a página.'; });
+
+  function monta() {
+    D.grupos.forEach(function (g) {
+      var gx = el('optgroup', { label: g.nome }), gy = el('optgroup', { label: g.nome });
+      g.itens.forEach(function (i) { i.grupo = g.nome; IND[i.id] = i; ORD.push(i.id);
+        gx.append(el('option', { value: i.id }, i.curto)); gy.append(el('option', { value: i.id }, i.curto)); });
+      fx.append(gx); fy.append(gy);
+    });
+    fy.prepend(el('option', { value: '' }, 'Nenhum: só ver o primeiro em ordem'));
+    var q = new URLSearchParams(location.search);
+    fx.value = IND[q.get('cx')] ? q.get('cx') : 'desocupacao';
+    if (!IND[fx.value]) fx.value = ORD[0];
+    fy.value = q.has('cy') ? (IND[q.get('cy')] ? q.get('cy') : '') : (IND['lula-t2'] ? 'lula-t2' : '');
+    fx.addEventListener('change', function () { desenha(true); });
+    fy.addEventListener('change', function () { desenha(true); });
+    $('#ce-trocar').addEventListener('click', function () { if (!fy.value) return; var t = fx.value; fx.value = fy.value; fy.value = t; desenha(true); });
+    box.querySelectorAll('[data-cx]').forEach(function (b) {
+      if (!IND[b.dataset.cx] || (b.dataset.cy && !IND[b.dataset.cy])) { b.hidden = true; return; }
+      b.addEventListener('click', function () { fx.value = b.dataset.cx; fy.value = b.dataset.cy || ''; desenha(true); $('#ce-t2').focus(); });
+    });
+    var uf = $('#cz-uf'); if (uf) uf.addEventListener('change', function () { desenha(false); });
+    box.hidden = false;
+    desenha(false);
+  }
+
+  function pontos(ix, iy) {
+    return Object.keys(D.ufs).map(function (u) { return { u: u, n: D.ufs[u], x: ix.v[u], y: iy ? iy.v[u] : null }; })
+      .filter(function (p) { return p.x != null && (!iy || p.y != null); });
+  }
+  function corr(ps) {
+    var n = ps.length; if (n < 5) return null;
+    var mx = 0, my = 0; ps.forEach(function (p) { mx += p.x; my += p.y; }); mx /= n; my /= n;
+    var a = 0, b = 0, c = 0; ps.forEach(function (p) { a += (p.x - mx) * (p.y - my); b += (p.x - mx) * (p.x - mx); c += (p.y - my) * (p.y - my); });
+    return b && c ? a / Math.sqrt(b * c) : null;
+  }
+  function forca(r) { var a = Math.abs(r); return a < 0.2 ? 'quase nenhuma' : a < 0.4 ? 'fraca' : a < 0.7 ? 'moderada' : 'forte'; }
+  function destaque() { var s = $('#cz-uf'), v = s && s.value ? s.value : new URLSearchParams(location.search).get('uf'); return v && D.ufs[v] ? v : ''; }
+
+  function desenha(muda) {
+    var ix = IND[fx.value], iy = fy.value && fy.value !== fx.value ? IND[fy.value] : null;
+    if (muda) { var q = new URLSearchParams(location.search); q.set('cx', ix.id); if (iy) q.set('cy', iy.id); else q.set('cy', ''); history.replaceState(null, '', '?' + q.toString() + '#ce'); }
+    var ps = pontos(ix, iy), uf = destaque();
+    out.textContent = '';
+    var h = el('h3', { id: 'ce-t2', tabindex: '-1' }, iy ? ix.curto + ' × ' + iy.curto : ix.curto + ', estado por estado');
+    var txt;
+    if (iy) {
+      var r = corr(ps);
+      txt = r == null ? 'Há poucos estados com os dois dados para comparar.' :
+        'Nos ' + ps.length + ' estados, ' + (Math.abs(r) < 0.2 ? 'os dois dados quase não andam juntos' :
+          'onde “' + ix.curto + '” é maior, “' + iy.curto + '” tende a ser ' + (r > 0 ? 'maior' : 'menor')) +
+        ' (relação ' + forca(r) + ', r = ' + r.toLocaleString('pt-BR', { maximumFractionDigits: 2 }) + '). Andar junto não quer dizer que um causa o outro.';
+    } else {
+      var o = ps.slice().sort(function (a, b) { return b.x - a.x; });
+      txt = 'Maior valor: ' + o[0].n + ' (' + fmt(ix, o[0].x) + '). Menor: ' + o[o.length - 1].n + ' (' + fmt(ix, o[o.length - 1].x) + '). Brasil: ' + fmt(ix, ix.br) + '.';
+    }
+    if (uf) { var pu = ps.filter(function (p) { return p.u === uf; })[0];
+      if (pu) txt += ' ' + D.ufs[uf] + ': ' + fmt(ix, pu.x) + (iy ? ' e ' + fmt(iy, pu.y) : '') + '.'; }
+    frase.textContent = txt;
+    var fr = el('p', { class: 'cz-frase' }, txt);
+    var fig = iy ? dispersao(ix, iy, ps, uf) : barras(ix, ps, uf);
+    var fontes = el('ul', { class: 'ce-fontes' }, [ix, iy].filter(Boolean).map(function (i) {
+      return el('li', null, el('b', null, i.nome), ' — ', i.fonte, ' (', i.quando, ').', i.desc ? ' ' + i.desc : '', ' Brasil: ', fmt(i, i.br), '.'); }));
+    out.append(el('div', { class: 'cz-card cz-largo ce-card' }, h, fr, fig, tabela(ix, iy, ps, uf), el('h4', null, 'De onde vêm estes números'), fontes,
+      el('p', { class: 'cz-nota' }, 'Os números são de estados e de bancadas inteiras, não notas de pessoas. O site não faz ranking de parlamentares e não diz em quem votar.')));
+  }
+
+  function dispersao(ix, iy, ps, uf) {
+    var W = Math.round(Math.max(300, Math.min(720, (out.clientWidth || 640) - 40))), H = Math.round(W < 520 ? W * 1.0 : W * 0.62), m = { l: 58, r: 14, t: 16, b: 52 };
+    var xs = ps.map(function (p) { return p.x; }), ys = ps.map(function (p) { return p.y; });
+    var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys);
+    var px = (x1 - x0) * 0.06 || 1, py = (y1 - y0) * 0.08 || 1; x0 -= px; x1 += px; y0 -= py; y1 += py;
+    var X = function (v) { return m.l + (v - x0) / (x1 - x0) * (W - m.l - m.r); }, Y = function (v) { return H - m.b - (v - y0) / (y1 - y0) * (H - m.t - m.b); };
+    var s = sv('svg', { viewBox: '0 0 ' + W + ' ' + H, class: 'ce-svg', role: 'img', 'aria-label': 'Gráfico de pontos: cada ponto é um estado. Eixo horizontal: ' + ix.curto + '. Eixo vertical: ' + iy.curto + '. A tabela logo abaixo traz os mesmos números.' });
+    var nk = W < 520 ? 3 : 4;
+    for (var k = 0; k <= nk; k++) {
+      var vx = x0 + (x1 - x0) * k / nk, vy = y0 + (y1 - y0) * k / nk;
+      s.append(sv('line', { x1: X(vx), x2: X(vx), y1: m.t, y2: H - m.b, class: 'ce-grade' }), sv('line', { x1: m.l, x2: W - m.r, y1: Y(vy), y2: Y(vy), class: 'ce-grade' }));
+      var tx = sv('text', { x: X(vx), y: H - m.b + 18, 'text-anchor': 'middle', class: 'ce-eixo' }); tx.textContent = curtoN(ix, vx); s.append(tx);
+      var ty = sv('text', { x: m.l - 6, y: Y(vy) + 4, 'text-anchor': 'end', class: 'ce-eixo' }); ty.textContent = curtoN(iy, vy); s.append(ty);
+    }
+    var lx = sv('text', { x: (m.l + W - m.r) / 2, y: H - 12, 'text-anchor': 'middle', class: 'ce-rot' }); lx.textContent = '→ ' + ix.curto; s.append(lx);
+    var ly = sv('text', { x: 14, y: (m.t + H - m.b) / 2, 'text-anchor': 'middle', class: 'ce-rot', transform: 'rotate(-90 14 ' + (m.t + H - m.b) / 2 + ')' }); ly.textContent = '→ ' + iy.curto; s.append(ly);
+    ps.slice().sort(function (a, b) { return (a.u === uf) - (b.u === uf); }).forEach(function (p) {
+      var g = sv('g', { class: 'ce-pt' + (p.u === uf ? ' ce-sel' : '') });
+      var t = sv('title', {}); t.textContent = p.n + ': ' + fmt(ix, p.x) + ' e ' + fmt(iy, p.y); g.append(t);
+      g.append(sv('circle', { cx: X(p.x), cy: Y(p.y), r: p.u === uf ? 15 : 12 }));
+      var l = sv('text', { x: X(p.x), y: Y(p.y) + 4, 'text-anchor': 'middle' }); l.textContent = p.u; g.append(l);
+      s.append(g);
+    });
+    if (ix.br != null && iy.br != null && ix.br >= x0 && ix.br <= x1 && iy.br >= y0 && iy.br <= y1) {
+      var b = sv('g', { class: 'ce-br' }); b.append(sv('rect', { x: X(ix.br) - 6, y: Y(iy.br) - 6, width: 12, height: 12, transform: 'rotate(45 ' + X(ix.br) + ' ' + Y(iy.br) + ')' }));
+      var bt = sv('text', { x: X(ix.br) + 10, y: Y(iy.br) - 8 }); bt.textContent = 'Brasil'; b.append(bt); s.append(b);
+    }
+    return el('figure', { class: 'ce-fig' }, s, el('figcaption', null, 'Cada bolinha é um estado (sigla). O losango é o Brasil.' + (uf ? ' Em destaque: ' + D.ufs[uf] + '.' : ' Escolha um estado em “Onde?” para destacá-lo.')));
+  }
+
+  function barras(ix, ps, uf) {
+    var o = ps.slice().sort(function (a, b) { return b.x - a.x; }), max = Math.max.apply(null, o.map(function (p) { return p.x; })) || 1;
+    var ul = el('ol', { class: 'ce-barras', 'aria-label': ix.curto + ', do maior para o menor' });
+    o.forEach(function (p) {
+      ul.append(el('li', { class: p.u === uf ? 'ce-sel' : null }, el('span', { class: 'ce-uf' }, p.n),
+        el('span', { class: 'ce-trilho', 'aria-hidden': 'true' }, el('span', { class: 'ce-barra', style: 'width:' + Math.max(2, 100 * p.x / max) + '%' })),
+        el('b', null, fmt(ix, p.x))));
+    });
+    return ul;
+  }
+
+  function tabela(ix, iy, ps, uf) {
+    var cols = [['n', 'Estado'], ['x', ix.curto]].concat(iy ? [['y', iy.curto]] : []);
+    if (!cols.some(function (c) { return c[0] === sortCol; })) sortCol = 'x';
+    var o = ps.slice().sort(function (a, b) { var A = a[sortCol], B = b[sortCol];
+      return sortCol === 'n' ? sortDir * -A.localeCompare(B, 'pt') : sortDir * (A - B); });
+    var tr = el('tr');
+    cols.forEach(function (c) {
+      var at = sortCol === c[0] ? (sortDir < 0 ? (c[0] === 'n' ? 'ascending' : 'descending') : (c[0] === 'n' ? 'descending' : 'ascending')) : null;
+      var b = el('button', { type: 'button', class: 'ce-ord' }, c[1], el('span', { class: 'visually-hidden' }, ' (ordenar)'));
+      b.addEventListener('click', function () { if (sortCol === c[0]) sortDir = -sortDir; else { sortCol = c[0]; sortDir = -1; } desenha(false);
+        var nb = out.querySelectorAll('.ce-ord')[cols.indexOf(c)]; if (nb) nb.focus(); });
+      tr.append(el('th', { scope: 'col', 'aria-sort': at }, b));
+    });
+    var tb = el('tbody');
+    o.forEach(function (p) { tb.append(el('tr', { class: p.u === uf ? 'ce-sel' : null }, el('th', { scope: 'row' }, p.n),
+      el('td', null, fmt(ix, p.x)), iy ? el('td', null, fmt(iy, p.y)) : null)); });
+    tb.append(el('tr', { class: 'ce-tbr' }, el('th', { scope: 'row' }, 'Brasil'), el('td', null, fmt(ix, ix.br)), iy ? el('td', null, fmt(iy, iy.br)) : null));
+    return el('details', { class: 'ce-tab', open: iy ? null : null }, el('summary', null, 'Ver a tabela com os ' + ps.length + ' estados'),
+      el('div', { class: 'ce-rolar', tabindex: '0', role: 'region', 'aria-label': 'Tabela dos estados' }, el('table', null, el('thead', null, tr), tb)));
   }
 })();
 </script>

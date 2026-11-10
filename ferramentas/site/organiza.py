@@ -231,6 +231,38 @@ html.a11y-contraste .faixa, html.a11y-contraste .faixa * { background-color:#000
 """
 
 CSS_CRUZAR = r"""
+
+.ce { display:flex; flex-direction:column; gap:12px; scroll-margin-top:12px; }
+.ce-ex-t { margin:0; font-weight:700; }
+.ce-ex { list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
+.ce-ex .btn { min-height:48px; }
+.ce-form { grid-template-columns:repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); }
+.ce-form .btn { grid-column:auto; }
+.ce-card h3 { font-size:clamp(1.15rem, 3vw, 1.35rem); } .ce-card h4 { margin:8px 0 0; font-family:'Lexend', sans-serif; font-size:1rem; }
+.ce-fig { margin:0; } .ce-fig figcaption { font-size:.9rem; color:var(--suave); margin-top:4px; }
+.ce-svg { width:100%; height:auto; display:block; background:var(--papel); border:1px solid var(--linha); border-radius:14px; }
+.ce-grade { stroke:var(--linha); stroke-width:1; }
+.ce-eixo { fill:var(--suave); font-size:12px; font-family:'Atkinson Hyperlegible', sans-serif; }
+.ce-rot { fill:var(--tinta); font-size:13px; font-weight:700; font-family:'Atkinson Hyperlegible', sans-serif; }
+.ce-pt circle { fill:var(--azul); stroke:var(--papel); stroke-width:1.5; }
+.ce-pt text { fill:var(--papel); font-size:9.5px; font-weight:700; font-family:'Atkinson Hyperlegible', sans-serif; pointer-events:none; }
+.ce-pt.ce-sel circle { fill:var(--verm); stroke:var(--tinta); stroke-width:3; } .ce-pt.ce-sel text { font-size:11px; }
+.ce-br rect { fill:var(--tinta); stroke:var(--papel); stroke-width:2; } .ce-br text { paint-order:stroke; stroke:var(--papel); stroke-width:4px; stroke-linejoin:round; fill:var(--tinta); font-size:12px; font-weight:700; font-family:'Atkinson Hyperlegible', sans-serif; }
+.ce-barras { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; }
+.ce-barras li { display:grid; grid-template-columns:minmax(6.5rem, 9.5rem) minmax(0, 1fr) auto; gap:8px; align-items:center; padding:2px 6px; border-radius:8px; }
+.ce-barras li.ce-sel { background:var(--papel); outline:2px solid var(--verm); }
+.ce-uf { font-size:.92rem; overflow-wrap:anywhere; } .ce-barras b { font-size:.92rem; white-space:nowrap; }
+.ce-trilho { height:14px; border-radius:7px; background:var(--linha); overflow:hidden; } .ce-barra { display:block; height:100%; background:var(--azul); border-radius:7px; }
+.ce-sel .ce-barra { background:var(--verm); }
+.ce-tab summary { cursor:pointer; font-weight:700; min-height:44px; display:flex; align-items:center; }
+.ce-rolar { overflow-x:auto; max-width:100%; }
+.ce-tab table { border-collapse:collapse; width:100%; font-size:.95rem; }
+.ce-tab th, .ce-tab td { padding:6px 8px; border-bottom:1px solid var(--linha); text-align:left; }
+.ce-tab td { text-align:right; white-space:nowrap; } .ce-tab thead th:not(:first-child) { text-align:right; }
+.ce-tab tr.ce-sel { background:var(--papel); outline:2px solid var(--verm); } .ce-tbr th, .ce-tbr td { font-weight:700; }
+.ce-ord { font:inherit; font-weight:700; background:none; border:0; color:var(--azul); cursor:pointer; min-height:44px; padding:0; text-align:inherit; text-decoration:underline; }
+th[aria-sort="ascending"] .ce-ord::after { content:" ▲"; } th[aria-sort="descending"] .ce-ord::after { content:" ▼"; }
+.ce-fontes { margin:0; padding-left:1.1em; font-size:.92rem; overflow-wrap:anywhere; } .ce-fontes li + li { margin-top:4px; }
 .cz-form { background:var(--cartao); border:2px solid var(--linha); border-radius:20px; padding:16px clamp(14px, 3vw, 22px); display:grid; gap:14px;
   grid-template-columns:repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); align-items:end; }
 .cz-form label, .cz-form legend { font-weight:700; display:block; margin-bottom:4px; }
@@ -598,7 +630,7 @@ def pagina_cruzar():
     cz = dict(ordem=CI.ASSUNTOS, sci=sci, sem=sem, links=links, tema=tema)
     corpo = f"""  <section class="tema-topo" data-tema="congresso" aria-labelledby="h1">
     <div class="linha"><span class="ic-a">{ico("cruzar")}</span><h1 id="h1">Cruze os dados</h1></div>
-    <p class="sub">Escolha o lugar, o assunto e o partido. O site junta os votos da Câmara e do Senado, a urna do TSE, os eleitos de 2026 e estudos científicos e mostra um dado novo, sempre com a fonte.</p>
+    <p class="sub">Escolha o lugar, o assunto e o partido. O site junta os votos da Câmara e do Senado, a urna do TSE, os eleitos de 2026, os dados do IBGE e estudos científicos e mostra um dado novo, sempre com a fonte. Mais abaixo, <a href="#ce">compare os estados</a> cruzando quaisquer dois dados.</p>
   </section>
   <p class="cz-aviso" id="cz-aviso" role="status">Carregando os dados…</p>
   <form class="cz-form" id="cz-form" hidden aria-describedby="cz-ajuda">
@@ -614,19 +646,132 @@ def pagina_cruzar():
   <p id="cz-ajuda" class="nota">Os resultados mudam na hora, a cada escolha. O endereço da página guarda o cruzamento: copie e mande para alguém.</p>
   <p class="visually-hidden" id="cz-resumo" aria-live="polite"></p>
   <div id="cz-res"></div>
+  <section class="ce" id="ce" aria-labelledby="ce-t" hidden>
+    <div class="sec-cab"><h2 id="ce-t">Compare os estados</h2>
+    <p>Escolha <b>dois dados quaisquer</b> e veja os 27 estados lado a lado: urna, eleitos, votos das bancadas, presença, trabalho e renda. São 49 dados, que se cruzam de todas as formas. O resultado vem em frase, em gráfico e em tabela.</p></div>
+    <p class="ce-ex-t" id="ce-ex-t">Comece por um exemplo:</p>
+    <ul class="ce-ex" aria-labelledby="ce-ex-t">
+      <li><button type="button" class="btn" data-cx="desocupacao" data-cy="lula-t2">Desemprego × voto em Lula</button></li>
+      <li><button type="button" class="btn" data-cx="rendimento" data-cy="comparec-t2">Renda × comparecimento</button></li>
+      <li><button type="button" class="btn" data-cx="informalidade" data-cy="voto-6x1-C">Informalidade × fim da 6x1</button></li>
+      <li><button type="button" class="btn" data-cx="gini" data-cy="eleitos-pl">Desigualdade × eleitos do PL</button></li>
+      <li><button type="button" class="btn" data-cx="gov-C" data-cy="lula-t2">Bancada com o governo × voto em Lula</button></li>
+      <li><button type="button" class="btn" data-cx="rendimento" data-cy="">Renda, estado por estado</button></li>
+    </ul>
+    <div class="cz-form ce-form">
+      <div><label for="ce-x">Primeiro dado</label><select id="ce-x"></select></div>
+      <div><label for="ce-y">Segundo dado</label><select id="ce-y"></select></div>
+      <button type="button" class="btn" id="ce-trocar">Trocar os dois de lugar</button>
+    </div>
+    <p class="nota">Para destacar um estado, escolha-o em “Onde?”, lá em cima. O endereço da página guarda a comparação.</p>
+    <p class="visually-hidden" id="ce-frase" aria-live="polite"></p>
+    <div id="ce-res"></div>
+  </section>
   <section class="caixa" aria-labelledby="cm-t"><h2 id="cm-t">De onde vêm os dados</h2>
     <ul class="cz-como">
       <li>Votos, presença, alinhamento com o governo e cota: dados abertos da Câmara dos Deputados e do Senado Federal, de 2023 a 2026, com o placar de cada votação conferido contra o oficial.</li>
       <li>Urna: arquivos oficiais de divulgação do TSE, com 100% das seções apuradas, do 1º e do 2º turno para Presidente.</li>
+      <li>Trabalho, renda e população: IBGE, Sidra (PNAD Contínua e Estimativas de População), com a tabela e o período de cada número.</li>
+      <li>Quer ir além? Veja o <a href="/bases">guia das bases de dados</a>: Base dos Dados, gráficos do Nexo, HubPolítico e as fontes oficiais.</li>
       <li>Eleitos de 2026: Portal de Dados Abertos do TSE.</li>
       <li>Ciência: estudos revisados por pares, com DOI, conferidos no PubMed ou na página da revista. Quando não há estudo que meça o efeito de uma votação, dizemos isso.</li>
       <li>Nada do que você escolhe sai do seu aparelho. O site não tem ranking de parlamentares e não diz em quem votar.</li></ul></section>"""
-    js = '<script src="/qr.js"></script>\n<script>window.CZ = ' + json.dumps(cz, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n<script>" + (B / "cruzar.js").read_text(encoding="utf-8") + "</script>"
+    js = '<script src="/qr.js"></script>\n<script>window.CZ = ' + json.dumps(cz, ensure_ascii=False).replace("</", "<\\/") + ";</script>\n<script>" + (B / "cruzar.js").read_text(encoding="utf-8") + "</script>\n<script>" + (B / "comparar.js").read_text(encoding="utf-8") + "</script>"
     cab = trilha([("Início", "/"), ("Cruze os dados", None)])
     return doc("cruzar", "Cruze os dados · Vigie a Democracia",
                "Estado, assunto e partido: veja como votou a bancada, o que deu a urna, quem foi eleito em 2026 e o que dizem os estudos científicos, com a fonte e um card pronto para postar.",
                "og-cruzar.png", corpo, css=CSS_CRUZAR, js=js, atual="cruzar", cab_extra=cab, texto_soc="Cruze os dados do seu estado: votos, urna, eleitos e ciência, com fonte:")
 
+
+# ------------------------------------------------------------------ bases de dados (guia)
+BASES = [
+    dict(id="basedosdados", nome="Base dos Dados", url="https://basedosdados.org/", quem="Organiza: Base dos Dados, organização sem fins lucrativos.",
+         oque="Centenas de conjuntos de dados públicos já limpos e organizados: IBGE, TSE, Receita Federal, CGU, INEP e outros, com séries históricas por município.",
+         para=["estudar", "pesquisar"], passos=["Procure um assunto na busca do site (por exemplo, “eleições” ou “escolas”).",
+         "Abra o conjunto e leia o guia de uso: ele diz de onde vem cada dado e o que dá para cruzar.",
+         "Baixe a tabela ou consulte com SQL (BigQuery), Python ou R."], acesso="Para baixar tabelas grandes ou usar o BigQuery, é preciso criar uma conta.",
+         vigie="No Vigie, o Compare os estados usa dados das mesmas fontes oficiais (TSE e IBGE)."),
+    dict(id="nexo", nome="Nexo Jornal: gráficos", url="https://www.nexojornal.com.br/grafico/", quem="Organiza: Nexo Jornal, jornal digital.",
+         oque="Gráficos que explicam, com números, temas do noticiário: economia, política, sociedade, meio ambiente.",
+         para=["comecar", "estudar"], passos=["Abra a seção de gráficos e escolha um tema.", "Leia o título e a frase de baixo: eles dizem o que o gráfico mostra.",
+         "Confira a fonte no rodapé de cada gráfico antes de compartilhar."], acesso="Parte do conteúdo exige assinatura depois de algumas leituras.",
+         vigie="No Vigie, cada gráfico do Compare os estados vem com uma frase e uma tabela, para quem não enxerga o gráfico."),
+    dict(id="hubpolitico", nome="HubPolítico", url="https://hubpolitico.com.br/", quem="Organiza: HubPolítico Inteligência e Dados Ltda., empresa privada.",
+         oque="Resultados das eleições de 2026 por estado, cidade e bairro, arquivo das eleições de 1998 a 2024 e perfis de políticos com votações, proposições, patrimônio declarado e gastos de campanha, a partir de dados do TSE, da Câmara e do Senado.",
+         para=["estudar", "pesquisar"], passos=["Busque sua cidade para ver o mapa da votação por bairro.", "Abra o perfil de um político para ver votos e gastos de campanha.",
+         "Volte à fonte oficial (TSE, Câmara ou Senado) quando for usar um número em público."], acesso="Algumas funções pedem cadastro.",
+         vigie="O HubPolítico tem um índice próprio de posição política; o critério é dele. O Vigie não faz ranking de parlamentares e não diz em quem votar."),
+]
+OFICIAIS = [
+    ("IBGE: Sidra", "https://sidra.ibge.gov.br/", "Tabelas de população, trabalho, renda e preços, por estado e município. É de onde vêm os dados de trabalho e renda do Compare os estados."),
+    ("TSE: Portal de Dados Abertos", "https://dadosabertos.tse.jus.br/", "Candidatos, eleitos, votação por seção, prestação de contas de campanha."),
+    ("Câmara dos Deputados: Dados Abertos", "https://dadosabertos.camara.leg.br/", "Votações nominais, presença, proposições e cota parlamentar."),
+    ("Senado Federal: Dados Abertos", "https://www12.senado.leg.br/dados-abertos", "Votações, matérias e gastos dos senadores."),
+    ("Portal da Transparência", "https://portaldatransparencia.gov.br/", "Gastos do governo federal, programas sociais e servidores (CGU)."),
+]
+PUBLICO = [("todos", "Todos"), ("comecar", "Para começar (qualquer idade)"), ("estudar", "Para estudar (escola e faculdade)"), ("pesquisar", "Para pesquisar (tabelas e programação)")]
+CSS_BASES = r"""
+.bd-filtro { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+.bd-filtro button { font:inherit; font-weight:700; min-height:48px; padding:6px 16px; border-radius:999px; border:2px solid var(--linha); background:var(--cartao); color:var(--tinta); cursor:pointer; }
+.bd-filtro button[aria-pressed="true"] { background:var(--tinta); color:var(--papel); border-color:var(--tinta); }
+.bd-lista { list-style:none; margin:0; padding:0; display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
+.bd-c { background:var(--cartao); border:2px solid var(--linha); border-radius:20px; padding:18px clamp(14px, 3vw, 22px); display:flex; flex-direction:column; gap:10px; height:100%; box-sizing:border-box; }
+.bd-c h2 { margin:0; font-size:clamp(1.25rem, 3.5vw, 1.5rem); }
+.bd-c p { margin:0; } .bd-quem { color:var(--suave); font-weight:700; font-size:.95rem; }
+.bd-para { display:flex; flex-wrap:wrap; gap:6px; margin:0; padding:0; list-style:none; }
+.bd-para li { font-size:.85rem; font-weight:700; padding:2px 10px; border-radius:999px; border:1px solid var(--linha); background:var(--papel); }
+.bd-c ol { margin:0; padding-left:1.3em; } .bd-c ol li + li { margin-top:4px; }
+.bd-c h3 { margin:4px 0 0; font-size:1rem; font-family:'Lexend', sans-serif; }
+.bd-acesso, .bd-vigie { font-size:.95rem; } .bd-vigie { border-left:4px solid var(--azul); padding-left:10px; }
+.bd-c .btn { align-self:flex-start; margin-top:auto; }
+.bd-of { margin:0; padding-left:1.1em; } .bd-of li + li { margin-top:8px; }
+"""
+JS_BASES = r"""<script>(function () {
+  var bs = document.querySelectorAll('.bd-filtro button'), cs = document.querySelectorAll('.bd-c'), st = document.getElementById('bd-st');
+  bs.forEach(function (b) { b.addEventListener('click', function () {
+    bs.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    var f = b.dataset.f, n = 0;
+    cs.forEach(function (c) { var ok = f === 'todos' || c.dataset.para.split(' ').indexOf(f) >= 0; c.parentNode.hidden = !ok; if (ok) n++; });
+    st.textContent = n + (n === 1 ? ' base' : ' bases') + ' para “' + b.textContent + '”.';
+  }); });
+})();</script>"""
+
+
+def pagina_bases():
+    nomes = dict(PUBLICO)
+    cards = []
+    for b in BASES:
+        para = "".join(f"<li>{E(nomes[p].split(' (')[0])}</li>" for p in b["para"])
+        passos = "".join(f"<li>{E(x)}</li>" for x in b["passos"])
+        cards.append(
+            f'<li><article class="bd-c" data-para="{" ".join(b["para"])}" aria-labelledby="bd-{b["id"]}">'
+            f'<h2 id="bd-{b["id"]}">{E(b["nome"])}</h2><p class="bd-quem">{E(b["quem"])}</p>'
+            f'<ul class="bd-para" aria-label="Para quem">{para}</ul><p>{E(b["oque"])}</p>'
+            f'<h3>Como usar, em 3 passos</h3><ol>{passos}</ol>'
+            f'<p class="bd-acesso"><b>Acesso:</b> {E(b["acesso"])}</p><p class="bd-vigie">{E(b["vigie"])}</p>'
+            f'<a class="btn forte" href="{E(b["url"])}" target="_blank" rel="noopener">Abrir {E(b["nome"])}<span class="visually-hidden"> (abre outro site)</span></a>'
+            f'</article></li>')
+    of = "".join(f'<li><a href="{E(u)}" target="_blank" rel="noopener">{E(n)}<span class="visually-hidden"> (abre outro site)</span></a>: {E(d)}</li>' for n, u, d in OFICIAIS)
+    filtro = "".join(f'<li><button type="button" data-f="{k}" aria-pressed="{"true" if k == "todos" else "false"}">{E(v)}</button></li>' for k, v in PUBLICO)
+    corpo = f"""  <section class="tema-topo" data-tema="fatos" aria-labelledby="h1">
+    <div class="linha"><span class="ic-a">{ico("cruzar")}</span><h1 id="h1">Bases de dados para <span>todo mundo</span></h1></div>
+    <p class="sub">Onde achar números confiáveis sobre o Brasil, para quem está começando e para quem pesquisa. Dizemos quem organiza cada base, o que ela tem e como usar em 3 passos.</p>
+    <p><a class="btn forte" href="/cruzar#ce">Cruzar os dados dos estados aqui mesmo</a></p>
+  </section>
+  <section aria-labelledby="bd-f-t"><h2 id="bd-f-t">Para quem?</h2>
+    <ul class="bd-filtro" aria-labelledby="bd-f-t">{filtro}</ul>
+    <p class="visually-hidden" id="bd-st" role="status" aria-live="polite"></p></section>
+  <ul class="bd-lista" aria-label="Bases de dados">{"".join(cards)}</ul>
+  <section class="caixa" aria-labelledby="bd-of-t"><h2 id="bd-of-t">As fontes oficiais, direto na origem</h2>
+    <p>Todo número das bases acima nasce em um órgão público. Quando for usar um dado em público, confira na origem.</p>
+    <ul class="bd-of">{of}</ul></section>
+  <section class="caixa" aria-labelledby="bd-dc-t"><h2 id="bd-dc-t">Antes de compartilhar um número</h2>
+    <ul><li>Veja de onde ele vem e de quando é.</li><li>Dois dados que andam juntos não provam que um causa o outro.</li>
+    <li>Desconfie de gráfico sem fonte, sem data ou com o eixo cortado.</li></ul></section>"""
+    cab = trilha([("Início", "/"), ("Fatos e boatos", "/tema/fatos"), ("Bases de dados", None)])
+    return doc("bases", "Bases de dados para todo mundo · Vigie a Democracia",
+               "Base dos Dados, gráficos do Nexo, HubPolítico e as fontes oficiais (IBGE, TSE, Câmara, Senado): quem organiza, o que têm e como usar em 3 passos.",
+               "og-cruzar.png", corpo, css=CSS_BASES, js=JS_BASES, atual="cruzar", cab_extra=cab, texto_soc="Bases de dados confiáveis, com quem organiza e como usar:")
 
 # ------------------------------------------------------------------ ajustes nas páginas que já existem
 CSS_COMUM = r"""/*vg-temas*/
@@ -663,7 +808,7 @@ def bloco_mais(tid, atual_href):
 
 
 def ajusta_paginas(pub):
-    novas = {"index.html", "jogar.html", "cruzar.html"}
+    novas = {"index.html", "jogar.html", "cruzar.html", "bases.html"}
     n = 0
     for f in sorted(pub.glob("*.html")):
         if f.name in novas:
@@ -729,7 +874,7 @@ def ajusta_sw(pub):
     for f in sorted(pub.glob("*.html")) + sorted((pub / "tema").glob("*.html")) + sorted((pub / "dados").glob("*.json")) + [pub / "vigia.js", pub / "vigie.css"]:
         h.update(f.read_bytes())
     s = re.sub(r"const V = 'vigie-[^']*';", f"const V = 'vigie-{h.hexdigest()[:10]}';", s, count=1)
-    pre = ["/", "/offline", "/cruzar", "/jogar", "/denuncie", "/vota-como-voce", "/parlamentares", "/dados/vota-como-voce.json", "/dados/parlamentares.json", "/dados/cruzar.json",
+    pre = ["/", "/offline", "/cruzar", "/jogar", "/denuncie", "/vota-como-voce", "/parlamentares", "/dados/vota-como-voce.json", "/dados/parlamentares.json", "/dados/cruzar.json", "/dados/estados.json", "/bases",
            "/vigia.js", "/vigie.css", "/icone.svg", "/icone-192.png", "/fontes/AtkinsonHyperlegible-Regular.woff2", "/fontes/AtkinsonHyperlegible-Bold.woff2", "/fontes/Lexend-var.woff2"]
     s = re.sub(r"const PRE = \[.*?\];", "const PRE = " + json.dumps(pre) + ";", s, count=1, flags=re.S)
     p.write_text(s, encoding="utf-8")
@@ -781,12 +926,13 @@ def main():
         (pub / "tema" / f"{t['id']}.html").write_text(pagina_tema(t), encoding="utf-8")
     (pub / "jogar.html").write_text(pagina_jogar(), encoding="utf-8")
     (pub / "cruzar.html").write_text(pagina_cruzar(), encoding="utf-8")
+    (pub / "bases.html").write_text(pagina_bases(), encoding="utf-8")
     n = ajusta_paginas(pub)
     ajusta_vigia(pub); ajusta_css(pub); ajusta_manifesto(pub)
     if a.og or not (pub / "og-cruzar.png").exists():
         og_imagens(pub)
     ajusta_sw(pub)
-    print(f"ok: início, {len(C.TEMAS)} temas, jogar, cruzar; {n} páginas com menu, trilha e 'continue no tema'")
+    print(f"ok: início, {len(C.TEMAS)} temas, jogar, cruzar, bases; {n} páginas com menu, trilha e 'continue no tema'")
 
 
 if __name__ == "__main__":

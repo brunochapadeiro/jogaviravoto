@@ -9,6 +9,7 @@ abre um pull request com a lista de mudanças (cada uma com a fonte) e avisa o B
 - Placar da semana: se `semana/ultima.txt` tem uma semana nova com votações, gerar a página com `ferramentas/build_placar.py`
   (veja `ferramentas/README.md`), com resumos de até 90 caracteres, sem adjetivo, a partir das ementas oficiais.
 - Parlamentares: se `parlamentares/meta.json` mudou, avisar o Bruno (o gerador da ficha pública ficou de fora do repositório).
+- IBGE (Compare os estados): a cada trimestre da PNAD Contínua, baixar de novo com `baixar.yml` (pasta `ibge`, endereços em `ferramentas/site/LEIA-ME.md`).
 - Rodar `cruzar_dados.py` e `organiza.py`. Os placares do cruzador são conferidos contra o oficial; aviso = parar e relatar.
 
 ## 2. Andamento dos temas (pesquisa na web, com fonte primária)
