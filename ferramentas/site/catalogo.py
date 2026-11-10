@@ -12,9 +12,9 @@ TEMAS = [
     dict(id="fatos", nome="Fatos e boatos", curto="Fatos", ic="fatos", cor="#1F7F73", corEsc="#5FD3C2",
          frase="Frases que circulam no zap, checadas com fonte, e jogos para treinar o olho antes de compartilhar.",
          pergunta="Recebeu uma mensagem e ficou na dúvida?", assuntos=["Redes", "fatos"]),
-    dict(id="trabalho", nome="Saúde mental e trabalho", curto="Saúde", ic="mente", cor="#9A5F0C", corEsc="#F0B05A",
-         frase="Riscos psicossociais, NR-1, jornada e adoecimento: jogos para o celular, o telão e o papel, com a fonte de cada resposta.",
-         pergunta="Vai falar de saúde mental no trabalho com um grupo?", assuntos=["Trabalho", "trabalho"]),
+    dict(id="trabalho", nome="Saúde do Trabalhador e da Trabalhadora", curto="Saúde no trabalho", ic="mente", cor="#9A5F0C", corEsc="#F0B05A",
+         frase="O trabalho como determinante da saúde. Dentro dele, a Saúde Mental Relacionada ao Trabalho: riscos psicossociais, NR-1, jornada e adoecimento, com jogos para o celular, o telão e o papel e a fonte de cada resposta.",
+         pergunta="Vai falar de saúde do trabalhador ou de saúde mental no trabalho com um grupo?", assuntos=["Trabalho", "trabalho"]),
     dict(id="direitos", nome="Assédio e denúncia", curto="Denúncia", ic="denuncia", cor="#B3261E", corEsc="#FF8F84",
          frase="Assédio, discriminação, direito desrespeitado ou pressão pelo voto: como reconhecer, guardar provas e onde denunciar, até sem se identificar.",
          pergunta="Está passando por uma situação no trabalho?", assuntos=["Direitos", "direitos"]),
@@ -51,6 +51,11 @@ item("parlamentares", "/parlamentares", "A ficha de cada parlamentar", "Votos, p
 item("cruzar", "/cruzar", "Cruze os dados", "Escolha o estado, o assunto e o partido: veja como votou a bancada, o que deu a urna, quem foi eleito em 2026 e o que dizem os estudos científicos.",
      "congresso", "ferramenta", ["celular"], mais=["trabalho", "direitos", "bolso", "eleicoes", "fatos"], dest=True,
      tags="cruzar cruzamento dados estado uf bancada partido urna tse eleitos ciência estudos comparar")
+item("comparar", "/cruzar#ce", "Compare os estados", "Escolha dois dados quaisquer (urna, eleitos, votos das bancadas, presença, desemprego, renda, desigualdade) e veja os 27 estados lado a lado, em frase, gráfico e tabela.",
+     "congresso", "ferramenta", ["celular", "telao"], mais=["bolso", "trabalho", "eleicoes"], dest=True,
+     tags="comparar estados cruzar ibge desemprego renda informalidade gini população urna eleitos bancada gráfico tabela")
+item("bases", "/bases", "Bases de dados para todo mundo", "Base dos Dados, gráficos do Nexo, HubPolítico e as fontes oficiais: quem organiza, o que têm e como usar em 3 passos.",
+     "fatos", "leitura", ["celular"], mais=["congresso"], tags="base dos dados nexo gráficos hubpolítico hub político dados abertos ibge tse câmara senado transparência pesquisa")
 item("semana", "/semana", "Placar da semana", "O que a Câmara e o Senado votaram e como votou cada partido. Sai às segundas, depois de conferido.",
      "congresso", "dados", tags="semana votação plenário partido placar")
 item("raiox", "/congresso", "Raio-X do novo Congresso", "Quem foi eleito em 2026 para a Câmara e o Senado, partido por partido, com os dados do TSE.",
@@ -73,8 +78,8 @@ item("j6", "/jogos#j6", "Pega o truque", "Alguém usa um truque para encerrar a 
 item("j3", "/jogos#j3", "Antes × Agora", "Oito números do governo anterior e de hoje. Subiu ou desceu?", "fatos", "jogo", ["celular"], mais=["bolso"], tags="números governo inflação desemprego")
 item("j13", "/jogos#j13", "Desenhe a linha", "Desenhe como você acha que o desmatamento da Amazônia mudou. Depois, veja a linha real.", "fatos", "jogo", ["celular"], tags="desmatamento amazônia gráfico meio ambiente")
 
-# Saúde mental e trabalho
-item("saude-mental", "/saude-mental", "Saúde mental e riscos psicossociais relacionados ao trabalho",
+# Saúde do Trabalhador e da Trabalhadora (STT), com a Saúde Mental Relacionada ao Trabalho (SMRT) dentro dela
+item("saude-mental", "/saude-mental", "Saúde Mental Relacionada ao Trabalho (SMRT) e riscos psicossociais",
      "12 jogos para todos que lidam com o tema: ergonomia, SST, psicologia, saúde, RH, CIPAs, sindicatos e ensino. No celular, no telão ou impressos, com a fonte de cada resposta.",
      "trabalho", "jogo", ["celular", "telao", "papel"], dest=True,
      tags="saúde mental riscos psicossociais nr-1 nr-17 aep aet iso 45003 fundacentro observatório saúde do trabalhador ergonomia sst burnout assédio telão qr code plateia palestra sipat cipa sindicato")

@@ -1,4 +1,10 @@
 [
+  {"data": "2026-11-10", "tema": "congresso", "titulo": "Novo: Compare os estados",
+   "desc": "Escolha dois dados quaisquer, entre 49 (urna, eleitos, votos das bancadas, presença, desemprego, renda, informalidade, desigualdade), e veja os 27 estados em frase, gráfico e tabela. Fontes: TSE, Câmara, Senado e IBGE.", "href": "/cruzar#ce"},
+  {"data": "2026-11-10", "tema": "fatos", "titulo": "Novo: guia das bases de dados",
+   "desc": "Base dos Dados, gráficos do Nexo, HubPolítico e as fontes oficiais, com quem organiza cada uma e como usar em 3 passos.", "href": "/bases"},
+  {"data": "2026-11-10", "tema": "trabalho", "titulo": "O tema agora é Saúde do Trabalhador e da Trabalhadora",
+   "desc": "A Saúde Mental Relacionada ao Trabalho (SMRT) passa a aparecer como parte da Saúde do Trabalhador e da Trabalhadora (STT), em diálogo com a Psicologia Social do Trabalho.", "href": "/tema/trabalho"},
   {"data": "2026-11-09", "tema": "bolso", "titulo": "Bets: STF suspende os processos contra a MP 1.394/2026",
    "desc": "Em 8/11, o ministro Luiz Fux, a pedido da PGR, suspendeu em todo o país os processos nas instâncias inferiores que questionam a MP que proibiu as bets, até o STF julgar o caso (ADI 8027). O julgamento ainda não tem data. Fonte: STF, 9/11/2026.", "href": "/tema/bolso#participe"},
   {"data": "2026-11-09", "tema": "bolso", "titulo": "Bets: Senado prepara audiência pública sobre o fim das apostas",
