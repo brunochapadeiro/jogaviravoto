@@ -479,7 +479,7 @@ def home():
                      f'<a class="ver" href="/tema/{t["id"]}">Ver os {len(its)} itens<span class="visually-hidden"> de {E(t["nome"])}</span>{ico("seta")}</a></li>')
     carimbos = "".join(f'<li id="r-{t["id"]}" data-tema="{t["id"]}"><a href="/tema/{t["id"]}"><span class="selo-r">{ico(t["ic"])}</span><span>{E(t["curto"])}</span>'
                        f'<span class="st visually-hidden"></span></a></li>' for t in C.TEMAS)
-    participe = "".join(cartao(x, com_tema=True) for x in C.I if x["fmt"] in ("campanha", "canal"))
+    participe = "".join(cartao(x, com_tema=True) for x in C.I if x["fmt"] in ("campanha", "canal", "evento"))
     exemplos = [("/cruzar?uf=RJ&assunto=Trabalho", "Rio de Janeiro × fim da escala 6x1"), ("/cruzar?uf=BR&assunto=Terra%20e%20ambiente&partido=PL", "PL × terra e meio ambiente"),
                 ("/cruzar?uf=BA&assunto=Democracia&eu=1", "Seu teste × a bancada da Bahia")]
     corpo = f"""  <section class="hero" aria-labelledby="h-wm">
@@ -525,7 +525,7 @@ def home():
 # ------------------------------------------------------------------ páginas de tema
 GRUPOS = [("comecar", "Comece por aqui", None), ("jogos", "Jogos, testes e calculadoras", ("jogo", "teste", "calc")),
           ("dados", "Dados e ferramentas", ("dados", "ferramenta")), ("ler", "Para ler, com fonte", ("leitura",)),
-          ("imprimir", "Para imprimir", ("imprimir",)), ("participe", "Participe", ("campanha", "canal"))]
+          ("imprimir", "Para imprimir", ("imprimir",)), ("participe", "Participe", ("campanha", "canal", "evento"))]
 ASSUNTO_DO_TEMA = {"congresso": "Democracia", "fatos": "Redes", "trabalho": "Trabalho", "direitos": "Direitos", "bolso": "Impostos", "eleicoes": None}
 
 
@@ -798,7 +798,7 @@ CSS_COMUM = r"""/*vg-temas*/
 
 def bloco_mais(tid, atual_href):
     t = C.TEMA[tid]
-    its = [x for x in C.itens_do_tema(tid) if x["href"] != atual_href and x["fmt"] not in ("campanha", "canal")]
+    its = [x for x in C.itens_do_tema(tid) if x["href"] != atual_href and x["fmt"] not in ("campanha", "canal", "evento")]
     its = sorted(its, key=lambda x: (not x["dest"], C.I.index(x)))[:4]
     lis = "".join(f'<li><a{link_attrs(x)}><b>{E(x["nome"])}</b><small>{E(C.FORMATOS[x["fmt"]])}{" · PDF" if x["pdf"] else ""}</small></a></li>' for x in its)
     asu = ASSUNTO_DO_TEMA[tid]
