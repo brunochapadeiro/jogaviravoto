@@ -486,6 +486,31 @@ def exporta(saida, site, slug, nrot, fim, legenda):
     return avisos
 
 
+def cabecalho_site(h, site):
+    """Troca o cabeçalho antigo (topo + barra de acessibilidade solta) pelo cabeçalho do site (marca, menu, acessibilidade, Instagram),
+    copiado de uma página que já o tem, e põe o CSS comum e o vigia.js. Depois, organiza.py acrescenta a trilha e o 'Continue no tema'."""
+    mod = Path(site) / "assedio.html"
+    if not mod.exists():
+        return h
+    m = mod.read_text(encoding="utf-8")
+    a, b = m.find('<header class="vg-topo"'), m.find("</header>")
+    i = m.find('<link rel="stylesheet" href="/vigie.css">')
+    if a < 0 or b < 0 or i < 0:
+        return h
+    cab, links = m[a:b + len("</header>")], m[i:m.find("</head>", i)].strip()
+    t = h.find('<div class="topo">')
+    if t >= 0:
+        h = h[:t] + cab + h[h.find("</p></div>", t) + len("</p></div>"):]
+    d = h.find('<details class="a11y"', h.find("</header>"))
+    if d >= 0 and d < h.find("<main"):
+        h = h[:d].rstrip(" ") + h[h.find("</details>", d) + len("</details>"):].lstrip("\n")
+    if "/vigie.css" not in h:
+        h = h.replace("</head>", links + "\n</head>", 1)
+    if "/vigia.js" not in h:
+        h = h.replace("</body>", '<script src="/vigia.js" defer data-nav></script>\n</body>', 1)
+    return h
+
+
 def main():
     a = argparse.ArgumentParser()
     a.add_argument("--dados", required=True); a.add_argument("--site", required=True); a.add_argument("--saida", required=True)
@@ -501,7 +526,7 @@ def main():
     D = montar(dados, res, "semana")
     leg = legenda_post(D, res)
     for slug in ("semana", slug_sem):
-        (saida / f"{slug}.html").write_text(pagina(D, slug, arquivo, leg), encoding="utf-8")
+        (saida / f"{slug}.html").write_text(cabecalho_site(pagina(D, slug, arquivo, leg), o.site), encoding="utf-8")
     (saida / "legenda.txt").write_text(leg + "\n", encoding="utf-8")
     print(f"{D['per']}: câmara {D['ncam']}, senado {D['nsen']}, destaques {[g['chave'] for g in D['dest']]}, governismo {'sim' if D['gov'] else 'não'} ({D['ndiv']} divididas), {len(D['rots'])} cards")
     if o.cards:

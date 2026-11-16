@@ -56,6 +56,10 @@ item("comparar", "/cruzar#ce", "Compare os estados", "Escolha dois dados quaisqu
      tags="comparar estados cruzar ibge desemprego renda informalidade gini população urna eleitos bancada gráfico tabela")
 item("bases", "/bases", "Bases de dados para todo mundo", "Base dos Dados, gráficos do Nexo, HubPolítico e as fontes oficiais: quem organiza, o que têm e como usar em 3 passos.",
      "fatos", "leitura", ["celular"], mais=["congresso"], tags="base dos dados nexo gráficos hubpolítico hub político dados abertos ibge tse câmara senado transparência pesquisa")
+item("big-techs", "/big-techs", "PL das Big Techs, explicado", "O PL 4.675/2025 dá ao Cade regras próprias para as maiores plataformas digitais: o que muda, quem defende, quem critica e quando vota. Com 8 cards.",
+     "congresso", "leitura", mais=["fatos"], dest=True, tags="big techs plataformas cade concorrência pl 4675 google meta amazon redes algoritmo")
+item("ajuste-fiscal", "/ajuste-fiscal", "Ajuste fiscal, explicado", "O PLP 299/2026: o que muda nos gastos e nos benefícios fiscais, o que fica protegido, salário mínimo, saúde e o debate. Com 8 cards.",
+     "bolso", "leitura", mais=["congresso"], dest=True, tags="ajuste fiscal plp 299 arcabouço gastos meta superávit salário mínimo saúde educação bolsa família benefícios fiscais moretti")
 item("semana", "/semana", "Placar da semana", "O que a Câmara e o Senado votaram e como votou cada partido. Sai às segundas, depois de conferido.",
      "congresso", "dados", tags="semana votação plenário partido placar")
 item("raiox", "/congresso", "Raio-X do novo Congresso", "Quem foi eleito em 2026 para a Câmara e o Senado, partido por partido, com os dados do TSE.",
