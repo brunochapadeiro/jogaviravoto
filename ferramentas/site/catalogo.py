@@ -29,7 +29,7 @@ TEMAS = [
 # formatos (o selo de cada item) e jeitos de jogar
 FORMATOS = {
     "jogo": "Jogo", "teste": "Teste", "dados": "Dados e busca", "calc": "Calculadora", "leitura": "Leitura com fonte",
-    "imprimir": "Para imprimir", "ferramenta": "Ferramenta", "campanha": "Campanha externa", "canal": "Canal externo",
+    "imprimir": "Para imprimir", "ferramenta": "Ferramenta", "campanha": "Campanha externa", "canal": "Canal externo", "evento": "Evento externo",
 }
 COMO = {"celular": "No celular", "grupo": "Em grupo ou na roda", "telao": "No telão, com a plateia", "papel": "No papel"}
 
@@ -142,9 +142,14 @@ item("materiais", "/jogos#materiais", "Todos os materiais da campanha", "Baralho
 
 # Participe: campanhas e canais de fora do site (não são órgãos públicos: dizemos quem organiza)
 item("bets", "https://betsnuncamais.com.br/", "#BetsNuncaMais: abaixo-assinado contra a volta das bets",
-     "A MP 1.394/2026, de 25/9, proibiu as apostas de quota fixa. No STF, a associação das empresas de apostas pede a suspensão da MP (ADI 8027); o relator, ministro Luiz Fux, fez audiência pública em 3/11 e, em 8/11, a pedido da PGR, suspendeu os processos sobre a MP nas outras instâncias até o STF decidir. O julgamento ainda não tem data. O abaixo-assinado pede que a proibição continue, o fim do patrocínio das bets e tratamento público para quem se viciou. Pede nome, e-mail e CPF.",
-     "bolso", "campanha", externo=True, quem="Organiza: Instituto Conhecimento Liberta. Conferido em 9/11/2026.",
+     "A MP 1.394/2026, de 25/9, proibiu as apostas de quota fixa. No STF, a associação das empresas de apostas pede a suspensão da MP (ADI 8027); o relator, ministro Luiz Fux, fez audiência pública em 3/11 e, em 8/11, a pedido da PGR, suspendeu os processos sobre a MP nas outras instâncias até o STF decidir. O julgamento ainda não tem data. No Congresso, a MP foi prorrogada por 60 dias (ato no Diário Oficial de 11/11) e vale até 5/3/2027, se não for votada antes. O abaixo-assinado pede que a proibição continue, o fim do patrocínio das bets e tratamento público para quem se viciou. Pede nome, e-mail e CPF.",
+     "bolso", "campanha", externo=True, quem="Organiza: Instituto Conhecimento Liberta. Conferido em 16/11/2026.",
      tags="bets apostas jogo vício abaixo-assinado petição stf participe campanha")
+item("oficina-obs", "https://observatoriosaudementaltrabalho.com/v-oficina-do-observatorio-nacional-de-saude-mental-e-trabalho-2026/",
+     "V Oficina do Observatório Nacional de Saúde Mental e Trabalho",
+     "De 1º a 4/12/2026, na Unicamp, em Campinas (SP), com o tema “Fortalecendo a participação e inclusão dos trabalhadores e trabalhadoras como protagonistas”. Inscrição pela plataforma Even3, a partir da página do evento.",
+     "trabalho", "evento", externo=True, quem="Organiza: Observatório Nacional de Saúde Mental e Trabalho. Conferido em 16/11/2026.",
+     tags="saúde mental trabalho observatório oficina evento unicamp campinas participe")
 item("antirracista", "https://whatsapp.com/channel/0029Vb92L295Ui2P899ACd1k", "Exército Antirracista",
      "Canal de mobilização antirracista no WhatsApp, que distribui “missões”. Cerca de 21 mil seguidores em 2/11/2026.",
      "direitos", "canal", externo=True, quem="Canal de militância, não é órgão público. Para denunciar racismo: Disque 100 e delegacia (veja Onde denunciar).",
