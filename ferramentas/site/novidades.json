@@ -1,4 +1,6 @@
 [
+  {"data": "2026-11-16", "tema": "congresso", "titulo": "Novo: PL das Big Techs, explicado", "desc": "O que muda com o PL 4.675/2025, que a Câmara pode votar em 17/11: quem entra na regra, o que o Cade passa a poder fazer, quem defende, quem critica e a pressão dos EUA. Com 8 cards para postar.", "href": "/big-techs"},
+  {"data": "2026-11-16", "tema": "bolso", "titulo": "Novo: ajuste fiscal, explicado", "desc": "O PLP 299/2026, aprovado no Senado por 45 a 31: gastos, benefícios fiscais, o que fica protegido, o que circula sobre salário mínimo e Bolsa Família, e o debate. Com 8 cards para postar.", "href": "/ajuste-fiscal"},
   {"data": "2026-11-10", "tema": "congresso", "titulo": "Novo: Compare os estados",
    "desc": "Escolha dois dados quaisquer, entre 49 (urna, eleitos, votos das bancadas, presença, desemprego, renda, informalidade, desigualdade), e veja os 27 estados em frase, gráfico e tabela. Fontes: TSE, Câmara, Senado e IBGE.", "href": "/cruzar#ce"},
   {"data": "2026-11-10", "tema": "fatos", "titulo": "Novo: guia das bases de dados",
