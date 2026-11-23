@@ -1,5 +1,5 @@
 {
- "gerado": "2026-11-16T11:09:51+00:00",
+ "gerado": "2026-11-23T21:53:13+00:00",
  "anos": [
   2023,
   2024,
@@ -9,18 +9,18 @@
  "deputados": 648,
  "senadores": 107,
  "votacoes_camara": 1128,
- "votacoes_senado": 194,
+ "votacoes_senado": 198,
  "lider_governo_senado": "581",
  "codigos_senado": {
-  "Sim": 10026,
-  "Não": 2701,
-  "P-NRV": 1095,
-  "AP": 995,
+  "Sim": 10219,
+  "Não": 2813,
+  "P-NRV": 1107,
+  "AP": 996,
   "LS": 314,
   "MIS": 237,
-  "Presidente (art. 51 RISF)": 194,
+  "Presidente (art. 51 RISF)": 198,
   "NCom": 79,
-  "Abstenção": 34,
+  "Abstenção": 36,
   "LP": 32,
   "NA": 6,
   "LAP": 1
