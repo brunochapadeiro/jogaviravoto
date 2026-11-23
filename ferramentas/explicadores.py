@@ -1,4 +1,4 @@
-"""Conteúdo das páginas explicativas (gerador: explicador.py). Situação em 16/11/2026.
+"""Conteúdo das páginas explicativas (gerador: explicador.py). Situação em 23/11/2026.
 Regras: fonte em tudo; número antes do adjetivo; fato separado de opinião (opinião sempre com quem diz); nada inventado."""
 
 CSS_EXTRA = """<style>
@@ -23,6 +23,8 @@ CAMARA_PL = "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idPropos
 FORUM = "https://revistaforum.com.br/politica/pl-das-big-techs/"
 TVSIM = "https://tvsimbrasil.com.br/brasil/politica/noticia/2026/11/15/camara-vota-regulacao-big-techs-pressao-casa-branca"
 DACRE = "https://diariodoacre.com.br/big-techs-veem-risco-de-interferencia-em-algoritmos-e-inseguranca-juridica-em-projeto-que-a-camara-pode-votar-na-terca/"
+GAZBT = "https://www.gazetadopovo.com.br/republica/sem-consenso-votacao-do-pl-das-big-techs-e-adiada-na-camara"
+DPBT = "https://www.diariodepernambuco.com.br/politica/2026/11/11729386-votacao-do-pl-das-big-techs-devera-ficar-para-a-proxima-semana-diz-hugo-motta.html"
 L = lambda u, t: f'<a href="{u}" target="_blank" rel="noopener">{t}</a>'
 
 BIG = dict(
@@ -33,8 +35,8 @@ BIG = dict(
     og=("PL das Big Techs", "Congresso · explicado", "O que muda com o PL 4.675/2025", "Concorrência nas plataformas digitais: o que diz o texto, quem defende, quem critica e quando vota."),
     h1="PL das Big Techs <span>(PL 4.675/2025)</span>",
     sub="O projeto dá ao Cade, o órgão que defende a concorrência, regras próprias para as maiores plataformas digitais. O que muda, o que não muda, quem defende, quem critica e quando vota.",
-    atual="Situação em 16/11/2026: a Câmara pode votar o projeto na terça, 17/11. A votação ainda não está garantida.",
-    data_txt="16/11/2026",
+    atual="Situação em 23/11/2026: a votação prevista para 17/11 foi adiada, sem consenso entre as bancadas. O presidente da Câmara, Hugo Motta (Republicanos-PB), disse que a nova data depende das conversas do relator com as bancadas. Ainda não há data.",
+    data_txt="23/11/2026",
     atalhos=[("frase", "Em uma frase"), ("quem", "Quem entra"), ("muda", "O que muda"), ("conteudo", "É sobre conteúdo?"),
              ("debate", "Quem defende e quem critica"), ("fora", "Pressão de fora"), ("caminho", "Próximos passos")],
     secoes=[
@@ -75,20 +77,21 @@ BIG = dict(
         f"""  <section class="forma" id="caminho" aria-labelledby="caminho-t" style="--c:#17191E;--ce:#F2F0EA"><h2 id="caminho-t">Onde está e próximos passos</h2>
     <ol class="passos"><li><b>18/3/2026:</b> a Câmara aprova a urgência, por 276 votos a 186. O projeto pode ir direto ao plenário.</li>
     <li><b>8/7/2026:</b> o relator apresenta o parecer no plenário.</li>
-    <li><b>17/11/2026 (prevista):</b> votação no plenário da Câmara. O relator diz que só adia se faltar voto.</li>
+    <li><b>17/11/2026:</b> a votação no plenário da Câmara é adiada, sem consenso entre as bancadas. A nova data ainda não foi marcada.</li>
     <li><b>Depois:</b> vai ao Senado. Se o Senado mudar o texto, volta à Câmara. No fim, sanção ou veto do presidente.</li></ol>
     <p>Como votou cada deputado vai aparecer no <a href="/semana">Placar da semana</a>. Quer cobrar? Veja <a href="/quem-cobrar">de quem cobrar cada coisa</a> e <a href="/parlamentares">a ficha de cada parlamentar</a>.</p>
-    <p class="fte">Fontes: {L(CAMARA_PL, 'Câmara, ficha do PL 4.675/2025')}; {L(TVSIM, 'TV Sim (15/11/2026)')}; {L(FORUM, 'Revista Fórum')}.</p></section>""",
+    <p class="fte">Fontes: {L(CAMARA_PL, 'Câmara, ficha do PL 4.675/2025')}; {L(TVSIM, 'TV Sim (15/11/2026)')}; {L(FORUM, 'Revista Fórum')}; adiamento: {L(GAZBT, 'Gazeta do Povo (17/11/2026)')} e {L(DPBT, 'Diario de Pernambuco (17/11/2026)')}.</p></section>""",
     ],
     fontes=[
         f"Tramitação e ementa: {L(CAMARA_PL, 'Câmara dos Deputados, ficha do PL 4.675/2025')} (consultada em 16/11/2026).",
+        f"Adiamento de 17/11: {L(GAZBT, 'Gazeta do Povo, “Sem consenso, votação do PL das Big Techs é adiada na Câmara” (17/11/2026)')}; {L(DPBT, 'Diario de Pernambuco, “Votação do PL das big techs deverá ficar para a próxima semana, diz Hugo Motta” (17/11/2026)')}.",
         f"Conteúdo do parecer, critérios e obrigações: {L(FORUM, 'Revista Fórum, “Veja as propostas do PL das Big Techs”')}; {L(DACRE, 'Diário do Acre, “Big techs veem risco de interferência em algoritmos…”')}.",
         f"Urgência (276 a 186), carta dos economistas, pressão dos EUA, posições a favor e contra: {L(TVSIM, 'TV Sim, “Câmara vota regulação das big techs sob pressão da Casa Branca” (15/11/2026)')}.",
     ],
     cards=[
-        dict(tipo="capa", rotulo="Capa: PL das Big Techs", alt="O que é o PL 4.675/2025, que a Câmara pode votar em 17/11.",
+        dict(tipo="capa", rotulo="Capa: PL das Big Techs", alt="O que é o PL 4.675/2025, que espera votação na Câmara. A votação de 17/11 foi adiada.",
              fonte="Fontes em cada card: Câmara dos Deputados e imprensa",
-             html='<p class="cd-t">PL das Big Techs</p><p class="cd-s">O que é o PL 4.675/2025, que a Câmara pode votar nesta terça, 17/11.</p><p class="cd-x">O que muda, quem entra, quem defende, quem critica e o que vem depois.</p><p class="cd-s2">Passe para o lado →</p>'),
+             html='<p class="cd-t">PL das Big Techs</p><p class="cd-s">O que é o PL 4.675/2025, que espera votação na Câmara.</p><p class="cd-x">O que muda, quem entra, quem defende, quem critica e o que vem depois.</p><p class="cd-s2">Passe para o lado →</p>'),
         dict(rotulo="Em uma frase", alt="O projeto dá ao Cade poder de impor obrigações às maiores plataformas antes de um abuso, e não só depois.",
              fonte="Fonte: Câmara dos Deputados, PL 4.675/2025",
              html='<p class="ff-tag dado">EM UMA FRASE</p><p class="cd-t2">O Cade passa a poder criar regras para as maiores plataformas antes de um abuso, e não só depois.</p><p class="cd-x">Cade é o órgão federal que defende a concorrência. O projeto muda a lei da concorrência (Lei 12.529/2011).</p><p class="cd-x2">Autor: governo federal (set./2025). Relator: Aliel Machado (PV-PR).</p>'),
@@ -107,16 +110,16 @@ BIG = dict(
         dict(rotulo="Pressão de fora", alt="Relatório do USTR em abril, pedido de retaliação de 20 republicanos em julho, e o tema no tarifaço.",
              fonte="Fonte: TV Sim, 15/11/2026, com informações da CNN Brasil",
              html='<p class="ff-tag alerta">PRESSÃO DE FORA</p><ul class="cd-lst anos"><li><b>Abril de 2026</b>O projeto entra no relatório de barreiras comerciais do governo dos EUA (USTR)</li><li><b>Julho de 2026</b>20 congressistas republicanos pedem retaliação contra o Brasil</li><li><b>Tarifaço</b>Segundo a CNN Brasil, o tema entrou na negociação entre os dois países</li></ul>'),
-        dict(tipo="fim", rotulo="Próximos passos", alt="Urgência aprovada por 276 a 186 em 18/3; votação prevista em 17/11; depois Senado e sanção.",
-             fonte="Fontes: Câmara dos Deputados; TV Sim, 15/11/2026",
-             html='<p class="cd-t2">E agora?</p><ul class="cd-lst anos"><li><b>18/3: urgência aprovada</b>276 votos a 186</li><li><b>17/11: plenário da Câmara</b>votação prevista, ainda não garantida</li><li><b>Depois: Senado</b>se mudar, volta à Câmara; no fim, sanção ou veto</li></ul><p class="cd-s2">O que muda, o debate e as fontes:<span class="ff-url" style="font-size:3.1cqw">vigieademocracia.brunochapadeiro.workers.dev/big-techs</span></p>'),
+        dict(tipo="fim", rotulo="Próximos passos", alt="Urgência aprovada por 276 a 186 em 18/3; votação de 17/11 adiada, sem nova data; depois Senado e sanção.",
+             fonte="Fontes: Câmara dos Deputados; TV Sim, 15/11/2026; Gazeta do Povo, 17/11/2026",
+             html='<p class="cd-t2">E agora?</p><ul class="cd-lst anos"><li><b>18/3: urgência aprovada</b>276 votos a 186</li><li><b>17/11: votação adiada</b>sem consenso; nova data ainda não marcada</li><li><b>Depois: Senado</b>se mudar, volta à Câmara; no fim, sanção ou veto</li></ul><p class="cd-s2">O que muda, o debate e as fontes:<span class="ff-url" style="font-size:3.1cqw">vigieademocracia.brunochapadeiro.workers.dev/big-techs</span></p>'),
     ],
-    whatsapp=("PL das Big Techs (PL 4.675/2025): a Câmara pode votar nesta terça (17/11).\n\n"
+    whatsapp=("PL das Big Techs (PL 4.675/2025): a votação na Câmara, prevista para 17/11, foi adiada e ainda não tem nova data.\n\n"
               "O que é: o Cade, órgão que defende a concorrência, passa a poder impor obrigações às maiores plataformas digitais antes de um abuso, e não só depois. "
               "Entra quem fatura mais de R$ 50 bi no mundo ou R$ 5 bi no Brasil por ano, e o Cade decide caso a caso.\n\n"
               "O que muda, quem defende, quem critica e próximos passos, com fonte: https://vigieademocracia.brunochapadeiro.workers.dev/big-techs"),
     legenda=("PL DAS BIG TECHS: O QUE É E O QUE MUDA\n\n"
-             "A Câmara pode votar nesta terça (17/11) o PL 4.675/2025. Em resumo:\n\n"
+             "O PL 4.675/2025 espera votação na Câmara: a de 17/11 foi adiada, sem nova data. Em resumo:\n\n"
              "• O Cade, órgão que defende a concorrência, passa a poder impor obrigações às maiores plataformas digitais antes de um abuso, e não só depois.\n"
              "• Referência: faturamento de R$ 50 bi por ano no mundo ou R$ 5 bi no Brasil. Não enquadra sozinha: o Cade decide caso a caso.\n"
              "• Obrigações: mostrar regras, ranqueamento, preços e taxas; avisar antes de mudar as regras; não favorecer o próprio produto; portabilidade de dados.\n"
@@ -134,6 +137,10 @@ PRES = "https://www12.senado.leg.br/institucional/presidencia/consultarnoticia?n
 VOT = "https://www25.senado.leg.br/web/atividade/materias/-/materia/176328/votacoes"
 OPOVO = "https://www.opovo.com.br/noticias/economia/2026/11/12/por-40-a-38-senado-aprova-urgencia-para-plp-de-ajuste-fiscal.html"
 ISTOE = "https://istoe.com.br/moretti-pacote-fiscal-salario-minimo-saude-2026-2"
+FENACON = "https://fenacon.org.br/noticias/senado-completa-votacao-e-ajuste-fiscal-segue-para-a-camara/"
+OPOVO18 = "https://www.opovo.com.br/noticias/economia/2026/11/18/senado-aprova-plp-de-ajuste-fiscal-texto-segue-para-camara.html"
+CEF = "https://www.congressoemfoco.com.br/noticia/131713/motta-convoca-sessao-extra-para-discutir-ajuste-fiscal-na-segunda"
+GAZ19 = "https://www.gazetadopovo.com.br/republica/motta-agenda-votacao-ajuste-fiscal-lula-camara-segunda-feira-23/"
 GAZETA = "https://gazetadopovo.com.br/republica/ministro-de-lula-rebate-criticas-ao-ajuste-fiscal-e-dispara-contra-esquerda-sectaria"
 OREIRO = "https://joseluisoreiro.substack.com/p/o-pacote-fiscal-do-senado-plp-2992026"
 PODCAST = "https://open.spotify.com/episode/5zZxfXS2rLBSidVmClO1EZ"
@@ -141,13 +148,13 @@ PODCAST = "https://open.spotify.com/episode/5zZxfXS2rLBSidVmClO1EZ"
 AJUSTE = dict(
     slug="ajuste-fiscal", zip="Ajuste_fiscal", cor="#2D6A2E", kicker="AJUSTE FISCAL", placa="BOLSO",
     titulo="Ajuste fiscal: o que é e o que muda", curto="Ajuste fiscal",
-    desc="O PLP 299/2026, aprovado no Senado por 45 a 31: o que muda nos gastos e nos benefícios fiscais, o que fica protegido, o debate e os próximos passos. Com fontes.",
+    desc="O PLP 299/2026, aprovado no Senado (69 a 2 na versão final) e agora na Câmara: o que muda nos gastos e nos benefícios fiscais, o que fica protegido, o debate e os próximos passos. Com fontes.",
     soc="Ajuste fiscal (PLP 299/2026): o que muda, o que fica protegido e o debate, com fontes.",
     og=("Ajuste fiscal", "Bolso · explicado", "O que muda com o PLP 299/2026", "Gastos, benefícios fiscais, saúde, salário mínimo e o debate, com os números oficiais."),
     h1="Ajuste fiscal <span>(PLP 299/2026)</span>",
-    sub="O projeto do governo para equilibrar as contas de 2027. O Senado aprovou o texto principal em 12/11. O que muda, o que fica protegido, quem defende, quem critica e o que vem agora.",
-    atual="Situação em 16/11/2026: faltam 4 destaques no Senado (terça, 17/11). Depois, o texto vai à Câmara.",
-    data_txt="16/11/2026",
+    sub="O projeto do governo para equilibrar as contas de 2027. O Senado concluiu a votação em 18/11 e o texto está na Câmara. O que muda, o que fica protegido, quem defende, quem critica e o que vem agora.",
+    atual="Situação em 23/11/2026: o Senado concluiu a votação em 18/11 (69 a 2 na versão final). Na Câmara, o relator é Mauro Benevides Filho (União-CE); o presidente, Hugo Motta (Republicanos-PB), marcou sessão nesta segunda (23/11) para começar a discussão. A data da votação ainda não está confirmada.",
+    data_txt="23/11/2026",
     atalhos=[("numeros", "Os números"), ("gasto", "Gastos"), ("impostos", "Benefícios fiscais"), ("protegido", "O que fica protegido"),
              ("duvidas", "Salário mínimo, saúde, Bolsa Família"), ("debate", "O debate"), ("caminho", "Próximos passos"), ("ouca", "Ouça")],
     secoes=[
@@ -159,7 +166,7 @@ AJUSTE = dict(
         f"""  <section class="forma" id="gasto" aria-labelledby="gasto-t" style="--c:#2D6A2E;--ce:#93D896"><h2 id="gasto-t">O que muda nos gastos</h2>
     <ul><li><b>Limite menor em ano de aperto:</b> quando houver bloqueio extra de despesas, o gasto só pode crescer 2% acima da inflação, e não 2,5% como no arcabouço fiscal. Vale só para o ano em que for aplicado.</li>
     <li><b>Mais bloqueio:</b> o governo pode bloquear mais despesas para buscar o centro da meta, mesmo quando o resultado já estiver dentro da faixa aceita.</li>
-    <li><b>Lei Kandir:</b> o repasse aos estados cai de R$ 4 bi para R$ 1 bi por ano, de 2027 a 2030. A diferença, R$ 12 bi, será paga até 2037.</li>
+    <li><b>Lei Kandir:</b> o texto de 12/11 baixava o repasse aos estados de R$ 4 bi para R$ 1 bi por ano e deixava o resto para 2031 a 2037. Pelo acordo de 18/11, o repasse fica em R$ 2 bi em 2027 e o que falta é pago de 2028 a 2030 (fontes: Agência Senado, via Fenacon; Gazeta do Povo, 19/11/2026).</li>
     <li><b>Emendas aprovadas no Senado:</b> restos a pagar de contratos e convênios plurianuais não podem ser bloqueados até o fim de 2027 (Randolfe Rodrigues); parte da economia pode virar investimento no ano seguinte, inclusive indicado por bancadas estaduais (Jader Barbalho); o Fundo Constitucional do DF fica fora da trava se houver déficit (Izalci Lucas).</li></ul>
     <p class="fte">Fontes: {L(AGSEN, 'Agência Senado (12/11/2026)')}; {L(PRES, 'Senado, Presidência (12/11/2026)')}.</p></section>""",
         f"""  <section class="forma" id="impostos" aria-labelledby="impostos-t" style="--c:#9A5F0C;--ce:#F0B05A"><h2 id="impostos-t">O que muda nos benefícios fiscais</h2>
@@ -171,7 +178,7 @@ AJUSTE = dict(
         f"""  <section class="forma" id="protegido" aria-labelledby="protegido-t" style="--c:#1F4E8C;--ce:#A6C8FF"><h2 id="protegido-t">O que fica protegido e o que não muda</h2>
     <ul><li><b>Não podem ser bloqueados:</b> os juros da dívida pública e os fundos de ciência, tecnologia e inovação.</li>
     <li><b>Pisos da saúde e da educação continuam.</b> Mas, até 2030, a receita extra do imposto de exportação de petróleo pode ficar fora do cálculo de algumas obrigações, entre elas o piso da saúde.</li>
-    <li><b>Supersalários:</b> o Congresso tem 120 dias para analisar a regulamentação dos pagamentos acima do teto. O projeto não acaba com os “penduricalhos” sozinho.</li></ul>
+    <li><b>Supersalários:</b> o Congresso tem 60 dias (prazo reduzido em 18/11) para analisar a regulamentação dos pagamentos acima do teto. O projeto não acaba com os “penduricalhos” sozinho.</li></ul>
     <p class="fte">Fonte: {L(PRES, 'Senado, Presidência (12/11/2026)')}.</p></section>""",
         f"""  <section class="forma" id="duvidas" aria-labelledby="duvidas-t" style="--c:#1F7F73;--ce:#5FD3C2"><h2 id="duvidas-t">Salário mínimo, saúde e Bolsa Família</h2>
     <p class="def">O que circula nas redes, o que dizem os resumos oficiais e o que diz o governo.</p>
@@ -188,9 +195,10 @@ AJUSTE = dict(
         f"""  <section class="forma" id="caminho" aria-labelledby="caminho-t" style="--c:#17191E;--ce:#F2F0EA"><h2 id="caminho-t">Onde está e próximos passos</h2>
     <ol class="passos"><li><b>11/11/2026:</b> o líder do governo, Jaques Wagner (PT-BA), apresenta o projeto a pedido do Executivo. Relator: Eduardo Braga (MDB-AM).</li>
     <li><b>12/11/2026:</b> o Senado aprova a urgência (40 a 38) e o texto principal (45 a 31).</li>
-    <li><b>17/11/2026:</b> votação dos 4 destaques que ficaram para depois.</li>
+    <li><b>18/11/2026:</b> o Senado rejeita 3 destaques (47 a 30, 45 a 32 e 49 a 31), o da Lei Kandir é retirado após acordo, e a versão final é aprovada por 69 a 2.</li>
+    <li><b>23/11/2026:</b> na Câmara, sessão para começar a discussão. Relator: Mauro Benevides Filho (União-CE). Data da votação ainda não confirmada.</li>
     <li><b>Depois:</b> vai à Câmara. Como é lei complementar, precisa de maioria absoluta: 257 deputados (no Senado, 41). Se a Câmara mudar, volta ao Senado. No fim, sanção ou veto.</li></ol>
-    <p class="fte">Fontes: {L(AGSEN, 'Agência Senado')}; {L(VOT, 'Senado Federal, votações')}; {L(OPOVO, 'O Povo (12/11/2026)')}; Constituição Federal, art. 69.</p></section>""",
+    <p class="fte">Fontes: {L(AGSEN, 'Agência Senado')}; {L(VOT, 'Senado Federal, votações')}; {L(OPOVO, 'O Povo (12/11/2026)')}; {L(FENACON, 'Agência Senado, via Fenacon (19/11/2026)')}; {L(OPOVO18, 'O Povo (18/11/2026)')}; {L(CEF, 'Congresso em Foco (19/11/2026)')}; Constituição Federal, art. 69.</p></section>""",
         f"""  <section class="caixa" id="ouca" aria-labelledby="ouca-t"><h2 id="ouca-t">Ouça</h2>
     <p>{L(PODCAST, 'Calma Urgente, episódio “É Justo o Ajuste?” (16/11/2026)')}: Alessandra Orofino, Gregório Duvivier e Bruno Torturra entrevistam o ministro do Planejamento, Bruno Moretti, sobre o motivo do ajuste, o pacote, os juros e a subvenção ao diesel. 97 minutos, no Spotify.</p>
     <p class="fte">É uma entrevista com o ministro: as falas dele são a posição do governo.</p></section>""",
@@ -199,46 +207,47 @@ AJUSTE = dict(
         f"Conteúdo do texto aprovado: {L(AGSEN, 'Agência Senado, “Texto principal do ajuste fiscal é aprovado pelo Senado” (12/11/2026)')}; {L(PRES, 'Senado Federal, Presidência, “Senado aprova texto-base de projeto de ajuste fiscal com previsão de economia de até R$ 60 bilhões”')}.",
         f"Placares: {L(VOT, 'Senado Federal, votações do PLP 299/2026')} e dados abertos do Senado (placar da semana); urgência: {L(OPOVO, 'O Povo (12/11/2026)')}.",
         f"Governo e críticas: {L(ISTOE, 'IstoÉ, “Moretti defende pacote fiscal…” (16/11/2026)')}; {L(GAZETA, 'Gazeta do Povo, “Ministro de Lula rebate críticas ao ajuste fiscal…”')}; {L(OREIRO, 'José Luis Oreiro, “O Pacote Fiscal do Senado (PLP 299/2026)”')}.",
+        f"Conclusão no Senado (18/11): {L(FENACON, 'Agência Senado, “Senado completa votação, e ajuste fiscal segue para a Câmara”, reproduzida pela Fenacon (19/11/2026)')}; {L(OPOVO18, 'O Povo (18/11/2026)')}; Lei Kandir: {L(GAZ19, 'Gazeta do Povo (19/11/2026)')}; Câmara: {L(CEF, 'Congresso em Foco (19/11/2026)')}.",
         f"Para ouvir: {L(PODCAST, 'Calma Urgente, “É Justo o Ajuste?”, Spotify (16/11/2026)')}.",
     ],
     cards=[
-        dict(tipo="capa", rotulo="Capa: Ajuste fiscal", alt="O que é o PLP 299/2026, aprovado no Senado por 45 a 31.",
+        dict(tipo="capa", rotulo="Capa: Ajuste fiscal", alt="O que é o PLP 299/2026, aprovado no Senado por 69 a 2 na versão final e que agora está na Câmara.",
              fonte="Fontes em cada card: Senado Federal e imprensa",
-             html='<p class="cd-t">Ajuste fiscal</p><p class="cd-s">O que é o PLP 299/2026, aprovado no Senado por 45 a 31 e que agora vai à Câmara.</p><p class="cd-x">O que muda, o que fica protegido, o debate e o que vem depois.</p><p class="cd-s2">Passe para o lado →</p>'),
+             html='<p class="cd-t">Ajuste fiscal</p><p class="cd-s">O que é o PLP 299/2026, aprovado no Senado (69 a 2 na versão final) e que agora está na Câmara.</p><p class="cd-x">O que muda, o que fica protegido, o debate e o que vem depois.</p><p class="cd-s2">Passe para o lado →</p>'),
         dict(rotulo="Os números", alt="Economia prevista de R$ 50 a 60 bilhões em 2027 e meta de superávit de 0,5% do PIB.",
              fonte="Fontes: Ministério do Planejamento, via Senado; Agência Senado (12/11/2026)",
              html='<p class="ff-tag dado">OS NÚMEROS</p><p class="cd-big">R$ 50 a 60 bi</p><p class="cd-t3">de economia prevista em 2027, segundo o governo.</p><p class="cd-x">Meta para 2027: superávit de 0,5% do PIB, cerca de R$ 73 bi, ou seja, arrecadar mais do que gastar, sem contar os juros.</p><p class="cd-x2">É estimativa. O relatório do Senado calcula R$ 45 a 56 bi.</p>'),
         dict(rotulo="Gastos", alt="Trava de 2% acima da inflação em ano de bloqueio, mais bloqueios e Lei Kandir menor.",
-             fonte="Fontes: Agência Senado; Senado, Presidência (12/11/2026)",
-             html='<p class="ff-tag dado">GASTOS</p><ul class="cd-lst"><li>Em ano de aperto, o gasto sobe no máximo <b>2% acima da inflação</b>, não 2,5%</li><li>O governo pode <b>bloquear mais</b> para chegar ao centro da meta</li><li>Lei Kandir: repasse aos estados cai de <b>R$ 4 bi para R$ 1 bi</b> por ano até 2030; a diferença é paga até 2037</li></ul>'),
+             fonte="Fontes: Agência Senado (12 e 18/11/2026); Gazeta do Povo (19/11/2026)",
+             html='<p class="ff-tag dado">GASTOS</p><ul class="cd-lst"><li>Em ano de aperto, o gasto sobe no máximo <b>2% acima da inflação</b>, não 2,5%</li><li>O governo pode <b>bloquear mais</b> para chegar ao centro da meta</li><li>Lei Kandir: repasse aos estados cai de <b>R$ 4 bi para R$ 2 bi</b> em 2027; o que falta é pago de 2028 a 2030</li></ul>'),
         dict(rotulo="Benefícios fiscais", alt="Corte de 10% nos benefícios fiscais com exceções, limite à compensação de créditos e diesel fora da meta.",
              fonte="Fontes: Senado, Presidência; Agência Senado (12/11/2026)",
              html='<p class="ff-tag dado">BENEFÍCIOS FISCAIS</p><p class="cd-t3">Corte de 10% nas isenções e regimes especiais de impostos.</p><ul class="cd-lst"><li>Fora do corte: desoneração da folha, informática e semicondutores, carro para PcD e autistas</li><li>Limite ao uso de créditos tributários para abater imposto</li><li>Até R$ 10,5 bi do subsídio ao diesel fora da meta de 2026</li></ul>'),
         dict(rotulo="O que fica protegido", alt="Juros da dívida e fundos de ciência não podem ser bloqueados; pisos continuam, mas receita do petróleo sai do cálculo do piso da saúde até 2030.",
              fonte="Fonte: Senado, Presidência (12/11/2026)",
-             html='<p class="ff-tag ok">O QUE FICA PROTEGIDO</p><ul class="cd-lst"><li><b>Não podem ser bloqueados:</b> juros da dívida e fundos de ciência e tecnologia</li><li><b>Pisos de saúde e educação continuam.</b> Mas, até 2030, a receita extra da exportação de petróleo pode sair do cálculo do piso da saúde</li><li><b>Supersalários:</b> 120 dias para o Congresso analisar a regra. Não acabam sozinhos</li></ul>'),
+             html='<p class="ff-tag ok">O QUE FICA PROTEGIDO</p><ul class="cd-lst"><li><b>Não podem ser bloqueados:</b> juros da dívida e fundos de ciência e tecnologia</li><li><b>Pisos de saúde e educação continuam.</b> Mas, até 2030, a receita extra da exportação de petróleo pode sair do cálculo do piso da saúde</li><li><b>Supersalários:</b> 60 dias para o Congresso analisar a regra. Não acabam sozinhos</li></ul>'),
         dict(rotulo="Salário mínimo e Bolsa Família", alt="Os resumos do Senado não citam mudança; o ministro diz que não mudam.",
              fonte="Fontes: Senado (resumos do texto); IstoÉ e Gazeta do Povo, falas do ministro",
              html='<p class="ff-tag alerta">CIRCULA NAS REDES</p><p class="cd-t3">Mexe no salário mínimo ou no Bolsa Família?</p><p class="cd-x"><b>O texto:</b> os resumos oficiais do Senado não citam mudança em nenhum dos dois.</p><p class="cd-x"><b>O governo:</b> o ministro Bruno Moretti diz que a regra do mínimo não muda e que o Bolsa Família não será reduzido.</p><p class="cd-x2">Na dúvida, confira a fonte antes de compartilhar.</p>'),
         dict(rotulo="O debate", alt="Governo, deputados de esquerda e o economista José Luis Oreiro; no Senado, o PL votou 12 a 2 contra.",
              fonte="Fontes: IstoÉ; Gazeta do Povo; J. L. Oreiro; Senado Federal",
              html='<p class="ff-tag dado">O DEBATE</p><ul class="cd-lst"><li><b>Governo:</b> não tira direitos e abre espaço para os juros caírem</li><li><b>Deputados de PT, PCdoB, PSOL e PV:</b> ajuste deveria vir mais de imposto de quem ganha mais</li><li><b>Economista J. L. Oreiro:</b> corta investimento, não mexe nos juros e pode frear a economia em 2027</li><li><b>No voto:</b> PT, MDB e PSB a favor; PL 12 a 2 contra</li></ul>'),
-        dict(tipo="fim", rotulo="Próximos passos", alt="Destaques em 17/11 no Senado, depois Câmara com 257 votos necessários, e sanção.",
-             fonte="Fontes: Agência Senado; Constituição, art. 69",
-             html='<p class="cd-t2">E agora?</p><ul class="cd-lst anos"><li><b>17/11: Senado</b>vota os 4 destaques que faltam</li><li><b>Depois: Câmara</b>precisa de 257 votos, a maioria absoluta</li><li><b>No fim</b>sanção ou veto do presidente</li></ul><p class="cd-s2">Tudo com fonte, e onde ouvir o ministro:<span class="ff-url" style="font-size:3.0cqw">vigieademocracia.brunochapadeiro.workers.dev/ajuste-fiscal</span></p>'),
+        dict(tipo="fim", rotulo="Próximos passos", alt="Senado conclui em 18/11 por 69 a 2; agora a Câmara, que precisa de 257 votos; depois sanção ou veto.",
+             fonte="Fontes: Agência Senado; Congresso em Foco; Constituição, art. 69",
+             html='<p class="cd-t2">E agora?</p><ul class="cd-lst anos"><li><b>18/11: Senado conclui</b>versão final aprovada por 69 a 2</li><li><b>Agora: Câmara</b>precisa de 257 votos; relator Mauro Benevides Filho</li><li><b>No fim</b>sanção ou veto do presidente</li></ul><p class="cd-s2">Tudo com fonte, e onde ouvir o ministro:<span class="ff-url" style="font-size:3.0cqw">vigieademocracia.brunochapadeiro.workers.dev/ajuste-fiscal</span></p>'),
     ],
-    whatsapp=("Ajuste fiscal (PLP 299/2026): o Senado aprovou o texto principal por 45 a 31. Agora vai à Câmara.\n\n"
+    whatsapp=("Ajuste fiscal (PLP 299/2026): o Senado concluiu a votação em 18/11 (69 a 2 na versão final). Agora está na Câmara.\n\n"
               "O que muda: em ano de aperto, o gasto só cresce 2% acima da inflação (e não 2,5%); corte de 10% nos benefícios fiscais de empresas e setores; economia prevista de R$ 50 a 60 bi em 2027.\n"
               "Os pisos de saúde e educação continuam, e os resumos do Senado não citam mudança no salário mínimo nem no Bolsa Família.\n\n"
               "O que muda, o que fica protegido e o debate, com fonte: https://vigieademocracia.brunochapadeiro.workers.dev/ajuste-fiscal"),
     legenda=("AJUSTE FISCAL: O QUE É E O QUE MUDA\n\n"
-             "O Senado aprovou em 12/11 o texto principal do PLP 299/2026, por 45 a 31. Em resumo:\n\n"
+             "O Senado aprovou o PLP 299/2026: texto principal por 45 a 31 (12/11) e versão final por 69 a 2 (18/11). Agora está na Câmara. Em resumo:\n\n"
              "• Economia prevista de R$ 50 a 60 bi em 2027 (governo). Meta: superávit de 0,5% do PIB.\n"
              "• Em ano de aperto, o gasto sobe no máximo 2% acima da inflação, não 2,5%.\n"
              "• Corte de 10% nos benefícios fiscais, com exceções (folha, informática, carro para PcD e autistas).\n"
              "• Juros da dívida e fundos de ciência não podem ser bloqueados. Pisos de saúde e educação continuam, mas a receita extra do petróleo pode sair do cálculo do piso da saúde até 2030.\n"
              "• Os resumos do Senado não citam mudança no salário mínimo nem no Bolsa Família; o ministro Bruno Moretti diz que não mudam.\n"
-             "• Próximos passos: 4 destaques no Senado na terça (17/11), depois a Câmara, que precisa de 257 votos.\n\n"
+             "• Próximos passos: a Câmara, que precisa de 257 votos; relator Mauro Benevides Filho (União-CE). Depois, sanção ou veto.\n\n"
              "O debate, as fontes e o podcast com o ministro no site (link na bio): vigieademocracia.brunochapadeiro.workers.dev/ajuste-fiscal\n"
              "Fontes: Agência Senado; Senado Federal; IstoÉ; Gazeta do Povo. Feito com auxílio de IA (Claude).\n"
              "© 2026 Prof. Bruno Chapadeiro · CC BY-NC-SA 4.0\n\n"
